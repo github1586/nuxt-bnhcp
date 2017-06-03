@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+/*--- 订单详情相关页面 ---*/
+/*-- 公用的部分 --*/
+header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+header .header_back {
+  background: url(../img/icon_back_red.png) no-repeat;
+  background-size: 10px 16px;
+}
+header span {
+  color: #333;
+}
+.menu_staus {
+  color: #666;
+  background-color: #fff;
+  height: 44px;
+  position: relative;
+  margin-bottom: 1rem;
+}
+.menu_staus .payment {
+  position: absolute;
+  color: #fff;
+  display: inline-block;
+  background: #f99630;
+  height: 100%;
+  line-height: 27px;
+  width: 60px;
+  height: 27px;
+  margin-top: 9px;
+  text-align: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 1.3rem;
+}
+.menu_staus .space {
+  padding: 0 0 0 8rem;
+  line-height: 48px;
+  font-size: 1.2rem;
+}
+.menu_address {
+  overflow: hidden;
+  background-color: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 10px 15px 10px 15px;
+  margin: 0 0 10px 0;
+}
+.menu_address .map {
+  width: 60px;
+  text-align: right;
+  font-size: 1.3rem;
+  color: #ef4040;
+  float: right;
+}
+.menu_address .address {
+  font-size: 1.3rem;
+  color: #484848;
+  margin-right: 65px;
+}
+.menu_class_infor {
+  background-color: #fff;
+  padding: 0 0 15px 15px;
+  margin: 0 0 10px 0;
+}
+.menu_class_infor .class_tit {
+  overflow: hidden;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 8px 0 8px 0;
+}
+.menu_class_infor .class_tit .cls_agent {
+  font-size: 1.3rem;
+  color: #fff;
+  background-color: #ef4040;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  float: right;
+  padding: 5px 6px 5px 6px;
+  margin: 0 15px 0 0;
+}
+.menu_class_infor .class_tit .cls_name {
+  color: #333;
+  display: inline-block;
+  padding: 5px 0 0 0;
+}
+.menu_class_infor .class_con {
+  padding: 10px 0 0 0;
+}
+.menu_class_infor .class_con p {
+  font-size: 1.4rem;
+  color: #666;
+  padding: 4px 0 4px 0;
+}
+.menu_class_infor .class_con p span {
+  padding: 0 0 0 2px;
+}
+.menu_money {
+  background-color: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0 0 0 15px;
+  margin: 0 0 10px 0;
+}
+.menu_money .money_tit {
+  color: #333;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 8px 0 8px 0;
+  margin: 0 0 10px 0;
+}
+.menu_money .money_money {
+  font-size: 1.4rem;
+  color: #666;
+  overflow: hidden;
+  padding: 6px 15px 6px 0;
+}
+.menu_money .money_money.minus {
+  color: #ef4040;
+}
+.menu_money .money_money span {
+  float: right;
+}
+.menu_money .money_total {
+  font-size: 1.4rem;
+  color: #484848;
+  border-top: 1px solid #dcdcdc;
+  padding: 13px 15px 13px 0;
+  margin: 8px 0 0 0;
+}
+.menu_money .money_total span {
+  float: right;
+}
+.menu_money.tui {
+  padding-bottom: 10px;
+}
+.menu_arry {
+  background-color: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0 0 0 15px;
+  margin: 0 0 10px 0;
+}
+.menu_arry .tit {
+  color: #333;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 8px 0 8px 0;
+  margin: 0 0 10px 0;
+}
+.menu_arry .con {
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0 0 10px 0;
+  margin: 0 0 13px 0;
+}
+.menu_arry .con p {
+  font-size: 1.4rem;
+  color: #666;
+  padding: 3px 0;
+}
+.menu_arry .class_list {
+  background-color: #fff;
+}
+.menu_arry .class_list li {
+  overflow: hidden;
+  border: 1px solid #dcdcdc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 0 15px 11px 0;
+}
+.menu_arry .class_list li.confirm .date {
+  background-color: #ef4040;
+}
+.menu_arry .class_list li.confirm .btns {
+  color: #ef4040;
+  border: 1px solid #ef4040;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  text-align: center;
+}
+.menu_arry .class_list li.wait .date {
+  background-color: #ef4040;
+}
+.menu_arry .class_list li .date {
+  width: 65px;
+  height: 45px;
+  background-color: #ccc;
+  text-align: center;
+  color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  float: left;
+}
+.menu_arry .class_list li .date p {
+  font-size: 1.3rem;
+  padding: 5px 0 0 0;
+}
+.menu_arry .class_list li .btns {
+  width: 59px;
+  height: 25px;
+  font-size: 1.3rem;
+  line-height: 23px;
+  text-align: right;
+  color: #999;
+  float: right;
+  margin: 10px 8px 0 0;
+}
+.menu_arry .class_list li .txt {
+  font-size: 1.3rem;
+  color: #666;
+  margin: 3px 75px 0 77px;
+}
+.menu_arry .class_list li .txt .time {
+  margin: 0 0 3px 0;
+}
+.menu_fix_bottom .ctrl_btns {
+  overflow: hidden;
+}
+.menu_fix_bottom .ctrl_btns.single li {
+  width: 100%;
+}
+.menu_fix_bottom .ctrl_btns li {
+  width: 50%;
+  float: left;
+}
+.menu_fix_bottom .ctrl_btns li a {
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  text-align: center;
+}
+.menu_fix_bottom .ctrl_btns li a.menu_cancel {
+  background-color: #fff;
+  color: #ef4040;
+}
+.menu_fix_bottom .ctrl_btns li a.menu_pay {
+  background-color: #ef4040;
+  color: #fff;
+}
+/*- 待付款页面 -*/
+/*- 进行中页面 -*/
+/* 确认上课按钮交互 */
+.que_tit {
+  font-size: 1.3rem;
+  color: #222;
+  line-height: 20px;
+}
+.que_tip {
+  font-size: 1.3rem;
+  color: #ef4040;
+  margin: 10px 0 0 0;
+}
+/* 退班按钮交互 */
+.class_tui_tit {
+  font-size: 1.5rem;
+  color: #222;
+  text-align: center;
+  margin: 0 0 15px 0;
+}
+.class_tui_con {
+  font-size: 1.3rem;
+  color: #222;
+  margin: 0 0 3px 0;
+}
+.class_tui_tip {
+  font-size: 1.3rem;
+  color: #999;
+  line-height: 18px;
+  margin: 5px 0 0 0;
+}
+/*- 待评价页面 -*/
+/*- 已退班 -*/
+.has_tui_infor .tui_tit {
+  background: url(../img/has_tui_bgc.png) repeat-x left bottom;
+  background-size: 9px 1px;
+  padding: 0 0 9px 0;
+  margin: 0 0 8px 0;
+}
+.has_tui_infor .tui_tit .tui_money {
+  padding-left: 53px;
+}

@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+/*------ 头部搜索区域 ------*/
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  padding-bottom: 6rem;
+}
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.header p {
+  color: #333;
+}
+.header .search_clas {
+  display: inline-block;
+  width: 2rem;
+  height: 1.4rem;
+  background: url('../img/search_page.png') no-repeat center center;
+  background-size: 1.4rem 1.4rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 1.5rem;
+  margin-right: 1.5rem;
+}
+.sidebar_mask {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.5;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 1355;
+}
+.content_main {
+  width: 100%;
+  height: 100%;
+  padding-top: 44px;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.content_main .left_main {
+  float: left;
+  height: 100%;
+  overflow-y: scroll;
+}
+.content_main .left_main ul li {
+  width: 68px;
+  height: 50px;
+  line-height: 50px;
+  color: #fff;
+  font-size: 1.4rem;
+  background: #ef4040;
+  text-align: center;
+  margin-bottom: 1px;
+}
+.content_main .left_main ul li.on {
+  background: #fff;
+  color: #ef4040;
+}
+.content_main .marsk_opcity {
+  display: none;
+}
+.content_main .right_main {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-left: 80px;
+  padding-right: 12px;
+  position: relative;
+}
+.content_main .right_main .right_main_up {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  color: #fff;
+  font-size: 1.4rem;
+  background: #ef4040;
+  border-radius: 2px;
+}
+.content_main .right_main .right_down_zong .right_main_down {
+  width: 100%;
+  height: 100%;
+  margin-top: 20px;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone {
+  width: 100%;
+  padding-bottom: 20px;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone.no_t {
+  margin-top: 0;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone p {
+  font-size: 1.4rem;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone .classify_fir {
+  overflow: hidden;
+  margin-top: 6px;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone .classify_fir ul {
+  overflow: hidden;
+  margin-right: -5px;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone .classify_fir ul li {
+  width: 33.33%;
+  float: left;
+  padding: 0 5px 5px 0;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone .classify_fir ul li a {
+  width: 100%;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  text-align: center;
+  background: #fff;
+  color: #484848;
+  font-size: 1.3rem;
+}
+.content_main .right_main .right_down_zong .right_main_down .right_main_down_zone .classify_fir ul li a.all_class {
+  color: #ef4040;
+}

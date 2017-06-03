@@ -1,0 +1,161 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+body {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: url('../img/login_bg.jpg') no-repeat 0 0;
+  background-attachment: fixed;
+}
+.container_login {
+  padding-top: 6.5rem;
+  width: 100%;
+  height: 100%;
+  background-size: 100%;
+}
+.container_login .login {
+  width: 100%;
+  height: 10.7rem;
+  background: url('../img/logo_login.png') no-repeat center center;
+  background-size: 5.8rem 10.7rem;
+}
+.container_login .login_form {
+  padding: 0 1.3rem;
+  margin-top: 4rem;
+}
+.container_login .login_form input {
+  width: 100%;
+  height: 4.5rem;
+  border-radius: 5rem;
+}
+.container_login .login_form .verification {
+  position: relative;
+}
+.container_login .login_form .verification b {
+  display: inline-block;
+  width: 80px;
+  height: 28px;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  background: #999;
+  margin-right: 1.8rem;
+  margin-top: -0.5rem;
+}
+.container_login .login_form .verification i {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  margin-right: 3.2rem;
+}
+.container_login .login_form .phone {
+  margin-bottom: 1rem;
+  position: relative;
+}
+.container_login .login_form .phone input {
+  background: rgba(62, 35, 74, 0.1) url('../img/icon_login_phone.png') no-repeat 1.9rem center;
+  background-size: 1.3rem 2.3rem;
+  padding-left: 4.5rem;
+  color: #fff;
+}
+.container_login .login_form .phone input::-webkit-input-placeholder {
+  color: #fff;
+}
+.container_login .login_form .phone input::-ms-input-placeholder {
+  color: #fff;
+}
+.container_login .login_form .phone input::-o-input-placeholder {
+  color: #fff;
+}
+.container_login .login_form .phone input::input-placeholder {
+  color: #fff;
+}
+.container_login .login_form .phone span {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  background: #fff;
+  color: #7e6382;
+  line-height: 1.5rem;
+  text-align: center;
+  border-radius: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.container_login .login_form .phone_num {
+  position: relative;
+}
+.container_login .login_form .phone_num input {
+  background: rgba(62, 35, 74, 0.1) url('../img/icon_login_num.png') no-repeat 1.9rem center;
+  background-size: 1.8rem 2.3rem;
+  padding-left: 4.5rem;
+  color: #fff;
+}
+.container_login .login_form .phone_num input::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #fff;
+}
+.container_login .login_form .phone_num input::-ms-input-placeholder {
+  /* WebKit browsers */
+  color: #fff;
+}
+.container_login .login_form .phone_num input::-o-input-placeholder {
+  /* WebKit browsers */
+  color: #fff;
+}
+.container_login .login_form .phone_num input::input-placeholder {
+  /* WebKit browsers */
+  color: #fff;
+}
+.container_login .login_form .phone_num span {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  width: 10rem;
+  text-align: center;
+  display: inline-block;
+  padding-left: 1.5rem;
+  border-left: 1px solid #fff;
+  height: 3rem;
+  color: #fff;
+  line-height: 3rem;
+  font-size: 1.5rem;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.container_login .login_form .login_btn {
+  margin-top: 2.5rem;
+}
+.container_login .login_form .login_btn input {
+  background: #9a4a62;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.container_login .login_form .login_btn input.on {
+  background: #ef4040;
+}
+.container_login .login_form .logup {
+  height: 3rem;
+  float: right;
+  margin-right: 1.6rem;
+  font-size: 1.4rem;
+}
+.container_login .login_form .logup a {
+  line-height: 3rem;
+  color: #afaaaf;
+}

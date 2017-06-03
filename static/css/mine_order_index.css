@@ -1,0 +1,399 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+header {
+  background: #fff;
+  color: #333;
+}
+header .sele_shai {
+  font-size: 1.4rem;
+  float: right;
+  margin: 0 15px 0 0;
+}
+header .header_tit {
+  margin: 0 50px 0 50px;
+}
+header .header_back {
+  background: url(../img/icon_back_red.png) no-repeat;
+  background-size: 10px 16px;
+}
+/*--- 订单列表 ---*/
+.menu_tabs {
+  overflow: hidden;
+  border-top: 1px solid #c7c5c6;
+  background-color: #fff;
+  margin: 0 0 10px 0;
+}
+.menu_tabs li {
+  width: 25%;
+  height: 3.5rem;
+  padding: 0 1rem;
+  float: left;
+}
+.menu_tabs li a {
+  height: 100%;
+  line-height: 3.5rem;
+  display: block;
+  text-align: center;
+  color: #484848;
+}
+.menu_tabs li a.on {
+  color: #ef4040;
+  border-bottom: 2px solid #ef4040;
+}
+/*--- 订单列表 ---*/
+.menu_list {
+  background-color: #fff;
+  border-top: 1px solid #eeeeee;
+  border-bottom: 1px solid #eeeeee;
+  margin: 0 0 10px 0;
+}
+.menu_list.ing .pay_ctrls .btns .cancel {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+.menu_list.cancel .pay_ctrls .btns .dele {
+  width: 40px;
+  height: 20px;
+  background: url(../img/menu_dele.png) no-repeat right center;
+  background-size: 18px 17px;
+  display: inline-block;
+  margin: 4px 0 0 0;
+}
+.menu_list.have_ok {
+  position: relative;
+}
+.menu_list.have_ok .have_ok_img {
+  width: 104px;
+  height: 82px;
+  background: url(../img/menu_have_ok.png) no-repeat 0 0;
+  background-size: 104px 82px;
+  position: absolute;
+  left: 135px;
+  top: 41px;
+}
+.menu_list .total_pay {
+  text-align: right;
+  height: 4rem;
+  line-height: 4rem;
+  padding-right: 1rem;
+  font-size: 1.5rem;
+  border-bottom: 1px solid #ddd;
+}
+.menu_list .list_link {
+  display: block;
+}
+.menu_list .list_link .tit {
+  border-bottom: 1px solid #eeeeee;
+  padding: 0.9rem 0 0.9rem 1rem;
+}
+.menu_list .list_link .tit .staus {
+  font-size: 1.2rem;
+  color: #ef4040;
+  float: right;
+  margin: 2px 15px 0 0;
+}
+.menu_list .list_link .tit .agent {
+  background: url(../img/menu_list_arrow.png) no-repeat right center;
+  background-size: 5px 8px;
+  padding: 0 13px 0 0;
+}
+.menu_list .list_link .course_list li {
+  background: #f5f5f5;
+  margin-bottom: 0.5rem;
+}
+.menu_list .list_link .course_list li h3 {
+  text-align: right;
+  padding-right: 1.2rem;
+  font-weight: normal;
+  height: 3rem;
+  line-height: 3rem;
+}
+.menu_list .list_link .course_list li h3.on {
+  color: #ef4040;
+}
+.menu_list .list_link .course_list li .con {
+  border-bottom: 1px solid #ddd;
+  overflow: hidden;
+  padding: 14px 0 10px 1rem;
+}
+.menu_list .list_link .course_list li .con > p {
+  float: left;
+  position: relative;
+  line-height: 1.7rem;
+  text-align: center;
+  width: 6.5rem;
+  height: 6.5rem;
+}
+.menu_list .list_link .course_list li .con > p span {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1.5rem;
+  background: #ef4040;
+  color: #fff;
+  width: 100%;
+}
+.menu_list .list_link .course_list li .con > p .cls_img {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+}
+.menu_list .list_link .course_list li .con .infor {
+  margin: 0 0 0 80px;
+}
+.menu_list .list_link .course_list li .con .infor p {
+  font-size: 1.2rem;
+  color: #333;
+  margin: 0 0 0.3rem 0;
+}
+.menu_list .list_link .pay_ctrls .btns .cancel {
+  padding-left: 13px;
+  padding-right: 13px;
+}
+.menu_list .pay_ctrls {
+  height: 40px;
+  overflow: hidden;
+}
+.menu_list .pay_ctrls .pay_money {
+  width: 150px;
+  color: #484848;
+  float: left;
+  margin: 11px 0 0 0;
+}
+.menu_list .pay_ctrls .btns {
+  overflow: hidden;
+  text-align: right;
+  padding: 6px 15px 0 0;
+  margin: 0 0 0 160px;
+}
+.menu_list .pay_ctrls .btns .cancel {
+  font-size: 1.2rem;
+  color: #999999;
+  border: 1px solid #cccccc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 5px 2px;
+}
+.menu_list .pay_ctrls .btns .pay_link {
+  width: 60px;
+  font-size: 1.2rem;
+  color: #ef4040;
+  text-align: center;
+  border: 1px solid #ef4040;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: inline-block;
+  padding: 5px 2px;
+  margin: 0 0 0 3px;
+}
+/* 退班按钮交互 */
+.class_tui_tit {
+  font-size: 1.4rem;
+  color: #222;
+  margin: 0 0 5px 0;
+}
+.class_tui_con {
+  font-size: 1.3rem;
+  color: #999;
+  margin: 0 0 3px 0;
+}
+.class_tui_con span.pad {
+  padding-left: 10px;
+}
+.class_tui_con span.tit {
+  color: #222;
+}
+.class_tui_con span.money {
+  color: #ef4040;
+}
+.class_tui_tip {
+  font-size: 1.3rem;
+  color: #999;
+  line-height: 18px;
+  margin: 5px 0 0 0;
+}
+/* 筛选按钮交互 */
+.kid_list {
+  border-bottom: 1px solid #eeeeee;
+  padding: 17px 10px 25px 10px;
+  margin: 0 0 15px 0;
+}
+.kid_list .kid_tit {
+  font-size: 1.5rem;
+  color: #4b4b4b;
+  padding: 0 0 1rem 0;
+}
+.kid_list .kid_list_box {
+  overflow: hidden;
+}
+.kid_list .kid_list_box li {
+  width: 25%;
+  font-size: 1.2rem;
+  float: left;
+  padding: 0rem 0.3rem;
+}
+.kid_list .kid_list_box li span {
+  display: block;
+  color: #666;
+  background: #ddd;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: 0.2rem 0rem;
+}
+.kid_list .kid_list_box li span.on {
+  background-color: #ef4040;
+  color: #fff;
+}
+.menu_staus_box {
+  padding: 0 10px 15px 10px;
+  border-bottom: 0 !important;
+}
+.menu_staus_box .menu_tit {
+  font-size: 1.5rem;
+  color: #4b4b4b;
+  padding: 0 0 15px 0;
+}
+.menu_staus_box .menu_list_box {
+  overflow: hidden;
+}
+.menu_staus_box .menu_list_box li {
+  width: 25%;
+  text-align: center;
+  float: left;
+  font-size: 1.2rem;
+  padding: 0rem 0.3rem;
+  margin-top: 0.3rem;
+}
+.menu_staus_box .menu_list_box li.on span {
+  background-color: #ef4040;
+  color: #fff;
+}
+.menu_staus_box .menu_list_box li span {
+  display: block;
+  color: #666;
+  background: #ddd;
+  -webkit-border-radius: 0.4rem;
+  -moz-border-radius: 0.4rem;
+  border-radius: 0.4rem;
+  text-align: center;
+  padding: 0.2rem 0rem;
+}
+.menu_staus_box .menu_list_box li span.on {
+  background-color: #ef4040;
+  color: #fff;
+}
+.shai_ctrl_btns {
+  overflow: hidden;
+}
+.shai_ctrl_btns li {
+  width: 50%;
+  height: 40px;
+  font-size: 1.4rem;
+  line-height: 40px;
+  text-align: center;
+  float: left;
+}
+.shai_ctrl_btns li.reset {
+  color: #ef4040;
+  border-right: 1px solid #ccc;
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+.shai_ctrl_btns li.appliy {
+  background-color: #ef4040;
+  color: #fff;
+}
+.layermchild.shai_box {
+  width: 100%;
+  max-width: 100% !important;
+}
+.layermchild.shai_box .layermcont {
+  padding: 0;
+}
+.layermchild.shai_box h3 {
+  height: 40px;
+  color: #fff;
+}
+.layermchild.shai_box .layermend {
+  right: 4px;
+  top: 6px;
+}
+.layermchild.shai_box .layermend::after,
+.layermchild.shai_box .layermend::before {
+  width: 18px;
+}
+/* 加载页面 */
+.layermchild.reimburse {
+  position: relative;
+  width: 300px !important;
+  max-width: 300px !important;
+  min-width: 300px !important;
+}
+.layermchild.reimburse.on .layermbtn::before {
+  content: '';
+  background: transparent !important;
+}
+.layermchild.reimburse.on .layermbtn span {
+  color: #ef4040;
+}
+.layermchild.reimburse.tui .layermbtn span {
+  color: #666;
+}
+.layermchild.reimburse.tui .layermcont ul {
+  padding: 1rem 0;
+}
+.layermchild.reimburse.tui .layermcont ul li {
+  overflow: hidden;
+  padding: 0rem 1.5rem;
+  font-size: 1.2rem;
+}
+.layermchild.reimburse.tui .layermcont ul li span,
+.layermchild.reimburse.tui .layermcont ul li i {
+  width: 33.33%;
+  float: left;
+}
+.layermchild.reimburse.tui .layermcont ul li b {
+  width: 33.33%;
+  float: right;
+  font-weight: normal;
+}
+.layermchild.reimburse.tui .layermcont h5 {
+  text-align: center;
+  margin-top: 6rem;
+  color: #ef4040;
+  font-weight: normal;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}
+.layermchild.reimburse .layermcont {
+  padding: 0px;
+}
+.layermchild.reimburse .layermcont h3 {
+  padding: 0;
+  background: #ef4040;
+  color: #fff;
+  text-align: center;
+}
+.layermchild.reimburse .layermcont .reim_box {
+  padding: 0.7rem 1.2rem;
+}
+.layermchild.reimburse .layermcont .reim_box p {
+  font-size: 1.2rem;
+}
+.layermchild.reimburse .layermcont .reim_box h4 {
+  margin: 0.6rem 0;
+}
+.layermchild.reimburse .layermcont .reim_box h4 span {
+  font-weight: normal;
+}
+.layermchild.reimburse .layermcont .reim_box h4 span.pay_money {
+  color: #ef4040;
+}

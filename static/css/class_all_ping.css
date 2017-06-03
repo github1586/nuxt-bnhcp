@@ -1,0 +1,20 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+header {
+  background: #fff;
+  border-bottom: 1px solid #bbb;
+}
+header .header_back {
+  background: url(../img/icon_back_red.png) no-repeat;
+  background-size: 10px 16px;
+}
+header span {
+  color: #333;
+}
+#wrapper {
+  top: 4.7rem;
+}

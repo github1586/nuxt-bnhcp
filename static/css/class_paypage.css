@@ -1,0 +1,583 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+header {
+  padding-top: 6px;
+  background: #fff;
+  border-bottom: 1px solid #bbb;
+}
+header .header_back {
+  background: url(../img/icon_back_red.png) no-repeat;
+  background-size: 10px 16px;
+}
+header .sel_txt,
+header .right_gu {
+  color: #333;
+}
+header .sel_txt {
+  display: inline-block;
+  width: 100%;
+}
+header .drop_down {
+  position: relative;
+}
+header .right_gu {
+  color: #333;
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.plan_d .devide_rect {
+  margin-top: 5px;
+  padding: 12px 0 15px 25px;
+}
+.plan_d .devide_rect .add_a {
+  width: 148px;
+  height: 27px;
+  line-height: 27px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+}
+.plan_d .line_spe {
+  height: 5px;
+  background-color: #eeeeee;
+  border-top: 1px solid #dcdcdc;
+}
+.plan_d .class_infor {
+  background-color: #f2f2f2;
+}
+.plan_d .class_infor .remain_d {
+  border-top: 1px solid #dcdcdc;
+}
+.plan_d .class_infor .remain_d.mar_b {
+  margin-bottom: 2px;
+}
+.plan_d .class_infor .remain_d .remain {
+  padding-top: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 6rem;
+  background-color: #fff;
+}
+.plan_d .class_infor .remain_d .remain.bor {
+  border-bottom: 1px solid #dcdcdc;
+  padding-top: 12px;
+  padding-bottom: 2px;
+  margin: 0 0 5px 0;
+}
+.plan_d .class_infor .remain_d .remain .banl_p {
+  margin-bottom: 20px;
+  text-align: center;
+  background: url("../img/pay_no.png") no-repeat right center;
+  background-size: 11px 11px;
+}
+.plan_d .class_infor .remain_d .remain .banl_p .ban_y {
+  float: left;
+  font-size: 1.4rem;
+  color: #484848;
+  margin-right: -25px;
+  font-weight: bold;
+}
+.plan_d .class_infor .remain_d .remain .banl_p .money_sp {
+  color: #848484;
+  font-size: 1.4rem;
+}
+.plan_d .class_infor .remain_d .remain .p_data {
+  overflow: hidden;
+  margin-bottom: 10px;
+}
+.plan_d .class_infor .remain_d .remain .p_data.last {
+  padding-bottom: 10px;
+  margin-bottom: 0;
+}
+.plan_d .class_infor .remain_d .remain .p_data .sp_infor {
+  float: left;
+  color: #484848;
+  font-size: 1.2rem;
+}
+.plan_d .class_infor .remain_d .remain .p_data .p_infor {
+  float: right;
+  color: #666;
+  font-size: 1.2rem;
+}
+.plan_d .class_infor .platform {
+  background: #fff;
+  color: #484848;
+  font-size: 1.4rem;
+  text-align: center;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 65px;
+}
+.plan_d .class_infor .confirm_pay_a {
+  color: #fff;
+  background-color: #ef4040;
+  text-align: center;
+  height: 5rem;
+  line-height: 5.2rem;
+  display: block;
+  font-size: 1.4rem;
+}
+.link_list {
+  border-top: 1px solid #ddd;
+  margin-top: -1.2rem;
+  margin-bottom: 1rem;
+}
+.link_list li {
+  border-color: #dcdcdc;
+  padding-top: 12px;
+  height: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.link_list li a {
+  display: inline-block;
+  height: 100%;
+}
+.link_list li a span {
+  color: #ef4040;
+}
+.link_list li a span i {
+  display: inline-block;
+  height: 100%;
+  line-height: 100%;
+}
+.link_list a {
+  background-image: url(../img/arrow_qian.png);
+  background-size: 5px 8px;
+}
+.link_list span {
+  float: right;
+  padding: 0 15px 0 0;
+}
+.link_list span.quan {
+  color: #d71d1d;
+}
+.pay_money {
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+}
+.pay_money p {
+  line-height: 50px;
+  color: #484848;
+  padding: 0 0 0 25px;
+  font-size: 1.2rem;
+  float: left;
+}
+.pay_money p span {
+  color: #cf1b1b;
+  font-weight: normal;
+}
+.pay_money .confirm_pay_a {
+  width: 135px;
+  -webkit-border-radius: 0px;
+  -moz-border-radius: 0px;
+  border-radius: 0px;
+  float: right;
+}
+.devide_rect .yu_time span.time {
+  padding-top: 4px;
+}
+.sele_kid_box {
+  border-bottom: 1px solid #dcdcdc;
+  background-color: #fff;
+  padding: 0 1rem;
+}
+.sele_kid {
+  display: block;
+  background: url(../img/arrow_qian.png) no-repeat right center;
+  background-size: 5px 8px;
+}
+.sele_kid .default {
+  display: inline-block;
+  font-size: 1.2rem;
+  color: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  width: 4rem;
+  text-align: center;
+  height: 1.8rem;
+  background: #f99630;
+  padding: 2px 5px;
+  float: right;
+  margin-right: 1.5rem;
+  margin-top: 0.3rem;
+}
+.sele_kid .default.on {
+  background: #fff;
+  color: #ef4040;
+  border: 1px solid #ef4040;
+  border-radius: 0.4rem;
+}
+.sele_kid .kid_img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  margin: -5px 5px 0 0px;
+}
+.sele_kid .name {
+  font-size: 1.4rem;
+  color: #484848;
+  display: inline-block;
+  margin-top: 0.6rem;
+}
+.sele_kid .guan {
+  font-size: 1.4rem;
+  color: #999;
+  margin: 0 6px 0 8px;
+}
+.sele_kid .birth {
+  font-size: 1.4rem;
+  color: #999;
+  margin-top: 0.5rem;
+}
+.sele_kid .birth i {
+  display: inline-block;
+  width: 1.2rem;
+  height: 1.2rem;
+  background: url('../img/icon_birthday_y.png') no-repeat center 2px;
+  background-size: 1rem 1rem;
+}
+.sele_kid .sex {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+}
+.sele_kid .sex.man {
+  background: url('../img/icon_child_boy.png') no-repeat center 2px;
+  background-size: 1.2rem 1.2rem;
+}
+.sele_kid .sex.wuman {
+  background: url('../img/icon_child_girl.png') no-repeat center 3px;
+  background-size: 0.8rem 1.2rem;
+}
+.class_infor_cls {
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 13px 15px 13px 15px;
+  margin: 0 0 10px 0;
+}
+.class_infor_cls h1 {
+  font-size: 1.4rem;
+  color: #484848;
+  margin: 0 0 5px 0;
+}
+.class_infor_cls p {
+  color: #999;
+  line-height: 20px;
+  margin: 0 0 2px 0;
+}
+/* 选择孩子页面 */
+.sele_kid_box.kid_page.on .sele_kid {
+  background-image: url(../img/kid_radio_on.png);
+}
+.sele_kid_box.kid_page.on .default {
+  display: block;
+  float: right;
+}
+.sele_kid_box.kid_page .sele_kid {
+  overflow: hidden;
+  background: url(../img/kid_radio.png) no-repeat right center;
+  background-size: 20px 20px;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+.sele_kid_box.kid_page .kid_img,
+.sele_kid_box.kid_page .kid_infor {
+  float: left;
+}
+.sele_kid_box.kid_page .kid_img {
+  margin: 0 19px 0 0;
+}
+.sele_kid_box.kid_page .kid_infor .name {
+  font-size: 1.5rem;
+}
+.sele_kid_box.kid_page .kid_infor .guan {
+  margin: 0 0 0 5px;
+}
+.sele_kid_box.kid_page .kid_infor .birth {
+  display: block;
+}
+.sele_kid_box.kid_page .default {
+  display: none;
+  float: right;
+  margin: 11px 32px 0 0;
+}
+.sub_btn {
+  margin: 50px 0 0 0;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 200px;
+}
+.sub_btn.short {
+  margin-top: 15px;
+}
+.sub_btn .margin_right {
+  margin-right: 20px;
+}
+.sub_btn .submit {
+  width: 90px;
+  height: 28px;
+  font-size: 1.5rem;
+  color: #fff;
+  float: left;
+  line-height: 28px;
+  background: #fff;
+  color: #333;
+  border: 1px solid #666;
+  text-align: center;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  display: block;
+}
+/* 订单结果页面 */
+.menu_ding_box {
+  background: #fff;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  padding: 2.8rem 0 1.2rem 0;
+}
+.menu_ding_box .menu_ok {
+  text-align: center;
+  background-size: 4px 2px;
+}
+.menu_ding_box .menu_ok span {
+  font-size: 2.2rem;
+  color: #333;
+  display: block;
+  padding: 10px 0 0 0;
+}
+.menu_ding_box .menu_ok span.suc_ti {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.menu_ding_box .menu_ok p {
+  color: #999999;
+  font-size: 1.2rem;
+}
+.menu_ding_box .menu_ok p.tip_support {
+  padding: 35px 0 0 0;
+}
+.menu_ding_box .menu_ok p.phone_contact {
+  padding: 19px 0 0 0;
+}
+.menu_ding_box .menu_ok .ping_con {
+  font-size: 1.2rem;
+  color: #999;
+  line-height: 22px;
+  padding: 0px 12px;
+  text-align: center;
+}
+.menu_ding_box .menu_ok .ping_con.mar_t {
+  margin: 3px 0 0 0;
+}
+.menu_ding_box .menu_ok .ping_con.line_less {
+  line-height: 18px;
+}
+.menu_ding_box .menu_ok .ping_con.line_less.mar_t {
+  margin-top: 8px;
+}
+.menu_ding_box .h3_order {
+  text-align: center;
+  font-size: 1.7rem;
+  margin: 1.4rem 0;
+  font-weight: normal;
+}
+.menu_ding_box .menu_infor {
+  padding: 20px 14px 17px 14px;
+}
+.menu_ding_box .menu_infor .cls_infor {
+  font-size: 1.4rem;
+  color: #666;
+  display: inline-block;
+  margin: 0 0 5px 0;
+}
+.menu_ding_box .menu_infor p {
+  color: #666;
+}
+.menu_ding_box .menu_infor .infor_agent {
+  font-size: 1.3rem;
+  color: #ef4040;
+  float: right;
+  margin: 10px 0 0 0;
+}
+.menu_ding_box .step_tip {
+  background-color: #fff;
+  padding: 15px 15px 100px 15px;
+  background: url("../img/tip_step.png") no-repeat 15px 16px;
+  background-size: 16px 90px;
+}
+.menu_ding_box .step_tip .has_sumbit {
+  color: #ef4040;
+  padding-left: 25px;
+}
+.menu_ding_box .step_tip p {
+  padding: 0 0 0 24px;
+}
+.menu_ding_box .step_tip p span {
+  color: #999999;
+  font-size: 1.2rem;
+}
+.menu_ding_box .step_tip p span.hour_time {
+  padding-left: 10px;
+}
+.menu_ding_box .step_tip .expect_time {
+  color: #ef4040;
+  background: url("../img/uncheck.png") no-repeat left 50px;
+  background-size: 16px 16px;
+  padding: 50px 0 0 25px;
+}
+/* 我的孩子页面 */
+.sele_kid_box.link.on .sele_kid {
+  background: #fff;
+}
+.sele_kid_box.link .sele_kid {
+  background: none;
+}
+.sele_kid_box.link .sele_kid .kid_infor_link {
+  display: block;
+  overflow: hidden;
+  margin-right: 70px;
+}
+.sele_kid_box.link .sele_kid .set_default {
+  width: 65px;
+  float: right;
+  background: url(../img/kid_radio.png) no-repeat right center;
+  background-size: 20px 20px;
+  text-align: left;
+  padding: 11px 0 11px 0;
+}
+.sele_kid_box.link .sele_kid .set_default.on {
+  background-image: url(../img/kid_radio_on.png);
+}
+.sele_kid_box.link .sele_kid .set_default.on .default {
+  visibility: visible;
+}
+.sele_kid_box.link .sele_kid .set_default .default {
+  float: none;
+  display: inline-block;
+  visibility: hidden;
+  margin: 0;
+}
+.sele_kid_box.link .sele_kid .default {
+  margin-left: 1rem;
+}
+/* 原来的样式 */
+.plan_d .class_infor .class_infor_d {
+  padding: 10px 0 10px 25px;
+  border-bottom: 1px solid #dcdcdc;
+}
+.plan_d .class_infor .class_infor_d .infor_p {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: #484848;
+}
+.plan_d .class_infor .class_infor_d .le_ri {
+  margin-top: 10px;
+  overflow: hidden;
+}
+.plan_d .class_infor .class_infor_d .le_ri .left_class {
+  width: 101px;
+  background-color: #fff;
+  float: left;
+  text-align: center;
+}
+.plan_d .class_infor .class_infor_d .le_ri .left_class img {
+  width: 101px;
+  height: 101px;
+}
+.plan_d .class_infor .class_infor_d .le_ri .left_class p {
+  padding-top: 3px;
+  font-size: 1rem;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class {
+  margin-left: 105px;
+  padding-left: 20px;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class .sort_time {
+  font-size: 1.2rem;
+  line-height: 24px;
+  overflow: hidden;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class .sort_time em {
+  float: left;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class .sort_time .class_name {
+  font-weight: bold;
+  color: #484848;
+  float: left;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class .sort_time .time_date {
+  float: left;
+  width: 130px;
+  display: inline;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class p {
+  color: #484848;
+  font-size: 1.2rem;
+  line-height: 24px;
+}
+.plan_d .class_infor .class_infor_d .le_ri .right_class p .class_time {
+  float: left;
+}
+/*--- 分销课程 ---*/
+.code_pay_box {
+  background: #fff;
+  border-top: 1px solid #ccc;
+  padding: 16px 0 20px 0;
+}
+.code_pay_box .code_box_folder {
+  width: 62.5%;
+  margin: 0 auto 0 auto;
+}
+.code_pay_box .code_box_folder .phone_box,
+.code_pay_box .code_box_folder .code_num_box input {
+  width: 100%;
+  height: 28px;
+  font-size: 12px;
+  color: #999;
+  line-height: 28px;
+  border: 1px solid #ccc;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  display: block;
+  padding: 0 0 0 10px;
+}
+.code_pay_box .code_box_folder .phone_box {
+  margin: 0 0 14px 0;
+}
+.code_pay_box .code_box_folder .code_box .get_code {
+  width: 68px;
+  height: 28px;
+  font-size: 12px;
+  color: #fff;
+  text-align: center;
+  line-height: 28px;
+  background: #e0a507;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  float: right;
+}
+.code_pay_box .code_box_folder .code_box .code_num_box {
+  margin: 0 78px 0 0;
+}
+.plan_d .class_infor .platform {
+  margin-bottom: 10px;
+}

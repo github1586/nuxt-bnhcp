@@ -1,0 +1,1007 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+/* 大容器 */
+.container {
+  overflow: hidden;
+  padding: 0;
+}
+/* 课程信息区域 */
+.cls_tea_infor .tea_zhu {
+  font-size: 1.5rem;
+}
+.cls_tea_infor .tea_zhu .age_fen {
+  color: #ea2a2a;
+  font-weight: bold;
+  padding-left: 18px;
+  font-size: 1.2rem;
+}
+.cls_tea_infor .slideBox {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 11px;
+}
+.cls_tea_infor .slideBox .bd li {
+  width: 100%;
+}
+.cls_tea_infor .slideBox .bd a {
+  display: block;
+  position: relative;
+  padding-top: 64.8%;
+}
+.cls_tea_infor .slideBox img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.cls_tea_infor .slideBox .hd ul {
+  overflow: hidden;
+  position: absolute;
+  right: 50px;
+  bottom: 6px;
+}
+.cls_tea_infor .slideBox .hd li {
+  width: 6px;
+  height: 6px;
+  background: url(../img/banner02.png) no-repeat 0 0;
+  background-size: 6px 6px;
+  float: left;
+  margin: 0 6px 0 0;
+}
+.cls_tea_infor .slideBox .hd li.on {
+  background-image: url(../img/banner01.png);
+}
+.cls_tea_infor .cls_sale_inf.word {
+  margin: 6px 0 6px 0;
+}
+.cls_tea_infor .cls_sale_inf.agent {
+  margin-top: 10px;
+}
+.cls_tea_infor .cls_sale_inf .has_look {
+  padding: 0 20px;
+}
+/* 链接区域 */
+.tab_lik {
+  height: 42px;
+  overflow: hidden;
+  text-align: center;
+  border-bottom: 1px solid #e6e6e6;
+  background: #ef4040;
+  padding: 0;
+  margin: 5px 0 10px 0;
+}
+.tab_lik.four li {
+  width: 25%;
+}
+.tab_lik li {
+  width: 33.3%;
+  height: 42px;
+  float: left;
+}
+.tab_lik li a {
+  font-size: 1.4rem;
+  display: block;
+  line-height: 42px;
+  color: #fff;
+}
+.tab_lik li a.on {
+  background: #a20407;
+}
+/* 具体详情 */
+.detail_content {
+  background: transparent;
+  -webkit-box-shadow: 0 0px 0px #d2d2d2;
+  -moz-box-shadow: 0 0px 0px #d2d2d2;
+  box-shadow: 0 0px 0px #d2d2d2;
+}
+.detail_content .tit {
+  height: 44px;
+  font-size: 1.5rem;
+  color: #484848;
+  line-height: 44px;
+  border-bottom: 1px solid #eee;
+}
+/* 课程标签 */
+ul.link_lists li {
+  height: auto;
+  line-height: 1;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  padding: 18px 15px 18px 0;
+}
+ul.link_lists li.marks {
+  padding-bottom: 13px;
+}
+ul.link_lists li.last {
+  border: none;
+}
+ul.link_lists li.jie {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+ul.link_lists li .tit_con {
+  color: #999;
+  float: left;
+}
+ul.link_lists li .con_con {
+  color: #484848;
+  margin: 0 0 0 75px;
+}
+ul.link_lists li .con_con span {
+  display: inline-block;
+  padding: 0 5px 8px 0;
+}
+ul.link_lists li .con_con span.jie_con,
+ul.link_lists li .con_con span.arrow {
+  display: block;
+  padding: 0;
+}
+ul.link_lists li .con_con span.jie_con {
+  overflow: hidden;
+  color: #999;
+  line-height: 18px;
+}
+ul.link_lists li .con_con span.arrow {
+  height: 16px;
+  background: url(../img/jie_arrow_u.png) no-repeat center center;
+  background-size: 8px 5px;
+}
+ul.link_lists li .con_con span.arrow.on {
+  background-image: url(../img/jie_arrow_d.png);
+}
+.agent_jie {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 0 0 0 15px;
+}
+/* 课程评价 */
+.more_con {
+  text-align: center;
+}
+.more_con a {
+  line-height: 45px;
+  display: inline-block;
+  background: url(../img/more_btn.png) no-repeat right center;
+  background-size: 5px 9px;
+  padding: 0 10px 0 0;
+}
+/* 相册和视频 */
+.pho_vedio {
+  border-top: 1px solid #dcdcdc;
+  background: #fff;
+  box-shadow: none;
+  margin: 10px 0 0 0;
+}
+.pho_vedio .title {
+  border-bottom: 1px solid #eee;
+  display: block;
+  padding: 12px 0 10px 0;
+  margin: 0 0 0 15px;
+}
+.pho_vedio .title span {
+  font-size: 1.5rem;
+}
+.pho_vedio .title em {
+  font-size: 1.2rem;
+  color: #828181;
+}
+/*图片区域*/
+.pho_ved_list {
+  overflow: hidden;
+  padding: 0 9px 0 9px;
+  margin: 10px -3px 0 0;
+}
+.pho_ved_list li {
+  width: 25%;
+  float: left;
+  padding-right: 3px;
+  margin-bottom: 3px;
+}
+.pho_ved_list li.video {
+  position: relative;
+}
+.pho_ved_list li a {
+  display: block;
+  padding-top: 62.5%;
+  position: relative;
+}
+.pho_ved_list li .vid_img {
+  width: auto;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+.pho_ved_list li img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/*分校信息*/
+.school_fen {
+  display: block;
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  padding: 15px 0 0 15px;
+  margin: 10px 0 0 0;
+}
+.school_fen .title {
+  overflow: hidden;
+}
+.school_fen .title .name {
+  font-size: 1.5rem;
+  color: #484848;
+  display: block;
+  margin: 0 130px 0 0;
+}
+.school_fen .title .distance {
+  float: right;
+  margin: 2px 15px 0 0;
+}
+.school_fen .title .distance span {
+  float: left;
+}
+.school_fen .title .distance .dis {
+  height: 17px;
+  font-size: 1.2rem;
+  color: #fff;
+  background: #63b673;
+  -webkit-border-top-left-radius: 2px;
+  -moz-border-radius-topleft: 2px;
+  border-top-left-radius: 2px;
+  -webkit-border-bottom-left-radius: 2px;
+  -moz-border-radius-bottomleft: 2px;
+  border-bottom-left-radius: 2px;
+  padding: 0 3px;
+}
+.school_fen .title .distance .dis_dis {
+  height: 17px;
+  font-size: 1.2rem;
+  color: #63b673;
+  -webkit-border-top-right-radius: 2px;
+  -moz-border-radius-topright: 2px;
+  border-top-right-radius: 2px;
+  -webkit-border-bottom-right-radius: 2px;
+  -moz-border-radius-bottomright: 2px;
+  border-bottom-right-radius: 2px;
+  border: 1px solid #63b673;
+  border-left: none;
+  padding: 0 3px;
+}
+.school_fen .con {
+  font-size: 1.2rem;
+  color: #999;
+  border-bottom: 1px solid #eee;
+  padding: 8px 15px 13px 0;
+}
+.link_list {
+  border-bottom: 1px solid #dcdcdc;
+  padding-left: 15px;
+  padding-bottom: 5px;
+}
+.link_list li {
+  border: none;
+  padding-left: 0;
+}
+.link_list li.pic_vedio {
+  border-top: 1px solid #eee;
+  margin: 15px 0 0 0;
+}
+.link_list a {
+  background-image: url(../img/agent_arrow.png);
+  background-size: 6px 10px;
+}
+.link_list a.fen_add {
+  color: #ef4040;
+}
+/* 评价区域 */
+.cls_evel_zone {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: none;
+  -webkit-box-shadow: 0 0px 0px #d2d2d2;
+  -moz-box-shadow: 0 0px 0px #d2d2d2;
+  box-shadow: 0 0px 0px #d2d2d2;
+  margin: 10px 0 10px 0;
+}
+.cls_evel_zone .tit {
+  height: 44px;
+  margin: 0 0 0 15px;
+}
+.cls_evel_zone .tit .h1 {
+  font-size: 1.5rem;
+  color: #484848;
+  line-height: 44px;
+  display: block;
+  float: none;
+}
+.cls_evel_zone .tit .h1 span {
+  font-size: 1.2rem;
+  color: #999;
+  padding: 0 0 0 3px;
+}
+.cls_evel_zone .ping_content {
+  border-bottom: 1px solid #eee;
+  display: block;
+  padding: 6px 0 6px 0;
+  margin: 0 0 0 15px;
+}
+.cls_evel_zone .ping_content .ping_img {
+  float: left;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.cls_evel_zone .ping_content .ping_txt {
+  margin: 0 0 0 33px;
+}
+.cls_evel_zone .ping_content .ping_txt .ping_tit {
+  overflow: hidden;
+  padding: 0 15px 0 0;
+}
+.cls_evel_zone .ping_content .ping_txt .ping_tit .tit_r {
+  color: #999;
+  float: right;
+  margin: 7px 0 0 0;
+}
+.cls_evel_zone .ping_content .ping_txt .ping_tit .tit_l {
+  overflow: hidden;
+}
+.cls_evel_zone .ping_content .ping_txt .ping_tit .tit_l .name {
+  font-size: 1.5rem;
+  color: #484848;
+  display: block;
+}
+.cls_evel_zone .ping_content .ping_txt .ping_str {
+  font-size: 1.3rem;
+  line-height: 20px;
+  color: #666;
+  padding: 0 12px 0 0;
+  margin: 7px 0 0 0;
+}
+/* 机构主要信息 */
+.agent_main_infor .banner {
+  height: 150px;
+  position: relative;
+  background: url(../img/agent_banner.jpg) no-repeat center 0;
+  background-size: 1000px 150px;
+}
+.agent_main_infor .banner .agent_logo {
+  width: 57px;
+  height: 57px;
+  border: 1px solid #efeff0;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  background: #fff;
+  position: absolute;
+  left: 15px;
+  bottom: -20px;
+  z-index: 1000;
+}
+.agent_main_infor .banner .agent_logo.teacher {
+  width: 62px;
+  height: 62px;
+}
+.agent_main_infor .banner .agent_logo img {
+  width: 100%;
+}
+.agent_main_infor .banner .agent_see {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(51, 51, 51, 0.5);
+  padding: 5px 0px 5px 25px;
+  position: absolute;
+  left: 72px;
+  bottom: 0;
+}
+.agent_main_infor .banner .agent_see li {
+  width: 45%;
+  font-size: 1.2rem;
+  color: #fff;
+  float: left;
+}
+.agent_main_infor .banner .agent_jie_zone {
+  position: absolute;
+  left: 95px;
+  bottom: 35px;
+}
+.agent_main_infor .banner .agent_jie_zone .tit_txt {
+  font-size: 1.5rem;
+  color: #fff;
+}
+.agent_main_infor .banner .agent_jie_zone .tit_txt span {
+  font-size: 1.2rem;
+  padding: 0 0 0 15px;
+}
+.agent_main_infor .banner .agent_jie_zone .fold_tit {
+  font-weight: bold;
+}
+.agent_main_infor .banner .contact_us {
+  width: 39px;
+  height: 39px;
+  background: url(../img/service_tel.png) no-repeat 0 0;
+  background-size: 39px 39px;
+  position: absolute;
+  right: 28px;
+  top: 13px;
+}
+.agent_main_infor .banner_g {
+  height: 100px;
+  position: relative;
+  background: url(../img/agent01_banner.jpg) no-repeat center 0;
+  background-size: 1000px 150px;
+}
+.agent_main_infor .infor_txt {
+  overflow: hidden;
+  background: #fff;
+  padding: 10px 0 10px 96px;
+}
+.agent_main_infor .infor_txt .cls_num,
+.agent_main_infor .infor_txt .stu_num {
+  font-size: 1.3rem;
+  color: #484848;
+  padding: 2px 0;
+  float: left;
+}
+.agent_main_infor .infor_txt .cls_num {
+  border-right: 1px solid #efeff0;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+/*--- 相关页面 ---*/
+/* 机构课程页面 */
+.agent_cls_list {
+  border-top: 1px solid #dcdcdc;
+}
+.agent_cls_list.activity .cls_tit {
+  border-bottom: 1px solid #eee;
+}
+.agent_cls_list.activity .cls_single {
+  border-top: none;
+  border-color: #eee;
+  margin-bottom: 0;
+}
+.agent_cls_list.activity .cls_single .cls_infor {
+  border: none;
+  overflow: visible;
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_infor_box {
+  margin-right: 15px;
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_img {
+  position: relative;
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_img i.icon {
+  width: 20px;
+  height: 20px;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 20px 20px;
+  position: absolute;
+  right: -9px;
+  top: -10px;
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_img i.icon.hot {
+  background-image: url(../img/icon_activity_hot.png);
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_img i.icon.new {
+  background-image: url(../img/icon_activity_new.png);
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_img i.icon.end {
+  width: 54px;
+  height: 54px;
+  background-size: 54px 54px;
+  background-image: url(../img/icon_activity_end.png);
+  margin: -27px 0 0 -27px;
+  left: 50%;
+  top: 50%;
+}
+.agent_cls_list.activity .cls_single .cls_infor .cls_infor_box .name {
+  font-size: 1.5rem;
+}
+.agent_cls_list .cls_tit {
+  height: 39px;
+  line-height: 39px;
+  background: #fff;
+  padding: 0 0 0 15px;
+}
+.agent_cls_list .cls_tit .cl_name {
+  float: left;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #484848;
+}
+.agent_cls_list .cls_tit .icon_class_s {
+  margin-left: 9px;
+  margin-top: 7px;
+  float: left;
+  display: block;
+}
+.agent_cls_list .cls_tit .hui {
+  width: 16px;
+  height: 20px;
+  background: url(../img/class_mark_hui.png) no-repeat;
+  background-size: 16px 20px;
+}
+.agent_cls_list .cls_tit .tuan {
+  margin-top: 10px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/class_mark_tuan.png);
+  background-size: 16px 16px;
+}
+.agent_cls_list .cls_single {
+  display: block;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 11px 0 0 15px;
+  margin: 0 0 10px 0;
+}
+.agent_cls_list .cls_single.bor_color {
+  border-top: 1px solid #dcdcdc;
+}
+.agent_cls_list .cls_single .cls_infor {
+  overflow: hidden;
+  padding: 0 0 10px 0;
+  border-bottom: 1px dashed #e7e7e7;
+}
+.agent_cls_list .cls_single .cls_infor .cls_img {
+  border: 1px solid #eee;
+  float: left;
+}
+.agent_cls_list .cls_single .cls_infor .cls_price {
+  color: #cf1b1b;
+  text-align: right;
+  float: right;
+  margin: 21px 15px 0 0;
+}
+.agent_cls_list .cls_single .cls_infor .price_befor {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+  display: block;
+}
+.agent_cls_list .cls_single .cls_infor .cls_infor_box {
+  margin: 0 85px 0 76px;
+}
+.agent_cls_list .cls_single .cls_infor .cls_infor_box .name {
+  font-size: 1.5rem;
+  color: #484848;
+}
+.agent_cls_list .cls_single .cls_infor .cls_infor_box .tea,
+.agent_cls_list .cls_single .cls_infor .cls_infor_box .bao {
+  font-size: 1.2rem;
+  color: #666;
+}
+.agent_cls_list .cls_single .cls_infor .cls_infor_box .tea {
+  margin: 3px 0;
+}
+.agent_cls_list .cls_single .cls_infor .cls_infor_box .bao span {
+  color: #cf1b1b;
+}
+.agent_cls_list .cls_single .cls_detail {
+  padding: 5px 0 5px 0;
+}
+.agent_cls_list .cls_single .cls_detail .cls_total {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 26px;
+}
+.agent_cls_list .cls_single .course_state_01 {
+  position: absolute;
+  background: url(../img/icon_couse_state_01.png) no-repeat 0 0;
+  background-size: 54px 54px;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+  top: 21px;
+  right: 20px;
+}
+.agent_cls_list .cls_single .course_state_01 span {
+  color: #FFF;
+  font-size: 12px;
+}
+.agent_cls_list .cls_pr {
+  position: relative;
+}
+.link_list.class {
+  border-top: 1px solid #dcdcdc;
+  padding-bottom: 0;
+  margin-bottom: 10px;
+}
+.link_list.class li {
+  border: none;
+  margin: 0;
+}
+/* 机构老师页面 */
+.agent_cls_list.teacher {
+  background: #fff;
+  border-bottom: 1px solid #dcdcdc;
+  margin: 0 0 10px 0;
+}
+.agent_cls_list.teacher .cls_tit {
+  border-bottom: 1px solid #eee;
+}
+/* 机构老师--老师课程页面 */
+.agent_main_infor.teacher .banner .agent_jie_zone .jie_txt {
+  font-size: 1.3rem;
+  color: #fff;
+  padding: 0 15px 0 0;
+  margin: 5px 0 0 0;
+}
+.agent_main_infor.teacher .banner .agent_logo {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.agent_main_infor.teacher .banner .agent_logo img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.tab_lik.teacher li {
+  width: 50%;
+}
+.teacher_class_list {
+  background: #fff;
+}
+.teacher_class_list .class_tit {
+  height: 33px;
+  line-height: 33px;
+  font-size: 1.4rem;
+  color: #999;
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #eee;
+  padding: 0 0 0 15px;
+}
+.teacher_class_list .class_single {
+  border-bottom: 1px solid #eee;
+  padding: 12px 0 12px 15px;
+}
+.teacher_class_list .class_single .class_link {
+  display: block;
+  border-bottom: 1px dashed #e5e5e5;
+  padding: 0 15px 15px 0;
+  margin: 0 0 8px 0;
+  position: relative;
+}
+.teacher_class_list .class_single .class_link .cls_tit {
+  font-size: 1.5rem;
+  color: #484848;
+  display: block;
+  margin: 0 0 5px 0;
+}
+.teacher_class_list .class_single .class_link .cls_tit .cl_name {
+  float: left;
+  display: inline-block;
+  font-size: 1.5rem;
+  color: #484848;
+}
+.teacher_class_list .class_single .class_link .cls_tit .icon_class_g {
+  margin-left: 9px;
+  margin-top: -3px;
+  float: left;
+  display: block;
+}
+.teacher_class_list .class_single .class_link .cls_tit .hui {
+  width: 16px;
+  height: 20px;
+  background: url(../img/class_mark_hui.png) no-repeat;
+  background-size: 16px 20px;
+}
+.teacher_class_list .class_single .class_link .cls_tit .tuan {
+  margin-top: 2px;
+  width: 16px;
+  height: 16px;
+  background-image: url(../img/class_mark_tuan.png);
+  background-size: 16px 16px;
+}
+.teacher_class_list .class_single .class_link .money {
+  overflow: hidden;
+  color: #999;
+}
+.teacher_class_list .class_single .class_link .money .money_num {
+  color: #cf1b1b;
+  float: right;
+}
+.teacher_class_list .class_single .class_link .money .has_boa {
+  color: #cf1b1b;
+}
+.teacher_class_list .class_single .class_link .money .price_befor {
+  font-size: 1.2rem;
+  color: #999;
+  text-decoration: line-through;
+  float: right;
+  padding: 0 0 0 10px;
+  margin: 1px 0 0 0;
+}
+.teacher_class_list .class_single .class_link .class {
+  overflow: hidden;
+  margin: 3px 0 0 0;
+}
+.teacher_class_list .class_single .class_link .class .tit_str,
+.teacher_class_list .class_single .class_link .class .detail {
+  display: block;
+  color: #999;
+}
+.teacher_class_list .class_single .class_link .class .tit_str {
+  float: left;
+}
+.teacher_class_list .class_single .class_link .class .detail {
+  margin: 1px 0 0 72px;
+}
+.teacher_class_list .class_single .class_link .course_state {
+  position: absolute;
+  background: url(../img/icon_couse_state_01.png) no-repeat 0 0;
+  background-size: 54px 54px;
+  width: 54px;
+  height: 54px;
+  line-height: 54px;
+  text-align: center;
+  top: 60px;
+  right: 20px;
+}
+.teacher_class_list .class_single .class_link .course_state span {
+  font-size: 1.2rem;
+  color: #fff;
+}
+.teacher_class_list .class_single .marks {
+  padding: 0 15px 0 0;
+}
+.teacher_class_list .class_single .marks .bao_btn {
+  font-size: 1.2rem;
+  color: #ef4040;
+  border: 1px solid #ef4040;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  float: right;
+  padding: 4px 2px;
+}
+.teacher_class_list .class_single .marks .cls_mark {
+  min-height: 24px;
+  display: block;
+  padding: 4px 0 0 0;
+  margin: 0 60px 0 0;
+}
+.teacher_class_list .class_single .marks .cls_mark img {
+  margin-right: 10px;
+}
+.link_list.more_cls {
+  padding-bottom: 0;
+  margin: 0 0 10px 0;
+}
+/* 机构老师--老师评价页面 */
+.ping_content_zone .ping_content_tit {
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 15px 15px 0 15px;
+  /* 全部评价页面 */
+}
+.ping_content_zone .ping_content_tit.all_ping {
+  border-top: none;
+  border-color: #eee;
+  padding-top: 0;
+  margin-top: 10px;
+}
+.ping_content_zone .ping_content_tit.all_ping .tit_nav {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.ping_content_zone .ping_content_tit .tit_tit {
+  overflow: hidden;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_r {
+  float: right;
+  margin: 0 10px 0 0;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_r .stars_fen {
+  overflow: hidden;
+  margin: 5px 0 5px 0;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_r .stars_fen .txt,
+.ping_content_zone .ping_content_tit .tit_tit .tit_r .stars_fen .fen {
+  font-size: 1.3rem;
+  color: #333;
+  float: left;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_r .stars_fen .stars {
+  margin-left: 7px;
+  margin-right: 4px;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_l {
+  float: left;
+  padding: 5px 0 0 0;
+  margin: 0 0 0 8px;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_l .fen,
+.ping_content_zone .ping_content_tit .tit_tit .tit_l .ping_num {
+  font-size: 1.3rem;
+  color: #333;
+  text-align: center;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_l .fen {
+  font-size: 1.5rem;
+}
+.ping_content_zone .ping_content_tit .tit_tit .tit_l .stars {
+  width: 60px;
+  overflow: hidden;
+  float: none;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.ping_content_zone .ping_content_tit .tit_nav {
+  overflow: hidden;
+  padding: 20px 0 14px 0;
+  margin: 0 -5px 0 0;
+}
+.ping_content_zone .ping_content_tit .tit_nav li {
+  width: 25%;
+  float: left;
+  padding: 0 5px 0 0;
+}
+.ping_content_zone .ping_content_tit .tit_nav li a {
+  height: 35px;
+  font-size: 1.2rem;
+  line-height: 35px;
+  display: block;
+  color: #ef4040;
+  border: 1px solid #ef4040;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  text-align: center;
+}
+.ping_content_zone .ping_content_tit .tit_nav li a.on {
+  background-color: #ef4040;
+  color: #fff;
+}
+.ping_content_zone .ping_content_con {
+  overflow: hidden;
+  background: #fff;
+  padding: 20px 15px 10px 15px;
+  margin: 10px 0 10px 0;
+  /* 全部评价页面 */
+}
+.ping_content_zone .ping_content_con.all_ping {
+  border-bottom: 1px solid #dcdcdc;
+  padding-top: 15px;
+  margin-top: 0;
+}
+.ping_content_zone .ping_content_con.all_ping .ping_l {
+  margin-top: 12px;
+}
+.ping_content_zone .ping_content_con.all_ping .ping_r {
+  padding-top: 5px;
+}
+.ping_content_zone .ping_content_con .ping_single {
+  overflow: hidden;
+}
+.ping_content_zone .ping_content_con .ping_l {
+  width: 73px;
+  position: relative;
+  float: left;
+}
+.ping_content_zone .ping_content_con .ping_l .tea_img {
+  text-align: center;
+}
+.ping_content_zone .ping_content_con .ping_l .tea_img img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  display: inline-block;
+}
+.ping_content_zone .ping_content_con .ping_l .name,
+.ping_content_zone .ping_content_con .ping_l .date {
+  font-size: 1.3rem;
+  text-align: center;
+}
+.ping_content_zone .ping_content_con .ping_l .name {
+  color: #484848;
+  margin: 5px 0 5px 0;
+}
+.ping_content_zone .ping_content_con .ping_l .date {
+  color: #999;
+}
+.ping_content_zone .ping_content_con .ping_l .icon_ping {
+  position: absolute;
+  right: -22px;
+  top: 12px;
+}
+.ping_content_zone .ping_content_con .ping_r {
+  min-height: 104px;
+  border-left: 1px solid #eee;
+  padding: 8px 0 16px 3px;
+  margin: 0 0 0 85px;
+}
+.ping_content_zone .ping_content_con .ping_r .cls_name,
+.ping_content_zone .ping_content_con .ping_r .ping_num {
+  color: #484848;
+  margin: 0 0 0 22px;
+}
+.ping_content_zone .ping_content_con .ping_r .ping_num {
+  margin-bottom: 3px;
+}
+.ping_content_zone .ping_content_con .ping_r .cls_teacher {
+  font-size: 1.3rem;
+  color: #989898;
+  margin: 3px 0 3px 22px;
+}
+.ping_content_zone .ping_content_con .ping_r .con_con {
+  background: #f2f2f2;
+  padding: 2px;
+}
+.ping_content_zone .ping_content_con .ping_r .con_con .jie_con {
+  overflow: hidden;
+  font-size: 1.2rem;
+  color: #999;
+  display: block;
+  word-break: break-all;
+}
+.ping_content_zone .ping_content_con .ping_r .con_con .arrow {
+  width: 100%;
+  height: 8px;
+  display: block;
+  background: url(../img/ping_content_arrow.png) no-repeat center center;
+  background-size: 13px 8px;
+  padding: 10px 0;
+}
+.ping_content_zone .ping_content_con .ping_r .con_con .arrow.on {
+  background-image: url(../img/ping_content_arrow_on.png);
+}
+/* 机构详情--机构相册页面 */
+.pho_vedio.agent_photo {
+  border: none;
+  padding-top: 8px;
+  padding-bottom: 50px;
+}
+.pho_vedio.agent_photo .pho_ved_list {
+  padding: 0 12px;
+  margin-top: 0;
+  margin-right: -5px;
+}
+.pho_vedio.agent_photo .pho_ved_list li {
+  width: 33.33%;
+  padding-right: 5px;
+  margin-bottom: 5px;
+}
+.pho_vedio.agent_photo .pho_ved_list li a {
+  border: 1px solid #f1f1f1;
+  padding-top: 62.5%;
+}
+.photo_shut {
+  width: 40px;
+  height: 40px;
+  background: url(../img/photo_shut.png) no-repeat center center;
+  background-size: 9px 14px;
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  z-index: 100000000010;
+}
+.photo_page_num {
+  width: 100%;
+  color: #fff;
+  text-align: center;
+  font-size: 1.6rem;
+  position: absolute;
+  left: 0;
+  bottom: 20px;
+}

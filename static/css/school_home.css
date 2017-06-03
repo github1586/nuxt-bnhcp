@@ -1,0 +1,173 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+body {
+  padding-top: 0;
+}
+.tea_home_tabs {
+  position: relative;
+}
+#wrapper,
+#wrapper1,
+#wrapper2 {
+  margin-top: 0px !important;
+  top: 0px;
+}
+#cla_list {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+#teacher {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+#teacher .teac_list {
+  background: #eee;
+}
+#teacher .teac_list > li {
+  background: #fff;
+  padding: 1rem 1rem;
+  margin-bottom: 1rem;
+}
+#teacher .teac_list > li .cls_single.teacher {
+  border-bottom: 1px dashed #e5e5e5;
+  border-top: none;
+}
+#teacher .teac_list > li .cls_single.teacher.last {
+  border-bottom: none;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_l {
+  float: left;
+  margin-top: 1rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_l img {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r {
+  margin: 0 11px 0 70px;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age .name {
+  font-size: 1.4rem;
+  display: inline-block;
+  color: #484848;
+  padding: 0 5px 0 0;
+  padding-right: 1.5rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age .name.nan {
+  background: url('../img/icon_child_boy.png') no-repeat right center;
+  background-size: 1.2rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age .name.wumen {
+  background: url('../img/icon_child_girl.png') no-repeat right center;
+  background-size: 1rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age .age {
+  font-size: 1.3rem;
+  padding: 0.4rem 0 0.1rem 0;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age > div {
+  margin-top: 0.4rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .name_age > div span {
+  margin-right: 0.4rem;
+  display: inline-block;
+  color: #ef4040;
+  border: 1px solid #ef4040;
+  border-radius: 0.2rem;
+  font-size: 1.2rem;
+  padding: 0rem 0.1rem;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .ping {
+  margin: 5px 0 0 0;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .ping .ping_num {
+  font-size: 1.2rem;
+  color: #999;
+  padding: 0 0 0 13px;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .ping .stars {
+  margin-top: 6px;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls {
+  margin: 5px 0 0 0;
+  overflow: hidden;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls .name,
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls .cls_name {
+  font-size: 1.3rem;
+  color: #666;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls .name {
+  float: left;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls .cls_name {
+  margin: 0 0 0 68px;
+  color: #333;
+}
+#teacher .teac_list > li .cls_single.teacher .teacher_r .cls .cls_name.textflow {
+  height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+#evaluate {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+}
+#evaluate .school_eval li {
+  height: 9.5rem;
+  padding: 1.5rem 1rem;
+  border-bottom: 1px solid #ddd;
+}
+#evaluate .school_eval li h3 {
+  font-size: 1.6rem;
+}
+#evaluate .school_eval li > p {
+  position: relative;
+  float: left;
+  width: 6.4rem;
+  height: 6.4rem;
+}
+#evaluate .school_eval li > p img {
+  width: 100%;
+  border-radius: 0.2rem;
+}
+#evaluate .school_eval li > p i {
+  display: inline-block;
+  width: 2rem;
+  height: 2rem;
+  position: absolute;
+  top: -1rem;
+  right: -1rem;
+}
+#evaluate .school_eval li > p i.new {
+  background: url('../img/icon_new_liter.png') no-repeat 0 0;
+  background-size: 2rem;
+}
+#evaluate .school_eval li > p i.hot {
+  background: url('../img/icon_hot_liter.png') no-repeat 0 0;
+  background-size: 2rem;
+}
+#evaluate .school_eval li > p i.over {
+  width: 6.4rem;
+  height: 6.4rem;
+  background: url('../img/icon_eval_leve.png') no-repeat center center;
+  background-size: 5.4rem;
+  top: 0rem;
+  right: 0rem;
+}
+#evaluate .school_eval li > div {
+  margin-left: 8rem;
+}
+#evaluate .school_eval li > div p {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,390 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+/*------ 头部搜索区域 ------*/
+header {
+  padding-top: 5px;
+}
+header .city_change {
+  font-size: 1.5rem;
+  color: #fff;
+  background: url(../img/city_change.png) no-repeat 51px 14px;
+  background-size: 12px 7px;
+  float: left;
+  padding: 0 25px 0 15px;
+  margin-top: 2px;
+}
+header .city_change.new {
+  background-position: right 14px;
+  padding-right: 15px;
+}
+header .input_box {
+  margin: 0 70px 0 88px;
+}
+header .input_box.word_2 {
+  margin-left: 72px;
+  margin-right: 47px;
+}
+header .input_box.word_3 {
+  margin-left: 87px;
+  margin-right: 47px;
+}
+header .input_box.word_4 {
+  margin-left: 98px;
+  margin-right: 60px;
+}
+header .input_box .index_sear_inp {
+  width: 100%;
+  height: 25px;
+  font-size: 1.2rem;
+  line-height: 16px;
+  color: #fff;
+  -webkit-border-radius: 70px;
+  -moz-border-radius: 70px;
+  border-radius: 70px;
+  background: url(../img/index_header_sear.png) no-repeat 7px center #a20407;
+  background-size: 14px 14px;
+  padding: 5px 0 5px 26px;
+}
+header .input_box .index_sear_inp::-webkit-input-placeholder {
+  color: #fff;
+}
+header .input_box .index_sear_inp :-moz-placeholder {
+  color: #fff;
+}
+header .input_box .index_sear_inp ::-moz-placeholder {
+  color: #fff;
+}
+header .input_box .index_sear_inp :-ms-input-placeholder {
+  color: #fff;
+}
+header .hed_login {
+  width: 32px;
+  height: 33px;
+  line-height: 33px;
+  text-align: right;
+  font-size: 1.5rem;
+  color: #fff;
+  float: right;
+  margin: 2px 13px 0 0;
+}
+header .hed_login.login {
+  background: url(../img/index_has_login.png) no-repeat 14px center;
+  background-size: 12px 15px;
+}
+header .right_bar {
+  padding-right: 12px;
+}
+header .right_bar .icon_btn {
+  background-image: url(../img/icon_btn_index.png);
+  background-position: right center;
+  background-size: 22px 5px;
+}
+/*------ 大容器公共部分 ------*/
+.container.bor_t_b {
+  border-top: 1px solid #eaeaea;
+  border-bottom: 1px solid #eaeaea;
+  margin: 7px 0 0 0;
+}
+/*------ 图标链接区域 ------*/
+.icon_link_zone {
+  position: relative;
+}
+.icon_link_zone .menu_link {
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  bottom: 6px;
+  margin-left: -12px;
+}
+.icon_link_zone .menu_link li {
+  width: 6px;
+  height: 6px;
+  background: url(../img/banner03.png) no-repeat 0 0;
+  background-size: 6px 6px;
+  float: left;
+  margin: 0 6px 0 0;
+}
+.icon_link_zone .menu_link li.on {
+  background-image: url(../img/banner01.png);
+}
+.icon_link {
+  min-height: 160px;
+  overflow: hidden;
+  background: #fff;
+  padding: 13px 0 0 0;
+}
+.icon_link li {
+  width: 20%;
+  float: left;
+  text-align: center;
+  margin: 0 0 13px 0;
+}
+.icon_link a {
+  display: block;
+}
+.icon_link p {
+  font-size: 1.2rem;
+  color: #484848;
+  margin: 7px 0 0 0;
+}
+/*------ 专题活动 ------*/
+.acti_topic {
+  padding: 0 0 11px 0;
+}
+.acti_topic .tit_folder {
+  height: 40px;
+}
+.acti_topic .tit {
+  height: 20px;
+  border-bottom: 1px solid #999;
+  margin: 0 5px;
+}
+.acti_topic .tit h1 {
+  width: 98px;
+  font-size: 1.5rem;
+  color: #484848;
+  text-align: center;
+  background: #fff;
+  padding: 12px 0 12px 0;
+  margin: 0 auto;
+}
+.acti_topic .topic_zone {
+  overflow: hidden;
+}
+.acti_topic .topic_zone .topic_l_folder {
+  width: 50%;
+  padding-right: 2px;
+  float: left;
+}
+.acti_topic .topic_zone .topic_l_folder.fr {
+  width: 50%;
+  padding-left: 2px;
+  padding-right: 0;
+}
+.acti_topic .topic_zone .topic_l_folder.fr .folder {
+  border: none;
+}
+.acti_topic .topic_zone .folder {
+  width: 100%;
+  border: 1px solid #dcdcdc;
+  padding-top: 130%;
+  position: relative;
+}
+.acti_topic .topic_zone .topic_l {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.acti_topic .topic_zone .topic_l img {
+  width: 100%;
+  height: 100%;
+}
+.acti_topic .topic_zone .topic_link {
+  width: 100%;
+  height: 48%;
+  display: block;
+  border: 1px solid #dcdcdc;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.acti_topic .topic_zone .topic_link img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.acti_topic .topic_zone .topic_link.bottom {
+  top: 52.8%;
+}
+/*------ 课程分类区域 ------*/
+/* 区块公共标题 */
+.tit_box {
+  overflow: hidden;
+  padding: 12px 0 12px 0;
+  line-height: 20px;
+}
+.tit_box .more {
+  color: #999;
+  float: right;
+}
+.tit_box .more .icon_more {
+  margin-left: 3.5px;
+  vertical-align: middle;
+}
+.tit_box .more .icon_more {
+  margin-top: -2px;
+}
+.tit_contain {
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 20px;
+  color: #484848;
+  padding: 0 0 0 4px;
+  border-left: 4px solid #ca272a;
+}
+.tit_contain .icon_time {
+  margin-right: 5px;
+  line-height: 15px;
+  height: 15px;
+  margin-top: -3px;
+}
+.no_con_tp {
+  border: none;
+  padding-left: 0;
+}
+.cls_lei.recommend_school .cls_list {
+  overflow: hidden;
+  margin-left: 2px;
+}
+.cls_lei.recommend_school .cls_list li {
+  width: 25%;
+  height: 25%;
+  float: left;
+  padding: 0 5px 0 0;
+}
+.cls_lei.recommend_school .cls_list li .con {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #eee;
+  position: relative;
+}
+.cls_lei.recommend_school .cls_list li .con img {
+  width: 100%;
+}
+.cls_lei.recommend_school .cls_list li.fr {
+  padding: 0 0 0 5px;
+}
+.cls_lei.recommend_school .cls_list li > p {
+  width: 100%;
+  text-align: center;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+.cls_lei {
+  padding: 0 0 10px 0;
+}
+.cls_lei .cls_list {
+  overflow: hidden;
+}
+.cls_lei .cls_list li {
+  width: 50%;
+  float: left;
+  padding: 0 5px 0 0;
+}
+.cls_lei .cls_list li .con {
+  display: block;
+  overflow: hidden;
+  border: 1px solid #eee;
+  position: relative;
+}
+.cls_lei .cls_list li .con img {
+  width: 100%;
+}
+.cls_lei .cls_list li.fr {
+  padding: 0 0 0 5px;
+}
+.cls_lei .cls_list li .time_dao {
+  margin-top: 5px;
+}
+.cls_lei .cls_list li .time_dao p {
+  text-align: center;
+}
+.cls_lei .cls_more_class {
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  overflow: hidden;
+  margin: 8px 0 0 0;
+}
+.cls_lei .cls_more_class li {
+  width: 50%;
+  float: left;
+}
+.cls_lei .cls_more_class li a {
+  position: relative;
+  height: 49px;
+  display: block;
+  font-size: 12px;
+  color: #666;
+  overflow: hidden;
+  border-bottom: 1px solid #eee;
+  border-right: 1px solid #eee;
+}
+.cls_lei .cls_more_class li a span {
+  display: block;
+  margin: 0 80px 0 0;
+  line-height: 50px;
+  font-size: 1.3rem;
+  color: #333;
+  text-align: center;
+}
+.cls_lei .cls_more_class li a p {
+  width: 26px;
+  margin-top: 5px;
+  float: right;
+  position: absolute;
+  top: 5px;
+  right: 28px;
+}
+.cls_lei .cls_more_class li a p img {
+  width: 100%;
+}
+/*------ 逛机构区域 ------*/
+.agent_list {
+  padding: 0 0 4px 0;
+}
+.agent_list .logo_list {
+  overflow: hidden;
+  margin: 0 -6px 0 0;
+}
+.agent_list .logo_list li {
+  width: 25%;
+  float: left;
+  padding: 0 6px 6px 0;
+}
+.agent_list .logo_list li a {
+  display: block;
+  border: 1px solid #eee;
+  text-align: center;
+  overflow: hidden;
+  padding-top: 100%;
+  position: relative;
+}
+.agent_list .logo_list li a img {
+  width: 100%;
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+/* 图片遮罩文字 */
+.topic_con_txt {
+  width: 100%;
+  height: 23px;
+  font-size: 1.2rem;
+  line-height: 23px;
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+/* app下载的layer样式 */
+.layermchild.down_load .layermcont .down_txt {
+  font-size: 1.6rem;
+  word-break: break-all;
+}
+/*定义更多*/
+.icon_more {
+  margin-left: 7px;
+  vertical-align: middle;
+}

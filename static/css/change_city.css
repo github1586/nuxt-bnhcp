@@ -1,0 +1,148 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+header {
+  padding-top: 6px;
+}
+.hot_city {
+  margin-top: 13px;
+  position: fixed;
+  right: 1rem;
+}
+.hot_city .hot_city_p {
+  margin-top: 0;
+  background: #dadada;
+  padding: .5rem;
+  display: block;
+  border-radius: .3rem;
+  text-align: center;
+}
+.hot_city .hot_city_p a {
+  color: #fff;
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  text-decoration: none;
+  display: block;
+}
+.view_list {
+  z-index: 10000;
+  background-color: #eeeeee;
+  padding-left: 0;
+}
+.view_list a {
+  color: #666;
+}
+.view_list .pi_view {
+  padding-left: 10px;
+  overflow: hidden;
+}
+.view_list .pi_view .city {
+  margin-top: 10px;
+  height: 36px;
+  display: inline-block;
+  background-color: #fff;
+  line-height: 36px;
+  text-align: center;
+  font-size: 1.2rem;
+}
+.view_list .pi_view .city.city_b {
+  width: 30%;
+  height: 36px;
+  line-height: 36px;
+  margin: 1.5%;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+}
+.view_list .pi_view .city.city_b.city_no {
+  height: 36px;
+  line-height: 36px;
+  display: none;
+}
+.view_list .pi_view .city.city_c {
+  width: 30%;
+  height: 36px;
+  margin: 1.5%;
+  line-height: 36px;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.view_list .pi_view ul {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 0;
+}
+.view_list .pi_view ul li {
+  list-style: none;
+  line-height: 36px;
+}
+.view_list .pi_view ul li .city {
+  width: 30%;
+  margin: 1.5%;
+  float: left;
+}
+.view_list .pi_view.pi_d {
+  background-color: #eeeeee;
+}
+.view_list .pi_view.pi_d ul {
+  overflow: hidden;
+}
+.view_list .pi_view.pi_d ul li {
+  width: 30%;
+  height: 36px;
+  line-height: 36px;
+  margin: 1.5%;
+  font-size: 1.2rem;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+}
+.view_list .pi_view.pi_d ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #ef3f41;
+}
+.view_list .curr_pi {
+  background-color: #fff;
+  padding: 0 5%;
+}
+.view_list .curr_pi p {
+  font-size: 1.4rem;
+  height: 3rem;
+  line-height: 3rem;
+}
+.city_kinds.pi_view {
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.city_kinds.pi_view .letter_a {
+  color: #666;
+  font-size: 1.2rem;
+  padding: 0 3%;
+}
+.city_kinds.pi_view .letter {
+  padding: 0 2%;
+}
+.city_kinds.pi_view .letter .letter_p {
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  color: #666;
+  font-size: 1.2rem;
+}
+.city_kinds.pi_view .letter .letter_p a {
+  text-decoration: none;
+  color: #666;
+}
+/*针对iPhone 3*/
+/*针对iPhone 4, 5c,5s, 所有iPhone6的放大模式，个别iPhone6的标准模式*/
+@media only screen and (min-device-width: 375px) and (-webkit-min-device-pixel-ratio: 2) {
+  /*针对大多数iPhone6的标准模式*/
+}
+/*针对所有iPhone6+的放大模式*/
+/*针对所有iPhone6+的标准模式,414px写为412px是由于三星Nexus 6为412px，可一并处理*/

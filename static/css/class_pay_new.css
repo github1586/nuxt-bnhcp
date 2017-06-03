@@ -1,0 +1,353 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+header {
+  padding-top: 6px;
+  background: #fff;
+  border-bottom: 1px solid #bbb;
+}
+header .header_back {
+  background: url(../img/icon_back_red.png) no-repeat;
+  background-size: 10px 16px;
+}
+header .sel_txt {
+  color: #333;
+}
+.container.plan_d {
+  padding-left: 0;
+  padding-right: 0;
+}
+.plan_d {
+  width: 100%;
+}
+.plan_d .tip_p {
+  padding: 14px 20px 30px 20px;
+  line-height: 25px;
+  font-size: 1.2rem;
+}
+.plan_d .pay_method {
+  font-size: 1.4rem;
+  padding-left: 20px;
+  padding-bottom: 12px;
+}
+.plan_d .pay_method_for {
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+}
+.plan_d .pay_method_for .pay_d {
+  height: 60px;
+  line-height: 34px;
+  font-size: 1.4rem;
+  color: #484848;
+  background: url("../img/pay_no.png") no-repeat 10px center;
+  background-size: 11px 11px;
+  padding-left: 34px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #dcdcdc;
+}
+.plan_d .pay_method_for .pay_d.on {
+  background-image: url("../img/pay_ok.png");
+}
+.plan_d .pay_method_for .pay_d .ban_sp {
+  font-size: 1.3rem;
+  color: #666;
+  margin-left: 50px;
+}
+.plan_d .pay_method_for .pay_d .pay_img {
+  width: 35px;
+  height: 35px;
+  float: left;
+  margin-right: 15px;
+}
+.plan_d .pay_method_for .pay_d .pay_go {
+  width: 5px;
+  height: 9px;
+  float: right;
+  margin-top: 13px;
+  margin-right: 23px;
+}
+.plan_d .pay_y {
+  padding: 0 15px 0 12px;
+}
+.plan_d .pay_y .pay_yes {
+  height: 46px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: #fff;
+  line-height: 46px;
+  display: block;
+  background: #ef4040;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  border-radius: 2px;
+  margin: 15px 0 15px 0;
+}
+.time_leave {
+  background: #7d8590;
+  text-align: center;
+  padding: 10px 0 10px 0;
+}
+.time_leave span {
+  font-size: 1.5rem;
+  color: #fff;
+  display: inline-block;
+  background: url(../img/time_leave.png) no-repeat left center;
+  background-size: 18px 18px;
+  padding: 0 0 0 25px;
+}
+.menu_infor_box {
+  background: url(../img/ding_bgc.png) repeat-x left bottom;
+  background-size: 14px 10px;
+  padding: 0 0 10px 0;
+  margin: 0 0 8px 0;
+}
+.menu_infor {
+  background: #fff;
+  padding: 10px 15px 8px 12px;
+}
+.menu_infor p {
+  color: #484848;
+  margin: 0 0 7px 0;
+}
+.menu_infor p span {
+  padding: 0 0 0 1px;
+}
+.pay_method_leave {
+  background: url(../img/pay_icon1.png) no-repeat 15px 14px #fff;
+  background-size: 25px 18px;
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+  padding: 0 15px 0 12px;
+  margin: 0 0 5px 0;
+}
+.pay_method_leave.on .zhang {
+  background-image: url(../img/kid_radio_on.png);
+}
+.pay_method_leave .zhang {
+  background: url(../img/kid_radio.png) no-repeat right center;
+  background-size: 16px 16px;
+  padding: 14px 0 13px 43px;
+}
+.pay_ways_zone .pay_way {
+  background: #fff;
+  border-top: 1px solid #dcdcdc;
+  padding: 1.3rem 15px 1.3rem 12px;
+  height: 60px;
+}
+.pay_ways_zone .pay_way.money_pay {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.pay_ways_zone .pay_way.money_pay span {
+  color: #cf1b1b;
+}
+.pay_ways_zone .pay_way.last {
+  border-bottom: 1px solid #dcdcdc;
+}
+.pay_ways_zone .pay_bank {
+  overflow: hidden;
+  background: url(../img/kid_radio.png) no-repeat right center;
+  background-size: 16px 16px;
+}
+.pay_ways_zone .pay_bank.on {
+  background-image: url(../img/kid_radio_on.png);
+}
+.pay_ways_zone .pay_bank .pay_bank_new {
+  background: #f0f0f0 url('../img/pay_icon_bank_new.png') no-repeat center center;
+  background-size: 2.3rem 1.8rem;
+}
+.pay_ways_zone .pay_bank .pay_wei {
+  background: #f0f0f0 url('../img/pay_icon_wei.png') no-repeat center center;
+  background-size: 2.3rem 1.8rem;
+}
+.pay_ways_zone .pay_bank .pay_zhi {
+  background: #f0f0f0 url('../img/pay_icon_zhi.png') no-repeat center center;
+  background-size: 2.3rem 1.8rem;
+}
+.pay_ways_zone .pay_bank > p {
+  float: left;
+  width: 50px;
+  height: 34px;
+}
+.pay_ways_zone .pay_bank > p img {
+  margin: 3px 0 0 0;
+  text-align: center;
+}
+.pay_ways_zone .pay_bank .pay_infor {
+  margin: 0 0 0 62px;
+}
+.pay_ways_zone .pay_bank .pay_infor.full {
+  position: relative;
+}
+.pay_ways_zone .pay_bank .pay_infor.full h1 {
+  float: left;
+}
+.pay_ways_zone .pay_bank .pay_infor.full p {
+  position: absolute;
+  top: 0.6rem;
+  right: 2rem;
+  font-size: 1rem;
+}
+.pay_ways_zone .pay_bank .pay_infor.full p a {
+  color: #ef4040;
+}
+.pay_ways_zone .pay_bank .pay_infor h1 {
+  font-size: 1.4rem;
+  color: #484848;
+  line-height: 3.4rem;
+}
+.pay_ways_zone .pay_bank .pay_infor p {
+  font-size: 1.2rem;
+  color: #999;
+}
+.pay_ways_zone .pay_bank .pay_infor p span {
+  font-size: 1.2rem;
+  color: #59cfd3;
+  border: 1px solid #59cfd3;
+  -webkit-border-radius: 1px;
+  -moz-border-radius: 1px;
+  border-radius: 1px;
+  padding: 0 2px;
+}
+.pay_tip {
+  background: url(../img/pay_tip.png) no-repeat 15px 1px;
+  background-size: 17px 17px;
+  display: none;
+  padding: 0 15px;
+  margin: 10px 0 0 0;
+}
+.pay_tip p {
+  font-size: 1.2rem;
+  color: #a6a6a6;
+  line-height: 18px;
+  padding: 0 0 0 22px;
+}
+#prompt_id {
+  display: none;
+}
+.inp_pass.yuanlai {
+  border: none;
+}
+.inp_pass.yuanlai .inp_hide_val {
+  padding-left: 0;
+  left: -500px;
+}
+.layermchild {
+  width: 100%;
+}
+.inp_hide_val {
+  padding-left: 10000px;
+  left: -5000px;
+}
+.warn_tip {
+  font-weight: bold;
+  color: #d91632;
+  text-indent: 28px;
+  padding: 5px 10px 5px 10px;
+}
+.warn_tip span {
+  color: #666;
+  font-weight: normal;
+}
+.layermchild.layer_prompt_default .layermbtn {
+  display: none;
+}
+.layermchild.layer_prompt_default .shut_btn {
+  width: 30px;
+  height: 30px;
+  background: url(../img/layer_shut_down.png) no-repeat center center;
+  background-size: 9px 9px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.pay_jump_win {
+  width: 100%;
+  background: #fcfcfc;
+  position: fixed;
+  left: 0;
+  bottom: 0px;
+  z-index: 1400;
+  -webkit-transform: translate(0px, 395px);
+  transform: translate(0px, 395px);
+}
+.pay_jump_win h1 {
+  font-size: 1.6rem;
+  color: #484848;
+  border-bottom: 1px solid #eee;
+  text-align: center;
+  padding: 14px 0 14px 0;
+}
+.pay_jump_win .inp_pass {
+  margin: 25px 15px 0 15px;
+}
+.pay_jump_win .inp_pass li span {
+  width: 8px;
+  height: 8px;
+}
+.pay_jump_win .forget {
+  display: block;
+  font-size: 1.3rem;
+  color: #007da4;
+  text-align: right;
+  padding: 0 15px;
+  margin: 23px 0 23px 0;
+}
+.pay_jump_win .pay_keys {
+  overflow: hidden;
+}
+.pay_jump_win .pay_keys li {
+  width: 33.33%;
+  height: 54px;
+  text-align: center;
+  float: left;
+  border-top: 1px solid #b6b9be;
+  border-right: 1px solid #b6b9be;
+}
+.pay_jump_win .pay_keys li.bor {
+  border-right: none;
+}
+.pay_jump_win .pay_keys li.zero span {
+  line-height: 54px;
+  padding: 0;
+}
+.pay_jump_win .pay_keys li.key_space,
+.pay_jump_win .pay_keys li.key_back {
+  background-color: #bcbfc4;
+}
+.pay_jump_win .pay_keys li.key_back {
+  background: url(../img/pay_key_back.jpg) no-repeat center center #bcbfc4;
+  background-size: 22px 16px;
+}
+.pay_jump_win .pay_keys li span {
+  font-size: 2rem;
+  color: #000;
+  display: inline-block;
+  padding-top: 3px;
+}
+.pay_jump_win .pay_keys li p {
+  font-size: 1.2rem;
+}
+.pay_jump_win .shut {
+  width: 30px;
+  height: 30px;
+  background: url(../img/pay_jump_back.png) no-repeat center center;
+  background-size: 6px 10px;
+  position: absolute;
+  left: 5px;
+  top: 8px;
+}
+.pay_chao_time h1 {
+  font-size: 1.6rem;
+  color: #333;
+  font-weight: bold;
+  margin: 0 0 10px 0;
+}
+.pay_chao_time p {
+  font-size: 1.4rem;
+  color: #333;
+}

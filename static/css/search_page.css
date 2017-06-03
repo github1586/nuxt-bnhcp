@@ -1,0 +1,175 @@
+@charset "utf-8";
+/* CSS Document */
+/* 主体背景-灰色 */
+/* 头部-背景颜色 */
+/* 首页-边框颜色 */
+/* 首页-专题活动边框颜色 */
+/*------ 头部搜索区域 ------*/
+header .header_sear_sel {
+  margin-top: 5px;
+  margin-left: 55px;
+  margin-right: 30px;
+}
+header .header_sear_sel .drop_down {
+  width: 48px;
+  height: 25px;
+  font-size: 1.2rem;
+  line-height: 25px;
+  color: #474747;
+  text-align: left;
+  background: url(../img/header_drop_down.png) no-repeat 36px center #f5f5f5;
+  background-size: 8px 5px;
+  float: left;
+  -webkit-border-top-left-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  border-top-left-radius: 5px;
+  -webkit-border-bottom-left-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  border-bottom-left-radius: 5px;
+  position: relative;
+  padding: 0 0 0 8px;
+}
+header .header_sear_sel .drop_down .sel_list {
+  width: 50px;
+  background: #fff;
+  text-align: center;
+  border: 1px solid #eee;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  display: none;
+  padding: 5px 0;
+  position: absolute;
+  left: 0;
+  top: 25px;
+}
+header .header_sear_sel .header_sear_box {
+  margin-left: 48px;
+  position: relative;
+}
+header .header_sear_sel .header_sear_box a {
+  position: absolute;
+  display: none;
+  top: 5px;
+  right: 5px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: url('../img/icon_close.png') no-repeat center center;
+  background-size: 14px 14px;
+}
+header .header_sear_sel .header_sear_box a.on {
+  display: block;
+}
+header .header_sear_sel .header_sear_txt {
+  width: 100%;
+  height: 25px;
+  font-size: 1.2rem;
+  line-height: 25px;
+  color: #474747;
+  background: #f5f5f5 url("../img/search_page.png") no-repeat 5px 6px;
+  background-size: 14px 13px;
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-right-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-right-radius: 5px;
+  border-left: 1px solid #ccc;
+  display: block;
+  padding: 0 0 0 25px;
+}
+header .header_sear_btn {
+  width: 43px;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1.4rem;
+  color: #fff;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  position: absolute;
+  right: 15px;
+  top: 7px;
+  margin: 4px 0 0 0;
+}
+/*------ 热搜词汇 ------*/
+.hot_sear {
+  min-height: 78px;
+  overflow: hidden;
+  border-top: 1px solid #eaeaea;
+}
+.hot_sear .sear_tit {
+  font-size: 1.4rem;
+  color: #474747;
+  padding-top: 15px;
+}
+.hot_sear .sear_con ul li {
+  height: 34px;
+  border-bottom: 1px solid #eee;
+}
+.hot_sear .sear_con ul li a {
+  line-height: 20px;
+  font-size: 1.2rem;
+  color: #474747;
+  text-align: left;
+  border-radius: 5px;
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 34px;
+  padding-left: 44px;
+  background: url("../img/search_page.png") no-repeat 22px 10px;
+  background-size: 15px 15px;
+  -webkit-tap-highlight-color: transparent;
+}
+.latest_search {
+  margin-top: 41px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.latest_search .search_text {
+  font-size: 1.4rem;
+  background-size: 5px 2px;
+  padding-bottom: 15px;
+}
+.latest_search ul li {
+  height: 42px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+}
+.latest_search ul li a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  line-height: 42px;
+  padding-left: 32px;
+  background: url('../img/icon_histersh.png') no-repeat 10px 15px;
+  background-size: 12px 12px;
+  -webkit-tap-highlight-color: transparent;
+}
+.latest_search ul li span {
+  position: absolute;
+  right: 6px;
+  width: 40px;
+  height: 100%;
+  background: url('../img/icon_close_histere.png') no-repeat 20px 15px;
+  background-size: 9px 9px;
+}
+/*------ 清除历史按钮 ------*/
+.clear_btn_contain {
+  padding: 0 15px 0 15px;
+  margin: 15px 0 0 0;
+}
+.clear_btn_contain .clear_btn {
+  height: 40px;
+  font-size: 1.4rem;
+  color: #474747;
+  line-height: 40px;
+  text-align: center;
+  background: #fff;
+  border-radius: 5px;
+}
