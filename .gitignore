@@ -1,23 +1,4 @@
-<<<<<<< HEAD
-# dependencies
-node_modules
-
-# logs
-npm-debug.log
-
-# Nuxt build
-.nuxt
-
-# Nuxt generate
-dist
-=======
 .DS_Store
-<<<<<<< HEAD
-node_modules/
-dist/
-npm-debug.log
-yarn-error.log
-=======
 node_modules
 *.log
 explorations
@@ -28,5 +9,4 @@ dist/vue.common.min.js
 test/e2e/reports
 test/e2e/screenshots
 coverage
->>>>>>> 70c496db7dd5bbf8e515cb9e09ca2957e119e656
->>>>>>> 20aa2082dba197407ffac89c9aae23f4cc30e90e
+.vscode/
