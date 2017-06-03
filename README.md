@@ -1,7 +1,6 @@
 # bnhcp
 
 > Nuxt.js project
-=======
 
 > A Vue.js project
 
