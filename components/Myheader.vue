@@ -1,6 +1,6 @@
 <template>
   <header id="header" class="all_nav_zone">
-		<a href="城市切换.html" class="city_change new">北京北京</a>
+  		<nuxt-link to="/user/Carousel" class="city_change new">北京北京</nuxt-link>
 		<a href="#" class="hed_login hed_fz">登陆</a>
 		<!-- 输入框 -->
 		<div class="input_box word_4">
