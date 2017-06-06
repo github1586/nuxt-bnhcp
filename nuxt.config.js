@@ -10,8 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'Nuxt.js project' }
     ],
     link: [
-        { rel: 'stylesheet', href: './css/common.css' },
-        { rel: 'stylesheet', href: './css/index.css' }
+        { rel: 'stylesheet', href: '/css/common.css' }
     ]
   },
   /*

@@ -2,21 +2,22 @@
 <template>
   <div>
     <Myheader></Myheader>
+    <Carousel></Carousel>
   </div>
 </template>
 <script>
 import Myheader from '~components/Myheader.vue'
-
+import Carousel from '~components/Carousel.vue'
 export default {
   components: {
-    Myheader
+    Myheader,
+    Carousel
   },
   head: {
     script: [
     ],
     link: [
-      { rel: 'stylesheet', href: './css/common.css' },
-      { rel: 'stylesheet', href: './css/index.css' }
+
     ]
   }
 }
