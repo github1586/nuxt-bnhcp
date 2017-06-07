@@ -14,10 +14,10 @@
 		.city_change
 			font-size: 15px 
 			color: #fff 
-			background: url(/img/city_change.png)no-repeat 51px 14px
+			background: url(/img/city_change.png)no-repeat 51px 12px
 			background-size: 12px 7px
 			float: left
-			padding: 0px 25px 0px 15px
+			padding: 6px 25px 0px 15px
 			margin-top: 2px
 			&.new
 				background-position: right 14px
@@ -32,24 +32,24 @@
 			&.word_4
 				margin-left: 98px
 				margin-right: 60px
-			margin: -5px 70px 0 88px		
+			margin: 5px 70px 0 88px		
 		.index_sear_inp
 			width: 100%
 			height: 25px
 			font-size: 12px
 			line-height: 25px
-			color:#666
+			color:#fff
 			border-radius: 70px
-			background: url(/img/index_header_sear.png) no-repeat 7px center #f7f7f7
+			background: url(/img/index_header_sear.png) no-repeat 7px center #a20407
 			background-size: 14px 14px
 			&::-webkit-input-placeholder 
-				color: #666
+				color: #fff
 			:-moz-placeholder 
-				color: #666 
+				color: #fff 
 			::-moz-placeholder 
-				color: #666 
+				color: #fff 
 			:-ms-input-placeholder 
-				color: #666 
+				color: #fff 
 			padding: 5px 0 5px 26px
 		.hed_login
 			width: 32px

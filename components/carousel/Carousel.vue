@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <div class="swiper-box">
-      
       </div>
       <rd-swipe :swipe="swipe">
         <div class="rd-swipe-item" :style="{ 'background-image': `url(${img})` }" v-for="(img, index) in imgs">
@@ -19,22 +18,18 @@ export default {
       swipe: {
         activeIndex: 0
       },
-      contacts: [{
-        text: 'Page 1'
-      }, {
-        text: 'Page 2'
-      }, {
-        text: 'Page 3'
-      }, {
-        text: 'Page 4'
-      }],
       imgs: [
-        'img/round01.jpg',
+        'img/banner_test.jpg',
         'img/round01.jpg',
         'img/round01.jpg',
         'img/round01.jpg'
       ]
     }
+  },
+  options: {
+    activeIndex: 0,
+    autoplay: 1000,
+    pagination: true
   },
   components: {
     rdSwipe
@@ -53,5 +48,7 @@ export default {
 <style lang="sass">
   .rd-swipe
     width: 100%!important
-    height: 200px!important
+    height: 140px!important
+  .rd-swipe-item
+    background-size: 100% 100%!important
 </style>

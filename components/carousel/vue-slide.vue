@@ -104,10 +104,10 @@ export default {
       },
       options: {
         activeIndex: 0,
-        autoplay: 3000,
+        autoplay: 1000,
         pagination: true
-      } 
-    } 
+      }
+    }
   },
   computed: {
     wrapperStyle () {
@@ -228,8 +228,8 @@ export default {
       }, this.swipe.autoplay * 2)
     },
     setPaginationActive (index) {
-      this.pagination.forEach(item => item.active = false)
-      this.pagination[index].active = true
+      // this.pagination.forEach(item => item.active = false)
+      // this.pagination[index].active = true
     },
     checkOut () {
       this.swipe.activeIndex = this.swiper.index
