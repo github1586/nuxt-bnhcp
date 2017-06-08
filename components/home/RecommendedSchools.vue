@@ -39,7 +39,7 @@ export default {
       headinfo: {
         before: '推荐学校',
         after: '更好学校',
-        imgurl: 'img/icon_time.png'
+        imgurl: 'img/icon_jigou.png'
       }
     }
   },
@@ -49,6 +49,28 @@ export default {
 }
 </script>
 
-<style lang='sass'>
-  
+<style lang="sass">
+		.cls_list
+			overflow: hidden
+			margin-left: 2px
+			padding-bottom: 1.5rem
+			li
+				width: 25%
+				height: 25%
+				float: left
+				padding: 0 5px 0 0
+				.con
+					display: block
+					overflow: hidden
+					border: 1px solid #eee
+					position: relative
+					img
+						width: 100%
+				&.fr
+					padding: 0 0 0 5px
+				>p
+					width: 100%
+					text-align: center
+					margin-top: 5px
+					white-space: nowrap
 </style>

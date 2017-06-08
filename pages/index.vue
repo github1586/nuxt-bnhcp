@@ -5,19 +5,28 @@
     <Carousel></Carousel>
     <Classification></Classification>
     <RecommendedSchools></RecommendedSchools>
+    <Grabactivity></Grabactivity>
+    <Courseblock></Courseblock>
+    <Footertabs></Footertabs>
   </div>
 </template>
 <script>
-import Myheader from '~components/Myheader.vue'
+import Myheader from '~components/home/Myheader.vue'
 import Carousel from '~components/carousel/Carousel.vue'
-import Classification from '~components/Classification.vue'
-import RecommendedSchools from '~components/RecommendedSchools.vue'
+import Classification from '~components/home/Classification.vue'
+import RecommendedSchools from '~components/home/RecommendedSchools.vue'
+import Grabactivity from '~components/home/Grabactivity.vue'
+import Courseblock from '~components/home/Courseblock.vue'
+import Footertabs from '~components/home/Footertabs.vue'
 export default {
   components: {
     Myheader,
     Carousel,
     Classification,
-    RecommendedSchools
+    RecommendedSchools,
+    Grabactivity,
+    Courseblock,
+    Footertabs
   },
   head: {
     script: [
@@ -39,6 +48,7 @@ export default {
   body 
     font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'Arail'
     padding-top: 44px
+    padding-bottom: 6rem
     -webkit-box-sizing: border-box
     margin: 0
 
