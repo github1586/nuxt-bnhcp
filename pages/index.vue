@@ -6,7 +6,7 @@
     <Classification></Classification>
     <RecommendedSchools></RecommendedSchools>
     <Grabactivity></Grabactivity>
-    <Courseblock></Courseblock>
+    <Courseblock :allparentinfo="allparentinfo.allparentinfo"></Courseblock>
     <Footertabs></Footertabs>
   </div>
 </template>
@@ -18,7 +18,21 @@ import RecommendedSchools from '~components/home/RecommendedSchools.vue'
 import Grabactivity from '~components/home/Grabactivity.vue'
 import Courseblock from '~components/home/Courseblock.vue'
 import Footertabs from '~components/home/Footertabs.vue'
+import axios from '~plugins/axios'
+
 export default {
+  // ajax module as axios
+  async asyncData () {
+    let { data } = await axios.get('/api/')
+    return {
+      allparentinfo: data
+    }
+  },
+  head () {
+    return {
+      title: 'bnhcp'
+    }
+  },
   components: {
     Myheader,
     Carousel,
@@ -26,14 +40,8 @@ export default {
     RecommendedSchools,
     Grabactivity,
     Courseblock,
-    Footertabs
-  },
-  head: {
-    script: [
-    ],
-    link: [
-
-    ]
+    Footertabs,
+    axios
   }
 }
 </script>
