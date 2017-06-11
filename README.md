@@ -1,5 +1,7 @@
 # bnhcp
 
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + SSR
+
 ## Build Setup
 
 ``` bash
@@ -14,4 +16,3 @@ $ npm run build
 $ npm start
 
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).

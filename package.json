@@ -5,12 +5,20 @@
   "author": "guanbobo1 <weibo392@163.com>",
   "private": true,
   "dependencies": {
+    "axios": "^0.16.2",
+    "backpack-core": "^0.3.0",
+    "cross-env": "^5.0.1",
+    "eslint-plugin-import": "^2.3.0",
+    "eslint-plugin-node": "^5.0.0",
+    "express": "^4.15.3",
+    "mysql": "^2.13.0",
     "nuxt": "latest",
+    "source-map-support": "^0.4.15",
     "vue-carousel": "^0.6.4",
     "vue-slide": "^1.1.1"
   },
   "scripts": {
-    "dev": "HOST=192.168.1.110 PORT=8080 nuxt",
+    "dev": "backpack dev",
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
