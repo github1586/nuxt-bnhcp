@@ -3,7 +3,7 @@
   <div class="body">
     <Myheader></Myheader>
     <Carousel></Carousel>
-    <Classification></Classification>
+    <Classification :indexClass="allparentinfo.indexClass"></Classification>
     <RecommendedSchools></RecommendedSchools>
     <Grabactivity></Grabactivity>
     <Courseblock :allparentinfo="allparentinfo.allparentinfo"></Courseblock>
@@ -59,10 +59,8 @@ export default {
     padding-bottom: 6rem
     -webkit-box-sizing: border-box
     margin: 0
-
   body.gray 
     background: #eeeeee
-
   button,input,textarea 
     border: none
     -webkit-outline: none
@@ -71,24 +69,19 @@ export default {
     -webkit-appearance: none
     border-radius: 0
     padding: 0
-
   .fl 
     float: left
-
   .fr 
     float: right
-
   a 
     color: #474747
     text-decoration: none
-
   a:focus,a.active,a:hover 
     text-decoration: none
 
   ul,p,h1,h2,h3,h4,h5,h6 
     padding: 0
     margin: 0
-
   li 
     list-style: none
 

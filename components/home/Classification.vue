@@ -1,75 +1,19 @@
 <template>
   <div class="icon_link_zone" id="icon_link_zone">
-			<ul class="icon_link_box">
-				<li>
-					<ul class="icon_link">
-						<li>
-							<a href="">
-								<img width="40" src="img/class_art_icon.png" alt="" />
-								<p>艺术</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_tiyu_icon.png" alt="" />
-								<p>体育</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_yuyan_icon.png" alt="" />
-								<p>语言</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_liuxue_icon.png" alt="" />
-								<p>留学</p>
-							</a>
-						</li>
-							<li>
-							<a href="">
-								<img width="40" src="img/class_xiao_icon.png" alt="" />
-								<p>小学</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_sheng_icon.png" alt="" />
-								<p>小升初</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_chuzhong_icon.png" alt="" />
-								<p>初中</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_zhongkao_icon.png.png" alt="" />
-								<p>中考</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_gao_icon.png" alt="" />
-								<p>高中</p>
-							</a>
-						</li>
-						<li>
-							<a href="">
-								<img width="40" src="img/class_sheng_icon.png" alt="" />
-								<p>更多</p>
-							</a>
-						</li>
-					</ul>
+			<ul class="icon_link">
+				<li v-for="value in indexClass">
+					<nuxt-link to="courseList" :data-id="value.classPid">
+						<img width="40" :src="value.showClassImg" alt="" />
+						<p>{{value.showClassName}}</p>
+					</nuxt-link>
 				</li>
 			</ul>
 		</div>
 </template>
 <script>
-
+export default {
+  props: ['indexClass']
+}
 </script>
 <style lang="sass">
   .icon_link_zone
@@ -99,7 +43,7 @@
       text-align: center
       margin: 0 0 1.3rem 0
       a
-        dispaly: block
+        display: block
       p
         font-size: 1rem
         color: #484848

@@ -38,7 +38,7 @@ export default {
     return {
       headinfo: {
         before: '推荐学校',
-        after: '更好学校',
+        after: '更多学校',
         imgurl: 'img/icon_jigou.png'
       }
     }

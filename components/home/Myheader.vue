@@ -1,6 +1,6 @@
 <template>
   <header id="header" class="all_nav_zone">
-  		<nuxt-link to="/user" class="city_change new">北京北京</nuxt-link>
+  		<nuxt-link to="/courseList" class="city_change new">北京北京</nuxt-link>
 		<a href="#" class="hed_login hed_fz">登陆</a>
 		<!-- 输入框 -->
 		<div class="input_box word_4">
