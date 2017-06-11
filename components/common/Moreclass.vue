@@ -4,19 +4,19 @@
 			<Headerchunk :headinfo="parentHeadinfo.headinfo"></Headerchunk>
 			<ul class="cls_list">
 				<li v-for="value in parentHeadinfo.course.classList">
-					<a href="#" class="con">
+					<nuxt-link to="courseList" class="con">
 						<img :src=value.imgurl alt="" />
 						<div class="topic_con_txt">{{value.classname}}</div>
-					</a>
+					</nuxt-link>
 				</li>
 			</ul>
 			<!-- 更多课程 -->
 			<ul class="cls_more_class">
 				<li v-for="value in parentHeadinfo.course.classMoreList">
-					<a href="#">
+					<nuxt-link to="courseList">
 						<p><img :src=value.imgurl style="position: absolute; top:3px;" alt="" /></p>
 						<span>{{value.classname}}</span>
-					</a>
+					</nuxt-link>
 				</li>
 			</ul>
 		</div>

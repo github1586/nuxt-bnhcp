@@ -16,7 +16,7 @@
 					<span>课表</span>
 				</li>
 				<li class="tabs_four">
-					<a href="javascript:"></a>
+					<a href="/"></a>
 					<span>我的</span>
 				</li>
 			</ul>
