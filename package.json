@@ -17,6 +17,12 @@
     "vue-carousel": "^0.6.4",
     "vue-slide": "^1.1.1"
   },
+  "config": {
+    "nuxt": {
+      "host": "192.168.1.110",
+      "port": "8080"
+    }
+  },
   "scripts": {
     "dev": "backpack dev",
     "build": "nuxt build",
