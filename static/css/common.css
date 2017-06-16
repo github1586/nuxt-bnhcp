@@ -13,6 +13,7 @@ body {
   padding-top: 44px;
   -webkit-box-sizing: border-box;
   margin: 0;
+  background: #eee;
 }
 body.gray {
   background: #eeeeee;
