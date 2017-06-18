@@ -10,7 +10,7 @@ module.exports = {
       { hid: 'description', name: 'description', content: 'bnhcp project' }
     ],
     link: [
-        { rel: 'stylesheet', href: '/css/common.css' }
+        { rel: 'stylesheet', href: '/common/common.css' }
     ]
   },
   /*
