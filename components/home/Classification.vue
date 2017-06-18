@@ -2,7 +2,7 @@
   <div class="icon_link_zone" id="icon_link_zone">
 			<ul class="icon_link">
 				<li v-for="value in indexClass">
-					<nuxt-link to="courseList" :data-id="value.classPid">
+					<nuxt-link to="/courseList" :data-id="value.classPid">
 						<img width="40" :src="value.showClassImg" alt="" />
 						<p>{{value.showClassName}}</p>
 					</nuxt-link>
