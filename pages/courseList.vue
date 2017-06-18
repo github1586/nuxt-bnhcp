@@ -20,188 +20,115 @@
       <div class="order_sort">
         <!-- 选项卡头部 -->
         <ul class="order_sort_u clearfix">
-          <li @click="activeSort('location')">
-            <a :class="{on: serachBy == 'location'}" href="javascript:" class="tab_swi_a">位置</a>
+          <li class="tabslist">
+            <a :class="{on: serachBy == 'location'}" href="javascript:" @click="activeSort('location')" class="tab_swi_a">位置</a>
+            <transition name="showlist">
+              <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
+                <div class="left_area">
+                  <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
+                </div>
+                <div class="right_area">
+                  <div class="right_area_d">
+                    <div class="rigth_third">
+                      <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
+                    </div>
+                    <div class="right_third">
+                      <a href="javascript:;" class="switch_a area_r mar_l third_menu on">双榆树</a>
+                      <div class="third_menu_con current">
+                        <ul>
+                          <li><a href="javascript:;">雅思</a></li>
+                          <li><a href="javascript:;">SAT</a></li>
+                          <li><a href="javascript:;">托福</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">留学预科</a></li>
+                          <li><a href="javascript:;">ACT</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>	
+                </div>
+              </div>
+            </transition>
           </li>
-          <li @click="activeSort('class')">
-            <a :class="{on: serachBy == 'class'}" href="javascript:" class="tab_swi_a">分类</a>
+          <li class="tabslist" >
+            <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">分类</a>
+            <transition name="showlist">
+              <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
+                <div class="left_area">
+                  <p v-for="(value,index) in classGrade.gradeOne"  :key="index" :data-id="value.gradeId"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,value.gradeId)" >{{value.class_name}}</p>
+                </div>
+                <div class="right_area">
+                  <div class="right_area_d">
+                    <div class="rigth_third">
+                      <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
+                    </div>
+                    <div class="right_third" v-for="(items,index) in classGrade.gradeTwo" :key="index">
+                      <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
+                      <div class="third_menu_con" v-show="isActive == index">
+                        <ul>
+                          <li v-for="(item,indexs) in classGrade.gradeThree[index]" :key="indexs"><a href="javascript:;">{{item.threeClass_name}}</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>	
+                </div>
+              </div>
+            </transition>
           </li>
-          <li @click="activeSort('sort')">
-            <a :class="{on: serachBy == 'sort'}" href="javascript:" class="tab_swi_a">排序</a>
+          <li class="tabslist">
+            <a :class="{on: serachBy == 'sort'}"  @click="activeSort('sort')" href="javascript:" class="tab_swi_a">排序</a>
+            <transition name="showlist">
+              <div class="search_tab min_hieght" v-show="serachBy == 'sort'"> 
+                <ul class="localtion_list sort_list">
+                  <li><i class="icon_bg_1"></i><a href="">智能排序</a></li>
+                  <li><i class="icon_bg_2"></i><a href="">离我最近</a></li>
+                  <li><i class="icon_bg_3"></i><a href="">人气最高</a></li>
+                  <li><i class="icon_bg_4"></i><a href="">老师好评</a></li>
+                  <li><i class="icon_bg_5"></i><a href="">价格最高</a></li>
+                  <li><i class="icon_bg_6"></i><a href="">价格最低</a></li>
+                </ul>
+              </div>
+            </transition>
           </li>
-          <li @click="activeSort('filter')">
-            <a :class="{on: serachBy == 'filter'}" href="javascript:" class="tab_swi_a">筛选</a>
+          <li class="tabslist">
+            <a :class="{on: serachBy == 'filter'}" @click="activeSort('filter')" href="javascript:" class="tab_swi_a">筛选</a>
+            <transition name="showlist">
+              <div class="search_tab" v-show="serachBy == 'filter'">
+                <!-- 筛选菜单 -->
+                <div class="sidebar shai">
+                  <!-- 主体 -->
+                  <div class="main">
+                    <div class="qujian_zone" v-for="(item, indexs) in screen" :key="indexs">
+                      <div class="info_tit">
+                        <h3><span></span>{{item.title}}</h3>
+                      </div>
+                      <ul class="staus_sele">
+                        <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" @click="selectClassIds(indexs,index,items.id)">
+                          <span :class="{on: selectScreen[indexs].classlist[index].status}">{{items.name}}</span>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <!-- 底部操作区 -->
+                  <div class="bottom_ctrl">
+                    <div class="cls_num"><span>10000</span>门课程</div>
+                    <div class="reset" data-role="reset">重置</div>
+                    <div class="ok">确认</div>
+                  </div>
+                </div>
+              </div>
+            </transition>
           </li>
         </ul>
           <!-- 搜索选项卡 -->
         <div class="search_tabs">
-            <!-- 单个选项卡 -->
-          <transition name="showlist">
-            <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
-              <div class="left_area">
-                <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
-              </div>
-              <div class="right_area">
-                <div class="right_area_d">
-                  <div class="rigth_third">
-                    <a href="javascript:;" class="switch_a area_r mar_l">全部</a>
-                  </div>
-                  <div class="right_third">
-                    <a href="javascript:;" class="switch_a area_r mar_l third_menu on">双榆树</a>
-                    <div class="third_menu_con current">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>	
-              </div>
-            </div>
-          </transition>
-          <transition name="showlist">
-            <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
-              <div class="left_area">
-                <p v-for="(value,index) in classArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
-              </div>
-              <div class="right_area">
-                <div class="right_area_d">
-                  <div class="rigth_third">
-                    <a href="javascript:;" class="switch_a area_r mar_l">全部</a>
-                  </div>
-                  <div class="right_third">
-                    <a  :class="{active: isActive == 1}" href="javascript:;" class="switch_a area_r mar_l third_menu" @click="clickActive(1)">双榆树</a>
-                    <div class="third_menu_con" v-show="isActive == 1">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="right_third">
-                    <a :class="{active: isActive == 2}" href="javascript:;" class="switch_a area_r mar_l third_menu" @click="clickActive(2)">双榆树</a>
-                    <div class="third_menu_con" v-show="isActive == 2">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="right_third">
-                    <a :class="{active: isActive == 3}" href="javascript:;" class="switch_a area_r mar_l third_menu" @click="clickActive(3)">中关村</a>
-                    <div class="third_menu_con" v-show="isActive == 3">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="right_third">
-                    <a :class="{active: isActive == 4}" href="javascript:;" class="switch_a area_r mar_l third_menu" @click="clickActive(4)">中关村</a>
-                    <div class="third_menu_con" v-show="isActive == 4">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="right_third">
-                    <a :class="{active: isActive == 5}" href="javascript:;" class="switch_a area_r mar_l third_menu" @click="clickActive(5)">中关村</a>
-                    <div class="third_menu_con" v-show="isActive == 5">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="right_third">
-                    <a :class="{active: isActive == 6}" href="javascript:;" class="switch_a area_r mar_l third_menu">中关村</a>
-                    <div class="third_menu_con" v-show="isActive == 6" @click="clickActive(6)">
-                      <ul>
-                        <li><a href="javascript:;">雅思</a></li>
-                        <li><a href="javascript:;">SAT</a></li>
-                        <li><a href="javascript:;">托福</a></li>
-                        <li><a href="javascript:;">留学预科</a></li>
-                        <li><a href="javascript:;">ACT</a></li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>	
-              </div>
-            </div>
-          </transition>
-          <transition name="showlist">
-            <div class="search_tab min_hieght" v-show="serachBy == 'sort'"> 
-              <ul class="localtion_list sort_list">
-                <li><i class="icon_bg_1"></i><a href="">智能排序</a></li>
-                <li><i class="icon_bg_2"></i><a href="">离我最近</a></li>
-                <li><i class="icon_bg_3"></i><a href="">人气最高</a></li>
-                <li><i class="icon_bg_4"></i><a href="">老师好评</a></li>
-                <li><i class="icon_bg_5"></i><a href="">价格最高</a></li>
-                <li><i class="icon_bg_6"></i><a href="">价格最低</a></li>
-              </ul>
-            </div>
-          </transition>
-          <transition name="showlist">
-            <div class="search_tab" v-show="serachBy == 'filter'">
-              <!-- 筛选菜单 -->
-              <div class="sidebar shai">
-                <!-- 主体 -->
-                <div class="main">
-                  <div class="qujian_zone" v-for="(item, indexs) in screen" :key="indexs">
-                    <div class="info_tit">
-                      <h3><span></span>{{item.title}}</h3>
-                    </div>
-                    <ul class="staus_sele">
-                      <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" @click="selectClassIds(indexs,index,items.id)">
-                        <span :class="{on: selectScreen[indexs].classlist[index].status}">{{items.name}}</span>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <!-- 底部操作区 -->
-                <div class="bottom_ctrl">
-                  <div class="cls_num"><span>10000</span>门课程</div>
-                  <div class="reset" data-role="reset">重置</div>
-                  <div class="ok">确认</div>
-                </div>
-              </div>
-            </div>
-          </transition>
         </div>
         <transition name="showcover"> 
           <div class="back_cover" v-show="serachBy"></div>
@@ -211,13 +138,20 @@
   </div>
 </template>
 <script>
-  // import Updownload from '~components/common/Updownload.vue'
+  import axios from '~plugins/axios'
+  import {syncClass} from '../ajax/getData'
   export default {
+    async asyncData () {
+      let { data } = await axios.get('/api/courseList')
+      return {
+        classGrade: data
+      }
+    },
     data () {
       return {
         changeActivated: 0,
         cityArr: '',
-        classArr: '',
+        classGrade: '',
         serachBy: null,
         isActive: '',
         selectScreen: [],
@@ -274,16 +208,18 @@
         ]
       }
     },
+    components: {
+      axios
+    },
     created () {
       this.init()
     },
     mounted () {
-      this.chooseActive()
+      this.changeActivated = 0
     },
     methods: {
-      init () {
-        this.classArr = ['艺术', '其它', '体育', '语言', '留学', '小学', '小升初', '初中', '中考', '高中', '益智', '高考', '学前', '营地', '其它']
-        this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
+      async init () {
+        // 筛选数组赋值
         this.screen.forEach((item) => {
           // 每次外循环 声明空变量
           let listobj = {classlist: []}
@@ -294,10 +230,18 @@
           // 把每块push进去
           this.selectScreen.push(listobj)
         })
+        this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
+      },
+      async getclass (id) {
+        
       },
       // 定位左侧选中
-      chooseActive (index) {
+      async chooseActive (index,id) {
         this.changeActivated = index
+        // 获取右侧对应的数据
+        console.log('开始请求')
+        this.classGrade = await syncClass(id)
+        console.log('请求回来')
       },
       // 展示对应的下拉分类
       async activeSort (type) {
@@ -395,218 +339,13 @@ header
   z-index: 1100
   .order_sort_u
     width: 100%
-    overflow: hidden
-    border-bottom: 1px solid #ccc
-    .search_tab
-      .localtion_list
-        background: #fff
-        overflow-y:scroll
-        min-height: 250px
-        max-height: 350px
-        li
-          height: 45px
-          border-bottom: 1px solid 
-          margin-left: 33px
-          position: relative
-          i
-            float: left
-            display: none
-            width: 14px
-            height: 11px
-            background: url('/img/ok_go.png')no-repeat
-            background-size: 15px 
-            position: absolute
-            top: 16px
-            left: -20px
-            &.on
-              display: inline-block
-          a
-            display: inline-block
-            float: left
-            width: 85%
-            height: 100%
-            font-size: 1.4rem
-            -webkit-tap-highlight-color: transparent
-            position: relative
-            &.on
-              color:#ef4040
-          
-          span
-            float:left
-            font-size: 1.4rem
-            &.on
-              color:#ef4040
-      .sort_list
-        max-height: 300px
-        li
-          border-bottom: 1px solid #bbb
-          i
-            display: block
-            width: 17px
-            height: 17px
-            top: 12px
-            left: -23px
-          a
-            font-size: 1.4rem
-            display: inline-block
-            float: left
-
-        .icon_bg_1
-          background: url('/img/icon_sort_lisrt.png')no-repeat
-          background-size: 17px 17px 
-        
-        .icon_bg_2
-          background: url('/img/icon_me_jin.png')no-repeat
-          background-size: 17px 17px 
-        
-        .icon_bg_3
-          background: url('/img/icon_mast_star.png')no-repeat
-          background-size: 17px 17px 
-        
-        .icon_bg_4
-          background: url('/img/icon_teacher_good.png')no-repeat
-          background-size: 17px 17px 
-        
-        .icon_bg_5
-          background: url('/img/icon_pay_big.png')no-repeat
-          background-size: 17px 17px 
-        
-        .icon_bg_6
-          background: url('/img/icon_pay_big.png')no-repeat
-          background-size: 17px 17px
-      .sidebar
-        max-height: 360px
-        min-height: 360px
-        overflow-y: scroll
-        &.shai
-          width: 100%
-          background: #fff
-          // 主体区域
-          .main
-            max-height: 100%
-            overflow-y: auto
-            // padding: 17px 0 10px 15px
-            padding-bottom: 4.5rem
-            .info_tit
-              h3
-                height: 30px
-                background: #eee
-                line-height: 30px
-                span
-                  display: inline-block
-                  height: 12px
-                  margin-right: 8px
-                  border-left: 2px solid #ef4040
-                  position: relative
-                  top: 2px
-            .staus_sele
-              overflow: hidden
-              border-bottom: 1px solid #eee
-              padding: 5px 10px 5px 0px
-              li
-                width: 25%
-                padding-left: 10px
-                float: left
-                &.on
-                  span
-                    color: #fff
-                    background: #e4393c
-                span
-                  text-align: center
-                  border: 1px solid #e4393c
-                  border-radius: 2px solid #eee
-                  display: inline-block
-                  width: 100%
-                  height: 100%
-                  line-height: 26px 
-                  border-radius: 50px
-                  border-color: #bbb
-                  color: #333
-                  font-size: 1.1rem
-                  &.on
-                    border-color: #e4393c 
-                    background: #fde8e8
-                    color: #e4393c
-          // 区间选择
-          // --公共部分
-          .qujian_zone
-            .title
-              padding: 0 15px 0 0
-              margin: 10px 0 8px 0
-              p
-                font-size: 1.4rem
-                color: #484848
-                background: url(/img/shai_arrow.png) no-repeat right center
-                background-size: 13px 8px
-                padding: 0 15px 0 0
-            // 时间区域
-            .time_zone
-              .time_tit
-                overflow: hidden
-                margin: 0 0 14px 0
-                .num_box,span
-                  display: inline-block
-                  float:left
-                .num_box
-                  width: 65px
-                  height: 25px
-                  line-height: 25px
-                  background: #eee
-                  padding: 0 5px
-                span
-                  color: #999
-                  margin: 2px 4px 0 4px
-            // 底部操作区
-          .bottom_ctrl
-            width: 100%
-            height: 50px
-            overflow: hidden
-            background: #e7e7e7
-            position: absolute
-            left: 0
-            bottom: 0
-            .cls_num,.reset,.ok
-              font-size: 1.4rem
-              line-height: 42px
-              text-align: center
-              float: left
-            .cls_num
-              width: 50%
-              color: #888
-              line-height: 50px
-              span
-                color: #888
-            .reset
-              background: #fff
-              color: #999
-              width: 80px
-              height: 35px
-              border: 1px solid #ddd
-              line-height: 35px
-              float: right
-              margin-top: 7px
-              margin-right: 10px
-              border-radius: 3px
-            .ok
-              background: #ef4040
-              color: #fff
-              width: 80px
-              height: 35px
-              border: 1px solid #ef4040
-              line-height: 35px
-              margin-top: 7px
-              float:right
-              margin-right: 10px
-              border-radius: 3px
-    &.three
-      li
-        width: 33.33%
-    li
+    position: relative
+    // overflow: hidden
+    .tabslist
       width: 25%
       float: left
       background: url("/img/smart_line.png") no-repeat right center
       background-size: 1px 20px
-      text-align: center
       &.last
         background-image: none
         position: relative
@@ -631,233 +370,242 @@ header
             &.on
               color: #ef3f41
               background: none
-      a
+      >a
         font-size: 1.4rem
         text-decoration: none
         color: #484848
         display: inline-block
         height: 100%
-        background: url("/img/sorting_01.png") no-repeat right 19px	
+        width: 100%
+        text-align: center
+        background: url("/img/sorting_01.png") no-repeat 80% 19px	
         background-size: 10px 5px
         padding-right: 12px
         -webkit-tap-highlight-color: transparent
+        border-bottom: 1px solid #ccc
         &.on
           color: #ef3f41
           background-image: url("/img/sorting_02.png")
-          background-position: right 19px
+          background-position: 80% 19px
+      .search_tab
+        position: absolute
+        top: 45px
+        left: 0
+        width: 100%
+        z-index: 100
+        .localtion_list
+          background: #fff
+          overflow-y:scroll
+          min-height: 250px
+          max-height: 350px
+          li
+            height: 45px
+            border-bottom: 1px solid 
+            margin-left: 33px
+            position: relative
+            i
+              float: left
+              display: none
+              width: 14px
+              height: 11px
+              background: url('/img/ok_go.png')no-repeat
+              background-size: 15px 
+              position: absolute
+              top: 16px
+              left: -20px
+              &.on
+                display: inline-block
+            a
+              display: inline-block
+              float: left
+              width: 85%
+              height: 100%
+              font-size: 1.4rem
+              -webkit-tap-highlight-color: transparent
+              position: relative
+              &.on
+                color:#ef4040
+            
+            span
+              float:left
+              font-size: 1.4rem
+              &.on
+                color:#ef4040
+        .sort_list
+          max-height: 300px
+          li
+            border-bottom: 1px solid #bbb
+            i
+              display: block
+              width: 17px
+              height: 17px
+              top: 12px
+              left: -23px
+            a
+              font-size: 1.4rem
+              display: inline-block
+              float: left
+
+          .icon_bg_1
+            background: url('/img/icon_sort_lisrt.png')no-repeat
+            background-size: 17px 17px 
+          
+          .icon_bg_2
+            background: url('/img/icon_me_jin.png')no-repeat
+            background-size: 17px 17px 
+          
+          .icon_bg_3
+            background: url('/img/icon_mast_star.png')no-repeat
+            background-size: 17px 17px 
+          
+          .icon_bg_4
+            background: url('/img/icon_teacher_good.png')no-repeat
+            background-size: 17px 17px 
+          
+          .icon_bg_5
+            background: url('/img/icon_pay_big.png')no-repeat
+            background-size: 17px 17px 
+          
+          .icon_bg_6
+            background: url('/img/icon_pay_big.png')no-repeat
+            background-size: 17px 17px
+        .sidebar
+          max-height: 360px
+          min-height: 360px
+          overflow-y: scroll
+          &.shai
+            width: 100%
+            background: #fff
+            // 主体区域
+            .main
+              max-height: 100%
+              overflow-y: auto
+              // padding: 17px 0 10px 15px
+              padding-bottom: 4.5rem
+              .info_tit
+                h3
+                  height: 30px
+                  background: #eee
+                  line-height: 30px
+                  span
+                    display: inline-block
+                    height: 12px
+                    margin-right: 8px
+                    border-left: 2px solid #ef4040
+                    position: relative
+                    top: 2px
+              .staus_sele
+                overflow: hidden
+                border-bottom: 1px solid #eee
+                padding: 5px 10px 5px 0px
+                li
+                  width: 25%
+                  padding-left: 10px
+                  float: left
+                  &.on
+                    span
+                      color: #fff
+                      background: #e4393c
+                  span
+                    text-align: center
+                    border: 1px solid #e4393c
+                    border-radius: 2px solid #eee
+                    display: inline-block
+                    width: 100%
+                    height: 100%
+                    line-height: 26px 
+                    border-radius: 50px
+                    border-color: #bbb
+                    color: #333
+                    font-size: 1.1rem
+                    &.on
+                      border-color: #e4393c 
+                      background: #fde8e8
+                      color: #e4393c
+            // 区间选择
+            // --公共部分
+            .qujian_zone
+              .title
+                padding: 0 15px 0 0
+                margin: 10px 0 8px 0
+                p
+                  font-size: 1.4rem
+                  color: #484848
+                  background: url(/img/shai_arrow.png) no-repeat right center
+                  background-size: 13px 8px
+                  padding: 0 15px 0 0
+              // 时间区域
+              .time_zone
+                .time_tit
+                  overflow: hidden
+                  margin: 0 0 14px 0
+                  .num_box,span
+                    display: inline-block
+                    float:left
+                  .num_box
+                    width: 65px
+                    height: 25px
+                    line-height: 25px
+                    background: #eee
+                    padding: 0 5px
+                  span
+                    color: #999
+                    margin: 2px 4px 0 4px
+              // 底部操作区
+            .bottom_ctrl
+              width: 100%
+              height: 50px
+              overflow: hidden
+              background: #e7e7e7
+              position: absolute
+              left: 0
+              bottom: 0
+              .cls_num,.reset,.ok
+                font-size: 1.4rem
+                line-height: 42px
+                text-align: center
+                float: left
+              .cls_num
+                width: 50%
+                color: #888
+                line-height: 50px
+                span
+                  color: #888
+              .reset
+                background: #fff
+                color: #999
+                width: 80px
+                height: 35px
+                border: 1px solid #ddd
+                line-height: 35px
+                float: right
+                margin-top: 7px
+                margin-right: 10px
+                border-radius: 3px
+              .ok
+                background: #ef4040
+                color: #fff
+                width: 80px
+                height: 35px
+                border: 1px solid #ef4040
+                line-height: 35px
+                margin-top: 7px
+                float:right
+                margin-right: 10px
+                border-radius: 3px
+
 .search_tabs
   position: relative
   overflow: hidden
   width: 100%
-  .search_tab
-    .localtion_list
-      background: #fff
-      overflow-y:scroll
-      min-height: 250px
-      max-height: 350px
-      li
-        height: 45px
-        border-bottom: 1px solid 
-        margin-left: 33px
-        position: relative
-        i
-          float: left
-          display: none
-          width: 14px
-          height: 11px
-          background: url('/img/ok_go.png')no-repeat
-          background-size: 15px 
-          position: absolute
-          top: 16px
-          left: -20px
-          &.on
-            display: inline-block
-        a
-          display: inline-block
-          float: left
-          width: 85%
-          height: 100%
-          font-size: 1.4rem
-          -webkit-tap-highlight-color: transparent
-          position: relative
-          &.on
-            color:#ef4040
-        
-        span
-          float:left
-          font-size: 1.4rem
-          &.on
-            color:#ef4040
-    .sort_list
-      max-height: 300px
-      li
-        border-bottom: 1px solid #bbb
-        i
-          display: block
-          width: 17px
-          height: 17px
-          top: 12px
-          left: -23px
-        a
-          font-size: 1.4rem
-          display: inline-block
-          float: left
-
-      .icon_bg_1
-        background: url('/img/icon_sort_lisrt.png')no-repeat
-        background-size: 17px 17px 
-      
-      .icon_bg_2
-        background: url('/img/icon_me_jin.png')no-repeat
-        background-size: 17px 17px 
-      
-      .icon_bg_3
-        background: url('/img/icon_mast_star.png')no-repeat
-        background-size: 17px 17px 
-      
-      .icon_bg_4
-        background: url('/img/icon_teacher_good.png')no-repeat
-        background-size: 17px 17px 
-      
-      .icon_bg_5
-        background: url('/img/icon_pay_big.png')no-repeat
-        background-size: 17px 17px 
-      
-      .icon_bg_6
-        background: url('/img/icon_pay_big.png')no-repeat
-        background-size: 17px 17px
-    .sidebar
-      max-height: 360px
-      min-height: 360px
-      overflow-y: scroll
-      &.shai
-        width: 100%
-        background: #fff
-        // 主体区域
-        .main
-          max-height: 100%
-          overflow-y: auto
-          // padding: 17px 0 10px 15px
-          padding-bottom: 4.5rem
-          .info_tit
-            h3
-              height: 30px
-              background: #eee
-              line-height: 30px
-              span
-                display: inline-block
-                height: 12px
-                margin-right: 8px
-                border-left: 2px solid #ef4040
-                position: relative
-                top: 2px
-          .staus_sele
-            overflow: hidden
-            border-bottom: 1px solid #eee
-            padding: 5px 10px 5px 0px
-            li
-              width: 25%
-              padding-left: 10px
-              float: left
-              &.on
-                span
-                  color: #fff
-                  background: #e4393c
-              span
-                text-align: center
-                border: 1px solid #e4393c
-                border-radius: 2px solid #eee
-                display: inline-block
-                width: 100%
-                height: 100%
-                line-height: 26px 
-                border-radius: 50px
-                border-color: #bbb
-                color: #333
-                font-size: 1.1rem
-                &.on
-                  border-color: #e4393c 
-                  background: #fde8e8
-                  color: #e4393c
-        // 区间选择
-        // --公共部分
-        .qujian_zone
-          .title
-            padding: 0 15px 0 0
-            margin: 10px 0 8px 0
-            p
-              font-size: 1.4rem
-              color: #484848
-              background: url(/img/shai_arrow.png) no-repeat right center
-              background-size: 13px 8px
-              padding: 0 15px 0 0
-          // 时间区域
-          .time_zone
-            .time_tit
-              overflow: hidden
-              margin: 0 0 14px 0
-              .num_box,span
-                display: inline-block
-                float:left
-              .num_box
-                width: 65px
-                height: 25px
-                line-height: 25px
-                background: #eee
-                padding: 0 5px
-              span
-                color: #999
-                margin: 2px 4px 0 4px
-          // 底部操作区
-        .bottom_ctrl
-          width: 100%
-          height: 50px
-          overflow: hidden
-          background: #e7e7e7
-          position: absolute
-          left: 0
-          bottom: 0
-          .cls_num,.reset,.ok
-            font-size: 1.4rem
-            line-height: 42px
-            text-align: center
-            float: left
-          .cls_num
-            width: 50%
-            color: #888
-            line-height: 50px
-            span
-              color: #888
-          .reset
-            background: #fff
-            color: #999
-            width: 80px
-            height: 35px
-            border: 1px solid #ddd
-            line-height: 35px
-            float: right
-            margin-top: 7px
-            margin-right: 10px
-            border-radius: 3px
-          .ok
-            background: #ef4040
-            color: #fff
-            width: 80px
-            height: 35px
-            border: 1px solid #ef4040
-            line-height: 35px
-            margin-top: 7px
-            float:right
-            margin-right: 10px
-            border-radius: 3px
 .showlist-enter-active, .showlist-leave-active
-  transition: all .3s
+  transition: all .2s
   transform: translateY(0)
 .showlist-enter, .showlist-leave-active
   opacity: 0
   transform: translateY(-100%)
 .showcover-enter-active, .showcover-leave-active
-  transition: opacity .3s
+  transition: opacity .2s
 .showcover-enter, .showcover-leave-active
   opacity: 0
 #courseClass,#citylocation
