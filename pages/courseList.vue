@@ -239,9 +239,7 @@
       async chooseActive (index,id) {
         this.changeActivated = index
         // 获取右侧对应的数据
-        console.log('开始请求')
         this.classGrade = await syncClass(id)
-        console.log('请求回来')
       },
       // 展示对应的下拉分类
       async activeSort (type) {
