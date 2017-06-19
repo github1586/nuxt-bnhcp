@@ -232,16 +232,11 @@
         })
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
       },
-      async getclass (id) {
-        
-      },
       // 定位左侧选中
-      async chooseActive (index,id) {
+      async chooseActive (index, id) {
         this.changeActivated = index
         // 获取右侧对应的数据
-        console.log('开始请求')
         this.classGrade = await syncClass(id)
-        console.log('请求回来')
       },
       // 展示对应的下拉分类
       async activeSort (type) {
