@@ -110,7 +110,7 @@
                         <h3><span></span>{{item.title}}</h3>
                       </div>
                       <ul class="staus_sele">
-                        <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" @click="selectClassIds(indexs,index,items.id)">
+                        <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" :filter-id="items.id" @click="selectClassIds(indexs,index,items.id)">
                           <span :class="{on: selectScreen[indexs].classlist[index].status}">{{items.name}}</span>
                         </li>
                       </ul>
@@ -139,7 +139,7 @@
 </template>
 <script>
   import axios from '~plugins/axios'
-  import {syncClass} from '../ajax/getData'
+  import {syncClass, filter} from '../ajax/getData'
   export default {
     async asyncData () {
       let { data } = await axios.get('/api/courseList')
@@ -154,58 +154,11 @@
         classGrade: '',
         serachBy: null,
         isActive: '',
+        // 选中筛选的数组 保存状态
         selectScreen: [],
-        screen: [
-          {
-            title: '班级类型',
-            classlist: [
-              {name: '免费试听', id: 'cdvd65v4568d8v4515'},
-              {name: '随时插班', id: 'cdvdvcs6456d65v8d8v4515'},
-              {name: '随时退班', id: 'cdvd6554654vfdv4515'},
-              {name: '未开课', id: 'cdvd65e456456dff8v4515'}
-            ]
-          },
-          {
-            title: '活动优惠',
-            classlist: [
-              {name: '连报优惠', id: 'cdvd65464565v8d8v4515'},
-              {name: '限时团购', id: 'cdvd45645754645667vcsd2165v8d8v4515'},
-              {name: '折扣', id: 'cdvd65645654646756dsfgd8v4515'},
-              {name: '立减', id: 'cdvd455456456565vfdv4515'}
-            ]
-          },
-          {
-            title: '上课时间',
-            classlist: [
-              {name: '周一', id: 'cdvd4545534546365v8d8v4515'},
-              {name: '周二', id: 'cdvdv454csd4545665v23238d8v4515'},
-              {name: '周三', id: 'cdvd4365dsf456456gd8v23224515'},
-              {name: '周四', id: 'cdvd45635435464565vfdv4515'},
-              {name: '周五', id: 'cdv5435d65ed546546ff8v4515'},
-              {name: '周六', id: 'cdv3554d65ed456546ff8v4515'},
-              {name: '周日', id: 'cdvd54646456645645665edff8v4515'}
-            ]
-          },
-          {
-            title: '具体时间',
-            classlist: [
-              {name: '上午', id: '576ut76547654erty'},
-              {name: '下午', id: 'cdvdvcsdefe45654645654df65546v8d8v4515'},
-              {name: '晚上', id: 'cdvd6fefew67456576f5dsfgd8v4515'}
-            ]
-          },
-          {
-            title: '价格区间',
-            classlist: [
-              {name: '0~1000', id: '576ut56765765erty'},
-              {name: '1000~3000', id: '5767567uterty'},
-              {name: '3000~5000', id: '576u756756terty'},
-              {name: '5000~7000', id: '576u65756te76567rty'},
-              {name: '7000~9000', id: '576ut76567erty'},
-              {name: '9000以上', id: '576ut67567erty'}
-            ]
-          }
-        ]
+        // 筛选数组
+        filterArr: '',
+        screen: ''
       }
     },
     components: {
@@ -218,8 +171,12 @@
       this.changeActivated = 0
     },
     methods: {
-      async init () {
-        // 筛选数组赋值
+      init () {
+        this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
+      },
+      async filterdata () {
+        this.screen = await filter()
+        // 筛选数组状态赋值 取反
         this.screen.forEach((item) => {
           // 每次外循环 声明空变量
           let listobj = {classlist: []}
@@ -230,7 +187,6 @@
           // 把每块push进去
           this.selectScreen.push(listobj)
         })
-        this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
       },
       // 定位左侧选中
       async chooseActive (index, id) {
@@ -240,6 +196,10 @@
       },
       // 展示对应的下拉分类
       async activeSort (type) {
+        if (type === 'filter' && this.screen.length === 0) {
+          // 调用渲染数据
+          this.filterdata()
+        }
         if (this.serachBy !== type) {
           this.serachBy = type
         } else {
