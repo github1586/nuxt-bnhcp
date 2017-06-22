@@ -21,7 +21,7 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    vendor: ['axios'],
+    vendor: ['axios', 'babel-polyfill'],
     /*
     ** Run ESLINT on save
     */
@@ -30,7 +30,7 @@ module.exports = {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
+          // loader: 'eslint-loader',
           exclude: /(node_modules)/
         })
       }

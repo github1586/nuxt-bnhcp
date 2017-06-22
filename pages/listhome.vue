@@ -134,36 +134,47 @@
           <div class="back_cover" v-show="serachBy"></div>
         </transition>
       </div>
+      <div class="courselist">
+        <course-list></course-list>
+      </div>
     </div>
   </div>
 </template>
 <script>
   import {mapState, mapMutations} from 'vuex'
   import axios from '~plugins/axios'
+  import courseList from '~components/common/courselist.vue'
+  import {mapState, mapMutations} from 'vuex'
   import {syncClass, filter} from '../ajax/getData'
   export default {
     async asyncData () {
-      let { data } = await axios.get('/api/courseList')
+      let { data } = await axios.get('/api/listhome')
       return {
         classGrade: data
       }
     },
     data () {
       return {
+        // 位置左侧是选中的id
         changeActivated: 0,
+        // 城市数组
         cityArr: '',
+        // 分类数组
         classGrade: '',
+        // 展示下拉的控制变量
         serachBy: null,
         isActive: '',
         // 选中筛选的数组 保存状态
         selectScreen: [],
         // 筛选数组
         filterArr: '',
+        // 筛选的请求来的展示数据
         screen: ''
       }
     },
     components: {
-      axios
+      axios,
+      courseList
     },
     created () {
       this.init()
@@ -176,9 +187,18 @@
     mounted () {
       this.changeActivated = 0
     },
+    computed: {
+      ...mapState([
+        'count'
+      ])
+    },
     methods: {
       ...mapMutations([
+<<<<<<< HEAD:pages/courseList.vue
         'RECORD_ADDRESS'
+=======
+        'TEST_CONST'
+>>>>>>> e755ab4bb4eae08388e3fcb8e663f4186ca8b47d:pages/listhome.vue
       ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
