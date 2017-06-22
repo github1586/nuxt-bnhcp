@@ -1,6 +1,6 @@
 module.exports = {
   helpers: {
-    raw: function(options) {
+    raw: function (options) {
       return options.fn(this)
     }
   },
@@ -22,4 +22,4 @@ module.exports = {
     },
   },
   completeMessage: '{{#inPlace}}To get started:\n\n  npm install # Or yarn\n  npm run dev{{else}}To get started:\n\n  cd {{destDirName}}\n  npm install # Or yarn\n  npm run dev{{/inPlace}}'
-};
+}

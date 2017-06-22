@@ -4,7 +4,7 @@
       <nuxt-link to="/" class="header_back"></nuxt-link>
       <div class="header_sear_sel">
         <div class="drop_down" data-role="selectFang">
-          <span data-role="sel_txt" class="sel_txt">课程</span>
+          <span data-role="sel_txt" class="sel_txt"></span>
           <ul data-role="sel_list" class="sel_list">
             <li>课程</li>
             <li>机构</li>
@@ -21,7 +21,7 @@
         <!-- 选项卡头部 -->
         <ul class="order_sort_u clearfix">
           <li class="tabslist">
-            <a :class="{on: serachBy == 'location'}" href="javascript:" @click="activeSort('location')" class="tab_swi_a">位置</a>
+            <a :class="{on: serachBy == 'location'}" href="javascript:" @click="activeSort('location')" class="tab_swi_a">{{this.$store.state.count}}</a>
             <transition name="showlist">
               <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
                 <div class="left_area">
@@ -138,6 +138,7 @@
   </div>
 </template>
 <script>
+  import {mapState, mapMutations} from 'vuex'
   import axios from '~plugins/axios'
   import {syncClass, filter} from '../ajax/getData'
   export default {
@@ -167,10 +168,18 @@
     created () {
       this.init()
     },
+    computed: {
+      ...mapState([
+        'count'
+      ])
+    },
     mounted () {
       this.changeActivated = 0
     },
     methods: {
+      ...mapMutations([
+        'RECORD_ADDRESS'
+      ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
       },
@@ -196,6 +205,7 @@
       },
       // 展示对应的下拉分类
       async activeSort (type) {
+        this.RECORD_ADDRESS('博博')
         if (type === 'filter' && this.screen.length === 0) {
           // 调用渲染数据
           this.filterdata()
