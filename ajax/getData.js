@@ -9,3 +9,8 @@ export const syncClass = classId => fetch('/api/listhome/' + classId)
  * 筛选条件下拉的展示请求
 */
 export const filter = () => fetch('/api/listhome/filter/data')
+
+/**
+ * 获取课程列表
+*/
+export const courselist = () => fetch('/api/courselist')

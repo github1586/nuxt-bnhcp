@@ -1,4 +1,5 @@
-import getStyle from '../config/configinfo.js'
+import {getStyle} from '../config/configinfo.js'
+
 export const loadMore = {
   directives: {
     'load-more': {
@@ -23,9 +24,8 @@ export const loadMore = {
         }
 
         el.addEventListener('touchstart', () => {
-          height = heightEl.clientHeight
           if (scrollType === 2) {
-            height = height
+            height = heightEl.clientHeight
           }
           setTop = el.offsetTop
           paddingBottom = getStyle(el, 'paddingBottom')

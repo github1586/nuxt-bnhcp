@@ -38,9 +38,53 @@
         </div>
       </li>
     </ul>
+		<p class="empty_data" @click="change(888)">没有更多课程</p>
   </div>
 </template>
-<style lang="sass">
+
+<script>
+import {mapState,mapMutations} from 'vuex'
+import {loadMore} from '../mixin/mixin.js'
+import axios from '~plugins/axios'
+export default {
+	async asyncData () {
+		let {data} =await axios.get('/api/listhome/courselist')
+		return {
+			data: data
+		}
+	},
+  data () {
+    return {
+      offset: 0,
+      couresListArr: [],
+      preventRepeatreuqest: false,
+      touchend: false
+    }
+  },
+  mounted () {
+  },
+  mixins: [loadMore],
+  computed: {
+    ...mapState([
+      'count','num'
+    ])
+  },
+  methods: {
+		...mapMutations([
+			'TEST_CONST'
+		]),
+    change (n) {
+			this.TEST_CONST(n)
+    }
+  },
+  watch: {
+
+  }
+}
+</script>
+
+<style lang="sass" scoped>
+@import '~static/common/style.sass'
 .ser_rel_list
 	.ser_rel_con
 		background: #fff
@@ -260,4 +304,8 @@
 				background-size: 1.1rem 1.1rem 
 			&.on
 				float: right
+.empty_data
+		@include sc(0.5rem, #666)
+		text-align: center
+		line-height: 2rem
 </style>
