@@ -7,7 +7,7 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
   url = baseUrl + url
 
   if (type === 'GET') {
-// 数据拼接字符串
+    // 数据拼接字符串
     let dataStr = ''
     Object.keys(data).forEach(key => {
       dataStr += key + '=' + data[key] + '&'

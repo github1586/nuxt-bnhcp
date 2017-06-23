@@ -1,34 +1,34 @@
 <template>
   <div class="coureslist_container">
     <ul v-load-more="loaderMore">
-      <router-link tag='li' :to="{path: '/'}" :key="index" v-for="(coures, index) in couresListArr">
+      <router-link tag='li' :to="{path: '/'}" :key="index" v-for="(items, index) in couresListArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
             <div class="content_txt_box">
               <a href="#" class="con_l">
-                <img src="img/kechen_t.png" width="100%" height="62" alt="" />
-                <i class="name_teac">张淼</i>
+                <img :src="items.teacher_photo" width="100%" height="62" alt="" />
+                <i class="name_teac">{{items.teacher_name}}</i>
               </a>
               <ul class="con_r on" style="width:80%;padding-left:6px;">
                 <li class="tit_h1">
-                  <h1><i>剑桥Super Safari钢琴私教</i><span class="zhe"></span><span class="tuan"></span><span class="jian"></span></h1>
+                  <h1><i>{{items.name}}</i><span class="zhe"></span><span class="tuan"></span><span class="jian"></span></h1>
                 </li>
-                <li class="school_name">杰瑞教育海淀校区</li>
-                <li class="str_end_time"><span>2015-11-16</span>至<span>2017-04-01</span></li>
-                <li class="week_time">每周一、三、四、无、六、日上课</li>
-                <li class="totle_mon on">&yen<span>5984.00</span><i>&yen7200</i></li>
+                <li class="school_name">{{items.shortName}}{{items.campus_name}}</li>
+                <li class="str_end_time"><span>{{items.open_date}}</span>至<span>{{items.end_date}}</span></li>
+                <li class="week_time">{{items.goods_week}}</li>
+                <li class="totle_mon on">&yen<span>{{items.mall_cost}}</span><i>{{items.cost}}</i></li>
                 <li class="meybe_class">
-                  已报<span>20</span>/<i>100</i>人
-                  <p>12Km</p>
+                  已报<span>{{items.saled}}</span>/<i>{{items.total}}</i>人
+                  <p>{{items.district}}</p>
                 </li>
                 <li class="line_gray"></li>
                 <li>
                   <div class="cls_mark">
                     <ul>
-                      <li><span>随时退班</span></li>
-                      <li><span>随时插班</span></li>
-                      <li><span>免费试听</span></li>
+                      <li v-show="items.retreat_rule == 1"><span>随时退班</span></li>
+                      <li v-show="items.is_transfer == 1"><span>随时插班</span></li>
+                      <li v-show="items.is_audition == 1"><span>免费试听</span></li>
                     </ul>
                   </div>
                 </li>
@@ -39,12 +39,16 @@
       </router-link>
     </ul>
 		<p class="empty_data" @click="change(888)">没有更多课程</p>
-  </div>
+		<transition name="loading">
+			<loading v-show="showLoading"></loading>
+		</transition>
+	</div>
 </template>
 
 <script>
 import {mapState, mapMutations} from 'vuex'
 import {loadMore} from '../mixin/mixin.js'
+import loading from './loading.vue'
 import {courselist} from '../../ajax/getData.js'
 export default {
   data () {
@@ -54,7 +58,9 @@ export default {
       // 课程列表数组
       couresListArr: [],
       // 是否可以请求
-      preventRepeatreuqest: false
+      preventRepeatreuqest: false,
+      // 是否显示加载动画
+      showLoading: false
     }
   },
   mounted () {
@@ -65,6 +71,9 @@ export default {
     ...mapState([
       'count', 'num'
     ])
+  },
+  components: {
+    loading
   },
   methods: {
     ...mapMutations([
@@ -79,9 +88,19 @@ export default {
     },
     // 加载到底部加载更多
     async loaderMore () {
+      // 到达底部防止重复加载
+      if (this.preventRepeatreuqest) {
+        return
+      }
+      // 更改变量为true 禁止再次加载
+      this.preventRepeatreuqest = true
+      this.showLoading = true
       let data = await courselist()
       this.couresListArr = [...this.couresListArr, ...data.data]
-      console.log(this.couresListArr)
+      // 恢复控制变量为false
+      this.preventRepeatreuqest = false
+      // 恢复控制变量为false
+      // this.showLoading = false
     }
   },
   watch: {
@@ -315,4 +334,8 @@ export default {
 		@include sc(1rem, #666)
 		text-align: center
 		line-height: 2rem
+.loading-enter-active, .loading-leave-active
+	transition: opacity 1s
+.loading-enter, .loading-leave-active
+	opacity: 0
 </style>
