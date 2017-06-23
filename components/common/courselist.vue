@@ -1,7 +1,7 @@
 <template>
   <div class="coureslist_container">
-    <ul>
-      <li>
+    <ul v-load-more="loaderMore">
+      <router-link tag='li' :to="{path: '/'}" :key="index" v-for="(coures, index) in couresListArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
@@ -36,45 +36,52 @@
             </div>
           </div>
         </div>
-      </li>
+      </router-link>
     </ul>
 		<p class="empty_data" @click="change(888)">没有更多课程</p>
   </div>
 </template>
 
 <script>
-import {mapState,mapMutations} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 import {loadMore} from '../mixin/mixin.js'
-import axios from '~plugins/axios'
+import {courselist} from '../../ajax/getData.js'
 export default {
-	async asyncData () {
-		let {data} =await axios.get('/api/listhome/courselist')
-		return {
-			data: data
-		}
-	},
   data () {
     return {
+      // 请求条数
       offset: 0,
+      // 课程列表数组
       couresListArr: [],
-      preventRepeatreuqest: false,
-      touchend: false
+      // 是否可以请求
+      preventRepeatreuqest: false
     }
   },
   mounted () {
+    this.initData()
   },
   mixins: [loadMore],
   computed: {
     ...mapState([
-      'count','num'
+      'count', 'num'
     ])
   },
   methods: {
-		...mapMutations([
-			'TEST_CONST'
-		]),
+    ...mapMutations([
+      'TEST_CONST'
+    ]),
+    async initData () {
+      let data = await courselist()
+      this.couresListArr = [...data.data]
+    },
     change (n) {
-			this.TEST_CONST(n)
+      this.TEST_CONST(n)
+    },
+    // 加载到底部加载更多
+    async loaderMore () {
+      let data = await courselist()
+      this.couresListArr = [...this.couresListArr, ...data.data]
+      console.log(this.couresListArr)
     }
   },
   watch: {
@@ -305,7 +312,7 @@ export default {
 			&.on
 				float: right
 .empty_data
-		@include sc(0.5rem, #666)
+		@include sc(1rem, #666)
 		text-align: center
 		line-height: 2rem
 </style>

@@ -1,4 +1,4 @@
-import fetch from '../ajaxconfig/config/fetch'
+import fetch from '../config/async/fetch'
 /**
  * 点击对应课程请求三级分类
  * @param {*一级课程id} classId

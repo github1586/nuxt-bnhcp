@@ -297,7 +297,7 @@ header
   border-bottom: 1px solid #d9d9d9
   background: #fff
   margin: 0 0 10px 0
-  position: relative
+  position: fixed
   z-index: 1100
   .order_sort_u
     width: 100%
@@ -556,6 +556,9 @@ header
                 margin-right: 10px
                 border-radius: 3px
 
+.courselist
+  position: relative
+  top: 52px
 .search_tabs
   position: relative
   overflow: hidden
