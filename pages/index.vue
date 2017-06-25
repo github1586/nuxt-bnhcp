@@ -1,14 +1,16 @@
 
 <template>
-  <div class="body">
-    <Myheader></Myheader>
-    <Carousel></Carousel>
-    <Classification :indexClass="allparentinfo.indexClass"></Classification>
-    <RecommendedSchools></RecommendedSchools>
-    <Grabactivity></Grabactivity>
-    <Courseblock :allparentinfo="allparentinfo.allparentinfo"></Courseblock>
-    <Footertabs></Footertabs>
-  </div>
+  <transition name='index'> 
+    <div class="body">
+      <Myheader></Myheader>
+      <Carousel></Carousel>
+      <Classification :indexClass="allparentinfo.indexClass"></Classification>
+      <RecommendedSchools></RecommendedSchools>
+      <Grabactivity></Grabactivity>
+      <Courseblock :allparentinfo="allparentinfo.allparentinfo"></Courseblock>
+      <Footertabs></Footertabs>
+    </div>
+  </transition> 
 </template>
 <script>
 import Myheader from '~components/home/Myheader.vue'
@@ -21,6 +23,14 @@ import Footertabs from '~components/home/Footertabs.vue'
 import axios from '~plugins/axios'
 
 export default {
+  transition: {
+    name: 'index',
+    mode: 'out-in',
+    beforeEnter: (to, from, next) => {
+      console.log(to)
+      // console.log(from)
+    }
+  },
   // ajax module as axios
   async asyncData () {
     let { data } = await axios.get('/api/')
@@ -90,4 +100,8 @@ export default {
 
   img 
     vertical-align: middle
+  .index-enter-active, .index-leave-active
+    transition: opacity 0.2s
+  .index-enter, .index-leave-active
+    opacity: 0
 </style>

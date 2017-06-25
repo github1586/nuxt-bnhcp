@@ -1,132 +1,129 @@
 <template>
-  <div>
-    <header id="header" class="header">
-      <nuxt-link to="/" class="header_back"></nuxt-link>
-      <div class="header_sear_sel">
-        <div class="drop_down" data-role="selectFang">
-          <span data-role="sel_txt" class="sel_txt">课程</span>
-          <ul data-role="sel_list" class="sel_list">
-            <li>课程</li>
-            <li>机构</li>
+  <transition name=''> 
+    <div>
+      <header id="header" class="header">
+        <nuxt-link to="/" class="header_back"></nuxt-link>
+        <div class="header_sear_sel">
+          <div class="drop_down" data-role="selectFang">
+            <span data-role="sel_txt" class="sel_txt">课程</span>
+            <ul data-role="sel_list" class="sel_list">
+              <li>课程</li>
+              <li>机构</li>
+            </ul>
+          </div>
+          <div class="header_sear_box">
+            <input type="" placeholder="搜索课程、机构" class="header_sear_txt">
+            <a href="javascript: "></a>
+          </div>
+        </div>
+      </header>
+      <div class="container full">
+        <div class="order_sort">
+          <!-- 选项卡头部 -->
+          <ul class="order_sort_u clearfix">
+            <li class="tabslist">
+              <a :class="{on: serachBy == 'location'}" href="javascript:" @click="activeSort('location')" class="tab_swi_a">{{location}}</a>
+              <transition name="showlist">
+                <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
+                  <div class="left_area">
+                    <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
+                  </div>
+                  <div class="right_area">
+                    <div class="right_area_d">
+                      <div class="rigth_third">
+                        <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
+                      </div>
+                      <div class="right_third">
+                        <a href="javascript:;" class="switch_a area_r mar_l third_menu on">双榆树</a>
+                        <div class="third_menu_con current">
+                          <ul>
+                            <li><a href="javascript:;">雅思</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>	
+                  </div>
+                </div>
+              </transition>
+            </li>
+            <li class="tabslist" >
+              <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">{{courseClass}}</a>
+              <transition name="showlist">
+                <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
+                  <div class="left_area">
+                    <p v-for="(value,index) in classGrade.gradeOne"  :key="index" :data-id="value.gradeId"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,value.gradeId)" >{{value.class_name}}</p>
+                  </div>
+                  <div class="right_area">
+                    <div class="right_area_d">
+                      <div class="rigth_third">
+                        <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
+                      </div>
+                      <div class="right_third" v-for="(items,index) in classGrade.gradeTwo" :key="index">
+                        <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
+                        <div class="third_menu_con" v-show="isActive == index">
+                          <ul>
+                            <li v-for="(item,indexs) in classGrade.gradeThree[index]" :key="indexs"><a href="javascript:;" @click="chooseClass(item.threeClass_name, 2)">{{item.threeClass_name}}</a></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>	
+                  </div>
+                </div>
+              </transition>
+            </li>
+            <li class="tabslist">
+              <a :class="{on: serachBy == 'sort'}"  @click="activeSort('sort')" href="javascript:" class="tab_swi_a">{{sort}}</a>
+              <transition name="showlist">
+                <div class="search_tab min_hieght" v-show="serachBy == 'sort'"> 
+                  <ul class="localtion_list sort_list">
+                    <li v-for="(item, index) in sortArr" :key="index" @click="chooseClass(item.name, 3)"><i :class="item.classname"></i><a href="javascript:;">{{item.name}}</a></li>
+                  </ul>
+                </div>
+              </transition>
+            </li>
+            <li class="tabslist">
+              <a :class="{on: serachBy == 'filter'}" @click="activeSort('filter')" href="javascript:" class="tab_swi_a">{{filter}}</a>
+              <transition name="showlist">
+                <div class="search_tab" v-show="serachBy == 'filter'">
+                  <!-- 筛选菜单 -->
+                  <div class="sidebar shai">
+                    <!-- 主体 -->
+                    <div class="main">
+                      <div class="qujian_zone" v-for="(item, indexs) in screen" :key="indexs">
+                        <div class="info_tit">
+                          <h3><span></span>{{item.title}}</h3>
+                        </div>
+                        <ul class="staus_sele">
+                          <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" :filter-id="items.id" @click="selectClassIds(indexs,index,items.id)">
+                            <span :class="{on: selectScreen[indexs].classlist[index].status}">{{items.name}}</span>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                    <!-- 底部操作区 -->
+                    <div class="bottom_ctrl">
+                      <div class="cls_num"><span>10000</span>门课程</div>
+                      <div class="reset" data-role="reset">重置</div>
+                      <div class="ok">确认</div>
+                    </div>
+                  </div>
+                </div>
+              </transition>
+            </li>
           </ul>
+            <!-- 搜索选项卡 -->
+          <div class="search_tabs">
+          </div>
+          <transition name="showcover"> 
+            <div class="back_cover" v-show="serachBy"></div>
+          </transition>
         </div>
-        <div class="header_sear_box">
-          <input type="" placeholder="搜索课程、机构" class="header_sear_txt" />
-          <a href="javascript: "></a>
+        <div class="courselist">
+          <course-list></course-list>
         </div>
-      </div>
-    </header>
-    <div class="container full">
-      <div class="order_sort">
-        <!-- 选项卡头部 -->
-        <ul class="order_sort_u clearfix">
-          <li class="tabslist">
-            <a :class="{on: serachBy == 'location'}" href="javascript:" @click="activeSort('location')" class="tab_swi_a">位置</a>
-            <transition name="showlist">
-              <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
-                <div class="left_area">
-                  <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
-                </div>
-                <div class="right_area">
-                  <div class="right_area_d">
-                    <div class="rigth_third">
-                      <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
-                    </div>
-                    <div class="right_third">
-                      <a href="javascript:;" class="switch_a area_r mar_l third_menu on">双榆树</a>
-                      <div class="third_menu_con current">
-                        <ul>
-                          <li><a href="javascript:;">雅思</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>	
-                </div>
-              </div>
-            </transition>
-          </li>
-          <li class="tabslist" >
-            <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">分类</a>
-            <transition name="showlist">
-              <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
-                <div class="left_area">
-                  <p v-for="(value,index) in classGrade.gradeOne"  :key="index" :data-id="value.gradeId"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,value.gradeId)" >{{value.class_name}}</p>
-                </div>
-                <div class="right_area">
-                  <div class="right_area_d">
-                    <div class="rigth_third">
-                      <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
-                    </div>
-                    <div class="right_third" v-for="(items,index) in classGrade.gradeTwo" :key="index">
-                      <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
-                      <div class="third_menu_con" v-show="isActive == index">
-                        <ul>
-                          <li v-for="(item,indexs) in classGrade.gradeThree[index]" :key="indexs"><a href="javascript:;">{{item.threeClass_name}}</a></li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>	
-                </div>
-              </div>
-            </transition>
-          </li>
-          <li class="tabslist">
-            <a :class="{on: serachBy == 'sort'}"  @click="activeSort('sort')" href="javascript:" class="tab_swi_a">排序</a>
-            <transition name="showlist">
-              <div class="search_tab min_hieght" v-show="serachBy == 'sort'"> 
-                <ul class="localtion_list sort_list">
-                  <li><i class="icon_bg_1"></i><a href="">智能排序</a></li>
-                  <li><i class="icon_bg_2"></i><a href="">离我最近</a></li>
-                  <li><i class="icon_bg_3"></i><a href="">人气最高</a></li>
-                  <li><i class="icon_bg_4"></i><a href="">老师好评</a></li>
-                  <li><i class="icon_bg_5"></i><a href="">价格最高</a></li>
-                  <li><i class="icon_bg_6"></i><a href="">价格最低</a></li>
-                </ul>
-              </div>
-            </transition>
-          </li>
-          <li class="tabslist">
-            <a :class="{on: serachBy == 'filter'}" @click="activeSort('filter')" href="javascript:" class="tab_swi_a">筛选</a>
-            <transition name="showlist">
-              <div class="search_tab" v-show="serachBy == 'filter'">
-                <!-- 筛选菜单 -->
-                <div class="sidebar shai">
-                  <!-- 主体 -->
-                  <div class="main">
-                    <div class="qujian_zone" v-for="(item, indexs) in screen" :key="indexs">
-                      <div class="info_tit">
-                        <h3><span></span>{{item.title}}</h3>
-                      </div>
-                      <ul class="staus_sele">
-                        <li v-for="(items,index) in item.classlist" class="staus" :key="items.id" :filter-id="items.id" @click="selectClassIds(indexs,index,items.id)">
-                          <span :class="{on: selectScreen[indexs].classlist[index].status}">{{items.name}}</span>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <!-- 底部操作区 -->
-                  <div class="bottom_ctrl">
-                    <div class="cls_num"><span>10000</span>门课程</div>
-                    <div class="reset" data-role="reset">重置</div>
-                    <div class="ok">确认</div>
-                  </div>
-                </div>
-              </div>
-            </transition>
-          </li>
-        </ul>
-          <!-- 搜索选项卡 -->
-        <div class="search_tabs">
-        </div>
-        <transition name="showcover"> 
-          <div class="back_cover" v-show="serachBy"></div>
-        </transition>
-      </div>
-      <div class="courselist">
-        <course-list></course-list>
       </div>
     </div>
-  </div>
+  </transition> 
 </template>
 <script>
   import axios from '~plugins/axios'
@@ -134,6 +131,10 @@
   import {mapState, mapMutations} from 'vuex'
   import {syncClass, filter} from '../ajax/getData'
   export default {
+    transition: {
+      name: 'index'
+      // mode: 'out-in'
+    },
     async asyncData () {
       let { data } = await axios.get('/api/listhome')
       return {
@@ -156,7 +157,24 @@
         // 筛选数组
         filterArr: '',
         // 筛选的请求来的展示数据
-        screen: ''
+        screen: '',
+        // 位置
+        location: '位置',
+        // 课程分类
+        courseClass: '分类',
+        // 排序
+        sort: '排序',
+        // 筛选
+        filter: '筛选',
+        // 排序
+        sortArr: [
+          {classname: 'icon_bg_1', name: '智能排序'},
+          {classname: 'icon_bg_2', name: '离我最近'},
+          {classname: 'icon_bg_3', name: '人气最高'},
+          {classname: 'icon_bg_4', name: '老师好评'},
+          {classname: 'icon_bg_5', name: '价格最高'},
+          {classname: 'icon_bg_6', name: '价格最低'}
+        ]
       }
     },
     components: {
@@ -200,6 +218,18 @@
         this.changeActivated = index
         // 获取右侧对应的数据
         this.classGrade = await syncClass(id)
+      },
+      // 选中课程thatn分类
+      chooseClass (value, type) {
+        // if (type === 2) {
+        //   this.courseClass = value
+        // }
+        // if (type === 3) {
+        //   this.sort = value
+        // }
+        type === 2 ? this.courseClass = value : type === 3 ? this.sort = value : ''
+        // 收起下拉
+        this.serachBy = null
       },
       // 展示对应的下拉分类
       async activeSort (type) {
@@ -340,7 +370,7 @@ header
         height: 100%
         width: 100%
         text-align: center
-        background: url("/img/sorting_01.png") no-repeat 80% 19px	
+        background: url("/img/sorting_01.png") no-repeat 85% 19px	
         background-size: 10px 5px
         padding-right: 12px
         -webkit-tap-highlight-color: transparent
@@ -348,7 +378,7 @@ header
         &.on
           color: #ef3f41
           background-image: url("/img/sorting_02.png")
-          background-position: 80% 19px
+          background-position: 85% 19px
       .search_tab
         position: absolute
         top: 45px
@@ -634,5 +664,9 @@ header
   width: 100%
   height: 100%
   z-index: 10
-  background-color: rgba(0,0,0,0.3)                      
+  background-color: rgba(0,0,0,0.3)
+.index-enter-active, .index-leave-active
+  transition: opacity 0.1s
+.index-enter, .index-leave-active
+  opacity: 0            
 </style>

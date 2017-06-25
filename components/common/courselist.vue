@@ -6,10 +6,10 @@
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
             <div class="content_txt_box">
-              <a href="#" class="con_l">
-                <img :src="items.teacher_photo" width="100%" height="62" alt="" />
+              <b href="#" class="con_l">
+                <img :src="items.teacher_photo" width="100%" height="64">
                 <i class="name_teac">{{items.teacher_name}}</i>
-              </a>
+              </b>
               <ul class="con_r on" style="width:80%;padding-left:6px;">
                 <li class="tit_h1">
                   <h1><i>{{items.name}}</i><span class="zhe"></span><span class="tuan"></span><span class="jian"></span></h1>
@@ -100,7 +100,7 @@ export default {
       // 恢复控制变量为false
       this.preventRepeatreuqest = false
       // 恢复控制变量为false
-      // this.showLoading = false
+      this.showLoading = false
     }
   },
   watch: {
