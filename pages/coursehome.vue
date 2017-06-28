@@ -1,5 +1,5 @@
 <template>
-  <transition name=''> 
+  <div>
     <div>
       <header id="header" class="header">
         <nuxt-link to="/" class="header_back"></nuxt-link>
@@ -26,7 +26,7 @@
               <transition name="showlist">
                 <div class="search_tab" id="citylocation" v-show="serachBy == 'location'">
                   <div class="left_area">
-                    <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index)" >{{value}}</p>
+                    <p v-for="(value,index) in cityArr"  :key="index"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,'','location')" >{{value}}</p>
                   </div>
                   <div class="right_area">
                     <div class="right_area_d">
@@ -123,7 +123,9 @@
         </div>
       </div>
     </div>
-  </transition> 
+    <nuxt-child/>
+    <router-view></router-view>
+  </div>
 </template>
 <script>
   import axios from '~plugins/axios'
@@ -131,10 +133,6 @@
   import {mapState, mapMutations} from 'vuex'
   import {syncClass, filter} from '../ajax/getData'
   export default {
-    transition: {
-      name: 'index'
-      // mode: 'out-in'
-    },
     async asyncData () {
       let { data } = await axios.get('/api/listhome')
       return {
@@ -214,19 +212,17 @@
         })
       },
       // 定位左侧选中
-      async chooseActive (index, id) {
+      async chooseActive (index, id, type) {
+        if (type === 'location') {
+          this.changeActivated = index
+          return
+        }
         this.changeActivated = index
         // 获取右侧对应的数据
         this.classGrade = await syncClass(id)
       },
       // 选中课程thatn分类
       chooseClass (value, type) {
-        // if (type === 2) {
-        //   this.courseClass = value
-        // }
-        // if (type === 3) {
-        //   this.sort = value
-        // }
         type === 2 ? this.courseClass = value : type === 3 ? this.sort = value : ''
         // 收起下拉
         this.serachBy = null

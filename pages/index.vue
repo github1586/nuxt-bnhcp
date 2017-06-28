@@ -23,14 +23,6 @@ import Footertabs from '~components/home/Footertabs.vue'
 import axios from '~plugins/axios'
 
 export default {
-  transition: {
-    name: 'index',
-    mode: 'out-in',
-    beforeEnter: (to, from, next) => {
-      console.log(to)
-      // console.log(from)
-    }
-  },
   // ajax module as axios
   async asyncData () {
     let { data } = await axios.get('/api/')

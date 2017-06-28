@@ -184,3 +184,10 @@ header.new_header .right_bar .icon_btn {
   background: url(../img/icon_point.png) no-repeat 19px 15px;
   background-size: 16px 4px;
 }
+
+.page-enter-active, .page-leave-active {
+  transition: opacity .4s;
+}
+.page-enter, .page-leave-active {
+  opacity: 0;
+}
