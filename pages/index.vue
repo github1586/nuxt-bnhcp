@@ -47,9 +47,10 @@ export default {
   }
 }
 </script>
-<style lang="sass">
+<style lang="sass" scoped>
   .body
     background: #eee
+    padding-top: 44px
   html 
     width: 100%
     height: 100%

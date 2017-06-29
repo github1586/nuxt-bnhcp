@@ -1,7 +1,7 @@
 <template>
   <div class="coureslist_container">
     <ul v-load-more="loaderMore">
-      <router-link tag='li' :to="{path: 'coursehome/courseDetail'}" :key="index" v-for="(items, index) in couresListArr">
+      <router-link tag='li' :to="{path: 'courseDetail/courseDetail'}" :key="index" v-for="(items, index) in couresListArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">

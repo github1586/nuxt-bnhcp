@@ -123,8 +123,6 @@
         </div>
       </div>
     </div>
-    <nuxt-child/>
-    <router-view></router-view>
   </div>
 </template>
 <script>
@@ -316,6 +314,8 @@ header
         border-left: 1px solid #ccc
         display: block
         padding: 0 0 0 25px
+.courselist
+  margin-top: 44px
 .order_sort
   width: 100%
   height: 46px
