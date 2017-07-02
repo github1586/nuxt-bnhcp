@@ -3,7 +3,7 @@
     <!-- 课程评价 -->
     <div class="cls_evel_zone">
       <!-- 标题 -->
-      <div class="tit on">
+      <div class="tit">
         <p><i></i>家长评价</p>
       </div>
       <div class="good_ping">
@@ -23,7 +23,7 @@
       <ul class="evel_list">
         <li>
           <a href="javascript:">
-            <img src="/img/head_portrait.png" width="25" height="25" alt="" />
+            <img src="/img/head_portrait.png" width="25" height="25" alt="">
             <div class="evel_con">
               <p>
                   <span>家长A</span>
@@ -46,7 +46,7 @@
         </li>
         <li>
           <a href="#">
-            <img src="/img/head_portrait.png" width="25" height="25" alt="" />
+            <img src="/img/head_portrait.png" width="25" height="25" alt="">
             <div class="evel_con">
               <p>
                 <span>家长A</span>
@@ -79,30 +79,6 @@
 </script>
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
-.cls_evel_zone
-  margin-top: 10px
-  padding: 0 10px
-  background: #fff
-  border-bottom: none
-  // 标题
-  .tit
-    font-size: 1.4rem
-		border-bottom: 1px solid #dcdcdc
-		&.on
-			border: 0
-  &.fenxiao
-    box-shadow: none
-    border-bottom: 1px solid #dcdcdc
-  .good_ping
-    position: relative
-    border-bottom: 1px solid $theme_grayddd
-    padding-bottom: 12px
-    .totle_ping
-      position: absolute
-      top: 3px
-      right: 0
-      font-size: 1.2rem
-      margin-right: 1rem
 .evaluat_zo
 	span
 		font-size: 1.8rem
@@ -121,4 +97,106 @@
 			margin-right: 5px
 			&.on
 				background-image: url("/img/evaluat_star_on.png")
+.evel_list
+  // margin-left: 1.5rem
+  li
+    padding: 0 1rem 1rem 0
+    overflow: hidden
+    border-bottom: 1px solid #f2f2f2
+    margin: 8px 0 0 0
+    a
+      img
+        border-radius: 50%
+        float: left
+      .evel_con
+        margin-left: 33px
+        p
+          margin-bottom: 0
+          font-size: 1.3rem
+          &.teach_ping
+            text-align: left
+            span
+              &.tip_more
+                width: 100%
+                height: 5px
+                display: block
+                text-align: center	
+                background: url("/img/next_more.png") no-repeat center center
+                background-size: 8px 5px
+                padding: 10px 0
+                &.on
+                  background: url("/img/next_more_d.png") no-repeat center center
+                  background-size: 8px 5px
+              &.content_learn
+                // height: 50px
+                overflow: hidden
+                word-break: break-all
+                display: block
+                font-size: 1.3rem
+                color: $theme_gray333
+                margin-top: 0.5rem
+          span
+            &.date_tip
+              float: right
+              color: $theme_gray666
+        .ping
+          overflow: hidden
+          .stars
+            float: left
+            li
+              border-bottom: none
+              margin: 0 4px 0 0
+              padding-right: 0
+              float: left
+              margin: 0 4px 0 0
+              padding-right: 0
+              width: 8px
+              height: 8px
+              background: url(/img/star.png)no-repeat 0 0
+              background-size: 8px 8px
+              &.on
+                background: url(/img/star_on.png)no-repeat 0 0
+                background-size: 8px 8px
+.tit
+		font-size: 1.4rem
+		>p
+			height: 35px
+			line-height: 35px
+			font-weight: bold
+			i
+				height: 14px
+				border-left: 2px solid $theme_color
+				display: inline-block
+				margin-right: 11px
+				position: relative
+				top: 2px
+.totle_ping
+  float: right
+  margin-top: -20px
+.good_ping
+  border-bottom: 1px solid #eee
+  padding-bottom: 10px 
+.cls_evel_zone
+  margin-top: 10px
+  padding: 0 10px
+  background: #fff
+  border-bottom: none
+  //查看全部评论
+.all_eval
+	background-color: #fff
+	padding: 10px 10px 10px 15px
+	border-bottom: 1px solid #dcdcdc
+	a
+		font-size: 1.3rem
+		color: $theme_color
+		display: block
+		width: 98px
+		height: 25px
+		background: #fff
+		border: 1px solid $theme_color
+		text-align: center
+		line-height: 25px
+		margin: 0 auto
+		border-radius: 3px
+		-webkit-tap-highlight-color: transparent
 </style>

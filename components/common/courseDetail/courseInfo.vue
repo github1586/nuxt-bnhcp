@@ -39,12 +39,14 @@
 	.tit
 		font-size: 1.4rem
 		border-bottom: 1px solid #dcdcdc
+		height: 3.5rem
+		margin-bottom: 3px
 		&.on
 			border: 0
 		
 		p
 			height: 35px
-			line-height: 35px
+			line-height: 3.5rem
 			font-weight: bold
 			i
 				height: 14px

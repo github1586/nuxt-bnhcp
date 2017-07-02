@@ -1,21 +1,21 @@
 <template>
   <div class="coureslist_container">
-    <ul v-load-more="loaderMore">
+    <ul v-load-more="loaderMore" v-if="couresListArr.length">
       <router-link tag='li' :to="{path: 'courseDetail/courseDetail'}" :key="index" v-for="(items, index) in couresListArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
             <div class="content_txt_box">
               <b href="#" class="con_l">
-                <img :src="items.teacher_photo" width="100%" height="64">
-                <i class="name_teac">{{items.teacher_name}}</i>
+                <img :src="getTeacherHead()" height="20%" width="100%">
+                <i class="name_teac">{{items.name}}</i>
               </b>
               <ul class="con_r on" style="width:80%;padding-left:6px;">
                 <li class="tit_h1">
                   <h1><i>{{items.name}}</i><span class="zhe"></span><span class="tuan"></span><span class="jian"></span></h1>
                 </li>
                 <li class="school_name">{{items.shortName}}{{items.campus_name}}</li>
-                <li class="str_end_time"><span>{{items.open_date}}</span>至<span>{{items.end_date}}</span></li>
+                <li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
                 <li class="week_time">{{items.goods_week}}</li>
                 <li class="totle_mon on">&yen<span>{{items.mall_cost}}</span><i>{{items.cost}}</i></li>
                 <li class="meybe_class">
@@ -38,7 +38,7 @@
         </div>
       </router-link>
     </ul>
-		<p class="empty_data" @click="change(888)">没有更多课程</p>
+		<p class="empty_data" v-if="touchend">没有更多课程</p>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
 		</transition>
@@ -60,7 +60,9 @@ export default {
       // 是否可以请求
       preventRepeatreuqest: false,
       // 是否显示加载动画
-      showLoading: false
+      showLoading: true,
+      // 是否显示暂无更多数据
+      touchend: false
     }
   },
   mounted () {
@@ -80,11 +82,19 @@ export default {
       'TEST_CONST'
     ]),
     async initData () {
-      let data = await courselist()
+      let data = await courselist(this.offset)
       this.couresListArr = [...data.data]
+      this.showLoading = false
     },
     change (n) {
       this.TEST_CONST(n)
+    },
+    // 获取老师头像
+    getTeacherHead () {
+      var randnum = parseInt(Math.random() * (100 - 0))
+      randnum = randnum < 10 ? '0' + randnum : randnum
+      var url = `/img/teacherHead/1_tpl_${randnum}.jpg`
+      return url
     },
     // 加载到底部加载更多
     async loaderMore () {
@@ -95,7 +105,8 @@ export default {
       // 更改变量为true 禁止再次加载
       this.preventRepeatreuqest = true
       this.showLoading = true
-      let data = await courselist()
+      this.offset += 15
+      let data = await courselist(this.offset)
       this.couresListArr = [...this.couresListArr, ...data.data]
       // 恢复控制变量为false
       this.preventRepeatreuqest = false

@@ -62,7 +62,7 @@
                         <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
                         <div class="third_menu_con" v-show="isActive == index">
                           <ul>
-                            <li v-for="(item,indexs) in classGrade.gradeThree[index]" :key="indexs"><a href="javascript:;" @click="chooseClass(item.threeClass_name, 2)">{{item.threeClass_name}}</a></li>
+                            <li v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs"><a href="javascript:;" @click="chooseClass(item.threeClass_name, 2)">{{item.threeClass_name}}</a></li>
                           </ul>
                         </div>
                       </div>
@@ -218,6 +218,7 @@
         this.changeActivated = index
         // 获取右侧对应的数据
         this.classGrade = await syncClass(id)
+        console.log(this.classGrade)
       },
       // 选中课程thatn分类
       chooseClass (value, type) {

@@ -3,6 +3,7 @@
  */
 
 const db = require('./db.js')
+const url = require('url')
 /**
  *  index show
  */
@@ -27,13 +28,14 @@ exports.indexShow = (req, res, next) => {
       // 四个小分类 课程名称
       var classSmall = rows[i].showSmallName.split('&')
       for (var x = 0; x < classSmall.length; x++) {
-        classMoreList.push({classname: classSmall[x].split('@')[0], imgurl: classSmall[x].split('@')[1]});
+        classMoreList.push({classname: classSmall[x].split('@')[0], imgurl: classSmall[x].split('@')[1]})
       }
       // 把整块 push 到数据数组
-      allparentinfo.push({headinfo: {before: rows[i].showCourseMore, after: rows[i].showCourseName, imgurl:rows[i].showCourseIcon},course:{
-        classList: classList,
-        classMoreList: classMoreList
-      }})
+      allparentinfo.push({headinfo: {before: rows[i].showCourseMore, after: rows[i].showCourseName, imgurl: rows[i].showCourseIcon},
+        course: {
+          classList: classList,
+          classMoreList: classMoreList
+        }})
     }
     // 查找分类
     db.query('select * from showClass', function (err, rows, fields) {
@@ -77,6 +79,7 @@ exports.gradeOne = (req, res, next) => {
     } else {
       params = rows[0].gradeId
     }
+
     // 查询二级
     db.query(`select * from gradeTwo where gradeTwo.pid=${params}`, (err, rows, fields) => {
       // 循环查询
@@ -85,25 +88,14 @@ exports.gradeOne = (req, res, next) => {
       }
       data.gradeTwo = rows
       data.gradeThree = []
-      function recursion (i) {
-        // 循环最后一层 返回数据
-        if (rows.length === i) {
-          res.json(data)
-          return
+      db.query(`select t.* from gradeThree t left join gradeTwo w on t.pid = w.gradeTwoId where w.pid=${params}`, (err, rows, fields) => {
+        if (err) {
+          throw err
         }
-        // 获取查询三级的参数
-        let params = rows[i].gradeTwoId
-        db.query(`select * from gradeThree where gradeThree.pid=${params}`, (err, rows, fields) => {
-          if (err) {
-            throw err
-          }
-          // 三级push进去
-          data.gradeThree.push(rows)
-          // 递归调用
-          recursion(i + 1)
-        })
-      }
-      recursion(0)
+        // 三级push进去
+        data.gradeThree = rows
+        res.json(data)
+      })
     })
   }, (error) => {
     if (error) throw error
@@ -143,5 +135,21 @@ exports.filter = (req, res, next) => {
       })
     }, this)
     res.json(data)
+  })
+}
+
+/**
+ * 课程列表
+ */
+exports.getCourseList = (req, res, next) => {
+  var params = url.parse(req.url, true)
+  console.log(params.query)
+  db.query(`select * , date_format(open_date,'%Y-%m-%d') open_date1, date_format(end_date,'%Y-%m-%d') end_date1 from course limit ${params.query.offset}, ${params.query.limit}`, (err, rows, fields) => {
+    if (err) {
+      throw err
+    }
+    var obj = {}
+    obj.data = rows
+    res.json(obj)
   })
 }

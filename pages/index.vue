@@ -51,6 +51,7 @@ export default {
   .body
     background: #eee
     padding-top: 44px
+    padding-bottom: 70px
   html 
     width: 100%
     height: 100%

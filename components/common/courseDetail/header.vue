@@ -1,14 +1,14 @@
 <template>
   <div class="cls_t_infor right_bar">   
       <div class="activeImg end_active"></div>
-      <div class="cls_banner"><img src="/img/header_pic.jpg" alt="" /></div>
+      <div class="cls_banner"><img src="/img/header_pic.jpg" alt=""></div>
       <p>
         <a href="javascript:" class="back_page"></a>
         <a href="tel:400-40000000" class="icon_phone"></a>
         <a href="javascript:" class="more_con icon_btn"></a>
       </p>
       <div class="opa_abso">
-        <img src="/img/opa_jx.png" alt="" />
+        <img src="/img/opa_jx.png" alt="">
         <div class="le_rig">
           <span class="left_s">已报3/9人</span>
           <span class="right_s">浏览量88</span>

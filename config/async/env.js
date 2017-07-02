@@ -12,6 +12,14 @@ if (process.env.NODE_ENV === 'development') {
 
 // baseUrl = 'http://cangdu.org:8001';
 }
+// 获取老师头像
+let getTeacherHead = () => {
+  var randnum = parseInt(Math.random() * (100 - 0))
+  randnum = randnum < 10 ? '0' + randnum : randnum
+  var url = `/img/teacherHead/1_tpl_${randnum}.jpg`
+  return url
+}
 export {
-  baseUrl
+  baseUrl,
+  getTeacherHead
 }

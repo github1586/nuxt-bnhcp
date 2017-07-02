@@ -4,16 +4,8 @@
     <descrip-tion></descrip-tion>
     <detail-content></detail-content>
     <course-info></course-info>
-    <evaluate></evaluate>    
-     <!-- 固定底部填充 -->
-    <div class="fix_bottom_pad_top"></div>
-    <!-- 功能按钮 -->
-    <div class="menu_fix_bottom">
-        <div class="ctrl_btn">
-            <a href="" class="bao">立即报名</a>
-            <a href="" class="yue">预约试听</a>
-        </div>
-    </div>
+    <evaluate></evaluate>
+    <footer-btn></footer-btn>  
   </div>
 </template>
 <script>
@@ -22,16 +14,19 @@ import descripTion from '~components/common/courseDetail/description.vue'
 import detailContent from '~components/common/courseDetail/detailContent.vue'
 import courseInfo from '~components/common/courseDetail/courseInfo.vue'
 import evaluate from '~components/common/courseDetail/evaluate.vue'
+import footerBtn from '~components/common/footerBtn.vue'
 export default {
   components: {
     headerTop,
     descripTion,
     detailContent,
     courseInfo,
-    evaluate
+    evaluate,
+    footerBtn
   }
 }
 </script>
 <style lang="sass" scoped>
-
+.box
+  padding-bottom: 50px
 </style>
