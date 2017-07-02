@@ -144,7 +144,13 @@ exports.filter = (req, res, next) => {
 exports.getCourseList = (req, res, next) => {
   var params = url.parse(req.url, true)
   console.log(params.query)
-  db.query(`select * , date_format(open_date,'%Y-%m-%d') open_date1, date_format(end_date,'%Y-%m-%d') end_date1 from course limit ${params.query.offset}, ${params.query.limit}`, (err, rows, fields) => {
+  db.query(`SELECT i.institutionsName,t.teacherName, p.campusesName, c.*,
+    date_format(open_date,'%Y-%m-%d') open_date1, 
+    date_format(end_date,'%Y-%m-%d') end_date1 
+    from course c left join teacher t  on c.teacher_id = t.thacherId
+    left join campuses p  on t.schoolId = p.campusesId 
+    left join institutions i on p.campusesParentId = i.institutionsId
+    ORDER BY RAND() limit ${params.query.offset}, ${params.query.limit} `, (err, rows, fields) => {
     if (err) {
       throw err
     }

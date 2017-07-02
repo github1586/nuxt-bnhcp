@@ -8,16 +8,22 @@
             <div class="content_txt_box">
               <b href="#" class="con_l">
                 <img :src="getTeacherHead()" height="20%" width="100%">
-                <i class="name_teac">{{items.name}}</i>
+                <i class="name_teac">{{items.teacherName}}</i>
               </b>
               <ul class="con_r on" style="width:80%;padding-left:6px;">
                 <li class="tit_h1">
-                  <h1><i>{{items.name}}</i><span class="zhe"></span><span class="tuan"></span><span class="jian"></span></h1>
+                  <h1>
+										<i>{{items.name}}</i>
+										<span class="zhe" v-if="items.is_discountRate === '1'"></span>
+										<span class="tuan" v-if="items.is_groupPurchase === '1'"></span>
+										<span class="jian" v-if="items.is_minus === '1'"></span>
+										<span class="hui" v-if="items.is_minus === '1'"></span>
+									</h1>
                 </li>
-                <li class="school_name">{{items.shortName}}{{items.campus_name}}</li>
+                <li class="school_name">{{items.institutionsName}}({{items.campusesName}})</li>
                 <li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
-                <li class="week_time">{{items.goods_week}}</li>
-                <li class="totle_mon on">&yen<span>{{items.mall_cost}}</span><i>{{items.cost}}</i></li>
+                <li class="week_time">{{filterWeek(items.goods_week)}}</li>
+                <li class="totle_mon on" :class="{tuan: items.is_signup == 2}">&yen<span>{{items.mall_cost}}</span><i>&yen{{items.cost}}</i></li>
                 <li class="meybe_class">
                   已报<span>{{items.saled}}</span>/<i>{{items.total}}</i>人
                   <p>{{items.district}}</p>
@@ -112,6 +118,50 @@ export default {
       this.preventRepeatreuqest = false
       // 恢复控制变量为false
       this.showLoading = false
+    },
+    getWeek (arr) {
+      let weekArr = []
+      arr.forEach(function (element) {
+        switch (element) {
+          case '1':
+            weekArr.push('一')
+            break
+          case '2':
+            weekArr.push('二')
+            break
+          case '3':
+            weekArr.push('三')
+            break
+          case '4':
+            weekArr.push('四')
+            break
+          case '5':
+            weekArr.push('五')
+            break
+          case '6':
+            weekArr.push('六')
+            break
+          case '7':
+            weekArr.push('日')
+            break
+          default:
+            break
+        }
+      })
+      return '每周' + weekArr.join(',') + '上课'
+    },
+    filterWeek (value) {
+      let week = []
+      if (value.indexOf('@') !== -1) {
+        let arr = value.split('@')
+        arr.forEach(function (element) {
+          week.push(element.slice(2))
+        }, this)
+        return this.getWeek(week)
+      } else {
+        week.push(value.slice(2))
+        return this.getWeek(week)
+      }
     }
   },
   watch: {
@@ -181,6 +231,20 @@ export default {
 									height: 16px
 									line-height: 17px
 									background: #ff780b
+									font-size: 1rem
+									color:#fff
+									border-radius: 3px
+									text-align: center
+									position: relative
+									top: -7px
+							.hui
+								&:after
+									content: '慧'
+									display: inline-block
+									width: 16px
+									height: 16px
+									line-height: 17px
+									background: #e4393c
 									font-size: 1rem
 									color:#fff
 									border-radius: 3px
@@ -263,7 +327,7 @@ export default {
 								text-align: center
 								border-radius: 5px
 								margin-right: 3px
-								line-height: 17px
+								line-height: 16px
 								position: relative
 								top: -2px
 						&.tuan
@@ -278,7 +342,7 @@ export default {
 								text-align: center
 								border-radius: 5px
 								margin-right: 3px
-								line-height: 1.8rem
+								line-height: 16px
 								position: relative
 								top: -2px
 						span
