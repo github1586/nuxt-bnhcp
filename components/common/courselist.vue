@@ -1,7 +1,7 @@
 <template>
   <div class="coureslist_container">
-    <ul v-load-more="loaderMore" v-if="couresListArr.length">
-      <router-link tag='li' :to="{path: 'courseDetail/courseDetail'}" :key="index" v-for="(items, index) in couresListArr">
+    <ul v-load-more="loaderMore" v-if="courseArr.length">
+      <router-link tag='li' :to="{path: 'courseDetail/courseDetail'}" :key="index" v-for="(items, index) in courseArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
@@ -61,8 +61,6 @@ export default {
     return {
       // 请求条数
       offset: 0,
-      // 课程列表数组
-      couresListArr: [],
       // 是否可以请求
       preventRepeatreuqest: false,
       // 是否显示加载动画
@@ -74,10 +72,12 @@ export default {
   mounted () {
     this.initData()
   },
+  created () {
+  },
   mixins: [loadMore],
   computed: {
     ...mapState([
-      'count', 'num'
+      'coursename', 'courseArr'
     ])
   },
   components: {
@@ -85,15 +85,12 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'TEST_CONST'
+      'COURSE_ARR'
     ]),
     async initData () {
-      let data = await courselist(this.offset)
-      this.couresListArr = [...data.data]
+      let data = await courselist(this.offset, this.coursename)
+      this.COURSE_ARR(data.data)
       this.showLoading = false
-    },
-    change (n) {
-      this.TEST_CONST(n)
     },
     // 获取老师头像
     getTeacherHead () {
@@ -104,6 +101,10 @@ export default {
     },
     // 加载到底部加载更多
     async loaderMore () {
+      console.log(this.courseArr)
+      if (this.touchend) {
+        return
+      }
       // 到达底部防止重复加载
       if (this.preventRepeatreuqest) {
         return
@@ -112,12 +113,16 @@ export default {
       this.preventRepeatreuqest = true
       this.showLoading = true
       this.offset += 15
-      let data = await courselist(this.offset)
-      this.couresListArr = [...this.couresListArr, ...data.data]
-      // 恢复控制变量为false
-      this.preventRepeatreuqest = false
+      let data = await courselist(this.offset, this.coursename)
       // 恢复控制变量为false
       this.showLoading = false
+      this.COURSE_ARR(data.data)
+      if (data.data.length < 15) {
+        this.touchend = true
+        return
+      }
+      // 恢复控制变量为false
+      this.preventRepeatreuqest = false
     },
     getWeek (arr) {
       let weekArr = []

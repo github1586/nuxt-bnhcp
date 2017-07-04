@@ -143,13 +143,19 @@ exports.filter = (req, res, next) => {
  */
 exports.getCourseList = (req, res, next) => {
   var params = url.parse(req.url, true)
-  console.log(params.query)
+  console.log(params.query.coursename)
+  var myparams = ''
+  if (params.query.coursename === 'undefined') {
+    myparams = `'%'`
+  } else {
+    myparams = `'%${params.query.coursename}%'`
+  }
   db.query(`SELECT i.institutionsName,t.teacherName, p.campusesName, c.*,
     date_format(open_date,'%Y-%m-%d') open_date1, 
     date_format(end_date,'%Y-%m-%d') end_date1 
     from course c left join teacher t  on c.teacher_id = t.thacherId
-    left join campuses p  on t.schoolId = p.campusesId 
-    left join institutions i on p.campusesParentId = i.institutionsId
+    left join campuses p  on t.schoolId = p.campusesId
+    left join institutions i  on p.campusesParentId = i.institutionsId where c.name like ${myparams}
     ORDER BY RAND() limit ${params.query.offset}, ${params.query.limit} `, (err, rows, fields) => {
     if (err) {
       throw err

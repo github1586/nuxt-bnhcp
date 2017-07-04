@@ -2,9 +2,10 @@
 import Vuex from 'vuex'
 import mutations from './mutations.js'
 const state = {
-  count: 123,
-  num: 7893,
-  bobo: 'bobo'
+  // 选中的参数
+  coursename: '',
+  // 课程列表组件容器
+  courseArr: []
 }
 
 const createStore = () => {

@@ -1,9 +1,14 @@
 
-import {TEST_CONST} from './mutation-types.js'
+import {
+  COURSE_PARAMS,
+  COURSE_ARR
+} from './mutation-types.js'
 
 export default {
-  [TEST_CONST] (state, n) {
-    state.count = n
-    state.num = n * 2
+  [COURSE_PARAMS] (state, value) {
+    state.coursename = value
+  },
+  [COURSE_ARR] (state, array) {
+    state.courseArr = [...array]
   }
 }

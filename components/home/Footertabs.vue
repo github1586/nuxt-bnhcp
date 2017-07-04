@@ -4,19 +4,19 @@
 		<div class="tabs_list">
 			<ul>
 				<li class="tabs_one">
-					<a href="javascript:"></a>
+					<nuxt-link to="/"></nuxt-link>
 					<span>首页</span>
 				</li>
 				<li class="tabs_two">
-					<a href="javascript:"></a>
+					<nuxt-link to="/classify"></nuxt-link>
 					<span>分类</span>
 				</li>
 				<li class="tabs_three">
-					<a href="javascript:"></a>
+					<nuxt-link to="/"></nuxt-link>
 					<span>课表</span>
 				</li>
 				<li class="tabs_four">
-					<a href="/"></a>
+					<nuxt-link to="/oneself"></nuxt-link>
 					<span>我的</span>
 				</li>
 			</ul>

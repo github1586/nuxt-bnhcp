@@ -13,11 +13,11 @@ export const filter = () => fetch('/api/listhome/filter/data')
 /**
  * 获取课程列表
 */
-export const courselist = (offset) => {
-  console.log(offset)
+export const courselist = (offset, coursename) => {
   var data = {
     offset,
-    limit: '20'
+    limit: '20',
+    coursename
   }
   return fetch('/api/courselist', data)
 }

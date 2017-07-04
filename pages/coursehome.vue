@@ -62,7 +62,7 @@
                         <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
                         <div class="third_menu_con" v-show="isActive == index">
                           <ul>
-                            <li v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs"><a href="javascript:;" @click="chooseClass(item.threeClass_name, 2)">{{item.threeClass_name}}</a></li>
+                            <li v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs" @click="chooseClass(item.threeClass_name, 2)"><nuxt-link to="/coursehome">{{item.threeClass_name}}</nuxt-link></li>
                           </ul>
                         </div>
                       </div>
@@ -119,7 +119,7 @@
           </transition>
         </div>
         <div class="courselist">
-          <course-list></course-list>
+          <course-list :coursename="this.coursename"></course-list>
         </div>
       </div>
     </div>
@@ -129,7 +129,7 @@
   import axios from '~plugins/axios'
   import courseList from '~components/common/courselist.vue'
   import {mapState, mapMutations} from 'vuex'
-  import {syncClass, filter} from '../ajax/getData'
+  import {syncClass, filter, courselist} from '../ajax/getData'
   export default {
     async asyncData () {
       let { data } = await axios.get('/api/listhome')
@@ -143,6 +143,10 @@
         changeActivated: 0,
         // 城市数组
         cityArr: '',
+        // 请求条数
+        offset: 0,
+        // 课程列表数组
+        couresListArr: [],
         // 分类数组
         classGrade: '',
         // 展示下拉的控制变量
@@ -173,6 +177,8 @@
         ]
       }
     },
+    async beforeMount () {
+    },
     components: {
       axios,
       courseList
@@ -182,7 +188,7 @@
     },
     computed: {
       ...mapState([
-        'count'
+        'coursename'
       ])
     },
     mounted () {
@@ -190,7 +196,7 @@
     },
     methods: {
       ...mapMutations([
-        'TEST_CONST'
+        'COURSE_PARAMS'
       ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
@@ -218,13 +224,21 @@
         this.changeActivated = index
         // 获取右侧对应的数据
         this.classGrade = await syncClass(id)
-        console.log(this.classGrade)
+      },
+      async getcourse () {
+        let data = await courselist(this.offset, this.coursename)
+        this.couresListArr = data.data
+        this.showLoading = false
       },
       // 选中课程thatn分类
       chooseClass (value, type) {
+        // 提交参数更改
+        this.COURSE_PARAMS(value)
         type === 2 ? this.courseClass = value : type === 3 ? this.sort = value : ''
         // 收起下拉
         this.serachBy = null
+        // 获取筛选
+        this.getcourse()
       },
       // 展示对应的下拉分类
       async activeSort (type) {
