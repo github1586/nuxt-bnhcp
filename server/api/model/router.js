@@ -150,6 +150,13 @@ exports.getCourseList = (req, res, next) => {
   } else {
     myparams = `'%${params.query.coursename}%'`
   }
+  console.log(`SELECT i.institutionsName,t.teacherName, p.campusesName, c.*,
+    date_format(open_date,'%Y-%m-%d') open_date1, 
+    date_format(end_date,'%Y-%m-%d') end_date1 
+    from course c left join teacher t  on c.teacher_id = t.thacherId
+    left join campuses p  on t.schoolId = p.campusesId
+    left join institutions i  on p.campusesParentId = i.institutionsId where c.name like ${myparams}
+    ORDER BY RAND() limit ${params.query.offset}, ${params.query.limit} `)
   db.query(`SELECT i.institutionsName,t.teacherName, p.campusesName, c.*,
     date_format(open_date,'%Y-%m-%d') open_date1, 
     date_format(end_date,'%Y-%m-%d') end_date1 
@@ -162,6 +169,7 @@ exports.getCourseList = (req, res, next) => {
     }
     var obj = {}
     obj.data = rows
+    obj.offset = `${params.query.offset}`
     res.json(obj)
   })
 }

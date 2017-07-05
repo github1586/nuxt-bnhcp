@@ -89,7 +89,7 @@ export default {
     ]),
     async initData () {
       let data = await courselist(this.offset, this.coursename)
-      this.COURSE_ARR(data.data)
+      this.COURSE_ARR(data)
       this.showLoading = false
     },
     // 获取老师头像
@@ -101,7 +101,6 @@ export default {
     },
     // 加载到底部加载更多
     async loaderMore () {
-      console.log(this.courseArr)
       if (this.touchend) {
         return
       }
@@ -111,12 +110,15 @@ export default {
       }
       // 更改变量为true 禁止再次加载
       this.preventRepeatreuqest = true
+      // loading显示
       this.showLoading = true
       this.offset += 15
       let data = await courselist(this.offset, this.coursename)
       // 恢复控制变量为false
       this.showLoading = false
-      this.COURSE_ARR(data.data)
+      // 提交数据 --》状态管理
+      this.COURSE_ARR(data)
+      // 小于15条 限时暂无更多
       if (data.data.length < 15) {
         this.touchend = true
         return

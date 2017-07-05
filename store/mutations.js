@@ -9,6 +9,11 @@ export default {
     state.coursename = value
   },
   [COURSE_ARR] (state, array) {
-    state.courseArr = [...array]
+    console.log(array)
+    if (array.offse !== '0') {
+      state.courseArr = [...state.courseArr, ...array.data]
+    } else {
+      state.courseArr = [...array.data]
+    }
   }
 }

@@ -196,7 +196,7 @@
     },
     methods: {
       ...mapMutations([
-        'COURSE_PARAMS'
+        'COURSE_PARAMS', 'COURSE_ARR'
       ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
@@ -227,7 +227,8 @@
       },
       async getcourse () {
         let data = await courselist(this.offset, this.coursename)
-        this.couresListArr = data.data
+        // 提交数据 -》课程列表 状态管理
+        this.COURSE_ARR(data)
         this.showLoading = false
       },
       // 选中课程thatn分类
