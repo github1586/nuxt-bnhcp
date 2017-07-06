@@ -59,7 +59,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'coursename'
+      'coursename', 'touchend'
     ])
   },
   mounted () {
@@ -67,7 +67,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'COURSE_PARAMS'
+      'COURSE_PARAMS', 'TOUCHEND'
     ]),
     init () {
     },
@@ -84,6 +84,7 @@ export default {
     chooseClass (value) {
       this.COURSE_PARAMS(value)
       // 提交课程搜索状态改变
+      this.TOUCHEND(false)
     },
     // 三级分类选中展开
     clickActive (type) {

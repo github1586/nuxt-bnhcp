@@ -47,7 +47,7 @@
               </transition>
             </li>
             <li class="tabslist" >
-              <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">{{courseClass}}</a>
+              <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">{{this.coursename}}</a>
               <transition name="showlist">
                 <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
                   <div class="left_area">
@@ -119,7 +119,7 @@
           </transition>
         </div>
         <div class="courselist">
-          <course-list :coursename="this.coursename"></course-list>
+          <course-list :courseNameType="this.coursename"></course-list>
         </div>
       </div>
     </div>
@@ -188,7 +188,7 @@
     },
     computed: {
       ...mapState([
-        'coursename'
+        'coursename', 'touchend'
       ])
     },
     mounted () {
@@ -196,7 +196,7 @@
     },
     methods: {
       ...mapMutations([
-        'COURSE_PARAMS', 'COURSE_ARR'
+        'COURSE_PARAMS', 'COURSE_ARR', 'TOUCHEND'
       ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
@@ -226,6 +226,7 @@
         this.classGrade = await syncClass(id)
       },
       async getcourse () {
+        this.offset = 0
         let data = await courselist(this.offset, this.coursename)
         // 提交数据 -》课程列表 状态管理
         this.COURSE_ARR(data)
@@ -233,13 +234,19 @@
       },
       // 选中课程thatn分类
       chooseClass (value, type) {
-        // 提交参数更改
-        this.COURSE_PARAMS(value)
         type === 2 ? this.courseClass = value : type === 3 ? this.sort = value : ''
         // 收起下拉
         this.serachBy = null
-        // 获取筛选
-        this.getcourse()
+        if (type === 2) {
+          // 提交参数更改\
+          this.COURSE_PARAMS(value)
+          // 提交显示更多隐藏
+          this.TOUCHEND(false)
+          // offset 归零
+          this.offset = 0
+          // 获取筛选
+          this.getcourse()
+        }
       },
       // 展示对应的下拉分类
       async activeSort (type) {

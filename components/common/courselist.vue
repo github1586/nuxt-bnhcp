@@ -44,7 +44,7 @@
         </div>
       </router-link>
     </ul>
-		<p class="empty_data" v-if="touchend">没有更多课程</p>
+		<p class="empty_data" v-if="this.touchend">没有更多课程</p>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
 		</transition>
@@ -64,9 +64,7 @@ export default {
       // 是否可以请求
       preventRepeatreuqest: false,
       // 是否显示加载动画
-      showLoading: true,
-      // 是否显示暂无更多数据
-      touchend: false
+      showLoading: true
     }
   },
   mounted () {
@@ -74,10 +72,11 @@ export default {
   },
   created () {
   },
+  props: ['courseNameType'],
   mixins: [loadMore],
   computed: {
     ...mapState([
-      'coursename', 'courseArr'
+      'coursename', 'courseArr', 'touchend'
     ])
   },
   components: {
@@ -85,10 +84,11 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'COURSE_ARR'
+      'COURSE_ARR', 'TOUCHEND'
     ]),
     async initData () {
       let data = await courselist(this.offset, this.coursename)
+      // 提交课程列表
       this.COURSE_ARR(data)
       this.showLoading = false
     },
@@ -118,13 +118,13 @@ export default {
       this.showLoading = false
       // 提交数据 --》状态管理
       this.COURSE_ARR(data)
-      // 小于15条 限时暂无更多
-      if (data.data.length < 15) {
-        this.touchend = true
-        return
-      }
       // 恢复控制变量为false
       this.preventRepeatreuqest = false
+      // 小于15条 限时暂无更多
+      if (data.data.length < 15) {
+        this.TOUCHEND(true)
+        return
+      }
     },
     getWeek (arr) {
       let weekArr = []
@@ -172,7 +172,9 @@ export default {
     }
   },
   watch: {
-
+    courseNameType: function (value) {
+      this.offset = 0
+    }
   }
 }
 </script>

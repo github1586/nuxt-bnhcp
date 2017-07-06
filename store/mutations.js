@@ -1,7 +1,8 @@
 
 import {
   COURSE_PARAMS,
-  COURSE_ARR
+  COURSE_ARR,
+  TOUCHEND
 } from './mutation-types.js'
 
 export default {
@@ -9,11 +10,13 @@ export default {
     state.coursename = value
   },
   [COURSE_ARR] (state, array) {
-    console.log(array)
-    if (array.offse !== '0') {
+    if (parseInt(array.offset) !== 0) {
       state.courseArr = [...state.courseArr, ...array.data]
     } else {
-      state.courseArr = [...array.data]
+      state.courseArr = array.data
     }
+  },
+  [TOUCHEND] (state, value) {
+    state.touchend = value
   }
 }

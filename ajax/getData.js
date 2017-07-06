@@ -16,7 +16,7 @@ export const filter = () => fetch('/api/listhome/filter/data')
 export const courselist = (offset, coursename) => {
   var data = {
     offset,
-    limit: '20',
+    limit: '15',
     coursename
   }
   return fetch('/api/courselist', data)
