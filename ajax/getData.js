@@ -13,11 +13,23 @@ export const filter = () => fetch('/api/listhome/filter/data')
 /**
  * 获取课程列表
 */
-export const courselist = (offset, coursename) => {
+export const courselist = (offset, courseId, type, sort, selectScreen = []) => {
+  var selectScreenStr = ''
+  // 过滤请求数组
+  selectScreen.forEach(function (element) {
+    for (var i = 0; i < element.classlist.length; i++) {
+      if (element.classlist[i].status) {
+        selectScreenStr += element.classlist[i].id + '/'
+      }
+    }
+  })
   var data = {
     offset,
     limit: '15',
-    coursename
+    type,
+    sort,
+    courseId,
+    selectScreenStr
   }
   return fetch('/api/courselist', data)
 }

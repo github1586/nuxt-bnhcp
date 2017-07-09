@@ -185,8 +185,87 @@ header.new_header .right_bar .icon_btn {
 }
 
 .page-enter-active, .page-leave-active {
-  transition: opacity .4s;
+  transition: opacity .2s;
 }
 .page-enter, .page-leave-active {
   opacity: 0;
+}
+
+/*--- 没有相关内容 ---*/
+.no_content {
+  padding: 30px 0 30px 0;
+}
+.no_content .margin_left_p {
+  margin-left: 1.4rem;
+}
+.no_content .icon {
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 13px;
+}
+.no_content .icon.menu {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_menu.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.jigou {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_jigou.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.ping {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_ping.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.kid {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_kid.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.class {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_class.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.noclass {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_class.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.collection {
+  width: 74px;
+  height: 53px;
+  background-image: url(../img/no_content_collection.png);
+  background-size: 74px 53px;
+}
+.no_content .icon.activity {
+  width: 52px;
+  height: 50px;
+  background-image: url(../img/no_content_activity.png);
+  background-size: 52px 50px;
+}
+.no_content .icon.message {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_message.png);
+  background-size: 168px 120px;
+}
+.no_content .icon.teacher {
+  width: 168px;
+  height: 120px;
+  background-image: url(../img/no_content_teacher.png);
+  background-size: 168px 120px;
+}
+.no_content p {
+  color: #c0c0c0;
+  text-align: center;
 }

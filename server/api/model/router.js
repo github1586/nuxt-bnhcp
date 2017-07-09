@@ -4,6 +4,7 @@
 
 const db = require('./db.js')
 const url = require('url')
+const sortFilter = require('./paramsFilter.js')
 /**
  *  index show
  */
@@ -22,13 +23,13 @@ exports.indexShow = (req, res, next) => {
       // 两个大分类
       var classImg = rows[i].showMainName.split('&')
       for (var j = 0; j < classImg.length; j++) {
-         // 每次得到的对象push进数组
-        classList.push({classname: classImg[j].split('@')[0], imgurl: classImg[j].split('@')[1]})
+        // 每次得到的对象push进数组
+        classList.push({ classname: classImg[j].split('@')[0], imgurl: classImg[j].split('@')[1], coueseGradeId: rows[i].coueseGradeId })
       }
       // 四个小分类 课程名称
       var classSmall = rows[i].showSmallName.split('&')
       for (var x = 0; x < classSmall.length; x++) {
-        classMoreList.push({classname: classSmall[x].split('@')[0], imgurl: classSmall[x].split('@')[1]})
+        classMoreList.push({classname: classSmall[x].split('@')[0], imgurl: classSmall[x].split('@')[1], coueseGradeId: rows[i].coueseGradeId})
       }
       // 把整块 push 到数据数组
       allparentinfo.push({headinfo: {before: rows[i].showCourseMore, after: rows[i].showCourseName, imgurl: rows[i].showCourseIcon},
@@ -143,20 +144,59 @@ exports.filter = (req, res, next) => {
  */
 exports.getCourseList = (req, res, next) => {
   var params = url.parse(req.url, true)
-  console.log(params.query.coursename)
-  var myparams = ''
-  if (params.query.coursename === 'undefined') {
-    myparams = `'%'`
+  var sql = ''
+  // 过滤排序类型
+  var sort = sortFilter.sort(params.query.sort)
+  // 筛选条件
+  var filter = ''
+  if (params.query.selectScreenStr !== '') {
+    filter = sortFilter.filter(params.query.selectScreenStr)
   } else {
-    myparams = `'%${params.query.coursename}%'`
+    filter = ''
   }
-  db.query(`SELECT i.institutionsName,t.teacherName, p.campusesName, c.*,
-    date_format(open_date,'%Y-%m-%d') open_date1, 
-    date_format(end_date,'%Y-%m-%d') end_date1 
-    from course c left join teacher t  on c.teacher_id = t.thacherId
-    left join campuses p  on t.schoolId = p.campusesId
-    left join institutions i  on p.campusesParentId = i.institutionsId where c.name like ${myparams}
-    ORDER BY RAND() limit ${params.query.offset}, ${params.query.limit} `, (err, rows, fields) => {
+  // 课程三级 筛选的sql
+  if (params.query.type === '3') {
+    sql = `SELECT i.institutionsName,t.teacherName,t.evalPerson, p.campusesName, c.*,
+        date_format(open_date,'%Y-%m-%d') open_date1, 
+        date_format(end_date,'%Y-%m-%d') end_date1 
+        from course c left join teacher t  on c.teacher_id = t.thacherId
+        left join campuses p  on t.schoolId = p.campusesId
+        left join institutions i  on p.campusesParentId = i.institutionsId 
+        where c.course_id=${params.query.courseId} ${filter}
+        ORDER BY ${sort} 
+        limit ${params.query.offset},${params.query.limit}`
+  } else if (params.query.type === '2') {
+    // 课程二级筛选的sql
+    sql = `SELECT i.institutionsName,t.teacherName,t.evalPerson, p.campusesName, c.*,
+        date_format(open_date,'%Y-%m-%d') open_date1, 
+        date_format(end_date,'%Y-%m-%d') end_date1 
+        from course c 
+        left join teacher t  on c.teacher_id = t.thacherId
+        left join campuses p  on t.schoolId = p.campusesId
+        left join institutions i  on p.campusesParentId = i.institutionsId
+        left join gradeThree h on c.course_id = h.gradeThreeId
+        left join gradeTwo w on h.pid = w.gradeTwoId 
+        where w.gradeTwoId=${params.query.courseId} ${filter}
+        ORDER BY ${sort}
+        limit ${params.query.offset},${params.query.limit}`
+  } else if (params.query.type === '1') {
+    // 课程一级筛选的sql
+    sql = `SELECT i.institutionsName,e.gradeId,w.gradeTwoId,t.teacherName,t.evalPerson, p.campusesName, c.*,
+        date_format(open_date,'%Y-%m-%d') open_date1, 
+        date_format(end_date,'%Y-%m-%d') end_date1 
+        from course c 
+        left join teacher t  on c.teacher_id = t.thacherId
+        left join campuses p  on t.schoolId = p.campusesId
+        left join institutions i  on p.campusesParentId = i.institutionsId
+        left join gradeThree h on c.course_id = h.gradeThreeId
+        left join gradeTwo w on h.pid = w.gradeTwoId
+        left join gradeOne e on w.pid = e.gradeId
+        where e.gradeId=${params.query.courseId} ${filter}
+        ORDER BY ${sort}
+        limit ${params.query.offset},${params.query.limit}`
+  }
+  console.log(sql)
+  db.query(sql, (err, rows, fields) => {
     if (err) {
       throw err
     }

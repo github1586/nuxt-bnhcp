@@ -47,22 +47,23 @@
               </transition>
             </li>
             <li class="tabslist" >
-              <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">{{this.coursename}}</a>
+              <a :class="{on: serachBy == 'class'}" href="javascript:" @click="activeSort('class')" class="tab_swi_a">{{this.coursenames}}</a>
               <transition name="showlist">
                 <div class="search_tab" id="courseClass" v-show="serachBy == 'class'">
                   <div class="left_area">
-                    <p v-for="(value,index) in classGrade.gradeOne"  :key="index" :data-id="value.gradeId"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,value.gradeId)" >{{value.class_name}}</p>
+                    <p v-for="(value,index) in classGrade.gradeOne"  :key="index" :data-id="value.gradeId"  :class="{activeCity: changeActivated == index}" @click="chooseActive(index,value.gradeId,value.class_name)" >{{value.class_name}}</p>
                   </div>
                   <div class="right_area">
                     <div class="right_area_d">
                       <div class="rigth_third">
-                        <a href="javascript:;" class="switch_a area_r mar_l third_menu">全部</a>
+                        <p @click="chooseClass(gradeOneName, currentId, 1)"><a class="switch_a area_r mar_l third_menu">全部</a></p>
                       </div>
                       <div class="right_third" v-for="(items,index) in classGrade.gradeTwo" :key="index">
                         <a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
                         <div class="third_menu_con" v-show="isActive == index">
                           <ul>
-                            <li v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs" @click="chooseClass(item.threeClass_name, 2)"><nuxt-link to="/coursehome">{{item.threeClass_name}}</nuxt-link></li>
+                            <li @click="chooseClass(items.twoClass_name, items.gradeTwoId, 2)"><a href="javascript:;">全部</a></li>
+                            <li v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs" @click="chooseClass(item.threeClass_name, item.gradeThreeId, 3)"><nuxt-link to="/coursehome" :class="{on: coursenames === item.threeClass_name}">{{item.threeClass_name}}</nuxt-link></li>
                           </ul>
                         </div>
                       </div>
@@ -72,11 +73,11 @@
               </transition>
             </li>
             <li class="tabslist">
-              <a :class="{on: serachBy == 'sort'}"  @click="activeSort('sort')" href="javascript:" class="tab_swi_a">{{sort}}</a>
+              <a :class="{on: serachBy == 'sort'}"  @click="activeSort('sort')" href="javascript:" :sortByType = "this.sort" class="tab_swi_a">{{this.sort}}</a>
               <transition name="showlist">
                 <div class="search_tab min_hieght" v-show="serachBy == 'sort'"> 
                   <ul class="localtion_list sort_list">
-                    <li v-for="(item, index) in sortArr" :key="index" @click="chooseClass(item.name, 3)"><i :class="item.classname"></i><a href="javascript:;">{{item.name}}</a></li>
+                    <li v-for="(item, index) in sortArr" :key="index" :data-sort="item.sortType" @click="courseListSort(item.name, item.sortType)"><i :class="item.classname"></i><a href="javascript:;">{{item.name}}</a></li>
                   </ul>
                 </div>
               </transition>
@@ -103,8 +104,8 @@
                     <!-- 底部操作区 -->
                     <div class="bottom_ctrl">
                       <div class="cls_num"><span>10000</span>门课程</div>
-                      <div class="reset" data-role="reset">重置</div>
-                      <div class="ok">确认</div>
+                      <div class="reset" data-role="reset" @click="reset()">重置</div>
+                      <div class="ok" @click="clicOk()">确认</div>
                     </div>
                   </div>
                 </div>
@@ -119,7 +120,7 @@
           </transition>
         </div>
         <div class="courselist">
-          <course-list :courseNameType="this.coursename"></course-list>
+          <course-list :courseIdType="coursenames" :sortByType="sort" :filterChange="filterChangeStatus" :selectScreen="selectScreen"></course-list>
         </div>
       </div>
     </div>
@@ -143,12 +144,19 @@
         changeActivated: 0,
         // 城市数组
         cityArr: '',
+        // 一级选中名字
+        gradeOneName: '艺术',
+        // 当前列表请求类型
+        currentType: '1',
+        coursenames: '分类',
         // 请求条数
         offset: 0,
         // 课程列表数组
         couresListArr: [],
         // 分类数组
         classGrade: '',
+        // 当前选中的分类课程
+        currentId: '15963587',
         // 展示下拉的控制变量
         serachBy: null,
         isActive: '',
@@ -166,14 +174,16 @@
         sort: '排序',
         // 筛选
         filter: '筛选',
+        // 筛选状态
+        filterChangeStatus: false,
         // 排序
         sortArr: [
-          {classname: 'icon_bg_1', name: '智能排序'},
-          {classname: 'icon_bg_2', name: '离我最近'},
-          {classname: 'icon_bg_3', name: '人气最高'},
-          {classname: 'icon_bg_4', name: '老师好评'},
-          {classname: 'icon_bg_5', name: '价格最高'},
-          {classname: 'icon_bg_6', name: '价格最低'}
+          {classname: 'icon_bg_1', name: '智能排序', sortType: '1'},
+          {classname: 'icon_bg_2', name: '离我最近', sortType: '2'},
+          {classname: 'icon_bg_3', name: '人气最高', sortType: '3'},
+          {classname: 'icon_bg_4', name: '老师好评', sortType: '4'},
+          {classname: 'icon_bg_5', name: '价格最高', sortType: '5'},
+          {classname: 'icon_bg_6', name: '价格最低', sortType: '6'}
         ]
       }
     },
@@ -188,15 +198,20 @@
     },
     computed: {
       ...mapState([
-        'coursename', 'touchend'
+        'courseId', 'touchend', 'coursename', 'coursetype', 'courseSort'
       ])
     },
     mounted () {
       this.changeActivated = 0
+      this.isSort()
+      // 把vuex状态赋值到页面内变量 显示当前搜索项 这样子组件 才可以监听值的变化
+      this.coursenames = this.coursename
+      // 当从分类页面进来的时候 分类页面提交了搜索课程 级别  到列表页 赋值
+      this.currentType = this.coursetype
     },
     methods: {
       ...mapMutations([
-        'COURSE_PARAMS', 'COURSE_ARR', 'TOUCHEND'
+        'COURSE_PARAMS', 'COURSE_ARR', 'TOUCHEND', 'COURSE_ID', 'COURSE_TYPE', 'COURSE_SORT'
       ]),
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
@@ -216,37 +231,97 @@
         })
       },
       // 定位左侧选中
-      async chooseActive (index, id, type) {
-        if (type === 'location') {
-          this.changeActivated = index
-          return
-        }
+      async chooseActive (index, id, name) {
+        // if (type === 'location') {
+        //   this.changeActivated = index
+        //   return
+        // }
         this.changeActivated = index
         // 获取右侧对应的数据
         this.classGrade = await syncClass(id)
+        // 给当前课程分类赋值
+        this.currentId = id
+        // 当前选中的一级名子赋值
+        this.gradeOneName = name
       },
-      async getcourse () {
+      async getcourse (type) {
         this.offset = 0
-        let data = await courselist(this.offset, this.coursename)
+        let data = await courselist(this.offset, this.courseId, type, this.courseSort, this.selectScreen)
         // 提交数据 -》课程列表 状态管理
         this.COURSE_ARR(data)
         this.showLoading = false
       },
-      // 选中课程thatn分类
-      chooseClass (value, type) {
-        type === 2 ? this.courseClass = value : type === 3 ? this.sort = value : ''
-        // 收起下拉
+      reset () {
+        // 重置按钮事件
+        this.selectScreen.map((items) => {
+          items.classlist.map((item) => {
+            item.status = false
+          })
+        })
+      },
+      clicOk () {
+        this.filterChangeStatus = !this.filterChangeStatus
         this.serachBy = null
-        if (type === 2) {
-          // 提交参数更改\
-          this.COURSE_PARAMS(value)
-          // 提交显示更多隐藏
-          this.TOUCHEND(false)
-          // offset 归零
-          this.offset = 0
-          // 获取筛选
-          this.getcourse()
+      },
+      // 选中课程thatn分类
+      chooseClass (value, courseId, type) {
+        this.serachBy = null
+        // 兄弟页面传至
+        this.COURSE_PARAMS(value)
+        // 搜索课程id提交奥
+        this.COURSE_ID(courseId)
+        this.coursenames = this.coursename
+        // 搜索课程类型嗯
+        this.COURSE_TYPE(type)
+        // 提交课程搜索状态改变
+        this.TOUCHEND(false)
+        // offset 归零
+        this.offset = 0
+        // 赋值当前列表请求currentType
+        this.currentType = type
+        // 获取筛选
+        this.getcourse(type)
+      },
+      // tabs排序方式
+      isSort () {
+        switch (this.courseSort) {
+          case '1':
+            this.sort = '智能排序'
+            break
+          case '2':
+            this.sort = '离我最近'
+            break
+          case '3':
+            this.sort = '人气最高'
+            break
+          case '4':
+            this.sort = '老师好评'
+            break
+          case '5':
+            this.sort = '价格最高'
+            break
+          case '6':
+            this.sort = '价格最低'
+            break
+          default:
+            this.sort = '排序'
+            break
         }
+      },
+      // 排序课程
+      courseListSort (name, type) {
+        // 提交vuex的排序状态
+        this.COURSE_SORT(type)
+        // 提交课程搜索状态改变
+        this.TOUCHEND(false)
+        // offset 归零
+        this.offset = 0
+        // 排序类别赋值
+        this.sort = name
+        // 点击排序重新请求一次
+        this.getcourse(this.currentType)
+        // 关闭下拉列表
+        this.serachBy = null
       },
       // 展示对应的下拉分类
       async activeSort (type) {
@@ -273,6 +348,7 @@
   }
 </script>
 <style lang="sass" scoped>
+@import '~static/common/style.sass'
 header
   background: #fff
   border-bottom: 1px solid #b2b2b2
@@ -388,6 +464,9 @@ header
         display: inline-block
         height: 100%
         width: 100%
+        text-overflow: ellipsis
+        overflow: hidden
+        white-space: nowrap        
         text-align: center
         background: url("/img/sorting_01.png") no-repeat 85% 19px	
         background-size: 10px 5px
@@ -589,7 +668,7 @@ header
                 height: 35px
                 border: 1px solid #ddd
                 line-height: 35px
-                float: right
+                float: left
                 margin-top: 7px
                 margin-right: 10px
                 border-radius: 3px
@@ -676,6 +755,8 @@ header
               height: 100%
               text-align: center
               -webkit-tap-highlight-color: transparent
+              &.on
+                color: $theme_color
               &:active
                 outline: none     
 .back_cover

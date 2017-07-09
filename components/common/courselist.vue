@@ -7,7 +7,7 @@
           <div class="ser_rel_con">
             <div class="content_txt_box">
               <b href="#" class="con_l">
-                <img :src="getTeacherHead()" height="20%" width="100%">
+                <img :src="'/img/teacherHead/'+items.teacher_actor" height="20%" width="100%">
                 <i class="name_teac">{{items.teacherName}}</i>
               </b>
               <ul class="con_r on" style="width:80%;padding-left:6px;">
@@ -17,7 +17,7 @@
 										<span class="zhe" v-if="items.is_discountRate === '1'"></span>
 										<span class="tuan" v-if="items.is_groupPurchase === '1'"></span>
 										<span class="jian" v-if="items.is_minus === '1'"></span>
-										<span class="hui" v-if="items.is_minus === '1'"></span>
+										<span class="hui" v-if="items.is_discount === '1'"></span>
 									</h1>
                 </li>
                 <li class="school_name">{{items.institutionsName}}({{items.campusesName}})</li>
@@ -44,17 +44,18 @@
         </div>
       </router-link>
     </ul>
-		<p class="empty_data" v-if="this.touchend">没有更多课程</p>
+		<no-content :content="noContent" v-show="this.courseArr.length === 0"></no-content>
+		<p class="empty_data" v-show="this.touchend">没有更多课程</p>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
 		</transition>
 	</div>
 </template>
-
 <script>
 import {mapState, mapMutations} from 'vuex'
 import {loadMore} from '../mixin/mixin.js'
 import loading from './loading.vue'
+import noContent from '~components/common/no_content/no_content.vue'
 import {courselist} from '../../ajax/getData.js'
 export default {
   data () {
@@ -64,30 +65,35 @@ export default {
       // 是否可以请求
       preventRepeatreuqest: false,
       // 是否显示加载动画
-      showLoading: true
+      showLoading: true,
+      // 无内容样式
+      noContent: {
+        class: 'class',
+        name: '你要找的课，臣妾做不到呀'
+      }
     }
   },
   mounted () {
     this.initData()
   },
-  created () {
-  },
-  props: ['courseNameType'],
+  props: ['courseIdType', 'sortByType', 'filterChange', 'selectScreen'],
   mixins: [loadMore],
   computed: {
     ...mapState([
-      'coursename', 'courseArr', 'touchend'
+      'courseId', 'courseArr', 'touchend', 'coursetype', 'courseSort'
     ])
   },
   components: {
-    loading
+    loading,
+    noContent
   },
   methods: {
     ...mapMutations([
-      'COURSE_ARR', 'TOUCHEND'
+      'COURSE_ARR', 'TOUCHEND', 'COURSE_TYPE'
     ]),
     async initData () {
-      let data = await courselist(this.offset, this.coursename)
+      this.offset = 0
+      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
       // 提交课程列表
       this.COURSE_ARR(data)
       this.showLoading = false
@@ -113,7 +119,7 @@ export default {
       // loading显示
       this.showLoading = true
       this.offset += 15
-      let data = await courselist(this.offset, this.coursename)
+      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
       // 恢复控制变量为false
       this.showLoading = false
       // 提交数据 --》状态管理
@@ -169,11 +175,22 @@ export default {
         week.push(value.slice(2))
         return this.getWeek(week)
       }
+    },
+    initOffset () {
+      this.offset = 0
+      this.TOUCHEND(false)
     }
   },
   watch: {
-    courseNameType: function (value) {
-      this.offset = 0
+    courseIdType: function (value) {
+      this.initOffset()
+    },
+    sortByType: function (value) {
+      this.initOffset()
+    },
+    filterChange: function (value) {
+      this.initData()
+      this.TOUCHEND(false)
     }
   }
 }

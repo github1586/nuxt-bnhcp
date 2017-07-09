@@ -3,7 +3,7 @@
 		<div class="cls_lei">
 			<Headerchunk :headinfo="parentHeadinfo.headinfo"></Headerchunk>
 			<ul class="cls_list">
-				<li v-for="value in parentHeadinfo.course.classList">
+				<li v-for="(value, index) in parentHeadinfo.course.classList" :key="index" :data-id="value.coueseGradeId" @click="tocourseList(value.coueseGradeId)">
 					<nuxt-link to="coursehome" class="con">
 						<img :src=value.imgurl alt="" />
 						<div class="topic_con_txt">{{value.classname}}</div>
@@ -12,7 +12,7 @@
 			</ul>
 			<!-- 更多课程 -->
 			<ul class="cls_more_class">
-				<li v-for="value in parentHeadinfo.course.classMoreList">
+				<li v-for="(value,index) in parentHeadinfo.course.classMoreList" :key="index" :data-id="value.coueseGradeId" @click="tocourseList(value.coueseGradeId)">
 					<nuxt-link to="coursehome">
 						<p><img :src=value.imgurl style="position: absolute; top:3px;" alt="" /></p>
 						<span>{{value.classname}}</span>
@@ -24,10 +24,27 @@
 </template>
 <script>
 import Headerchunk from '~components/common/Headerchunk.vue'
+import {mapState, mapMutations} from 'vuex'
 export default {
   props: ['parentHeadinfo'],
   components: {
     Headerchunk
+  },
+  computed: {
+    ...mapState([
+      'courseId', 'coursename', 'coursetype', 'courseSort'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'COURSE_PARAMS', 'COURSE_ID', 'COURSE_TYPE', 'COURSE_SORT'
+    ]),
+    tocourseList (value) {
+      this.COURSE_SORT(7)
+      this.COURSE_ID(value)
+      this.COURSE_TYPE('1')
+      this.COURSE_PARAMS('分类')
+    }
   }
 }
 </script>

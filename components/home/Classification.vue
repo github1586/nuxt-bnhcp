@@ -1,7 +1,7 @@
 <template>
   <div class="icon_link_zone" id="icon_link_zone">
 			<ul class="icon_link">
-				<li v-for="value in indexClass">
+				<li v-for="(value, index) in indexClass" :key="index" @click="getCourseList(value.classPid, value.showClassName)">
 					<nuxt-link to="/coursehome" :data-id="value.classPid">
 						<img width="40" :src="value.showClassImg" alt="" />
 						<p>{{value.showClassName}}</p>
@@ -11,8 +11,30 @@
 		</div>
 </template>
 <script>
+import {mapState, mapMutations} from 'vuex'
 export default {
-  props: ['indexClass']
+  props: ['indexClass'],
+  computed: {
+    ...mapState([
+      'courseId', 'coursename', 'courseSort'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'COURSE_ID', 'COURSE_PARAMS', 'COURSE_SORT'
+    ]),
+    getCourseList (id, name) {
+      if (name === '更多') {
+        this.COURSE_ID('15963587')
+        this.COURSE_PARAMS('分类')
+        this.COURSE_SORT('7')
+        this.COURSE_TYPE('1')
+      } else {
+        this.COURSE_ID(id)
+        this.COURSE_PARAMS(name)
+      }
+    }
+  }
 }
 </script>
 <style lang="sass">

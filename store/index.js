@@ -3,11 +3,17 @@ import Vuex from 'vuex'
 import mutations from './mutations.js'
 const state = {
   // 选中的参数
-  coursename: 'undefined',
+  coursename: '艺术',
   // 是否显示暂无更多数据
   touchend: false,
   // 课程列表组件容器
-  courseArr: []
+  courseArr: [],
+  // 课程id
+  courseId: '15963587',
+  // 课程类型
+  coursetype: '1',
+  // 当前的课程列表排序方式啊
+  courseSort: '1'
 }
 
 const createStore = () => {

@@ -12,13 +12,14 @@
         <div class="right_area">	
           <div class="right_area_d on">
             <div class="head_img" :style="{background: `url(/img/headImg/${this.currentId}.jpg)no-repeat center center`}">
-              <p><span>全部{{this.class}}课程</span><a></a></p>
+              <p @click="chooseClass(currentclass, currentId, 1)" :key="this.currentId" :data-id="this.currentId"><nuxt-link to="/coursehome">全部{{this.currentclass}}课程</nuxt-link><span></span></p>
             </div>
 						<div class="right_third" v-for="(items,index) in classGrade.gradeTwo" :key="index">
 							<a  :class="{active: isActive == index}" href="javascript:;" :data-id="items.gradeTwoId" :data-pid="items.pid" class="switch_a area_r mar_l third_menu" @click="clickActive(index)">{{items.twoClass_name}}</a>
 							<div class="third_menu_con" v-show="isActive == index">
 								<ul>
-									<li  v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs" @click="chooseClass(item.threeClass_name)"><nuxt-link to='/coursehome'>{{item.threeClass_name}}</nuxt-link></li>
+                  <li :data-id="items.gradeTwoId" @click="chooseClass(items.twoClass_name, items.gradeTwoId, 2)"><nuxt-link to="/coursehome">全部</nuxt-link></li>
+									<li  v-for="(item,indexs) in classGrade.gradeThree" v-if="item.pid == items.gradeTwoId" :key="indexs" :data-id="item.gradeThreeId" @click="chooseClass(item.threeClass_name,item.gradeThreeId,3)"><nuxt-link to='/coursehome'>{{item.threeClass_name}}</nuxt-link></li>
 								</ul>
 							</div>
 						</div>
@@ -44,7 +45,7 @@ export default {
   data () {
     return {
       // 变化的课程名字
-      class: '艺术',
+      currentclass: '艺术',
       // 当前选中
       currentId: '15963587',
       // 分类数组
@@ -59,7 +60,7 @@ export default {
   },
   computed: {
     ...mapState([
-      'coursename', 'touchend'
+      'courseId', 'touchend', 'coursetype'
     ])
   },
   mounted () {
@@ -67,7 +68,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'COURSE_PARAMS', 'TOUCHEND'
+      'COURSE_PARAMS', 'TOUCHEND', 'COURSE_TYPE', 'COURSE_ID'
     ]),
     init () {
     },
@@ -77,14 +78,22 @@ export default {
       // 获取右侧对应的数据
       this.classGrade = await syncClass(id)
       // 设置动态名字
-      this.class = name
+      this.currentclass = name
       // 更画背景
       this.currentId = id
     },
-    chooseClass (value) {
-      this.COURSE_PARAMS(value)
+    chooseClass (name, courseId, type) {
+      // 兄弟页面传至
+      this.COURSE_PARAMS(name)
+      // 搜索课程id提交奥
+      this.COURSE_ID(courseId)
+      // 搜索课程类型嗯
+      this.COURSE_TYPE(type)
       // 提交课程搜索状态改变
       this.TOUCHEND(false)
+    },
+    gradetwo (value) {
+      this.COURSE_PARAMS
     },
     // 三级分类选中展开
     clickActive (type) {
@@ -291,14 +300,17 @@ export default {
     padding: 2rem 0
     position: relative
     padding-left: 50%
-    span
+    a
       position: absolute
+      color: #fff
+      display: inline-block
+      height: 100%
       -webkit-transform: translate(-50%)
       -ms-transform: translate(-50%)
       -o-transform: translate(-50%)
       transform: translate(-50%)
       display: inline-block
-  a
+  span
     display: inline-block
     width: 1.7rem
     height: 1.7rem

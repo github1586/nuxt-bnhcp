@@ -14,6 +14,7 @@
 </template>
 <script>
 import Myheader from '~components/home/Myheader.vue'
+import {mapState, mapMutations} from 'vuex'
 import Carousel from '~components/carousel/Carousel.vue'
 import Classification from '~components/home/Classification.vue'
 import RecommendedSchools from '~components/home/RecommendedSchools.vue'
@@ -29,6 +30,19 @@ export default {
     return {
       allparentinfo: data
     }
+  },
+  computed: {
+    ...mapState([
+      'coursetype'
+    ])
+  },
+  mounted () {
+    this.COURSE_TYPE('1')
+  },
+  methods: {
+    ...mapMutations([
+      'COURSE_TYPE'
+    ])
   },
   head () {
     return {
