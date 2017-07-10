@@ -1,6 +1,6 @@
 # bnhcp
 
-> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + SSR
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
 ## 完成功能
 
 1. 首页渲染
