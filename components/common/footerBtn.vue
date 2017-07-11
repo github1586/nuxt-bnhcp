@@ -2,8 +2,8 @@
    <!-- 功能按钮 -->
   <div class="menu_fix_bottom">
       <div class="ctrl_btn">
-          <a href="" class="bao">立即报名</a>
-          <a href="" class="yue">预约试听</a>
+          <a href="" class="bao">预约试听</a>
+          <a href="" class="yue">立即报名</a>
       </div>
   </div>
 </template>
