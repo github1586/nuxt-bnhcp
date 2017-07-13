@@ -1,7 +1,7 @@
 <template>
   <div class="containers">
     <div class="herder">
-      <p>购物车</p>
+      <p class="cart">购物车</p><span class="white">编辑</span>
     </div>
     <div class="order_cart">
       <ul>
@@ -49,6 +49,51 @@
             </div>
           </div>
         </li>
+				<li>
+					<div class="title_school">
+						<h3>小佳教育培训机构</h3>
+					</div>
+          <div class="ser_rel_list new">
+            <!-- 单节课-普通 -->
+            <div class="ser_rel_con">
+              <div class="content_txt_box">
+                <ul class="con_r on" style="width:75%;padding-left:6px;">
+                  <li class="tit_h1">
+                    <h1>
+                      <i>1564846</i>
+                      <span class="zhe"></span>
+                      <span class="tuan"></span>
+                      <span class="jian"></span>
+                      <span class="hui"></span>
+                    </h1>
+                  </li>
+                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
+                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
+                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
+                  <li class="meybe_class">
+                    已报<span>30</span>/<i>20</i>人
+                    <p>20</p>
+                  </li>
+                  <li class="line_gray"></li>
+                  <li>
+                    <div class="cls_mark">
+                      <ul>
+                        <li><span>随时退班</span></li>
+                        <li><span>随时插班</span></li>
+                        <li><span>免费试听</span></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+								<b href="#" class="con_l">
+                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
+                  <i class="name_teac">古呐博博</i>
+                </b>
+              </div>
+            </div>
+          </div>
+        </li>
+				
       </ul>
     </div>
     <div class="no_content" v-show="no_content">
@@ -56,6 +101,16 @@
       <p class="margin_left_p">购物车为空,快
         <nuxt-link to="/coursehome">去选课</nuxt-link>吧</p>
     </div>
+		<div class="computed">
+			<div class="left_select">
+				<h3>全选</h3>
+				<div class="price">
+					<p>合计：<span>￥100.00</span></p>
+					<b>不含教材费</b>
+				</div>
+			</div>
+			<input class="settlement" value="马上结算">
+		</div>
     <footer-tab></footer-tab>
   </div>
 </template>
@@ -76,14 +131,24 @@
 
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
+body
+  background: #f8f8f8 !important
 .containers
+  height: 100%
   .herder
-    @include  wh(100%, 4.5rem)
+		position: relative
+    @include  wh(100%, 4rem)
     background: #f8f8f8
-    p
-      text-align: center
-      line-height: 4.5rem
-      font-size: 1.6rem
+		.cart
+			text-align: center
+			line-height: 4rem
+			font-size: 1.6rem
+		.white
+			top: 0
+			right: 1rem
+			position: absolute
+			font-size: 1.3rem
+			margin-top: 1.1rem
 .no_content
   @include center
   margin-top: -6rem
@@ -91,42 +156,30 @@
     color: $theme_color
 .title_school
 	margin: 0.5rem 0
-	background: $theme_color
 	color: #fff
 	line-height: 3.5rem	
 	padding-left: 3.3rem
+	background: $theme_color url("/img/select_not.png")no-repeat 0.8rem 0.8rem
+	background-size: 1.8rem
+	h3
+		font-weight: normal
+		font-size: 1.3rem
 .ser_rel_list
 	.ser_rel_con
-		background: #fff
+		// background: #fff
 	&.new
-		padding: 0
 		.ser_rel_con
-			&.man_no
-				background:#fff url("/img/man_no.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-			&.man
-				background:#fff url("/img/man.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-			&.zhao
-				background:#FFF url("/img/zhao.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-			&.shang
-				background:#fff url("/img/shang.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-			&.xia
-				background:#fff url("/img/xiajia.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-			&.jie
-				background: #fff url("/img/jie_class.png") no-repeat 96% 1rem
-				background-size: 85px 68px
-      border-bottom: 1px solid #dcdcdc
 			border-top: 1px solid #dcdcdc
 			-webkit-box-shadow: none
 			box-shadow: none
 			padding: 0 10px
 			margin: 0 0 10px 0
+      border-bottom: 1px solid #dcdcdc			
 			.content_txt_box
 				overflow: hidden
+				padding: 0
+				background: url("/img/select_not.png")no-repeat 0 3rem
+				background-size: 1.8rem
 				.con_r
 					float: right
 					li
@@ -231,4 +284,37 @@
 .loading-enter-active, .loading-leave-active
 	transition: opacity 1s
 .loading-enter, .loading-leave-active
+.computed
+	position: fiexd
+	bottom: 0
+	left: 0
+	.left_select
+		background: #fff
+		overflow: hidden
+		width: 75%
+		float: left
+		height: 4rem
+		h3
+			float: left
+			line-height: 4rem
+			padding-left: 3rem
+			font-weight: normal
+		.price
+			float: right
+			height: 100%
+			p
+				margin-top: 0.8rem
+				margin-right: 1rem
+				span
+					color: $theme_color
+			b
+				font-weight: normal
+	.settlement
+		float: right
+		width: 25%
+		height: 4rem
+		background: $theme_color
+		text-align: center
+		color: #fff
+		font-size: 1.3rem
 </style>
