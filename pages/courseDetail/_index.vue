@@ -15,7 +15,13 @@ import detailContent from '~components/common/courseDetail/detailContent.vue'
 import courseInfo from '~components/common/courseDetail/courseInfo.vue'
 import evaluate from '~components/common/courseDetail/evaluate.vue'
 import footerBtn from '~components/common/footerBtn.vue'
+import {getDetail} from '../../ajax/getData'
 export default {
+  created () {
+  },
+  mounted () {
+    getDetail(this.$route.query.id)
+  },
   components: {
     headerTop,
     descripTion,

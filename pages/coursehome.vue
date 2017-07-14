@@ -340,9 +340,17 @@
         this.isActive = type
       },
       // 筛选点击选中
-      selectClassIds (indexs, index, id) {
+      selectClassIds (indexs, index, id, filterId) {
         // 改变选中的状态反转
-        this.selectScreen[indexs].classlist.splice(index, 1, {status: !this.selectScreen[indexs].classlist[index].status, id})
+        if (id.indexOf('^') === -1) {
+          this.selectScreen[indexs].classlist.splice(index, 1, {status: !this.selectScreen[indexs].classlist[index].status, id})
+        } else {
+          // 移除第五组的所有状态 然后取反
+          this.selectScreen[4].classlist.map((item) => {
+            item.status = false
+          })
+          this.selectScreen[indexs].classlist.splice(index, 1, {status: !this.selectScreen[indexs].classlist[index].status, id})
+        }
       }
     }
   }

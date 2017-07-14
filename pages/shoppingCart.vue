@@ -28,7 +28,6 @@
                   <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
                   <li class="meybe_class">
                     已报<span>30</span>/<i>20</i>人
-                    <p>20</p>
                   </li>
                   <li class="line_gray"></li>
                   <li>
@@ -72,7 +71,6 @@
                   <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
                   <li class="meybe_class">
                     已报<span>30</span>/<i>20</i>人
-                    <p>20</p>
                   </li>
                   <li class="line_gray"></li>
                   <li>
@@ -93,7 +91,92 @@
             </div>
           </div>
         </li>
-				
+				<li>
+					<div class="title_school">
+						<h3>小佳教育培训机构</h3>
+					</div>
+          <div class="ser_rel_list new">
+            <!-- 单节课-普通 -->
+            <div class="ser_rel_con">
+              <div class="content_txt_box">
+                <ul class="con_r on" style="width:75%;padding-left:6px;">
+                  <li class="tit_h1">
+                    <h1>
+                      <i>1564846</i>
+                      <span class="zhe"></span>
+                      <span class="tuan"></span>
+                      <span class="jian"></span>
+                      <span class="hui"></span>
+                    </h1>
+                  </li>
+                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
+                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
+                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
+                  <li class="meybe_class">
+                    已报<span>30</span>/<i>20</i>人
+                  </li>
+                  <li class="line_gray"></li>
+                  <li>
+                    <div class="cls_mark">
+                      <ul>
+                        <li><span>随时退班</span></li>
+                        <li><span>随时插班</span></li>
+                        <li><span>免费试听</span></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+								<b href="#" class="con_l">
+                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
+                  <i class="name_teac">古呐博博</i>
+                </b>
+              </div>
+            </div>
+          </div>
+        </li>
+				<li>
+					<div class="title_school">
+						<h3>小佳教育培训机构</h3>
+					</div>
+          <div class="ser_rel_list new">
+            <!-- 单节课-普通 -->
+            <div class="ser_rel_con">
+              <div class="content_txt_box">
+                <ul class="con_r on" style="width:75%;padding-left:6px;">
+                  <li class="tit_h1">
+                    <h1>
+                      <i>1564846</i>
+                      <span class="zhe"></span>
+                      <span class="tuan"></span>
+                      <span class="jian"></span>
+                      <span class="hui"></span>
+                    </h1>
+                  </li>
+                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
+                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
+                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
+                  <li class="meybe_class">
+                    已报<span>30</span>/<i>20</i>人
+                  </li>
+                  <li class="line_gray"></li>
+                  <li>
+                    <div class="cls_mark">
+                      <ul>
+                        <li><span>随时退班</span></li>
+                        <li><span>随时插班</span></li>
+                        <li><span>免费试听</span></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+								<b href="#" class="con_l">
+                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
+                  <i class="name_teac">古呐博博</i>
+                </b>
+              </div>
+            </div>
+          </div>
+        </li>
       </ul>
     </div>
     <div class="no_content" v-show="no_content">
@@ -109,7 +192,7 @@
 					<b>不含教材费</b>
 				</div>
 			</div>
-			<input class="settlement" value="马上结算">
+			<input class="settlement" type="button" value="马上结算">
 		</div>
     <footer-tab></footer-tab>
   </div>
@@ -131,14 +214,17 @@
 
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
-body
-  background: #f8f8f8 !important
 .containers
-  height: 100%
-  .herder
-		position: relative
-    @include  wh(100%, 4rem)
-    background: #f8f8f8
+	background: #fafafa
+	height: 100%
+	padding-top: 45px
+	padding-bottom: 100px
+	.herder
+		background: #f0f0f0
+		position: fixed
+		left: 0
+		top: 0
+		@include  wh(100%, 4rem)
 		.cart
 			text-align: center
 			line-height: 4rem
@@ -148,7 +234,7 @@ body
 			right: 1rem
 			position: absolute
 			font-size: 1.3rem
-			margin-top: 1.1rem
+			line-height: 40px
 .no_content
   @include center
   margin-top: -6rem
@@ -169,7 +255,6 @@ body
 		// background: #fff
 	&.new
 		.ser_rel_con
-			border-top: 1px solid #dcdcdc
 			-webkit-box-shadow: none
 			box-shadow: none
 			padding: 0 10px
@@ -285,9 +370,13 @@ body
 	transition: opacity 1s
 .loading-enter, .loading-leave-active
 .computed
-	position: fiexd
-	bottom: 0
+	position: fixed
 	left: 0
+	bottom: 60px
+	width: 100%
+	z-index: 100
+	border-bottom: 1px solid #eee
+	border-top: 1px solid #eee
 	.left_select
 		background: #fff
 		overflow: hidden
@@ -296,15 +385,19 @@ body
 		height: 4rem
 		h3
 			float: left
-			line-height: 4rem
+			line-height: 4.1rem
 			padding-left: 3rem
 			font-weight: normal
+			background: url("/img/select_not.png")no-repeat 8px 10px
+			background-size: 1.8rem
 		.price
 			float: right
 			height: 100%
+			// transform: translateY(50%)
+			padding-top: 8px
+			padding-bottom: 8px
+			padding-right: 10px
 			p
-				margin-top: 0.8rem
-				margin-right: 1rem
 				span
 					color: $theme_color
 			b

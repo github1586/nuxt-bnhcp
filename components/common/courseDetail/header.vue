@@ -3,7 +3,7 @@
       <div class="activeImg end_active"></div>
       <div class="cls_banner"><img src="/img/header_pic.jpg" alt=""></div>
       <p>
-        <a href="javascript:" class="back_page"></a>
+        <nuxt-link to="/coursehome" class="back_page"></nuxt-link>
         <a href="tel:400-40000000" class="icon_phone"></a>
         <a href="javascript:" class="more_con icon_btn"></a>
       </p>

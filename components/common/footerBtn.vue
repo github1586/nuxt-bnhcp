@@ -2,7 +2,8 @@
    <!-- 功能按钮 -->
   <div class="menu_fix_bottom">
       <div class="ctrl_btn">
-          <a href="" class="bao">预约试听</a>
+          <a href="" class="yu">预约试听</a>
+          <a href="" class="bao">加入购物车</a>
           <a href="" class="yue">立即报名</a>
       </div>
   </div>
@@ -20,12 +21,15 @@
     width: 100%
   a
     display: inline-block
-    width: 50%
+    width: 33.333%
     height: 100%
     line-height: 50px
     text-align: center
     color: #fff
     font-size: 15px
+  .yu
+    background: #f8f8f8
+    color: $theme_color
   .yue
     background: $theme_color
   .bao

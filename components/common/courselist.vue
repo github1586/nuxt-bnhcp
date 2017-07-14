@@ -1,7 +1,7 @@
 <template>
   <div class="coureslist_container">
     <ul v-load-more="loaderMore" v-if="courseArr.length">
-      <router-link tag='li' :to="{path: 'courseDetail/courseDetail'}" :key="index" v-for="(items, index) in courseArr">
+      <router-link tag='li' :to="{path: 'courseDetail/index', query: {id: items.courseId} }" :data-id="items.courseId" :key="index" v-for="(items, index) in courseArr">
         <div class="ser_rel_list new">
           <!-- 单节课-普通 -->
           <div class="ser_rel_con">
@@ -120,12 +120,14 @@ export default {
       this.showLoading = true
       this.offset += 15
       let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
-      // 恢复控制变量为false
-      this.showLoading = false
       // 提交数据 --》状态管理
       this.COURSE_ARR(data)
       // 恢复控制变量为false
-      this.preventRepeatreuqest = false
+      setTimeout(() => {
+        this.preventRepeatreuqest = false
+        // 恢复控制变量为false
+        this.showLoading = false
+      }, 2000)
       // 小于15条 限时暂无更多
       if (data.data.length < 15) {
         this.TOUCHEND(true)

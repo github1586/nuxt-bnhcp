@@ -33,3 +33,9 @@ export const courselist = (offset, courseId, type, sort, selectScreen = []) => {
   }
   return fetch('/api/courselist', data)
 }
+/**
+ * 获取课程详情
+ */
+export const getDetail = (id) => {
+  fetch('/api/courseDetail/index', id)
+}
