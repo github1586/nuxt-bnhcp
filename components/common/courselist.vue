@@ -44,7 +44,7 @@
         </div>
       </router-link>
     </ul>
-		<no-content :content="noContent" v-show="this.courseArr.length === 0"></no-content>
+		<no-content :content="noContent" v-show="isDisplayNo"></no-content>
 		<p class="empty_data" v-show="this.touchend">没有更多课程</p>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
@@ -66,6 +66,8 @@ export default {
       preventRepeatreuqest: false,
       // 是否显示加载动画
       showLoading: true,
+      // 无内容是否显示
+      isDisplayNo: false,
       // 无内容样式
       noContent: {
         class: 'class',
@@ -94,6 +96,8 @@ export default {
     async initData () {
       this.offset = 0
       let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
+      // 如果数据为空 把空样式显示改为 true
+      if (data.data.length === 0) this.isDisplayNo = true
       // 提交课程列表
       this.COURSE_ARR(data)
       this.showLoading = false

@@ -23,7 +23,6 @@
     </div>
   </div>
 </template>
-
 <style lang="sass">
 .bottom_tabs
   position: fixed
@@ -59,28 +58,28 @@
       a
         background: url('/img/icon_tab_home.png')no-repeat center 10px
         background-size: 19px 20px 
-        &.on
+        &.nuxt-link-exact-active
           background: url('/img/icon_tab_home_on.png')no-repeat center 10px
           background-size: 19px 20px
     .tabs_two
       a
         background: url('/img/icon_tab_class.png')no-repeat center 10px
         background-size: 19px 20px 
-        &.on
+        &.nuxt-link-exact-active
             background: url('/img/icon_tab_class_on.png')no-repeat center 10px
             background-size: 19px 20px 
     .tabs_three
       a
-        background: url('/img/icon_tab_line.png')no-repeat center 10px
+        background: url('/img/icon_cart.png')no-repeat center 10px
         background-size: 19px 20px 
-        &.on
-          background: url('/img/icon_tab_line_on.png')no-repeat center 10px
+        &.nuxt-link-exact-active
+          background: url('/img/icon_on_cart.png')no-repeat center 10px
           background-size: 19px 20px 
     .tabs_four
       a
         background: url('/img/icon_tab_my.png')no-repeat center 10px
         background-size: 19px 20px 
-        &.on
+        &.nuxt-link-exact-active
           background: url('/img/icon_tab_my_on.png')no-repeat center 10px
           background-size: 19px 20px 
 </style>

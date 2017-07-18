@@ -20,7 +20,12 @@ export default {
   created () {
   },
   mounted () {
-    getDetail(this.$route.query.id)
+    this.init()
+  },
+  methods: {
+    init () {
+      getDetail(this.$route.query.id)
+    }
   },
   components: {
     headerTop,
