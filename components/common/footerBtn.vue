@@ -2,9 +2,9 @@
    <!-- 功能按钮 -->
   <div class="menu_fix_bottom">
       <div class="ctrl_btn">
-          <a href="" class="yu">预约试听</a>
-          <a href="" class="bao">加入购物车</a>
-          <a href="" class="yue">立即报名</a>
+          <nuxt-link to="/subscribe/index" class="yu">预约试听</nuxt-link>
+          <nuxt-link to="/subscribe/index" class="bao">加入购物车</nuxt-link>
+          <nuxt-link to="/subscribe/index" class="yue">立即报名</nuxt-link>
       </div>
   </div>
 </template>

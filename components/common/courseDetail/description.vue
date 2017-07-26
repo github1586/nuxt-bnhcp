@@ -6,7 +6,12 @@
         <span class="price_sp"><i>¥</i>{{this.courseDetail.cost}}</span>
         <span class="price_original"><i>¥</i>{{this.courseDetail.mall_cost}}</span>
       </p>
-      <div class="have_class" :class="{ zhao: this.courseDetail.isClass === '2'}" ></div>
+      <div class="have_class" :class="{ zhao: this.courseDetail.isClass === '1',
+																				man: this.courseDetail.isClass === '2',
+																				xia: this.courseDetail.isClass === '3',
+																				jie: this.courseDetail.isClass === '4',
+																				shang: this.courseDetail.isClass === '5',
+																				}" ></div>
     </div>
     <div class="bottom_con">
       <div class="cls_mark">
