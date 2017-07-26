@@ -5,7 +5,8 @@ import {
   TOUCHEND,
   COURSE_ID,
   COURSE_TYPE,
-  COURSE_SORT
+  COURSE_SORT,
+  COURSE_DETAIL
 } from './mutation-types.js'
 
 export default {
@@ -36,5 +37,9 @@ export default {
   // 当前课程列表排序方式
   [COURSE_SORT] (state, value) {
     state.courseSort = value
+  },
+  // 课程详情
+  [COURSE_DETAIL] (state, value) {
+    state.courseDetail = value
   }
 }

@@ -23,6 +23,7 @@ async function start () {
   app.use(nuxt.render)
   // Build in development
   if (config.dev) {
+    console.log(config.dev)
     try {
       await nuxt.build()
     } catch (error) {

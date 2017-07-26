@@ -13,20 +13,20 @@
       <li class="">
         <p>适学人群</p>
         <ul>
-          <li>钢琴零基础</li>
+          <li>{{this.courseDetail.person}}</li>
         </ul>
       </li>
       <li>
         <p class="target_teach">教学目标</p>
         <ul class="teach_ping">
-          <li class="content_learn">学学好钢学好钢学好钢学好钢</li>
+          <li class="content_learn">{{this.courseDetail.teachingTarget}}</li>
           <li class="tip_more" data-role="hide_show" style="display: none">516568546</li>
         </ul>  
       </li>
       <li>
         <p class="target_teach">课程亮点</p>
         <ul class="teach_ping_zone">
-          <li class="content_learn">学好好钢学好钢学好钢学好钢学好钢</li>
+          <li class="content_learn">{{this.courseDetail.couresStar}}</li>
           <li class="tip_more" data-role="hide_show" style="display: none">1565</li>
         </ul>  
       </li>
@@ -34,7 +34,14 @@
   </div>
 </template>
 <script>
-
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
+  }
+}
 </script>
 <style lang="sass" scoped>
 @import '~static/common/style.sass'

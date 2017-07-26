@@ -1,30 +1,37 @@
 <template>
   <div class="c_detail">
     <div class="class_pay">
-      <p class="jp_class">精品钢琴课</p>
+      <p class="jp_class">{{this.courseDetail.name}}</p>
       <p class="pad_p">
-        <span class="price_sp"><i>¥</i>1099.00</span>
-        <span class="price_original"><i>¥</i>2000.00</span>
+        <span class="price_sp"><i>¥</i>{{this.courseDetail.cost}}</span>
+        <span class="price_original"><i>¥</i>{{this.courseDetail.mall_cost}}</span>
       </p>
-      <div class="have_class zhao"></div>
+      <div class="have_class" :class="{ zhao: this.courseDetail.isClass === '2'}" ></div>
     </div>
     <div class="bottom_con">
       <div class="cls_mark">
         <ul>
-          <li><span>随时退班</span></li>
-          <li><span>随时插班</span></li>
-          <li><span>免费试听</span></li>
+          <li v-show="this.courseDetail.retreat_rule == 1"><span>随时退班</span></li>
+					<li v-show="this.courseDetail.is_transfer == 1"><span>随时插班</span></li>
+					<li v-show="this.courseDetail.is_audition == 1"><span>免费试听</span></li>
         </ul>       
       </div>
       <div class="box_time tao">
-        <p class="zhe"><span>2017-08-09</span><span class="on">15:50:50</span>前报名，享9.8折优惠</p>
+        <p class="zhe"><span>{{this.courseDetail.end_date1}}</span><span class="on">{{this.courseDetail.class_time_names}}</span>前报名，享9.8折优惠</p>
         <i class="more_three"></i>
       </div> 
     </div>
   </div>
 </template>
 <script>
-
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
+  }
+}
 </script>
 <style lang="sass" scoped>
 @import '~static/common/style.sass'

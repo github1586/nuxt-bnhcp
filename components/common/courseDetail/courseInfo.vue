@@ -6,29 +6,81 @@
     <ul class="link_lists">
       <li class="link">
         <a href="javascript:">
-          主讲老师：<span>张淼</span>
+          主讲老师：<span>{{this.courseDetail.teacherName}}</span>
         </a>
       </li>
       <li class="spe_no_back">
         <a href="javascript:">
           <span class="deal_with">课程安排：</span>
           <div class="study_time">
-            <span class="time_s">2015-11-30至2016-03-18</span>
-            <span>每周一、二、三、四、五、日上课</span>
+            <span class="time_s">{{this.courseDetail.open_date1}}至{{this.courseDetail.end_date1}}</span>
+            <span>{{filterWeek(this.courseDetail.goods_week)}}</span>
           </div>
-          <span class="right_plan">详细安排</span>
         </a>
       </li>
       <li class="link no_bottom">
         <a href="javascript:;">
-          <i>上课地点</i>：<span>中关村厦中关村大大厦村大厦中关村大厦中关村厦中关村大大厦村大厦中关村大厦</span>
+          <i>上课地点</i>：<span>{{this.courseDetail.address}}</span>
         </a>
       </li>
     </ul>
   </div>
 </template>
 <script>
-
+import {mapState} from 'vuex'
+export default {
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
+  },
+  methods: {
+    getWeek (arr) {
+      let weekArr = []
+      arr.forEach(function (element) {
+        switch (element) {
+          case '1':
+            weekArr.push('一')
+            break
+          case '2':
+            weekArr.push('二')
+            break
+          case '3':
+            weekArr.push('三')
+            break
+          case '4':
+            weekArr.push('四')
+            break
+          case '5':
+            weekArr.push('五')
+            break
+          case '6':
+            weekArr.push('六')
+            break
+          case '7':
+            weekArr.push('日')
+            break
+          default:
+            break
+        }
+      })
+      return '每周' + weekArr.join(',') + '上课'
+    },
+    filterWeek (value) {
+      let week = []
+      if (value.indexOf('@') !== -1) {
+        let arr = value.split('@')
+        arr.forEach(function (element) {
+          week.push(element.slice(2))
+        }, this)
+        return this.getWeek(week)
+      } else {
+        week.push(value.slice(2))
+        return this.getWeek(week)
+      }
+    }
+  }
+}
 </script>
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
@@ -73,7 +125,7 @@
 					span
 						font-size: 1.3rem
 						display: inline-block
-						margin-left: 70px
+						margin-left: 60px
 						position: relative
 						text-align: left
 						margin-top: -19px

@@ -15,17 +15,25 @@ import detailContent from '~components/common/courseDetail/detailContent.vue'
 import courseInfo from '~components/common/courseDetail/courseInfo.vue'
 import evaluate from '~components/common/courseDetail/evaluate.vue'
 import footerBtn from '~components/common/footerBtn.vue'
-import {getDetail} from '../../ajax/getData'
+import { mapState, mapMutations } from 'vuex'
+import axios from '~plugins/axios'
 export default {
-  created () {
+  // ajax module as axios
+  fetch ({store, query}) {
+    return axios.get(`/api/courseDetail/index/${query.id}`)
+    .then(function (data) {
+      store.commit('COURSE_DETAIL', data.data)
+    })
   },
-  mounted () {
-    this.init()
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
   },
   methods: {
-    init () {
-      getDetail(this.$route.query.id)
-    }
+    ...mapMutations([
+      'COURSE_DETAIL'
+    ])
   },
   components: {
     headerTop,

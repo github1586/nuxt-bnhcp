@@ -44,7 +44,7 @@
         </div>
       </router-link>
     </ul>
-		<no-content :content="noContent" v-show="isDisplayNo"></no-content>
+		<no-content :content="noContent" v-show="this.courseArr.length===0"></no-content>
 		<p class="empty_data" v-show="this.touchend">没有更多课程</p>
 		<transition name="loading">
 			<loading v-show="showLoading"></loading>
@@ -190,6 +190,7 @@ export default {
   watch: {
     courseIdType: function (value) {
       this.initOffset()
+      // this.isDisplayNo = false
     },
     sortByType: function (value) {
       this.initOffset()

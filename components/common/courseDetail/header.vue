@@ -10,14 +10,21 @@
       <div class="opa_abso">
         <img src="/img/opa_jx.png" alt="">
         <div class="le_rig">
-          <span class="left_s">已报3/9人</span>
-          <span class="right_s">浏览量88</span>
+          <span class="left_s">已报{{this.courseDetail.saled}}/{{this.courseDetail.total}}人</span>
+          <span class="right_s">浏览量{{this.courseDetail.browse_number}}</span>
         </div>       
       </div>
     </div>
 </template>
 <script>
-
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
+  }
+}
 </script>
 <style lang="sass" scoped>
 // 课程详情区域

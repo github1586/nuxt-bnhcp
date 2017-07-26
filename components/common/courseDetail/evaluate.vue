@@ -21,13 +21,13 @@
       </div>
       <!-- 评论内容 -->
       <ul class="evel_list">
-        <li>
+        <li v-for="(items, index) in this.courseDetail.evaluate" :key="index">
           <a href="javascript:">
             <img src="/img/head_portrait.png" width="25" height="25" alt="">
             <div class="evel_con">
               <p>
-                  <span>家长A</span>
-                  <span class="date_tip">2015-11-20</span>
+                  <span>匿名</span>
+                  <span class="date_tip">{{courseDetail.end_date1}}</span>
               </p>
               <div class="ping">
                   <ul class="stars">
@@ -39,30 +39,7 @@
                   </ul>
               </div>      
               <p class="teach_ping">
-                  <span class="content_learn">挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好好挺好挺好</span>
-              </p>  
-            </div>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <img src="/img/head_portrait.png" width="25" height="25" alt="">
-            <div class="evel_con">
-              <p>
-                <span>家长A</span>
-                <span class="date_tip">2015-11-20</span>
-              </p>
-              <div class="ping">
-                <ul class="stars">
-                  <li class="on"></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                  <li></li>
-                </ul>
-              </div>  
-              <p class="teach_ping">
-                <span class="content_learn">挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好挺好</span>
+                  <span class="content_learn">{{items}}</span>
               </p>  
             </div>
           </a>
@@ -75,7 +52,14 @@
   </div>
 </template>
 <script>
-
+import { mapState } from 'vuex'
+export default {
+  computed: {
+    ...mapState([
+      'courseDetail'
+    ])
+  }
+}
 </script>
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
