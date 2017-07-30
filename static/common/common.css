@@ -104,10 +104,24 @@ header {
   top: 0;
   z-index: 19881121;
 }
+header.fff {
+  background: #fff
+}
 header .header_back {
   width: 10px;
   height: 16px;
-  background: url(../img/back_search.png) no-repeat 0 0;
+  background: url(../img/header_back_red.png) no-repeat 0 0;
+  background-size: 10px 16px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  display: block;
+  margin: 0 0 0 20px;
+}
+header .header_back_red {
+  width: 10px;
+  height: 16px;
+  background: url(../img/icon_back_red.png) no-repeat 0 0;
   background-size: 10px 16px;
   position: absolute;
   left: 0;
@@ -138,6 +152,13 @@ header .course_out_btn {
 }
 header span.tit {
   color: #fff;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+header span.titgray {
+  color: #666;
   line-height: 25px;
   text-overflow: ellipsis;
   overflow: hidden;

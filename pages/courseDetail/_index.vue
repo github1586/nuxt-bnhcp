@@ -5,7 +5,7 @@
     <detail-content></detail-content>
     <course-info></course-info>
     <evaluate></evaluate>
-    <footer-btn></footer-btn>  
+    <footer-btn></footer-btn>
   </div>
 </template>
 <script>

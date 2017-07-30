@@ -39,3 +39,16 @@ export const courselist = (offset, courseId, type, sort, selectScreen = []) => {
 export const getDetail = (id) => {
   fetch('/api/courseDetail/index/' + id)
 }
+
+/**
+ * 获取课程详情
+ */
+export const postCourseId = (id) => {
+  return fetch('/api/postCourseId/' + id)
+}
+/**
+ * 是否存在购物车
+ */
+export const isexistCart = (id) => {
+  return fetch('/api/isexistCart/' + id)
+}

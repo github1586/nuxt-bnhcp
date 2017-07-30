@@ -14,7 +14,7 @@
           <span class="deal_with">课程安排：</span>
           <div class="study_time">
             <span class="time_s">{{this.courseDetail.open_date1}}至{{this.courseDetail.end_date1}}</span>
-            <span>{{filterWeek(this.courseDetail.goods_week)}}</span>
+            <span>{{filterWeeks(this.courseDetail.goods_week)}}</span>
           </div>
         </a>
       </li>
@@ -28,6 +28,7 @@
 </template>
 <script>
 import {mapState} from 'vuex'
+import {filterWeek} from '../../../config/common.js'
 export default {
   computed: {
     ...mapState([
@@ -35,49 +36,8 @@ export default {
     ])
   },
   methods: {
-    getWeek (arr) {
-      let weekArr = []
-      arr.forEach(function (element) {
-        switch (element) {
-          case '1':
-            weekArr.push('一')
-            break
-          case '2':
-            weekArr.push('二')
-            break
-          case '3':
-            weekArr.push('三')
-            break
-          case '4':
-            weekArr.push('四')
-            break
-          case '5':
-            weekArr.push('五')
-            break
-          case '6':
-            weekArr.push('六')
-            break
-          case '7':
-            weekArr.push('日')
-            break
-          default:
-            break
-        }
-      })
-      return '每周' + weekArr.join(',') + '上课'
-    },
-    filterWeek (value) {
-      let week = []
-      if (value.indexOf('@') !== -1) {
-        let arr = value.split('@')
-        arr.forEach(function (element) {
-          week.push(element.slice(2))
-        }, this)
-        return this.getWeek(week)
-      } else {
-        week.push(value.slice(2))
-        return this.getWeek(week)
-      }
+    filterWeeks (value) {
+      return filterWeek(value)
     }
   }
 }

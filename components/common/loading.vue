@@ -56,25 +56,25 @@ export default {
 		50%  {transform: scale(0.3);}
 		100% {transform: scale(1);}
 	}
-    .loading_container{
-    	position: fixed;
-    	top: 50%;
-    	left: 50%;
-    	-webkit-transform: translate(-50%, -50%);
-    	-o-transform: translate(-50%, -50%);
-    	-ms-transform: translate(-50%, -50%);
-    	transform: translate(-50%, -50%);
-    	@include wh(5rem, 4rem);
-    }
-    .load_img{
-    	@include wh(100%, 100%);
-    	background: url(/img/icon_loading.png) no-repeat 0 0;
-    	background-size: 100% auto;
-    	transform: translateY(0px);
-    	animation: load .6s infinite ease-in-out;
-    	position: relative;
-    	z-index: 11;
-    }
+	.loading_container{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-o-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		@include wh(5rem, 4rem);
+	}
+	.load_img{
+		@include wh(100%, 100%);
+		background: url(/img/icon_loading.png) no-repeat 0 0;
+		background-size: 100% auto;
+		transform: translateY(0px);
+		animation: load .6s infinite ease-in-out;
+		position: relative;
+		z-index: 11;
+	}
 	.load_ellipse{
 		position: absolute;
 		@include wh(5rem, 5rem);

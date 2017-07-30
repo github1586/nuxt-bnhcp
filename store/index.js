@@ -15,7 +15,9 @@ const state = {
   // 当前的课程列表排序方式啊
   courseSort: '1',
   // 课程详情
-  courseDetail: {}
+  courseDetail: {},
+  // 购物车
+  cart: {}
 }
 
 const createStore = () => {

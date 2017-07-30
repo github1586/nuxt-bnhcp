@@ -1,13 +1,13 @@
 <template>
   <div class="container full">
-    <!-- <header-top :name="this.name"></header-top> -->
+    <header-top :name="this.name" :className="this.className" :backgroundColor="this.backgroundColor"></header-top> 
     <detail-time></detail-time>
     <vali-phone></vali-phone>
     <yes-btn :val="this.val"></yes-btn>
   </div>
 </template>
 <script>
-// import headerTop from '~components/common/header.vue'
+import headerTop from '~components/common/header.vue'
 import detailTime from '~components/common/subscribe/detailTime.vue'
 import valiPhone from '~components/common/subscribe/valiPhone.vue'
 import yesBtn from '~components/common/subscribe/yesbtn.vue'
@@ -15,11 +15,12 @@ export default {
   data () {
     return {
       name: '预约试听',
-      val: '确认预约'
+      val: '确认预约',
+      className: 0
     }
   },
   components: {
-    // headerTop,
+    headerTop,
     detailTime,
     valiPhone,
     yesBtn

@@ -5,9 +5,9 @@
     </div>
     <div class="order_cart">
       <ul>
-        <li>
+        <router-link tag='li' :to="{path: 'courseDetail/index', query: {id: item.courseId}}" v-for="(item, index) in cartList" :key="index">
 					<div class="title_school">
-						<h3>小佳教育培训机构</h3>
+						<h3>{{item.campusesName}}</h3>
 					</div>
           <div class="ser_rel_list new">
             <!-- 单节课-普通 -->
@@ -16,167 +16,38 @@
                 <ul class="con_r on" style="width:75%;padding-left:6px;">
                   <li class="tit_h1">
                     <h1>
-                      <i>1564846</i>
+                      <i>{{item.name}}</i>
                       <span class="zhe"></span>
                       <span class="tuan"></span>
                       <span class="jian"></span>
                       <span class="hui"></span>
                     </h1>
                   </li>
-                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
-                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
-                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
+                  <li class="school_name">{{item.address}}</li>
+                  <li class="str_end_time"><span>{{item.open_date1}}</span>至<span>{{item.end_date1}}</span></li>
+                  <li class="totle_mon">&yen<span>{{item.cost}}</span><i>&yen{{item.mall_cost}}</i></li>
                   <li class="meybe_class">
-                    已报<span>30</span>/<i>20</i>人
+                    已报<span>{{item.saled}}</span>/<i>{{item.total}}</i>人
                   </li>
                   <li class="line_gray"></li>
                   <li>
                     <div class="cls_mark">
                       <ul>
-                        <li><span>随时退班</span></li>
-                        <li><span>随时插班</span></li>
-                        <li><span>免费试听</span></li>
+												<li v-show="item.retreat_rule == 1"><span>随时退班</span></li>
+												<li v-show="item.is_transfer == 1"><span>随时插班</span></li>
+												<li v-show="item.is_audition == 1"><span>免费试听</span></li>
                       </ul>
                     </div>
                   </li>
                 </ul>
 								<b href="#" class="con_l">
-                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
-                  <i class="name_teac">古呐博博</i>
+                  <img :src="'/img/teacherHead/' + item.teacher_actor" height="20%" width="100%">
+                  <i class="name_teac">{{item.teacherName}}</i>
                 </b>
               </div>
             </div>
           </div>
-        </li>
-				<li>
-					<div class="title_school">
-						<h3>小佳教育培训机构</h3>
-					</div>
-          <div class="ser_rel_list new">
-            <!-- 单节课-普通 -->
-            <div class="ser_rel_con">
-              <div class="content_txt_box">
-                <ul class="con_r on" style="width:75%;padding-left:6px;">
-                  <li class="tit_h1">
-                    <h1>
-                      <i>1564846</i>
-                      <span class="zhe"></span>
-                      <span class="tuan"></span>
-                      <span class="jian"></span>
-                      <span class="hui"></span>
-                    </h1>
-                  </li>
-                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
-                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
-                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
-                  <li class="meybe_class">
-                    已报<span>30</span>/<i>20</i>人
-                  </li>
-                  <li class="line_gray"></li>
-                  <li>
-                    <div class="cls_mark">
-                      <ul>
-                        <li><span>随时退班</span></li>
-                        <li><span>随时插班</span></li>
-                        <li><span>免费试听</span></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-								<b href="#" class="con_l">
-                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
-                  <i class="name_teac">古呐博博</i>
-                </b>
-              </div>
-            </div>
-          </div>
-        </li>
-				<li>
-					<div class="title_school">
-						<h3>小佳教育培训机构</h3>
-					</div>
-          <div class="ser_rel_list new">
-            <!-- 单节课-普通 -->
-            <div class="ser_rel_con">
-              <div class="content_txt_box">
-                <ul class="con_r on" style="width:75%;padding-left:6px;">
-                  <li class="tit_h1">
-                    <h1>
-                      <i>1564846</i>
-                      <span class="zhe"></span>
-                      <span class="tuan"></span>
-                      <span class="jian"></span>
-                      <span class="hui"></span>
-                    </h1>
-                  </li>
-                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
-                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
-                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
-                  <li class="meybe_class">
-                    已报<span>30</span>/<i>20</i>人
-                  </li>
-                  <li class="line_gray"></li>
-                  <li>
-                    <div class="cls_mark">
-                      <ul>
-                        <li><span>随时退班</span></li>
-                        <li><span>随时插班</span></li>
-                        <li><span>免费试听</span></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-								<b href="#" class="con_l">
-                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
-                  <i class="name_teac">古呐博博</i>
-                </b>
-              </div>
-            </div>
-          </div>
-        </li>
-				<li>
-					<div class="title_school">
-						<h3>小佳教育培训机构</h3>
-					</div>
-          <div class="ser_rel_list new">
-            <!-- 单节课-普通 -->
-            <div class="ser_rel_con">
-              <div class="content_txt_box">
-                <ul class="con_r on" style="width:75%;padding-left:6px;">
-                  <li class="tit_h1">
-                    <h1>
-                      <i>1564846</i>
-                      <span class="zhe"></span>
-                      <span class="tuan"></span>
-                      <span class="jian"></span>
-                      <span class="hui"></span>
-                    </h1>
-                  </li>
-                  <li class="school_name">该法电视广告(该法电视广告该法电视广告)</li>
-                  <li class="str_end_time"><span>2017-05-06</span>至<span>2017-08-06</span></li>
-                  <li class="totle_mon">&yen<span>600</span><i>&yen300</i></li>
-                  <li class="meybe_class">
-                    已报<span>30</span>/<i>20</i>人
-                  </li>
-                  <li class="line_gray"></li>
-                  <li>
-                    <div class="cls_mark">
-                      <ul>
-                        <li><span>随时退班</span></li>
-                        <li><span>随时插班</span></li>
-                        <li><span>免费试听</span></li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-								<b href="#" class="con_l">
-                  <img src='/img/teacherHead/1_tpl_00.jpg' height="20%" width="100%">
-                  <i class="name_teac">古呐博博</i>
-                </b>
-              </div>
-            </div>
-          </div>
-        </li>
+        </router-link>
       </ul>
     </div>
     <div class="no_content" v-show="no_content">
@@ -188,7 +59,7 @@
 			<div class="left_select">
 				<h3>全选</h3>
 				<div class="price">
-					<p>合计：<span>￥100.00</span></p>
+					<p>合计：<span>￥{{this.total}}</span></p>
 					<b>不含教材费</b>
 				</div>
 			</div>
@@ -199,28 +70,56 @@
 </template>
 
 <script>
-  import footerTab from '~components/home/Footertabs.vue'
-  export default {
-    data () {
-      return {
-        no_content: false
-      }
-    },
-    components: {
-      footerTab
+import footerTab from '~components/home/Footertabs.vue'
+import {mapState, mapMutations} from 'vuex'
+import axios from '~plugins/axios'
+export default {
+  // axios data
+  async asyncData () {
+    let data = await axios.get('/api/cartList')
+    return {
+      cartList: data.data.result
+    }
+  },
+  data () {
+    return {
+      no_content: false,
+      total: 0
+    }
+  },
+  computed: {
+    ...mapState([
+      'cart'
+    ])
+  },
+  methods: {
+    ...mapMutations([
+      'CART'
+    ]),
+    addPrice (price) {
+      this.total += parseFloat(price)
+    }
+  },
+  components: {
+    footerTab
+  },
+  watch: {
+    addCart: function () {
+      alert(1)
     }
   }
+}
 </script>
 
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
 .containers
-	background: #fafafa
+	background: #f0f0f0
 	height: 100%
-	padding-top: 45px
+	padding-top: 50px
 	padding-bottom: 100px
 	.herder
-		background: #f0f0f0
+		background: #fafafa
 		position: fixed
 		left: 0
 		top: 0
@@ -247,6 +146,9 @@
 	padding-left: 3.3rem
 	background: $theme_color url("/img/select_not.png")no-repeat 0.8rem 0.8rem
 	background-size: 1.8rem
+	&.on
+		background: $theme_color url("/img/icon_red_ok.png")no-repeat 0.8rem 0.8rem
+		background-size: 1.8rem
 	h3
 		font-weight: normal
 		font-size: 1.3rem
@@ -265,11 +167,15 @@
 				padding: 0
 				background: url("/img/select_not.png")no-repeat 0 3rem
 				background-size: 1.8rem
+				&.on
+					background: url("/img/icon_red_ok.png")no-repeat 0 3rem
+					background-size: 1.8rem
 				.con_r
 					float: right
 					li
 						margin-bottom: 0.7rem
 						font-size: 1.2rem
+            background: #fff
 					.tit_h1
 						h1
 							font-size: 1.6rem
@@ -388,7 +294,6 @@
 			line-height: 4.1rem
 			padding-left: 3rem
 			font-weight: normal
-			background: url("/img/select_not.png")no-repeat 8px 10px
 			background-size: 1.8rem
 		.price
 			float: right
@@ -410,4 +315,8 @@
 		text-align: center
 		color: #fff
 		font-size: 1.3rem
+.order_cart
+  ul
+    li
+      background: #fff
 </style>

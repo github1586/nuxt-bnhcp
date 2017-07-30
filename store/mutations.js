@@ -6,9 +6,10 @@ import {
   COURSE_ID,
   COURSE_TYPE,
   COURSE_SORT,
-  COURSE_DETAIL
+  COURSE_DETAIL,
+  CART
 } from './mutation-types.js'
-
+import {setStore} from '../config/common.js'
 export default {
   [COURSE_PARAMS] (state, value) {
     state.coursename = value
@@ -41,5 +42,10 @@ export default {
   // 课程详情
   [COURSE_DETAIL] (state, value) {
     state.courseDetail = value
+    // 存入locaStore
+    setStore('courseDetail', value)
+  },
+  [CART] (state, value) {
+    state.cart = value
   }
 }

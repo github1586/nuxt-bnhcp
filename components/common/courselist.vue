@@ -22,7 +22,7 @@
                 </li>
                 <li class="school_name">{{items.institutionsName}}({{items.campusesName}})</li>
                 <li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
-                <li class="week_time">{{filterWeek(items.goods_week)}}</li>
+                <li class="week_time">{{filterWeeks(items.goods_week)}}</li>
                 <li class="totle_mon on" :class="{tuan: items.is_signup == 2}">&yen<span>{{items.mall_cost}}</span><i>&yen{{items.cost}}</i></li>
                 <li class="meybe_class">
                   已报<span>{{items.saled}}</span>/<i>{{items.total}}</i>人
@@ -57,6 +57,7 @@ import {loadMore} from '../mixin/mixin.js'
 import loading from './loading.vue'
 import noContent from '~components/common/no_content/no_content.vue'
 import {courselist} from '../../ajax/getData.js'
+import {filterWeek} from '../../config/common.js'
 export default {
   data () {
     return {
@@ -102,6 +103,9 @@ export default {
       this.COURSE_ARR(data)
       this.showLoading = false
     },
+    filterWeeks (value) {
+      return filterWeek(value)
+    },
     // 获取老师头像
     getTeacherHead () {
       var randnum = parseInt(Math.random() * (100 - 0))
@@ -125,6 +129,7 @@ export default {
       this.offset += 15
       let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
       // 提交数据 --》状态管理
+      console.log(data)
       this.COURSE_ARR(data)
       // 恢复控制变量为false
       setTimeout(() => {
@@ -136,50 +141,6 @@ export default {
       if (data.data.length < 15) {
         this.TOUCHEND(true)
         return
-      }
-    },
-    getWeek (arr) {
-      let weekArr = []
-      arr.forEach(function (element) {
-        switch (element) {
-          case '1':
-            weekArr.push('一')
-            break
-          case '2':
-            weekArr.push('二')
-            break
-          case '3':
-            weekArr.push('三')
-            break
-          case '4':
-            weekArr.push('四')
-            break
-          case '5':
-            weekArr.push('五')
-            break
-          case '6':
-            weekArr.push('六')
-            break
-          case '7':
-            weekArr.push('日')
-            break
-          default:
-            break
-        }
-      })
-      return '每周' + weekArr.join(',') + '上课'
-    },
-    filterWeek (value) {
-      let week = []
-      if (value.indexOf('@') !== -1) {
-        let arr = value.split('@')
-        arr.forEach(function (element) {
-          week.push(element.slice(2))
-        }, this)
-        return this.getWeek(week)
-      } else {
-        week.push(value.slice(2))
-        return this.getWeek(week)
       }
     },
     initOffset () {
