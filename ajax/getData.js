@@ -56,9 +56,9 @@ export const isexistCart = (id) => {
  * 登录
  */
 
-export const userLongin = (users, password) => {
+export const userLongin = (phone, password) => {
   var data = {
-    users,
+    phone,
     password
   }
   return fetch('/api/longin', data, 'POST')

@@ -9,19 +9,16 @@
       <p class="login_btn"><input type="button" @click="longin()" value="登录"></p>
       <p class="user_trans">未注册用户登录将自动创建报哪好账号，<b>即视为您已同意</b><a href="">《报哪好用户服务协议》</a></p>
     </div>
-    <loading v-show="showloading === true"></loading>
     <layer-msg :msg="this.layerMSg" v-show="isLayer"></layer-msg>
   </div>
 </template>
 <script>
-import { loading } from '~components/common/loading.vue'
 import { setStore } from '../config/common.js'
 import { userLongin } from '../ajax/getData.js'
 import layerMsg from '~components/layer/layerMsg.vue'
 export default {
   data () {
     return {
-      showloading: true,
       phone: '',
       password: '',
       layerMSg: '手机号格式不对',
@@ -39,6 +36,13 @@ export default {
         setStore('user', this.phone)
         let data = await userLongin(this.phone, this.password)
         if (data.status) {
+          this.$router.push({ path: '/' }) // 跳转
+        } else {
+          this.layerMsg = data.msg // 更换提示语
+          this.isLayer = true // 提示
+          setTimeout(() => { // 两秒恢复为true
+            this.isLayer = false
+          }, 2000)
         }
       } else {
         this.isLayer = true
@@ -52,7 +56,6 @@ export default {
     }
   },
   components: {
-    loading,
     layerMsg
   }
 }

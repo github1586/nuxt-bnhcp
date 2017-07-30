@@ -52,6 +52,19 @@ export default {
 		90%  {opacity: 0.2;}
 		100%  {opacity: 0;}
 	}
+	@keyframes load{
+		0%   {opacity: 0;}
+		10%  {opacity: 0.3;}
+		20%  {opacity: 0.6;}
+		30%  {opacity: 1;}
+		40%  {opacity: 1;}
+		50%  {opacity: 1;}
+		60%  {opacity: 1;}
+		70%  {opacity: 1;}
+		80%  {opacity: 0.5;}
+		90%  {opacity: 0.2;}
+		100%  {opacity: 0;}
+	}
 	.loading_container{
 		position: fixed;
 		top: 50%;
@@ -65,7 +78,7 @@ export default {
 	.load_msg{
 		@include wh(100%, 100%);
     line-height: 3.5rem;
-    background: #a1a1a1;
+    background: #999;
     color: #fff;
     text-align: center;
     font-size: 14px;
