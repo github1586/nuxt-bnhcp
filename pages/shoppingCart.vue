@@ -3,7 +3,7 @@
     <div class="herder">
       <p class="cart">购物车</p><span class="white">编辑</span>
     </div>
-    <div class="order_cart">
+    <div class="order_cart" v-if="data.data.result.length">
       <ul>
         <router-link tag='li' :to="{path: 'courseDetail/index', query: {id: item.courseId}}" v-for="(item, index) in cartList" :key="index">
 					<div class="title_school">
@@ -50,7 +50,7 @@
         </router-link>
       </ul>
     </div>
-    <div class="no_content" v-show="no_content">
+    <div class="no_content" v-else>
       <i class="icon menu"></i>
       <p class="margin_left_p">购物车为空,快
         <nuxt-link to="/coursehome">去选课</nuxt-link>吧</p>

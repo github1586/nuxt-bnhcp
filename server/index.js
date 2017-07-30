@@ -7,6 +7,11 @@ const app = express()
 const host = process.env.HOST || '192.168.1.110'
 const port = process.env.PORT || 8080
 
+var bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
+
 app.set('port', port)
 
 // Import API Routes

@@ -13,7 +13,33 @@ export default {
 
 <style lang="scss" scoped>
   @import '~static/common/style';
-	@keyframes load{
+	@-webkit-keyframes load{
+		0%   {opacity: 0;}
+		10%  {opacity: 0.3;}
+		20%  {opacity: 0.6;}
+		30%  {opacity: 1;}
+		40%  {opacity: 1;}
+		50%  {opacity: 1;}
+		60%  {opacity: 1;}
+		70%  {opacity: 1;}
+		80%  {opacity: 0.5;}
+		90%  {opacity: 0.2;}
+		100%  {opacity: 0;}
+	}
+	@-ms-keyframes load{
+		0%   {opacity: 0;}
+		10%  {opacity: 0.3;}
+		20%  {opacity: 0.6;}
+		30%  {opacity: 1;}
+		40%  {opacity: 1;}
+		50%  {opacity: 1;}
+		60%  {opacity: 1;}
+		70%  {opacity: 1;}
+		80%  {opacity: 0.5;}
+		90%  {opacity: 0.2;}
+		100%  {opacity: 0;}
+	}
+	@-o-keyframes load{
 		0%   {opacity: 0;}
 		10%  {opacity: 0.3;}
 		20%  {opacity: 0.6;}

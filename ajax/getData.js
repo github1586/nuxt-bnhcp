@@ -52,3 +52,14 @@ export const postCourseId = (id) => {
 export const isexistCart = (id) => {
   return fetch('/api/isexistCart/' + id)
 }
+/**
+ * 登录
+ */
+
+export const userLongin = (users, password) => {
+  var data = {
+    users,
+    password
+  }
+  return fetch('/api/longin', data, 'POST')
+}
