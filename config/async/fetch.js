@@ -10,6 +10,7 @@ export default async(url = '', data = {}, type = 'GET', method = 'fetch') => {
     // 数据拼接字符串
     let dataStr = ''
     Object.keys(data).forEach(key => {
+      console.log(data)
       dataStr += key + '=' + data[key] + '&'
     })
 

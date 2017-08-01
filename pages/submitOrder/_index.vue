@@ -41,7 +41,7 @@
       <div class="menu_fix_bottom">
         <div class="pay_money">
           <p>应付款：<span>￥520</span></p>
-          <input type="button" value="提交订单" class="confirm_pay_a" />
+          <input type="button" value="提交订单" @click="topay()" class="confirm_pay_a" />
         </div>
       </div>
     </div>
@@ -78,6 +78,9 @@ export default {
   methods: {
     filterWeeks (value) {
       return filterWeek(value)
+    },
+    topay () {
+      this.$router.push({path: '/order/payOrder'})
     }
   },
   components: {

@@ -41,10 +41,14 @@ export const getDetail = (id) => {
 }
 
 /**
- * 获取课程详情
+ * 加入购物车
  */
-export const postCourseId = (id) => {
-  return fetch('/api/postCourseId/' + id)
+export const postCourseId = (id, user) => {
+  var data = {
+    id: id,
+    user: user
+  }
+  return fetch('/api/postCourseId', data)
 }
 /**
  * 是否存在购物车
@@ -62,4 +66,14 @@ export const userLongin = (phone, password) => {
     password
   }
   return fetch('/api/longin', data, 'POST')
+}
+/**
+ * 登录
+ */
+
+export const getCartList = (user) => {
+  var data = {
+    user
+  }
+  return fetch('/api/cartList', data)
 }

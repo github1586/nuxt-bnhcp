@@ -1,12 +1,17 @@
 <template>
   <header class="header" :class="[this.backgroundColor ? 'fff' : '' ]">
-    <a href="javascript:" :class="[this.back ? 'header_back' : 'header_back_red']"></a>
+    <a href="javascript:" @click="go()" :class="[this.back ? 'header_back' : 'header_back_red']"></a>
     <span :class="[this.className ? 'titgray' : 'tit']">{{this.name}}</span>
   </header>
 </template>
 <script>
 export default {
-  props: ['name', 'className', 'backgroundColor', 'back']
+  props: ['name', 'className', 'backgroundColor', 'back'],
+  methods: {
+    go () {
+      this.$router.go(-1)
+    }
+  }
 }
 </script>
 <style lang="sass" scoped>

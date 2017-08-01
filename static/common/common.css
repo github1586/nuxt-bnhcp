@@ -110,7 +110,7 @@ header.fff {
 header .header_back {
   width: 10px;
   height: 16px;
-  background: url(../img/header_back_red.png) no-repeat 0 0;
+  background: url(../img/search_back.png) no-repeat 0 0;
   background-size: 10px 16px;
   position: absolute;
   left: 0;

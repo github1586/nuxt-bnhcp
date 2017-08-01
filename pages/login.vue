@@ -4,7 +4,7 @@
     <div class="login_form">
       <p class="phone"><input type="text" v-model="phone" placeholder="输入手机号"><span @click="clear()">×</span></p>
       <p class="phone verification">
-        <input type="text" v-model="password" placeholder="输入您的密码">
+        <input type="password" v-model="password" placeholder="输入您的密码">
       </p>
       <p class="login_btn"><input type="button" @click="longin()" value="登录"></p>
       <p class="user_trans">未注册用户登录将自动创建报哪好账号，<b>即视为您已同意</b><a href="">《报哪好用户服务协议》</a></p>
@@ -33,12 +33,12 @@ export default {
   methods: {
     async longin () {
       if (/^1[345789]\d{9}$/.test(this.phone)) {
-        setStore('user', this.phone)
         let data = await userLongin(this.phone, this.password)
         if (data.status) {
+          setStore('user', this.phone) // 存储用户手机号
           this.$router.push({ path: '/' }) // 跳转
         } else {
-          this.layerMsg = data.msg // 更换提示语
+          this.layerMSg = data.msg // 更换提示语
           this.isLayer = true // 提示
           setTimeout(() => { // 两秒恢复为true
             this.isLayer = false

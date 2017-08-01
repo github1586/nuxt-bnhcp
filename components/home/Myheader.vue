@@ -1,13 +1,28 @@
 <template>
   <header id="header" class="all_nav_zone">
   		<nuxt-link to="/coursehome" class="city_change new">北京北京</nuxt-link>
-		<nuxt-link to="/login" class="hed_login hed_fz">登陆</nuxt-link>
+		<nuxt-link v-show="this.islogin" to="/login" class="hed_login hed_fz">登录</nuxt-link>
 		<!-- 输入框 -->
 		<div class="input_box word_4">
 			<input type="text" name="" id="" class="index_sear_inp" placeholder="搜索：课程、机构">
 		</div>
 	</header>
 </template>
+<script>
+import {getStore} from '../../config/common.js'
+export default {
+  data () {
+    return {
+      islogin: true
+    }
+  },
+  mounted () {
+    if (getStore('user')) {
+      this.islogin = false
+    }
+  }
+}
+</script>
 <style lang="sass">
 	header
 		padding-top: 5px

@@ -3,7 +3,7 @@
       <div class="activeImg end_active"></div>
       <div class="cls_banner"><img src="/img/header_pic.jpg" alt=""></div>
       <p>
-        <nuxt-link to="/coursehome" class="back_page"></nuxt-link>
+        <a @click="go()" class="back_page"></a>
         <a href="tel:400-40000000" class="icon_phone"></a>
         <a href="javascript:" class="more_con icon_btn"></a>
       </p>
@@ -23,6 +23,11 @@ export default {
     ...mapState([
       'courseDetail'
     ])
+  },
+  methods: {
+    go () {
+      this.$router.go(-1)
+    }
   }
 }
 </script>

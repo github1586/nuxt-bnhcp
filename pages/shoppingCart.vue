@@ -3,9 +3,9 @@
     <div class="herder">
       <p class="cart">购物车</p><span class="white">编辑</span>
     </div>
-    <div class="order_cart" v-if="data.data.result.length">
+    <div class="order_cart" v-if="cartList.length">
       <ul>
-        <router-link tag='li' :to="{path: 'courseDetail/index', query: {id: item.courseId}}" v-for="(item, index) in cartList" :key="index">
+        <li  v-for="(item, index) in cartList" :key="index">
 					<div class="title_school">
 						<h3>{{item.campusesName}}</h3>
 					</div>
@@ -13,7 +13,7 @@
             <!-- 单节课-普通 -->
             <div class="ser_rel_con">
               <div class="content_txt_box">
-                <ul class="con_r on" style="width:75%;padding-left:6px;">
+                <router-link tag='ul' :to="{path: 'courseDetail/index', query: {id: item.courseId}}" class="con_r on" style="width:75%;padding-left:6px;">
                   <li class="tit_h1">
                     <h1>
                       <i>{{item.name}}</i>
@@ -39,7 +39,7 @@
                       </ul>
                     </div>
                   </li>
-                </ul>
+                </router-link>
 								<b href="#" class="con_l">
                   <img :src="'/img/teacherHead/' + item.teacher_actor" height="20%" width="100%">
                   <i class="name_teac">{{item.teacherName}}</i>
@@ -47,7 +47,7 @@
               </div>
             </div>
           </div>
-        </router-link>
+        </li>
       </ul>
     </div>
     <div class="no_content" v-else>
@@ -72,19 +72,14 @@
 <script>
 import footerTab from '~components/home/Footertabs.vue'
 import {mapState, mapMutations} from 'vuex'
-import axios from '~plugins/axios'
+import {getCartList} from '../ajax/getData.js'
+import {getStore} from '../config/common.js'
 export default {
-  // axios data
-  async asyncData () {
-    let data = await axios.get('/api/cartList')
-    return {
-      cartList: data.data.result
-    }
-  },
   data () {
     return {
-      no_content: false,
-      total: 0
+      no_content: false, // 没有内容的组件
+      total: 0, // 总价
+      cartList: '' // 购物车列表
     }
   },
   computed: {
@@ -92,12 +87,27 @@ export default {
       'cart'
     ])
   },
+  mounted () {
+    this.getCart()
+  },
   methods: {
     ...mapMutations([
       'CART'
     ]),
-    addPrice (price) {
-      this.total += parseFloat(price)
+    addPrice (arr) { // 计算总价
+      arr.forEach(function (element) {
+        this.total += element.cost
+      }, this)
+    },
+    async getCart () {
+      let user = getStore('user') // 获取用户信息
+      if (user) { // 存在的化就去请求购物车列表
+        let data = await getCartList(user)
+        this.cartList = data.result
+        this.addPrice(this.cartList)
+      } else { // 然则 你去登录把 或者注册的
+        this.$router.push({path: '/login'})
+      }
     }
   },
   components: {

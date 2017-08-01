@@ -1,6 +1,6 @@
 <template>
   <div class="container full">
-    <header-top :name="this.name" :className="this.className" :backgroundColor="this.backgroundColor"></header-top> 
+    <header-top :name="this.name" :className="this.className" :back="this.back"></header-top> 
     <detail-time></detail-time>
     <vali-phone></vali-phone>
     <yes-btn :val="this.val"></yes-btn>
@@ -16,7 +16,8 @@ export default {
     return {
       name: '预约试听',
       val: '确认预约',
-      className: 0
+      className: 0,
+      back: 1
     }
   },
   components: {
