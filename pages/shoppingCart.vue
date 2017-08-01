@@ -6,13 +6,13 @@
     <div class="order_cart" v-if="cartList.length">
       <ul>
         <li  v-for="(item, index) in cartList" :key="index">
-					<div class="title_school">
+					<div class="title_school"  @click="cartSelect(index, item.courseId)" :class="{on: cartSelectStatus[index].status}">
 						<h3>{{item.campusesName}}</h3>
 					</div>
           <div class="ser_rel_list new">
             <!-- 单节课-普通 -->
             <div class="ser_rel_con">
-              <div class="content_txt_box">
+              <div class="content_txt_box" :class="{on: cartSelectStatus[index].status}">
                 <router-link tag='ul' :to="{path: 'courseDetail/index', query: {id: item.courseId}}" class="con_r on" style="width:75%;padding-left:6px;">
                   <li class="tit_h1">
                     <h1>
@@ -40,7 +40,7 @@
                     </div>
                   </li>
                 </router-link>
-								<b href="#" class="con_l">
+								<b href="#" class="con_l" @click="cartSelect(index, item.courseId)">
                   <img :src="'/img/teacherHead/' + item.teacher_actor" height="20%" width="100%">
                   <i class="name_teac">{{item.teacherName}}</i>
                 </b>
@@ -57,7 +57,7 @@
     </div>
 		<div class="computed">
 			<div class="left_select">
-				<h3>全选</h3>
+				<h3 @click="allSelect()" :class="{on: isAllSelect}">全选</h3>
 				<div class="price">
 					<p>合计：<span>￥{{this.total}}</span></p>
 					<b>不含教材费</b>
@@ -79,7 +79,9 @@ export default {
     return {
       no_content: false, // 没有内容的组件
       total: 0, // 总价
-      cartList: '' // 购物车列表
+      cartList: [], // 购物车列表
+      cartSelectStatus: [],
+      isAllSelect: false
     }
   },
   computed: {
@@ -95,6 +97,7 @@ export default {
       'CART'
     ]),
     addPrice (arr) { // 计算总价
+      this.total = 0 // 清空价格
       arr.forEach(function (element) {
         this.total += element.cost
       }, this)
@@ -104,9 +107,39 @@ export default {
       if (user) { // 存在的化就去请求购物车列表
         let data = await getCartList(user)
         this.cartList = data.result
-        this.addPrice(this.cartList)
+        this.initCartStatus() // 记住状态
       } else { // 然则 你去登录把 或者注册的
         this.$router.push({path: '/login'})
+      }
+    },
+    initCartStatus () { // 初始化购物车数据状态
+      this.cartList.forEach(function (element, index) {
+        this.cartSelectStatus.push({status: false, id: element.courseId}) // 全部未选中
+      }, this)
+    },
+    cartSelect (index, id) { // 点击选中
+      this.cartSelectStatus.splice(index, 1, {status: !this.cartSelectStatus[index].status, id})
+      if (this.cartSelectStatus[index].status) {
+        this.total += parseInt(this.cartList[index].cost)
+      } else {
+        this.total -= parseInt(this.cartList[index].cost)
+        this.isAllSelect = false // 如果在全选情况下  有一个不是选中 全选就不选中了啊
+      }
+    },
+    allSelect () {
+      this.isAllSelect = !this.isAllSelect
+      this.cartSelectStatus = [] // 清空所有中台 重新赋值
+      if (!this.isAllSelect) {
+        this.initCartStatus() // 记住状态
+        this.total = 0 // 全部未选中
+        this.cartList.forEach(function (element, index) {
+          this.cartSelectStatus.push({status: false, id: element.courseId}) // 全部未选中
+        }, this)
+      } else {
+        this.addPrice(this.cartList)
+        this.cartList.forEach(function (element, index) {
+          this.cartSelectStatus.push({status: true, id: element.courseId}) // 全部未选中
+        }, this)
       }
     }
   },
@@ -114,9 +147,6 @@ export default {
     footerTab
   },
   watch: {
-    addCart: function () {
-      alert(1)
-    }
   }
 }
 </script>
@@ -305,6 +335,11 @@ export default {
 			padding-left: 3rem
 			font-weight: normal
 			background-size: 1.8rem
+			background: url(/img/select_not.png) no-repeat 0.8rem 0.8rem
+			background-size: 1.8rem
+			&.on
+        background: url(/img/icon_red_ok.png) no-repeat 0.8rem 0.8rem
+        background-size: 1.8rem
 		.price
 			float: right
 			height: 100%
