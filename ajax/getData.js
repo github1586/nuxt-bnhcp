@@ -41,6 +41,18 @@ export const getDetail = (id) => {
 }
 
 /**
+ * 模糊查询
+ */
+export const getleckCourse = (name, offset) => {
+  let data = {
+    limit: '15',
+    offset,
+    name
+  }
+  return fetch('/api/getleckCourse', data)
+}
+
+/**
  * 加入购物车
  */
 export const postCourseId = (id, user) => {

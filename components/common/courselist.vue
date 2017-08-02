@@ -56,7 +56,7 @@ import {mapState, mapMutations} from 'vuex'
 import {loadMore} from '../mixin/mixin.js'
 import loading from './loading.vue'
 import noContent from '~components/common/no_content/no_content.vue'
-import {courselist} from '../../ajax/getData.js'
+import {courselist, getleckCourse} from '../../ajax/getData.js'
 import {filterWeek} from '../../config/common.js'
 export default {
   data () {
@@ -65,6 +65,8 @@ export default {
       offset: 0,
       // 是否可以请求
       preventRepeatreuqest: false,
+      // 模糊查询的当前请求条数 0
+      likeOffset: 0,
       // 是否显示加载动画
       showLoading: true,
       // 无内容是否显示
@@ -77,7 +79,11 @@ export default {
     }
   },
   mounted () {
-    this.initData()
+    if (this.$route.query.name) {
+      this.likeCourse()
+    } else {
+      this.initData()
+    }
   },
   props: ['courseIdType', 'sortByType', 'filterChange', 'selectScreen'],
   mixins: [loadMore],
@@ -94,14 +100,22 @@ export default {
     ...mapMutations([
       'COURSE_ARR', 'TOUCHEND', 'COURSE_TYPE'
     ]),
-    async initData () {
-      this.offset = 0
-      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
+    setStyle (data) {
       // 如果数据为空 把空样式显示改为 true
       if (data.data.length === 0) this.isDisplayNo = true
+      if (data.data.length < 12) this.TOUCHEND(false)
       // 提交课程列表
       this.COURSE_ARR(data)
       this.showLoading = false
+    },
+    async likeCourse () {
+      let data = await getleckCourse(this.$route.query.name, this.likeOffset)
+      this.setStyle(data)
+    },
+    async initData () {
+      this.offset = 0
+      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
+      this.setStyle(data)
     },
     filterWeeks (value) {
       return filterWeek(value)
@@ -113,8 +127,7 @@ export default {
       var url = `/img/teacherHead/1_tpl_${randnum}.jpg`
       return url
     },
-    // 加载到底部加载更多
-    async loaderMore () {
+    controllerLoad () {
       if (this.touchend) {
         return
       }
@@ -126,10 +139,14 @@ export default {
       this.preventRepeatreuqest = true
       // loading显示
       this.showLoading = true
-      this.offset += 15
-      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
+      if (this.$route.query.name) { // 判断谁加offset
+        this.likeOffset += 15
+      } else {
+        this.offset += 15
+      }
+    },
+    setData (data) {
       // 提交数据 --》状态管理
-      console.log(data)
       this.COURSE_ARR(data)
       // 恢复控制变量为false
       setTimeout(() => {
@@ -141,6 +158,27 @@ export default {
       if (data.data.length < 15) {
         this.TOUCHEND(true)
         return
+      }
+    },
+    // 加载到底部加载更多
+    async likeLoadMore () {
+      this.controllerLoad() // 设置变量是否可以再次加载
+      let data = await getleckCourse(this.$route.query.name, this.likeOffset)
+      // 提交数据 --》状态管理
+      this.setData(data)
+    },
+    // 加载到底部加载更多
+    async filterLoadMore () {
+      this.controllerLoad() // 设置变量是否可以再次加载
+      let data = await courselist(this.offset, this.courseId, this.coursetype, this.courseSort, this.selectScreen)
+      // 提交数据 --》状态管理
+      this.setData(data)
+    },
+    loaderMore () { // 加载更多的方法
+      if (this.$route.query.name) {
+        this.likeLoadMore() // 如果有参数 就查询走模糊查询
+      } else {
+        this.filterLoadMore() // 然则 查询筛选的把
       }
     },
     initOffset () {

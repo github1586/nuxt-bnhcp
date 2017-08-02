@@ -17,6 +17,11 @@ module.exports = {
   ** Customize the progress-bar colornuxt
   */
   loading: { color: '#3B8070' },
+  // or
+  cache: {
+    max: 1000,
+    maxAge: 900000
+  },
   /*
   ** Build configuration
   */

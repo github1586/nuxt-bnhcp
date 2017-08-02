@@ -17,6 +17,9 @@ body {
 body.gray {
   background: #eeeeee;
 }
+body.fff {
+  background: #fff;
+}
 button,
 input,
 textarea {

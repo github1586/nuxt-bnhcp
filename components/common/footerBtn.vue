@@ -76,6 +76,9 @@ export default {
         this.disabledCart = true
         this.disabledYu = true
         this.disabledAdd = true
+      } else if (this.courseDetail.isClass === '2') { // 如果满班 就不能购买和预约试听
+        this.disabledYu = true
+        this.disabledAdd = true
       }
     }
   },

@@ -1,10 +1,10 @@
 <template>
   <header id="header" class="all_nav_zone">
-  		<nuxt-link to="/coursehome" class="city_change new">北京北京</nuxt-link>
+  	<nuxt-link to="/coursehome" class="city_change new">北京北京</nuxt-link>
 		<nuxt-link v-show="this.islogin" to="/login" class="hed_login hed_fz">登录</nuxt-link>
 		<!-- 输入框 -->
 		<div class="input_box word_4">
-			<input type="text" name="" id="" class="index_sear_inp" placeholder="搜索：课程、机构">
+			<input type="text" @click="search()" class="index_sear_inp" placeholder="搜索：课程、机构">
 		</div>
 	</header>
 </template>
@@ -14,6 +14,11 @@ export default {
   data () {
     return {
       islogin: true
+    }
+  },
+  methods: {
+    search () {
+      this.$router.push({path: '/search/searchPage'})
     }
   },
   mounted () {
@@ -53,7 +58,7 @@ export default {
 			height: 25px
 			font-size: 12px
 			line-height: 25px
-			color:#fff
+			color: #fff
 			border-radius: 70px
 			background: url(/img/index_header_sear.png) no-repeat 7px center #a20407
 			background-size: 14px 14px
