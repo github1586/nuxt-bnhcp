@@ -14,7 +14,7 @@
     <div class="container latest_search" v-show="history">
       <p class="search_text">搜索历史</p>
       <ul>
-        <li v-for="(item, index) in history" :key="index">
+        <li v-for="(item, index) in historys" :key="index">
 					<a href="javascript:">{{item}}</a><span></span>
 				</li>
       </ul>
@@ -27,7 +27,7 @@
 </template>
 <script>
 import courseHeader from '~components/common/courseHeader.vue'
-import {getStore, removeStore} from '../../config/common.js'
+import {removeStore, getStore} from '../../config/common.js'
 export default {
   data () {
     return {
@@ -37,6 +37,7 @@ export default {
   methods: {
     clearHistory () {
       removeStore('history')
+      this.historys = []
     }
   },
   computed: {
