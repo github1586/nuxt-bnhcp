@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <course-header></course-header>
+      <course-header v-on:keyup.13="submits()"></course-header>
       <div class="container full">
         <div class="order_sort">
           <!-- 选项卡头部 -->
@@ -116,7 +116,7 @@
   import courseList from '~components/common/courselist.vue'
   import courseHeader from '~components/common/courseHeader.vue'
   import {mapState, mapMutations} from 'vuex'
-  import {syncClass, filter, courselist} from '../ajax/getData'
+  import {syncClass, filter, courselist, getleckCourse} from '../ajax/getData'
   export default {
     async asyncData () {
       let { data } = await axios.get('/api/listhome')
@@ -200,6 +200,9 @@
       ...mapMutations([
         'COURSE_PARAMS', 'COURSE_ARR', 'TOUCHEND', 'COURSE_ID', 'COURSE_TYPE', 'COURSE_SORT'
       ]),
+      submits () {
+        alert(1)
+      },
       init () {
         this.cityArr = ['海淀区', '西城区', '朝阳区', '朝阳区', '西城区', '朝阳区', '西城区', '朝阳区', '丰台区', '丰台区', '丰台区', '东城区', '石景山']
       },
@@ -338,7 +341,21 @@
           })
           this.selectScreen[indexs].classlist.splice(index, 1, {status: !this.selectScreen[indexs].classlist[index].status, id})
         }
+      },
+      async updateData () {
+        this.TOUCHEND(false)
+        let data = await getleckCourse(this.$route.query.name, 0)
+        // 提交数据 --》状态管理
+        this.COURSE_ARR(data)
+        // 小于15条 限时暂无更多
+        if (data.data.length < 15 && data.data.length !== 0) {
+          this.TOUCHEND(true)
+          return
+        }
       }
+    },
+    watch: {
+      '$route': 'updateData'
     }
   }
 </script>

@@ -23,6 +23,9 @@ export default {
   mounted () {
     this.name = this.$route.query.name
   },
+  beforeRouteUpdate () {
+    alert(1)
+  },
   methods: {
     submit () { // 通过路由传过去值
       let history = JSON.parse(getStore('history'))

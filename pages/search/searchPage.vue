@@ -15,7 +15,7 @@
       <p class="search_text">搜索历史</p>
       <ul>
         <li v-for="(item, index) in historys" :key="index">
-					<a href="javascript:">{{item}}</a><span></span>
+					<a href="javascript:">{{item}}</a><span @click="deleteClose()"></span>
 				</li>
       </ul>
     </div>
@@ -38,12 +38,15 @@ export default {
     clearHistory () {
       removeStore('history')
       this.historys = []
+    },
+    deleteClose () {
     }
   },
   computed: {
     history: function () {
       if (getStore('history')) { // 获取搜索记录
         this.historys = JSON.parse(getStore('history'))
+        this.$forceUpdate()
       } else {
         this.historys = []
       }
