@@ -21,9 +21,9 @@ export default {
   // ajax module as axios
   fetch ({store, query}) {
     return axios.get(`/api/courseDetail/index/${query.id}`)
-    .then(function (data) {
-      store.commit('COURSE_DETAIL', data.data)
-    })
+      .then(function (data) {
+        store.commit('COURSE_DETAIL', data.data)
+      })
   },
   computed: {
     ...mapState([

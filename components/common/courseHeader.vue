@@ -29,7 +29,7 @@ export default {
   methods: {
     submit () { // 通过路由传过去值
       let history = JSON.parse(getStore('history'))
-      history ? '' : history = []
+      history === undefined ? '' : history = []
       history.push(this.name)
       setStore('history', JSON.stringify(history))
       this.$router.push({path: '/coursehome', query: {name: this.name}})

@@ -93,7 +93,7 @@ export default {
       this.TOUCHEND(false)
     },
     gradetwo (value) {
-      this.COURSE_PARAMS
+      this.COURSE_PARAMS(value)
     },
     // 三级分类选中展开
     clickActive (type) {

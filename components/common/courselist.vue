@@ -157,7 +157,7 @@ export default {
       // 小于15条 限时暂无更多
       if (data.data.length < 15) {
         this.TOUCHEND(true)
-        return
+        return false
       }
     },
     // 加载到底部加载更多
