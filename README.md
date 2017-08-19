@@ -1,4 +1,4 @@
-# bnhcp <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="88" height="20"><linearGradient id="b" x2="0" y2="100%"><stop offset="0" stop-color="#bbb" stop-opacity=".1"/><stop offset="1" stop-opacity=".1"/></linearGradient><clipPath id="a"><rect width="88" height="20" rx="3" fill="#fff"/></clipPath><g clip-path="url(#a)"><path fill="#555" d="M0 0h43v20H0z"/><path fill="#a4a61d" d="M43 0h45v20H43z"/><path fill="url(#b)" d="M0 0h88v20H0z"/></g><g fill="#fff" text-anchor="middle" font-family="DejaVu Sans,Verdana,Geneva,sans-serif" font-size="11"><text x="21.5" y="15" fill="#010101" fill-opacity=".3">bnhcp</text><text x="21.5" y="14">bnhcp</text><text x="64.5" y="15" fill="#010101" fill-opacity=".3">v1.0.0</text><text x="64.5" y="14">v1.0.0</text></g></svg>
+# bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-yellowgreen.svg"/>
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
 ## 完成功能
