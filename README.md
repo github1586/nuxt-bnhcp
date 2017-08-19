@@ -1,4 +1,4 @@
-# bnhcphttps://img.shields.io/badge/bnhcp-v1.0.0-yellowgreen.svg
+# bnhcp https://img.shields.io/badge/bnhcp-v1.0.0-yellowgreen.svg
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
 ## 完成功能
