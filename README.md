@@ -1,7 +1,7 @@
-# bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-yellowgreen.svg"/>
+# bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/>
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
-## 完成功能
+## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-yellowgreen.svg"/>
 
 1. 首页渲染
 2. 课程的分类搜索
@@ -11,7 +11,7 @@
 6. 课程详情
 7. 预约试听 
 
-## 预计功能
+## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-yellowgreen.svg"/>
 1. 购物车
 2. 头像上传
 3. 家长添加孩子
@@ -21,7 +21,7 @@
 7. 我的订单
 8. 机器人客服
 9. 阿里云部署
-## Build Setup
+## Build Setup <img src="https://img.shields.io/badge/setup-v1.0.0-yellowgreen.svg"/>
 
 ``` bash
 # install dependencies
