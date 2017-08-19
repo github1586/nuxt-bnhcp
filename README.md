@@ -3,7 +3,7 @@
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
 ## 前言 <img src="https://img.shields.io/badge/preface-v1.0.0-yellowgreen.svg"/>
 
-    *本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。
+*本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。
     
 本项目是公司项目，公司的技术实现是 cakephp php的mvc框架，由于cakephp view 模板ctp 和 html写在同一
 文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，闲暇之余 利用 vue + srr + node
