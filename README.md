@@ -1,6 +1,10 @@
 # bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/>
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR
+## 前言 <img src="https://img.shields.io/badge/preface-v1.0.0-yellowgreen.svg"/>
+
+  *本项目纯属个人练习项目，不涉及交易，不涉及数据泄漏，数据完全自己构造。
+
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
 1. 首页渲染
@@ -21,7 +25,7 @@
 7. 我的订单
 8. 机器人客服
 9. 阿里云部署
-## Build Setup <img src="https://img.shields.io/badge/setup-v1.0.0-blue.svg"/>
+## Build Setup <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 ``` bash
 # install dependencies
