@@ -16,7 +16,7 @@ NUXT 能为我们做什么
 
 还有很多便捷之处，可以尝试去写一写，读读源码
 
-##项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-0f0f0f.svg"/>
+## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-0f0f0f.svg"/>
 
 <img src="http://47.94.100.129:3001/img/show1.gif"/>
 <img src="http://47.94.100.129:3001/img/show2.gif"/>
@@ -24,7 +24,7 @@ NUXT 能为我们做什么
 <img src="http://47.94.100.129:3001/img/show3.gif"/>
 <img src="http://47.94.100.129:3001/img/show4.gif"/>
 
-##感谢～
+## 感谢～
 
 如果对您有帮助，您可以点右上角 "Star" 支持一下 感谢～～！
 
