@@ -20,13 +20,17 @@ NUXT 能为我们做什么
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-![avatar](http://47.94.100.129:3001/img/show1.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show2_gif.gif)
 
-![avatar](http://47.94.100.129:3001/img/show2.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show3_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show4_gif.gif)
 
-![avatar](http://47.94.100.129:3001/img/show3.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show5_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show6_gif.gif)
 
-![avatar](http://47.94.100.129:3001/img/show4.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show7_gif.gif)
+
 
 ## 感谢～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
 
