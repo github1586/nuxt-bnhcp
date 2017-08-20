@@ -2,13 +2,12 @@
    <!-- 功能按钮 -->
   <div class="menu_fix_bottom">
       <div class="ctrl_btn">
-          <a @click="islongin()"  class="yu" :class="{disabled: disabledYu}" >预约试听</a>
+          <a @click="islongin(2)"  class="yu" :class="{disabled: disabledYu}" >预约试听</a>
           <a to="" @click="addCarts()" class="bao" :class="{disabled: disabledCart}">加入购物车</a>
-          <a @click="islongin()" class="yue" :class="{disabled: disabledAdd}">立即报名</a>
+          <a @click="islongin(1)" class="yue" :class="{disabled: disabledAdd}">立即报名</a>
       </div>
       <layer-msg v-show="isCart" :msg="this.layerMSg"></layer-msg>
   </div>
-  
 </template>
 <script>
 import {postCourseId, isexistCart} from '../../ajax/getData'
@@ -60,14 +59,18 @@ export default {
         this.disabledCart = true
       }
     },
-    islongin () {
+    islongin (value) {
       if (!getStore('user')) {
         this.$router.push({path: '/login'}) // 没有登录就去登录把  少年
       } else {
         if (this.disabledAdd) { // 是否禁用啊  如果是 你就别再跳转了 好吧
           return
         } else {
-          this.$router.push({path: '/submitOrder/index'})
+          if (value === 1) {
+            this.$router.push({path: '/submitOrder/index'})
+          } else {
+            this.$router.push({path: '/subscribe/index'})
+          }
         }
       }
     },
