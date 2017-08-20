@@ -22,10 +22,9 @@ NUXT 能为我们做什么
 
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.gif)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show2_gif.gif)
-
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show3_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show4_gif.gif)
 
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show4_gif.gif)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show5_gif.gif)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show6_gif.gif)
 
