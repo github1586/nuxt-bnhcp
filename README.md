@@ -20,15 +20,19 @@ NUXT 能为我们做什么
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-<img src="http://47.94.100.129:3001/img/show1.gif"/>
-<img src="http://47.94.100.129:3001/img/show2.gif"/>
+![avatar](http://47.94.100.129:3001/img/show1.gif)
 
-<img src="http://47.94.100.129:3001/img/show3.gif"/>
-<img src="http://47.94.100.129:3001/img/show4.gif"/>
+![avatar](http://47.94.100.129:3001/img/show2.gif)
+
+![avatar](http://47.94.100.129:3001/img/show3.gif)
+
+![avatar](http://47.94.100.129:3001/img/show4.gif)
 
 ## 感谢～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
 
-如果对您有帮助，您可以点右上角 "Star" 支持一下 感谢～～！
+如果我的项目对您有帮助，您可以点右上角 "Star" 支持一下 感谢～～！
+
+另外，本项目本地数据暂时没有，可以线上看，本地数据尽快补上～～ 也可以加我，拿sql文件，自己跑本地 mysql
 
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
