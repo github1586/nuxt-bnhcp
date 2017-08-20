@@ -20,7 +20,7 @@ NUXT 能为我们做什么
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.jpg)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show2_gif.gif)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show3_gif.gif)
 
