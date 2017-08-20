@@ -20,11 +20,11 @@ NUXT 能为我们做什么
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-![avatar](http://47.94.100.129:3001/img/show1.gif)
-![avatar](http://47.94.100.129:3001/img/show2.gif)
+![image](http://47.94.100.129:3001/img/show1.gif)
+![image](http://47.94.100.129:3001/img/show2.gif)
 
-![avatar](http://47.94.100.129:3001/img/show3.gif)
-![avatar](http://47.94.100.129:3001/img/show4.gif)
+![image](http://47.94.100.129:3001/img/show3.gif)
+![image](http://47.94.100.129:3001/img/show4.gif)
 
 ## 感谢～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
 
