@@ -6,7 +6,7 @@
 *本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。
 
 本项目是公司项目，公司的技术实现是 cakephp php的mvc框架，由于cakephp view 模板ctp 和 html写在同一
-文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，奔着君子动手不动口的原则（所有的技术不是口头上的，需要自己动手，踩坑，你才可以成长），闲暇之余 利用 vue + srr + node + mysql nginx代理 重构本项目，这样既加强了对vue的学习认知，也很好的把vue和node结合，对于数据库的选型，mysql，比较稳定，更通用，老牌值得信赖 ～～由于时间并不充裕，功能实现可能的并不完美，我尽力按需求文档实现～～～现在的页面大概有20个左右，涉及注册、登录、课程列表、课程详情、购物车、提交订单、个人中心等等，最终完成应该会有60个页面左右～需要时间啊...
+文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，奔着君子动手不动口的原则（所有的技术不是口头上的，需要自己动手，踩坑，你才可以成长），闲暇之余 利用 vue + srr + node + mysql nginx代理 重构本项目，这样既加强了对vue的学习认知，也很好的把vue和node结合，对于数据库的选型，mysql，比较稳定，更通用，老牌值得信赖 ～～由于时间并不充裕，功能实现可能的并不完美，我尽力按需求文档实现～～～现在的页面大概有20个左右，涉及注册、登录、课程列表、课程详情、购物车、提交订单、个人中心等等，最终完成应该会有50个页面左右～需要时间啊...
 
 项目持续进行中~
 
@@ -44,13 +44,13 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 另一种 也可以找我 拿sql文件，自己跑本地服务
 
-线上项目地址：<a href="#" style="color: red;">bnhcp.pboss.cc</a>  （Google Chrome观看更佳）
+线上项目地址：<a href="bnhcp.pboss.cc" style="color: red;">bnhcp.pboss.cc</a>  （Google Chrome观看更佳）
 
 扫码 进入 项目
 
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/myproject.png)
 
-有疑问或者项目有什么问题 可以联系企鹅 995189950 微信搜索：node-s 
+有疑问或者项目有什么问题 可以联系企鹅 995189950 微信搜索：node-s 或者 Issues me
 
 欢迎大家来给我提提意见 互相探讨~
 
@@ -58,7 +58,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 阿里云ECS服务器 centos7 
 
-0、安装 nvm（node） mysql nginx（Tengine）
+0、安装配置 nvm（node） mysql nginx（Tengine）
 
 1、下载xftp 连接自己服务器，把自己的项目丢进去。
 
@@ -74,7 +74,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 7、npm run build
 
-8、上面忘记安装pm2， yarn add pm2
+8、上面忘记安装pm2， yarn add pm2 （开启 node server 使用）
 
 9、pm2 start build/mian.js
 
@@ -82,21 +82,24 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 11、pm2 monit  监视所有进程
 
-12、开启 nginx
+12、开启 ./nginx
 
-12、如果一切正常，但是访问不通，可以pm2 logs 查看是否报错？
+13、如果一切正常，但是访问不通，可以pm2 logs 查看是否报错？
 
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
 1. 首页渲染
 2. 课程的分类搜索
 3. 课程 按 （智能排序 价格最高 价格最低 老师好评 人气最高） 排序
-4. 课程 按 （班级类型 活动优惠 上课时间 具体时间 价格区间） 筛选
+4. 课程 按 （班级类型 活动优惠 上课时间（周一到周日） 具体时间（上午下午晚上） 价格区间） 筛选
 5. 完成课程列表的下拉加载更多 
 6. 课程详情
 7. 预约试听 
-8. 登录（注册暂无）
-9. 阿里云部署
+8. 分类页面
+9. 我的页面
+10. 提交订单
+11. 登录（注册暂无）
+12. 阿里云部署
 
 ## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
 1. 购物车 （尚未完整）
@@ -107,6 +110,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 6. 我的订单
 7. 机器人客服
 8. redis 首页缓存
+（有些页面没有在此处写，根据项目进度往上加~）
 ## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
 
 爱生活 爱技术 爱折腾
@@ -115,9 +119,9 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 ``` bash
 # install dependencies
-$ npm install 
+$ npm install  or yarn install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:3000
 $ npm run dev
 
 
