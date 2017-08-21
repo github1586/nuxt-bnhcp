@@ -44,7 +44,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 另一种 也可以找我 拿sql文件，自己跑本地服务
 
-线上项目地址：<a href="#bnhcp.pboss.cc" target="_blank" style="color: red;">bnhcp.pboss.cc</a>  （Google Chrome观看更佳）
+线上项目地址：[title](bnhcp.pboss.cc?_blank)  （Google Chrome观看更佳）
 
 扫码 进入 项目
 
