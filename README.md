@@ -6,7 +6,7 @@
 *本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。
 
 本项目是公司项目，公司的技术实现是 cakephp php的mvc框架，由于cakephp view 模板ctp 和 html写在同一
-文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，奔着君子动手不动口的原则（所有的技术不是口头上的，需要自己动手，踩坑，你才可以成长），闲暇之余 利用 vue + srr + node + mysql 重构本项目，这样既加强了对vue的学习认知，也很好的把vue和node结合，对于数据库的选型，mysql，比较稳定，更通用，老牌值得信赖 ～～由于时间并不充裕，功能实现可能的并不完美，我尽力按需求文档实现～～～现在的页面大概有20个左右，涉及注册、登录、课程列表、课程详情、购物车、提交订单、个人中心等等，最终完成应该会有60个页面左右～需要时间啊...
+文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，奔着君子动手不动口的原则（所有的技术不是口头上的，需要自己动手，踩坑，你才可以成长），闲暇之余 利用 vue + srr + node + mysql nginx代理 重构本项目，这样既加强了对vue的学习认知，也很好的把vue和node结合，对于数据库的选型，mysql，比较稳定，更通用，老牌值得信赖 ～～由于时间并不充裕，功能实现可能的并不完美，我尽力按需求文档实现～～～现在的页面大概有20个左右，涉及注册、登录、课程列表、课程详情、购物车、提交订单、个人中心等等，最终完成应该会有60个页面左右～需要时间啊...
 
 NUXT 能为我们做什么
 
@@ -42,7 +42,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 另一种 也可以找我 拿sql文件，自己跑本地服务
 
-线上项目地址：bnhcp.pboss.cc （Google Chrome观看更佳）
+线上项目地址：<a href="#" style="color: red;">bnhcp.pboss.cc</a>  （Google Chrome观看更佳）
 
 扫码 进入 项目
 
@@ -50,7 +50,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 有疑问或者项目有什么问题 可以联系QQ 995189950 微信搜索：node-s 
 
-欢迎大家来给我提提意见
+欢迎大家来给我提提意见 互相探讨~
 
 ## 部署 <img src="https://img.shields.io/project/deploy-v1.0.0-blue.svg"/>
 
@@ -104,6 +104,11 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 7. 我的订单
 8. 机器人客服
 9. 阿里云部署
+
+## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
+
+爱生活 爱技术 爱折腾
+
 ## Build Setup <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 ``` bash
