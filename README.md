@@ -36,11 +36,16 @@ NUXT 能为我们做什么
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 感谢～～！
 
-另外，本项目本地数据暂时没有，可以线上看，本地数据尽快补上～～ 也可以加我，拿sql文件，自己跑本地 服务
+git clone 项目地址 进入 local文件夹 cd template 里面是本地（node）写死的数据可以 
+
+然后 --  yarn install 和 npm run dev
+
+另一种 也可以找我 拿sql文件，自己跑本地服务
 
 线上项目地址：bnhcp.pboss.cc （Google Chrome观看更佳）
 
 扫码 进入 项目
+
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/myproject.png)
 
 有疑问或者项目有什么问题 可以联系QQ 995189950 微信搜索：node-s 
