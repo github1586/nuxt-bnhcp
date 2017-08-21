@@ -8,6 +8,8 @@
 本项目是公司项目，公司的技术实现是 cakephp php的mvc框架，由于cakephp view 模板ctp 和 html写在同一
 文件，前端部分（view）页面惨不忍睹，难维护，效率低，沟通成本大，迫于无奈，奔着君子动手不动口的原则（所有的技术不是口头上的，需要自己动手，踩坑，你才可以成长），闲暇之余 利用 vue + srr + node + mysql nginx代理 重构本项目，这样既加强了对vue的学习认知，也很好的把vue和node结合，对于数据库的选型，mysql，比较稳定，更通用，老牌值得信赖 ～～由于时间并不充裕，功能实现可能的并不完美，我尽力按需求文档实现～～～现在的页面大概有20个左右，涉及注册、登录、课程列表、课程详情、购物车、提交订单、个人中心等等，最终完成应该会有60个页面左右～需要时间啊...
 
+项目持续进行中~
+
 NUXT 能为我们做什么
 
 问题1：就是我们无需为了路由划分而烦恼，你只需要按照对应的文件夹层级创建 .vue 文件就行
@@ -48,7 +50,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/myproject.png)
 
-有疑问或者项目有什么问题 可以联系QQ 995189950 微信搜索：node-s 
+有疑问或者项目有什么问题 可以联系企鹅 995189950 微信搜索：node-s 
 
 欢迎大家来给我提提意见 互相探讨~
 
@@ -93,18 +95,18 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 5. 完成课程列表的下拉加载更多 
 6. 课程详情
 7. 预约试听 
-
-## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
-1. 购物车
-2. 头像上传
-3. 家长添加孩子
-4. 登录注册
-5. 报名
-6. 优惠券
-7. 我的订单
-8. 机器人客服
+8. 登录（注册暂无）
 9. 阿里云部署
 
+## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
+1. 购物车 （尚未完整）
+2. 头像上传
+3. 家长添加孩子
+4. 报名
+5. 优惠券
+6. 我的订单
+7. 机器人客服
+8. redis 首页缓存
 ## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
 
 爱生活 爱技术 爱折腾
