@@ -1,6 +1,6 @@
 # bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/>
 
-> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx（Tengine）
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx反向代理
 ## 前言 <img src="https://img.shields.io/badge/preface-v1.0.0-yellowgreen.svg"/>
 
 *本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。
@@ -42,16 +42,27 @@ NUXT 能为我们做什么
 
 阿里云ECS服务器 centos7 
 1、安装 nvm（node） mysql nginx（Tengine）
+
 1、下载xftp 连接自己服务器，把自己的项目丢进去。
+
 2、cd myproject
+
 3、yarn install（npm install）
+
 4、配置数据库配置文件
+
 5、npm run dev
+
 6、npm run build
+
 7、上面忘记安装pm2， yarn add pm2
+
 8、pm2 start build/mian.js
+
 9、查看 pm2 list 列表，查看启动状态
+
 10、pm2 monit  查看
+
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
 1. 首页渲染
