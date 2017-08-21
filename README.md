@@ -62,7 +62,9 @@ NUXT 能为我们做什么
 
 9、查看 pm2 list 列表，查看启动状态
 
-10、pm2 monit  查看
+10、pm2 monit  监视所有进程
+
+11、如果一切正常，但是访问不通，可以pm2 logs 查看是否报错？
 
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
