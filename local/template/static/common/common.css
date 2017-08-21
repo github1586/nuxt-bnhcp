@@ -1,0 +1,186 @@
+@charset "utf-8";
+* {
+  box-sizing: border-box;
+}
+html {
+  width: 100%;
+  height: 100%;
+  font-size: 62.5%!important;
+  color: #474747;
+}
+body {
+  font-family: 'Microsoft YaHei', 'Hiragino Sans GB', 'Arail';
+  padding-top: 44px;
+  -webkit-box-sizing: border-box;
+  margin: 0;
+  background: #eee;
+}
+body.gray {
+  background: #eeeeee;
+}
+button,
+input,
+textarea {
+  border: none;
+  -webkit-outline: none;
+  outline: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-appearance: none;
+  border-radius: 0;
+  padding: 0;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+a {
+  color: #474747;
+  text-decoration: none;
+}
+a:focus,
+a.active,
+a:hover {
+  text-decoration: none;
+}
+/*--- 元素多余间距值 ---*/
+ul,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+em,
+i {
+  font-style: normal;
+}
+img {
+  vertical-align: middle;
+}
+/*------ @part 布局 ------*/
+/*--- container ---*/
+.container {
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+.container .recruit_student {
+  padding: 0 1rem;
+  margin-top: 1rem;
+}
+.container .recruit_student p img {
+  width: 100%;
+}
+.container .recruit_student h3 {
+  margin: 1rem 0 1rem 0.5rem;
+}
+.container.white_bgc {
+  background: #fff;
+}
+.container.full {
+  padding: 0;
+}
+.container.overflow {
+  overflow: hidden;
+}
+/*--- 头部 ---*/
+/* 整体头部 */
+header {
+  width: 100%;
+  height: 44px;
+  background: #ef3f41;
+  text-align: center;
+  padding-top: 5px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 19881121;
+}
+header .header_back {
+  width: 10px;
+  height: 16px;
+  background: url(../img/back_search.png) no-repeat 0 0;
+  background-size: 10px 16px;
+  position: absolute;
+  left: 0;
+  top: 15px;
+  display: block;
+  margin: 0 0 0 20px;
+}
+header .course_share {
+  width: 35px;
+  height: 35px;
+  background: url(../img/icon_share.png) no-repeat right center;
+  background-size: 15px 15px;
+  display: inline-block;
+}
+header .fl {
+  float: left;
+}
+header .course_out_back {
+  background: url(../img/icon_return.png) no-repeat 0 center;
+  background-size: 10px 16px;
+}
+header .course_out_btn {
+  width: 35px;
+  height: 35px;
+  background: url(../img/icon_point.png) no-repeat 19px 15px;
+  background-size: 16px 4px;
+  display: block;
+}
+header span.tit {
+  color: #fff;
+  line-height: 25px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+header .index_sear_icon {
+  width: 50px;
+  height: 24px;
+  background: url(../img/side_bar_icon.png) no-repeat 13px 12px;
+  background-size: 15px 12px;
+  display: inline-block;
+  float: right;
+  padding: 12px 0 25px 0;
+}
+header.all_nav_zone .header_back {
+  width: 38px;
+  height: 35px;
+  background-position: left center;
+  float: left;
+  position: static;
+  margin: -2px 0 0 15px;
+}
+header.all_nav_zone .cen_con {
+  font-size: 1.7rem;
+  display: block;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 50px 0 53px;
+}
+header.new_header {
+  border-bottom: 1px solid #ef3f41;
+  background-color: #fff;
+}
+header.new_header .header_back {
+  background-image: url(../img/icon_return.png);
+  background-size: 10px 16px;
+}
+header.new_header .cen_con {
+  color: #ef3f41;
+}
+header.new_header .right_bar .icon_btn {
+  background: url(../img/icon_point.png) no-repeat 19px 15px;
+  background-size: 16px 4px;
+}

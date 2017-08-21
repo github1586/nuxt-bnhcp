@@ -38,6 +38,15 @@ NUXT 能为我们做什么
 
 另外，本项目本地数据暂时没有，可以线上看，本地数据尽快补上～～ 也可以加我，拿sql文件，自己跑本地 服务
 
+线上项目地址：bnhcp.pboss.cc （Google Chrome观看更佳）
+
+扫码 进入 项目
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/myproject.png)
+
+有疑问或者项目有什么问题 可以联系QQ 995189950 微信搜索：node-s 
+
+欢迎大家来给我提提意见
+
 ## 部署 <img src="https://img.shields.io/project/deploy-v1.0.0-blue.svg"/>
 
 阿里云ECS服务器 centos7 
@@ -52,19 +61,23 @@ NUXT 能为我们做什么
 
 4、配置数据库配置文件
 
-5、npm run dev
+5、配置nginx 文件 进行代理 代理所有80端口
 
-6、npm run build
+6、npm run dev
 
-7、上面忘记安装pm2， yarn add pm2
+7、npm run build
 
-8、pm2 start build/mian.js
+8、上面忘记安装pm2， yarn add pm2
 
-9、查看 pm2 list 列表，查看启动状态
+9、pm2 start build/mian.js
 
-10、pm2 monit  监视所有进程
+10、查看 pm2 list 列表，查看启动状态
 
-11、如果一切正常，但是访问不通，可以pm2 logs 查看是否报错？
+11、pm2 monit  监视所有进程
+
+12、开启 nginx
+
+12、如果一切正常，但是访问不通，可以pm2 logs 查看是否报错？
 
 ## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
