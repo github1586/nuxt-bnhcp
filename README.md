@@ -41,7 +41,8 @@ NUXT 能为我们做什么
 ## 部署 <img src="https://img.shields.io/project/deploy-v1.0.0-blue.svg"/>
 
 阿里云ECS服务器 centos7 
-1、安装 nvm（node） mysql nginx（Tengine）
+
+0、安装 nvm（node） mysql nginx（Tengine）
 
 1、下载xftp 连接自己服务器，把自己的项目丢进去。
 
