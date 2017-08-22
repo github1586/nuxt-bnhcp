@@ -379,7 +379,7 @@
     .tabslist
       width: 25%
       float: left
-      background: url("/img/smart_line.png") no-repeat right center
+      background: url("/img/smart_line.png") no-repeat right 12px
       background-size: 1px 20px
       &.last
         background-image: none
