@@ -99,7 +99,10 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 9. 我的页面
 10. 提交订单
 11. 登录（注册暂无）
-12. 阿里云部署
+12. 设置页面
+13. 优惠券页面
+14. 钱包页面
+15. 阿里云部署
 
 ## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
 1. 购物车 （尚未完整）

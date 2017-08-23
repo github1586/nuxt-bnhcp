@@ -1,24 +1,31 @@
 <template>
-  <div class="cls_t_infor right_bar">   
-      <div class="activeImg end_active"></div>
-      <div class="cls_banner"><img src="/img/header_pic.jpg" alt=""></div>
-      <p>
-        <a @click="go()" class="back_page"></a>
-        <a href="tel:400-40000000" class="icon_phone"></a>
-        <a href="javascript:" class="more_con icon_btn"></a>
-      </p>
-      <div class="opa_abso">
-        <img src="/img/opa_jx.png" alt="">
-        <div class="le_rig">
-          <span class="left_s">已报{{this.courseDetail.saled}}/{{this.courseDetail.total}}人</span>
-          <span class="right_s">浏览量{{this.courseDetail.browse_number}}</span>
-        </div>       
-      </div>
-    </div>
+  <div class="cls_t_infor right_bar" @touchmove.prevent> 
+		<div class="activeImg end_active"></div>
+		<div class="cls_banner"><img src="/img/header_pic.jpg" alt=""></div>
+		<p>
+			<a @click="go()" class="back_page"></a>
+			<a href="tel:400-40000000" class="icon_phone"></a>
+			<a href="javascript:" @click="gobar()" class="more_con icon_btn"></a>
+		</p>
+		<div class="opa_abso">
+			<img src="/img/opa_jx.png" alt="">
+			<div class="le_rig">
+				<span class="left_s">已报{{this.courseDetail.saled}}/{{this.courseDetail.total}}人</span>
+				<span class="right_s">浏览量{{this.courseDetail.browse_number}}</span>
+			</div>       
+		</div>
+    <pull-down v-show="isDisplayBar"></pull-down>
+	</div>
 </template>
 <script>
 import { mapState } from 'vuex'
+import pullDown from '~components/common/pullDown.vue'
 export default {
+  data () {
+    return {
+      isDisplayBar: false
+    }
+  },
   computed: {
     ...mapState([
       'courseDetail'
@@ -27,7 +34,14 @@ export default {
   methods: {
     go () {
       this.$router.go(-1)
+    },
+    gobar () {
+      this.isDisplayBar = !this.isDisplayBar
+      document.body.scrollTop = 0
     }
+  },
+  components: {
+    pullDown
   }
 }
 </script>

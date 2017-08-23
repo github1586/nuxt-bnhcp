@@ -9,4 +9,10 @@ npm-debug.log
 
 # Nuxt generate
 dist
+<<<<<<< HEAD
 .vscode/
+=======
+.vscode/
+build
+server
+>>>>>>> 7a763f6bce78405a83246ed8d57999bb248e14d4

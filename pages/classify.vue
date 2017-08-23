@@ -2,7 +2,7 @@
   <div>
     <header id="header" class="header">
       <p>全部科目</p>
-      <a class="search_clas"></a>
+      <a href="/search/searchPage" class="search_clas"></a>
     </header>
     <div class="content_main">
       <div class="search_tab classification" style="display:block">

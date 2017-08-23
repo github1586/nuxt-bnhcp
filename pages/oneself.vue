@@ -18,10 +18,10 @@
       </div>
       <div class="my_business">
           <ul>
-              <li><p class="my_child">我的孩子<a href="">查看课程安排</a></p></li>
-              <li><p class="my_pay">我的钱包<a href="">管理孩子信息</a></p></li>
-              <li><p class="my_favorable">我的优惠<a href="">试听课程</a></p></li>
-              <li><p class="my_set">设置</p></li>
+              <li><p class="my_child"><span>我的孩子</span><a href="">查看课程安排</a></p></li>
+              <li><p class="my_pay"><span>我的钱包</span><a href="/myWallet/index">管理孩子信息</a></p></li>
+              <li><p class="my_favorable"><span>我的优惠</span><a href="/discount/index">试听课程</a></p></li>
+              <li><p class="my_set"><a href="/conf/index"><span>设置</span></a></p></li>
           </ul>
       </div>
     </div>
@@ -130,6 +130,8 @@ export default {
           font-size: 1.4rem
           color: $theme_gray666
           font-weight: bold
+          width: 100%
+          overflow: hidden
         .my_child
           background: url('/img/icon_my_child.png')no-repeat 0.5rem 1.1rem
           background-size: 2rem 2rem
@@ -142,9 +144,13 @@ export default {
         .my_set
           background: url('/img/icon_set.png')no-repeat 0.5rem 1.1rem
           background-size: 2rem 2rem 
+        span
+          float: left
         a
           float: right
           display: inline-block
+          // position: relative
+          // left: 160px
           padding-right: 1.5rem
           color: $theme_gray999
           background: url('/img/pay_go.png')no-repeat right center
