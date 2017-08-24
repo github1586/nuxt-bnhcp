@@ -109,10 +109,9 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 1. 头像上传
 2. 家长添加孩子
 3. 报名
-4. 优惠券
-5. 我的订单
-6. 机器人客服
-7. redis 首页缓存
+4. 我的订单
+5. 客服
+6. redis 首页缓存
 （有些页面没有在此处写，根据项目进度往上加~）
 ## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
 
