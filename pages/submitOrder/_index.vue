@@ -3,7 +3,7 @@
 		<header-top :name="this.name" :back="this.back" :className="this.className" :backgroundColor="this.backgroundColor"></header-top>		
     <div class="ser_rel_list new">
       <!-- 单节课-普通 -->
-      <div class="ser_rel_con">
+      <div class="ser_rel_con" v-if="!isCart">
         <div class="content_txt_box">
           <a href="#" class="con_l">
             <img :src="'/img/teacherHead/'+this.teacher_actor" width="100%" height="62" alt="" />
@@ -20,6 +20,25 @@
           </ul>
         </div>
       </div>
+			<div v-else>
+				<div class="ser_rel_con" v-for="(items, index) in cartList" :key="index">
+					<div class="content_txt_box">
+						<a href="#" class="con_l">
+							<img :src="'/img/teacherHead/'+items.teacher_actor" width="100%" height="62" alt="" />
+							<i class="name_teac">张淼1315165</i>
+						</a>
+						<ul class="con_r">
+							<li class="tit_h1">
+								<h1>{{items.name}}</h1>
+							</li>
+							<li class="school_name">{{items.campusesName}}</li>
+							<li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
+							<li class="week_time">{{filterWeeks(items.goods_week)}}</li>
+							<li class="totle_mon">&yen<span>{{items.cost}}</span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
     </div>
     <!-- 订单详情 -->
     <div class="class_infor">
@@ -33,14 +52,16 @@
               <span class="ban_y">余额</span>
               <span class="money_sp">可用余额：0.01</span>
           </p> -->
-          <p class="p_data"><span class="sp_infor">原课时费：</span><span class="p_infor">￥{{this.detailCourse.cost}}</span></p>
+          <p  v-if="!isCart" class="p_data"><span class="sp_infor">原课时费：</span><span class="p_infor">￥{{this.detailCourse.cost}}</span></p>
+          <p v-else class="p_data"><span class="sp_infor">原课时费：</span><span class="p_infor">￥{{totalMoney}}</span></p>
           <p class="p_data"><span class="sp_infor">教材费：</span><span class="p_infor">￥0.00</span></p>
-          <p class="p_data last"><span class="sp_infor">优惠金额：</span><span class="p_infor">-￥119.00</span></p>  
+          <p class="p_data last"><span class="sp_infor">优惠金额：</span><span class="p_infor">￥0.00</span></p>  
         </div>
       </div>
       <div class="menu_fix_bottom">
         <div class="pay_money">
-          <p>应付款：<span>￥520</span></p>
+          <p v-if="!isCart">应付款：<span>￥{{this.detailCourse.cost}}</span></p>
+          <p v-else>应付款：<span>￥{{totalMoney}}</span></p>
           <input type="button" value="提交订单" @click="topay()" class="confirm_pay_a" />
         </div>
       </div>
@@ -50,6 +71,7 @@
 <script>
 import headerTop from '~components/common/header.vue'
 import {mapState} from 'vuex'
+import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
 export default {
   data () {
@@ -59,12 +81,19 @@ export default {
       backgroundColor: 1,
       back: 0,
       detailCourse: {},
-      teacher_actor: ''
+      teacher_actor: '',
+      isCart: false,
+      cartList: [],
+      totalMoney: 0
     }
   },
   created () {
     if (process.BROWSER_BUILD) {
       this.detailCourse = JSON.parse(getStore('courseDetail'))
+    }
+    if (this.$route.query.id) {
+      this.isCart = true // 如果是购物车提交 那就循环
+      this.postMostClass(this.$route.query.id) // 发送请求
     }
   },
   mounted () { // created 钩子函数 读不到老师头像
@@ -81,6 +110,13 @@ export default {
     },
     topay () {
       this.$router.push({path: '/order/payOrder'})
+    },
+    async postMostClass (id) { // 批量提交购物车
+      let data = await mostAddClass(id)
+      this.cartList = data.data
+      this.cartList.forEach(function (element) { // 所有订单的价格的和
+        this.totalMoney += element.cost
+      }, this)
     }
   },
   components: {

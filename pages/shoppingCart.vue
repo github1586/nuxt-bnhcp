@@ -143,14 +143,14 @@ export default {
       }
     },
     async deleteCartClass () { // 删除购物车
+      let deleteArr = [] // 需要删除的课程
+      // 遍历选中的
+      this.cartSelectStatus.forEach(function (element) {
+        if (element.status) {
+          deleteArr.push(element.cartId)
+        }
+      }, this)
       if (!this.isDelete) {
-        let deleteArr = [] // 需要删除的课程
-        // 遍历选中的
-        this.cartSelectStatus.forEach(function (element) {
-          if (element.status) {
-            deleteArr.push(element.cartId)
-          }
-        }, this)
         if (!deleteArr.length) return
         let data = await deleteCart(deleteArr)
         if (data.status) {
@@ -169,6 +169,17 @@ export default {
             this.isAllSelect = !this.isAllSelect
           }
         }
+      } else {
+        if (!deleteArr.length) return
+        let params = []
+        // 获取选中的课程 id 带过去
+        this.cartSelectStatus.forEach(function (element, index) {
+          if (element.status) {
+            params.push(this.cartList[index].courseId)
+          }
+        }, this)
+        // 传参数
+        this.$router.push({path: '/submitOrder/index', query: {id: params.join('-')}})
       }
     },
     allSelect () {

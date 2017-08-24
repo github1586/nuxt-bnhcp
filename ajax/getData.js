@@ -69,6 +69,12 @@ export const isexistCart = (id) => {
   return fetch('/api/isexistCart/' + id)
 }
 /**
+ * 购物车批量提交
+ */
+export const mostAddClass = (id) => {
+  return fetch('/api/mostAddClass/', {id})
+}
+/**
  * 删除购物车
  */
 export const deleteCart = (deleteArr = []) => {
