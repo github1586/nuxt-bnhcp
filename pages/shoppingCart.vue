@@ -1,12 +1,12 @@
 <template>
   <div class="containers">
     <div class="herder">
-      <p class="cart">购物车</p><span class="white">编辑</span>
+      <p class="cart">购物车</p><span class="white" @click="deleteClass()">{{this.deleteTxt}}</span>
     </div>
     <div class="order_cart" v-if="cartList.length">
       <ul>
         <li  v-for="(item, index) in cartList" :key="index">
-					<div class="title_school"  @click="cartSelect(index, item.courseId)" :class="{on: cartSelectStatus[index].status}">
+					<div class="title_school"  @click="cartSelect(index, item.courseId, item.id)" :class="{on: cartSelectStatus[index].status}">
 						<h3>{{item.campusesName}}</h3>
 					</div>
           <div class="ser_rel_list new">
@@ -58,12 +58,12 @@
 		<div class="computed">
 			<div class="left_select">
 				<h3 @click="allSelect()" :class="{on: isAllSelect}">全选</h3>
-				<div class="price">
+				<div class="price" v-show="isDelete">
 					<p>合计：<span>￥{{this.total}}</span></p>
 					<b>不含教材费</b>
 				</div>
 			</div>
-			<input class="settlement" type="button" value="马上结算">
+			<input class="settlement" type="button" @click="deleteCartClass()" :value="btnVal">
 		</div>
     <footer-tab></footer-tab>
   </div>
@@ -72,7 +72,7 @@
 <script>
 import footerTab from '~components/home/Footertabs.vue'
 import {mapState, mapMutations} from 'vuex'
-import {getCartList} from '../ajax/getData.js'
+import {getCartList, deleteCart} from '../ajax/getData.js'
 import {getStore} from '../config/common.js'
 export default {
   data () {
@@ -81,7 +81,10 @@ export default {
       total: 0, // 总价
       cartList: [], // 购物车列表
       cartSelectStatus: [],
-      isAllSelect: false
+      isAllSelect: false,
+      btnVal: '马上结算',
+      isDelete: true,
+      deleteTxt: '编辑'
     }
   },
   computed: {
@@ -114,16 +117,51 @@ export default {
     },
     initCartStatus () { // 初始化购物车数据状态
       this.cartList.forEach(function (element, index) {
-        this.cartSelectStatus.push({status: false, id: element.courseId}) // 全部未选中
+        this.cartSelectStatus.push({status: false, id: element.courseId, cartId: element.id}) // 全部未选中
       }, this)
     },
-    cartSelect (index, id) { // 点击选中
-      this.cartSelectStatus.splice(index, 1, {status: !this.cartSelectStatus[index].status, id})
+    cartSelect (index, id, cartId) { // 点击选中
+      this.cartSelectStatus.splice(index, 1, {status: !this.cartSelectStatus[index].status, id, cartId})
       if (this.cartSelectStatus[index].status) {
         this.total += parseInt(this.cartList[index].cost)
       } else {
         this.total -= parseInt(this.cartList[index].cost)
         this.isAllSelect = false // 如果在全选情况下  有一个不是选中 全选就不选中了啊
+      }
+    },
+    deleteClass () { // 编辑购物车
+      if (this.isDelete) {
+        this.deleteTxt = '完成'
+        this.btnVal = '删除'
+        this.isDelete = false
+      } else {
+        this.deleteTxt = '编辑'
+        this.btnVal = '马上结算'
+        this.isDelete = true
+      }
+    },
+    async deleteCartClass () { // 删除购物车
+      if (!this.isDelete) {
+        let deleteArr = [] // 需要删除的课程
+        // 遍历选中的
+        this.cartSelectStatus.forEach(function (element) {
+          if (element.status) {
+            deleteArr.push(element.cartId)
+          }
+        }, this)
+        if (!deleteArr.length) return
+        let data = await deleteCart(deleteArr)
+        if (data.status) {
+          for (let i = 0, bool = true; i < this.cartList.length; bool ? i++ : i) {
+            if (this.cartList[i] && this.cartSelectStatus[i].status) {
+              this.cartSelectStatus.splice(i, 1) // 记录状态删除
+              this.cartList.splice(i, 1) // 点击删除的时候 选中的删除
+              bool = false
+            } else {
+              bool = true
+            }
+          }
+        }
       }
     },
     allSelect () {
@@ -133,12 +171,12 @@ export default {
         this.initCartStatus() // 记住状态
         this.total = 0 // 全部未选中
         this.cartList.forEach(function (element, index) {
-          this.cartSelectStatus.push({status: false, id: element.courseId}) // 全部未选中
+          this.cartSelectStatus.push({status: false, id: element.courseId, cartId: element.id}) // 全部未选中
         }, this)
       } else {
         this.addPrice(this.cartList)
         this.cartList.forEach(function (element, index) {
-          this.cartSelectStatus.push({status: true, id: element.courseId}) // 全部未选中
+          this.cartSelectStatus.push({status: true, id: element.courseId, cartId: element.id}) // 全部未选中
         }, this)
       }
     }

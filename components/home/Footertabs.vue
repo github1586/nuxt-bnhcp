@@ -14,6 +14,7 @@
         <li class="tabs_three">
           <nuxt-link to="/shoppingCart"></nuxt-link>
           <span>购物车</span>
+          <i class="count_cart" v-show="cartList.length > 0">{{cartList.length}}</i>
         </li>
         <li class="tabs_four">
           <nuxt-link to="/oneself"></nuxt-link>
@@ -23,7 +24,39 @@
     </div>
   </div>
 </template>
+<script>
+import {mapState} from 'vuex'
+import {getCartList} from '../../ajax/getData.js'
+import {getStore} from '../../config/common.js'
+export default {
+  data () {
+    return {
+      cartList: [] // 购物车列表
+    }
+  },
+  computed: {
+    ...mapState([
+      'cart'
+    ])
+  },
+  mounted () {
+    this.getCart()
+    console.log(this.cartList)
+  },
+  methods: {
+    async getCart () {
+      let user = getStore('user') // 获取用户信息
+      if (user) { // 存在的化就去请求购物车列表
+        let data = await getCartList(user)
+        this.cartList = data.result
+      }
+    }
+  }
+}
+</script>
+
 <style lang="sass">
+@import '~static/common/style.sass'
 .bottom_tabs
   position: fixed
   left: 0
@@ -69,6 +102,19 @@
             background: url('/img/icon_tab_class_on.png')no-repeat center 10px
             background-size: 19px 20px 
     .tabs_three
+      position: relative
+      .count_cart
+        position: absolute
+        right: 20px
+        top: 10px
+        display: inline-block
+        width: 15px
+        height: 15px
+        background: $theme_color
+        color: #fff
+        border-radius: 50%
+        text-align: center
+        line-height: 15px
       a
         background: url('/img/icon_cart.png')no-repeat center 10px
         background-size: 19px 20px 

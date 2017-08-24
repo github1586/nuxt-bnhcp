@@ -15,7 +15,7 @@
           <a href="#" class="index_zixun">咨询</a>
         </li>
           <li class="">
-          <a href="#" class="index_fen">分享</a>
+          <a href="/shoppingCart" class="index_fen">购车</a>
         </li>
       </ul>
     </div>  

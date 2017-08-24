@@ -5,12 +5,12 @@
 			<Headerchunk :headinfo="headinfo"></Headerchunk>
 			<ul class="cls_list">
 				<li>
-					<a href="123" class="con" id="dao_acti1">
+					<nuxt-link to="/coursehome" class="con" id="dao_acti1">
 						<img src="img/favorable_1.jpg" alt="" />
 						<div  class="topic_con_txt">
               <span>钢琴精品课</span>
             </div>
-					</a>
+					</nuxt-link>
 					<div id="time_dao_ing1" class="time_dao">
 						<p>
 							<span>距开抢<i>5</i>天</span>
@@ -21,12 +21,12 @@
           </div>
 				</li>
 				<li class="fr">
-					<a href="javascript:;" class="con" id="dao_acti2">
+					<nuxt-link to="/coursehome" class="con" id="dao_acti2">
 						<img src="img/favorable_2.jpg" alt="" />
 						<div  class="topic_con_txt">
             <span>钢琴精品课</span>
           </div>
-					</a>
+					</nuxt-link>
 					<div id="time_dao_ing2" class="time_dao">
 						<p>
 							<span>距开抢<i>5</i>天</span>

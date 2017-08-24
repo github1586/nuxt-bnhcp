@@ -69,6 +69,14 @@ export const isexistCart = (id) => {
   return fetch('/api/isexistCart/' + id)
 }
 /**
+ * 删除购物车
+ */
+export const deleteCart = (deleteArr = []) => {
+  // 拿到数组处理一下把
+  let id = deleteArr.join('-')
+  return fetch('/api/deleteCart/', {id})
+}
+/**
  * 登录
  */
 

@@ -33,6 +33,11 @@ export default {
   methods: {
     async longin () {
       if (/^1[345789]\d{9}$/.test(this.phone)) {
+        if (!this.password) {
+          this.layerMSg = '密码不能为空' // 更换提示语
+          this.isLayer = true // 提示
+          return
+        }
         let data = await userLongin(this.phone, this.password)
         if (data.status) {
           setStore('user', this.phone) // 存储用户手机号
