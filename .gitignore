@@ -11,4 +11,4 @@ npm-debug.log
 dist
 .vscode/
 build
-./server
+server
