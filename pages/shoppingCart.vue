@@ -65,7 +65,7 @@
 			</div>
 			<input class="settlement" type="button" @click="deleteCartClass()" :value="btnVal">
 		</div>
-    <footer-tab></footer-tab>
+    <footer-tab :cartNum="cartNumStatus"></footer-tab>
   </div>
 </template>
 
@@ -84,7 +84,8 @@ export default {
       isAllSelect: false,
       btnVal: '马上结算',
       isDelete: true,
-      deleteTxt: '编辑'
+      deleteTxt: '编辑',
+      cartNumStatus: false
     }
   },
   computed: {
@@ -110,6 +111,7 @@ export default {
       if (user) { // 存在的化就去请求购物车列表
         let data = await getCartList(user)
         this.cartList = data.result
+        this.cartNumStatus = this.cartList.length
         this.initCartStatus() // 记住状态
       } else { // 然则 你去登录把 或者注册的
         this.$router.push({path: '/login'})
@@ -157,9 +159,14 @@ export default {
               this.cartSelectStatus.splice(i, 1) // 记录状态删除
               this.cartList.splice(i, 1) // 点击删除的时候 选中的删除
               bool = false
+              this.cartNumStatus = this.cartList.length
             } else {
               bool = true
             }
+          }
+          this.total = 0
+          if (this.cartList.length === 0) {
+            this.isAllSelect = !this.isAllSelect
           }
         }
       }
