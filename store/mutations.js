@@ -7,7 +7,8 @@ import {
   COURSE_TYPE,
   COURSE_SORT,
   COURSE_DETAIL,
-  CART
+  CART,
+  ORDERDATA
 } from './mutation-types.js'
 import {setStore} from '../config/common.js'
 export default {
@@ -47,5 +48,9 @@ export default {
   },
   [CART] (state, value) {
     state.cart = value
+  },
+  // 订单信息
+  [ORDERDATA] (state, value) {
+    state.orderData = value
   }
 }

@@ -17,7 +17,9 @@ const state = {
   // 课程详情
   courseDetail: {},
   // 购物车
-  cart: {}
+  cart: {},
+  // 订单信息
+  orderData: {}
 }
 
 const createStore = () => {

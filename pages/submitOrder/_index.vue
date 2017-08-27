@@ -70,7 +70,7 @@
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
 import {submitOrder} from '../../ajax/getData'
@@ -106,6 +106,9 @@ export default {
     ])
   },
   methods: {
+    ...mapMutations([
+      'ORDERDATA'
+    ]),
     filterWeeks (value) {
       return filterWeek(value)
     },
@@ -121,6 +124,7 @@ export default {
       let id = this.$route.query.id // 获取路由参数
       let data = await submitOrder(phone, id, this.totalMoney) // 提交订单
       if (data.status) {
+        this.ORDERDATA(data.orderData)
         this.$router.push({path: '/order/payOrder', query: {id: id}})
       }
     }

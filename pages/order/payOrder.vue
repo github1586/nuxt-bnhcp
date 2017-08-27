@@ -7,9 +7,9 @@
     </div>
     <div class="menu_infor_box">
       <div class="menu_infor">
-        <p>订单号码：<span>JG23143898854</span></p>
-        <p>购买课程：<span>钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程</span></p>
-        <p>订单金额：<span>￥<i>10</i></span></p>
+        <p>订单号码：<span>{{orderData.orderId}}</span></p>
+        <p>购买课程：<span>{{orderData.orderName}}</span></p>
+        <p>订单金额：<span>￥<i>{{orderData.total}}</i></span></p>
       </div>
     </div>
     <!-- 具体支付方式 -->
@@ -32,13 +32,14 @@
         </div>
       </div>
     </div>
-    <yes-btn :val="this.val"></yes-btn>
+    <yes-btn @click.native="success()" :val="this.val"></yes-btn>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
 import yesBtn from '~components/common/subscribe/yesbtn.vue'
 import computedTime from '~components/common/computedTime.vue'
+import {mapState} from 'vuex'
 export default {
   data () {
     return {
@@ -52,6 +53,11 @@ export default {
       time: '300'
     }
   },
+  computed: {
+    ...mapState([
+      'orderData'
+    ])
+  },
   methods: {
     select (value) {
       if (value === 1) {
@@ -61,6 +67,9 @@ export default {
         this.weixin = true
         this.zhi = false
       }
+    },
+    success () {
+      this.$router.push({path: '/paySuccess/index'})
     }
   },
   components: {

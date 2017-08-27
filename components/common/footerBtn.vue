@@ -67,9 +67,10 @@ export default {
           return
         } else {
           if (value === 1) {
-            this.$router.push({path: '/submitOrder/index'})
+            let id = JSON.parse(getStore('courseDetail')).courseId // 路由带走当前的id
+            this.$router.push({path: '/submitOrder/index', query: {id: id}}) // 跳转提交订单
           } else {
-            this.$router.push({path: '/subscribe/index'})
+            this.$router.push({path: '/subscribe/index'}) // 跳转预约试听
           }
         }
       }

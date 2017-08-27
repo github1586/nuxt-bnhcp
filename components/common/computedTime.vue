@@ -22,6 +22,7 @@ export default {
         this.countTime --
         if (this.countTime === 0) {
           clearInterval(this.timer)
+          this.$router.push({path: '/coursehome'})
         }
       }, 1000)
     }
