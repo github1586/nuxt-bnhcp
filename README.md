@@ -103,7 +103,8 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 13. 优惠券页面
 14. 钱包页面
 15. 购物车 （添加购物车 删除购物车 结算购物车 购物车批量提交订单）
-16. 阿里云部署
+16. redis (首页缓存 分页缓存）
+17. 阿里云部署
 
 ## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
 1. 头像上传
@@ -111,7 +112,7 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 3. 报名
 4. 我的订单
 5. 客服
-6. redis 首页缓存
+
 （有些页面没有在此处写，根据项目进度往上加~）
 ## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
 
