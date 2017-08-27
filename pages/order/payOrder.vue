@@ -8,7 +8,7 @@
     <div class="menu_infor_box">
       <div class="menu_infor">
         <p>订单号码：<span>JG23143898854</span></p>
-        <p>购买课程：<span>钢琴精品课程</span></p>
+        <p>购买课程：<span>钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程,钢琴精品课程</span></p>
         <p>订单金额：<span>￥<i>10</i></span></p>
       </div>
     </div>
@@ -32,14 +32,13 @@
         </div>
       </div>
     </div>
-    <yes-btn @click.native="goPayOrder(15214685)" :val="this.val"></yes-btn>
+    <yes-btn :val="this.val"></yes-btn>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
 import yesBtn from '~components/common/subscribe/yesbtn.vue'
 import computedTime from '~components/common/computedTime.vue'
-import {submitOrder} from '../../ajax/getData'
 export default {
   data () {
     return {
@@ -62,10 +61,6 @@ export default {
         this.weixin = true
         this.zhi = false
       }
-    },
-    async goPayOrder (id) {
-      let data = await submitOrder(id)
-      console.log(data)
     }
   },
   components: {

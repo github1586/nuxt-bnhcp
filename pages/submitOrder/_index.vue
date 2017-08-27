@@ -62,7 +62,7 @@
         <div class="pay_money">
           <p v-if="!isCart">应付款：<span>￥{{this.detailCourse.cost}}</span></p>
           <p v-else>应付款：<span>￥{{totalMoney}}</span></p>
-          <input type="button" value="提交订单" @click="topay()" class="confirm_pay_a" />
+          <input type="button" value="提交订单" @click="goPayOrder()" class="confirm_pay_a" />
         </div>
       </div>
     </div>
@@ -73,6 +73,7 @@ import headerTop from '~components/common/header.vue'
 import {mapState} from 'vuex'
 import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
+import {submitOrder} from '../../ajax/getData'
 export default {
   data () {
     return {
@@ -108,15 +109,20 @@ export default {
     filterWeeks (value) {
       return filterWeek(value)
     },
-    topay () {
-      this.$router.push({path: '/order/payOrder'})
-    },
     async postMostClass (id) { // 批量提交购物车
       let data = await mostAddClass(id)
       this.cartList = data.data
       this.cartList.forEach(function (element) { // 所有订单的价格的和
         this.totalMoney += element.cost
       }, this)
+    },
+    async goPayOrder () {
+      let phone = getStore('user')
+      let id = this.$route.query.id // 获取路由参数
+      let data = await submitOrder(phone, id, this.totalMoney) // 提交订单
+      if (data.status) {
+        this.$router.push({path: '/order/payOrder', query: {id: id}})
+      }
     }
   },
   components: {

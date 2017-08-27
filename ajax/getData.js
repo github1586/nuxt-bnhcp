@@ -108,9 +108,11 @@ export const getCartList = (user) => {
  * 提交订单
  */
 
-export const submitOrder = (id) => {
+export const submitOrder = (phone, id, total) => {
   var data = {
-    id
+    phone,
+    id,
+    total
   }
   return fetch('/api/submitOrder', data)
 }
