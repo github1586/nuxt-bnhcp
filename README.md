@@ -1,6 +1,6 @@
 # vue-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/>
 
-> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx反向代理
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx反向代理 + redis 缓存
 ## 前言 <img src="https://img.shields.io/badge/preface-v1.0.0-yellowgreen.svg"/>
 
 *本项目纯属个人练习项目，数据并非真实，如有雷同，纯属巧合。

@@ -32,13 +32,14 @@
         </div>
       </div>
     </div>
-    <yes-btn :val="this.val"></yes-btn>
+    <yes-btn @click.native="goPayOrder(15214685)" :val="this.val"></yes-btn>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
 import yesBtn from '~components/common/subscribe/yesbtn.vue'
 import computedTime from '~components/common/computedTime.vue'
+import {submitOrder} from '../../ajax/getData'
 export default {
   data () {
     return {
@@ -61,6 +62,10 @@ export default {
         this.weixin = true
         this.zhi = false
       }
+    },
+    async goPayOrder (id) {
+      let data = await submitOrder(id)
+      console.log(data)
     }
   },
   components: {

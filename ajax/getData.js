@@ -103,3 +103,15 @@ export const getCartList = (user) => {
   }
   return fetch('/api/cartList', data)
 }
+
+/**
+ * 提交订单
+ */
+
+export const submitOrder = (id) => {
+  var data = {
+    id
+  }
+  return fetch('/api/submitOrder', data)
+}
+
