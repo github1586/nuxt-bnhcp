@@ -4,7 +4,7 @@
     <div class="login_form">
       <p class="phone"><input type="text" v-model="phone" placeholder="输入手机号"><span @click="clear()">×</span></p>
       <p class="phone verification">
-        <input type="password" v-model="password" placeholder="输入您的密码">
+        <input type="password" v-model="password" placeholder="首次登录为注册">
       </p>
       <p class="login_btn"><input type="button" @click="longin()" value="登录"></p>
       <p class="user_trans">未注册用户登录将自动创建报哪好账号，<b>即视为您已同意</b><a href="">《报哪好用户服务协议》</a></p>
