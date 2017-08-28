@@ -2,7 +2,7 @@
   <div class="menu_ding_box">
     <div class="order_result">
       <h3 class="h3_order">{{this.title}}</h3>
-      <a class="success_ok" @click="orderList()" href="">完成</a>
+      <a class="success_ok" @click="orderList()">完成</a>
     </div>
     <div class="menu_ok mar_less">
       <img src="/img/icon_alert_scs.png" width="110" height="110" alt="" />

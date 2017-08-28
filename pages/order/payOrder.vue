@@ -49,7 +49,7 @@ export default {
       back: 0,
       val: '确认支付',
       weixin: false,
-      zhi: false,
+      zhi: true,
       time: '300'
     }
   },
