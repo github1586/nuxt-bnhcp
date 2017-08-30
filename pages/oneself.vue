@@ -9,7 +9,7 @@
           </div>
       </div>
       <div class="my_order">
-          <p>我的订单<a href="">查看全部订单</a></p>
+          <p>我的订单<a href="/orderList/index">查看全部订单</a></p>
           <ul>
               <li><a class="obligation" href="">待付款</a></li>
               <li><a class="evaluated" href="">待评价</a></li>
@@ -18,7 +18,7 @@
       </div>
       <div class="my_business">
           <ul>
-              <li><p class="my_child"><span>我的孩子</span><a href="">查看课程安排</a></p></li>
+              <li><p class="my_child"><span>家长交流</span><a href="/chat/index">点击进入聊天室</a></p></li>
               <li><p class="my_pay"><span>我的钱包</span><a href="/myWallet/index">管理孩子信息</a></p></li>
               <li><p class="my_favorable"><span>我的优惠</span><a href="/discount/index">试听课程</a></p></li>
               <li><p class="my_set"><a href="/conf/index"><span>设置</span></a></p></li>

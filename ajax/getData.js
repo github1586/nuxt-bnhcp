@@ -117,3 +117,24 @@ export const submitOrder = (phone, id, total) => {
   return fetch('/api/submitOrder', data)
 }
 
+/**
+ * 支付成功
+ */
+
+export const paySuccess = (id) => {
+  var data = {
+    id
+  }
+  return fetch('/api/paySuccess', data)
+}
+/**
+ * 请求订单列表
+ */
+
+export const getOrderList = (user) => {
+  var data = {
+    user
+  }
+  return fetch('/api/getOrderList', data)
+}
+

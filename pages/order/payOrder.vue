@@ -39,6 +39,7 @@
 import headerTop from '~components/common/header.vue'
 import yesBtn from '~components/common/subscribe/yesbtn.vue'
 import computedTime from '~components/common/computedTime.vue'
+import {paySuccess} from '../../ajax/getData.js'
 import {mapState} from 'vuex'
 export default {
   data () {
@@ -68,8 +69,11 @@ export default {
         this.zhi = false
       }
     },
-    success () {
-      this.$router.push({path: '/paySuccess/index'})
+    async success () {
+      let result = await paySuccess(this.orderData.orderId)
+      if (result.status) {
+        this.$router.push({path: '/paySuccess/index'})
+      }
     }
   },
   components: {

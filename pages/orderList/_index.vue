@@ -30,6 +30,18 @@
                   </div>
                   <h3>&yen 1009.00</h3>
                 </li>
+								<li>
+                  <div class="con">
+                    <p><img src="/img/menu_list_img.jpg" width="65" height="65" class="cls_img" alt="" /><span>老师：<i>待定</i></span></p>
+                    <div class="infor">
+                      <p>购买：<span>钢琴精品课程</span></p>
+                      <p>孩子：<span>萌仔</span></p>
+                      <p>时间：<span>2015-12-05  23:32:14</span></p>
+                      <p>学校：<span>2015-12-05  23:32:14</span></p>
+                    </div>
+                  </div>
+                  <h3>&yen 1009.00</h3>
+                </li>
               </ul>
             </a>
             <div class="total_pay">
@@ -51,6 +63,8 @@
 <script>
 import headerTop from '~components/common/header.vue'
 import Footertabs from '~components/home/Footertabs.vue'
+import {getOrderList} from '../../ajax/getData.js'
+import {getStore} from '../../config/common.js'
 export default {
   data () {
     return {
@@ -58,6 +72,16 @@ export default {
       className: 1,
       backgroundColor: 1,
       back: 0
+    }
+  },
+  mounted () {
+    this.getorder()
+  },
+  methods: {
+    async getorder () {
+      let phone = getStore('user')
+      let data = await getOrderList(phone)
+      console.log(data)
     }
   },
   components: {
