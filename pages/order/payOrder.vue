@@ -41,6 +41,7 @@ import yesBtn from '~components/common/subscribe/yesbtn.vue'
 import computedTime from '~components/common/computedTime.vue'
 import {paySuccess} from '../../ajax/getData.js'
 import {mapState} from 'vuex'
+import {getStore} from '../../config/common.js'
 export default {
   data () {
     return {
@@ -70,7 +71,9 @@ export default {
       }
     },
     async success () {
-      let result = await paySuccess(this.orderData.orderId)
+      let phone = getStore('user') // 拿到用户手机号
+      console.log(this.orderData)
+      let result = await paySuccess(this.orderData.orderId, phone)
       if (result.status) {
         this.$router.push({path: '/paySuccess/index'})
       }

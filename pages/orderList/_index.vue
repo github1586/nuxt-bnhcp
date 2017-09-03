@@ -10,83 +10,100 @@
           <li><a onclick="return false" href="">已评价</a></li>
       </ul> 
       <ul class="meun">
-        <li>
+        <li v-for="(item, index) in listArr" :key="index">
           <div class="menu_list">
             <a href="#" class="list_link">
               <div class="tit">
-                  <span class="staus">交易成功</span>
-                  <span class="agent">2016-3-10 15:25:00</span>
+                  <span class="staus">{{item[0].orderSataus === "0" ? '待付款' : '交易成功'}}</span>
+                  <span class="agent">{{item[0].order_date1}}</span>
               </div>
               <ul class="course_list">
-                <li>
+                <li v-for="(items, indexs) in item" :key="indexs">
                   <div class="con">
-                    <p><img src="/img/menu_list_img.jpg" width="65" height="65" class="cls_img" alt="" /><span>老师：<i>待定</i></span></p>
+                    <p><img :src="'/img/teacherHead/'+items.teacher_actor" width="65" height="65" class="cls_img" alt="" /><span>老师：<i>{{items.teacherName}}</i></span></p>
                     <div class="infor">
-                      <p>购买：<span>钢琴精品课程</span></p>
-                      <p>孩子：<span>萌仔</span></p>
-                      <p>时间：<span>2015-12-05  23:32:14</span></p>
-                      <p>学校：<span>2015-12-05  23:32:14</span></p>
+                      <p>购买：<span>{{items.name}}</span></p>
+                      <p>地址：<span>{{items.address}}</span></p>
+                      <p>时间：<span>{{items.open_date1}}</span></p>
+                      <p>学校：<span>{{items.end_date1}}</span></p>
                     </div>
                   </div>
-                  <h3>&yen 1009.00</h3>
-                </li>
-								<li>
-                  <div class="con">
-                    <p><img src="/img/menu_list_img.jpg" width="65" height="65" class="cls_img" alt="" /><span>老师：<i>待定</i></span></p>
-                    <div class="infor">
-                      <p>购买：<span>钢琴精品课程</span></p>
-                      <p>孩子：<span>萌仔</span></p>
-                      <p>时间：<span>2015-12-05  23:32:14</span></p>
-                      <p>学校：<span>2015-12-05  23:32:14</span></p>
-                    </div>
-                  </div>
-                  <h3>&yen 1009.00</h3>
+                  <h3>&yen {{items.cost}}</h3>
                 </li>
               </ul>
             </a>
             <div class="total_pay">
-                <div class="pay_money lf">合计：<span>￥1099.00</span></div>                
+                <div class="pay_money lf">合计：<span>￥{{item[0].total}}</span></div>                
             </div>
             <div class="pay_ctrls">
                 <div class="btns">
-                  <span class="cancel" data-role="menu_cancel">不支持退班</span>
-                  <a href="#" class="pay_link">支付</a>
+                  <span class="cancel" data-role="menu_cancel">{{item[0].orderSataus === "0" ? '取消' : '不支持退班'}}</span>
+                  <a  @click="goPayTo(item[0].orderSataus, item, item[0].total)" class="pay_link">{{item[0].orderSataus === "0" ? '支付' : '订单详情'}}</a>
                 </div>
             </div>
           </div>
         </li>
       </ul>
     </div>
+		<no-content :content="noContent" v-show="this.listArr.length === 0"></no-content>	
 		<Footertabs></Footertabs>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
 import Footertabs from '~components/home/Footertabs.vue'
-import {getOrderList} from '../../ajax/getData.js'
+import {mapMutations} from 'vuex'
+import {getOrderList, submitOrder} from '../../ajax/getData.js'
 import {getStore} from '../../config/common.js'
+import noContent from '~components/common/no_content/no_content.vue'
 export default {
   data () {
     return {
       name: '我的订单',
       className: 1,
       backgroundColor: 1,
-      back: 0
+      back: 0,
+      listArr: [],
+      // 无内容样式
+      noContent: {
+        class: 'menu',
+        name: '你没有订单'
+      }
     }
   },
   mounted () {
     this.getorder()
   },
   methods: {
+    ...mapMutations([
+      'ORDERDATA'
+    ]),
     async getorder () {
       let phone = getStore('user')
       let data = await getOrderList(phone)
-      console.log(data)
+      if (data.status) {
+        this.listArr = data.result
+      }
+      console.log(data.result['__ob__'])
+    },
+    async goPayTo (status, item, totalMoney) {
+      if (!parseInt(status)) {
+        this.$router.push({path: '/order/payOrder', query: this.$route.query.id})
+        let phone = getStore('user') // 拿到用户手机号
+        let orderArr = []
+        item.forEach(function (element) { // 循环当前订单一共有几个课程
+          orderArr.push(element.courseOrder) // 每个课程的id放进去
+        }, this)
+        let data = await submitOrder(phone, orderArr.join('-'), totalMoney, true) // 提交订单
+        data.orderData.orderId = item[0].orderId
+        this.ORDERDATA(data.orderData)
+      }
     }
   },
   components: {
     headerTop,
-    Footertabs
+    Footertabs,
+    noContent
   }
 }
 </script>
@@ -356,8 +373,6 @@ export default {
 		
 		.close_order
 			background: $theme_gray666
-		
-	
 	// 订单课程详情
 	.menu_class_infor
 		background-color: #fff
@@ -375,7 +390,6 @@ export default {
 				float: right
 				padding: 5px 6px 5px 6px
 				margin: 0 15px 0 0
-			
 			.cls_name
 				color: #333
 				display: inline-block
@@ -400,7 +414,6 @@ export default {
 			color: #333
 			padding: 8px 0 8px 1rem
 			margin: 0 0 10px 0
-		
 		.money_money
 			font-size: 1.4rem
 			color: #666
@@ -408,11 +421,8 @@ export default {
 			padding: 6px 15px 6px 1rem
 			&.minus
 				color: $theme_fu_org
-			
 			span
 				float: right
-			
-		
 		.money_total
 			font-size: 1.4rem
 			color: #484848
@@ -456,8 +466,8 @@ export default {
 		.pay_ctrls
 			.btns
 				.cancel
-					padding-left: 13px
-					padding-right: 13px
+					padding-left: 20px
+					padding-right: 20px
 				.pay_link
 	// 已取消
 	&.cancel
@@ -602,7 +612,7 @@ export default {
 				border-color: #ddd
 				border-radius: 2px
 				display: inline-block
-				padding: 5px 2px
+				padding: 5px 12px
 			.pay_link
 				width: 60px
 				font-size: 1.2rem

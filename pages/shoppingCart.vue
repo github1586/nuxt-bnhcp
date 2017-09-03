@@ -178,8 +178,16 @@ export default {
             params.push(this.cartList[index].courseId)
           }
         }, this)
+        // 提交过后删除
+        let submitcource = []
+        console.log(this.cartSelectStatus)
+        this.cartSelectStatus.forEach(function (element) {
+          if (element.status) {
+            submitcource.push(element.cartId) // 如果选中状态为选中  那就放进数组传入参数提交删除
+          }
+        }, this)
         // 传参数
-        this.$router.push({path: '/submitOrder/index', query: {id: params.join('-')}})
+        this.$router.push({path: '/submitOrder/index', query: {id: params.join('-'), courceId: submitcource.join('-')}})
       }
     },
     allSelect () {

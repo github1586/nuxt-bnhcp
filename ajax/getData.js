@@ -108,11 +108,12 @@ export const getCartList = (user) => {
  * 提交订单
  */
 
-export const submitOrder = (phone, id, total) => {
+export const submitOrder = (phone, id, total, oldOrder) => {
   var data = {
     phone,
     id,
-    total
+    total,
+    oldOrder
   }
   return fetch('/api/submitOrder', data)
 }
@@ -121,9 +122,10 @@ export const submitOrder = (phone, id, total) => {
  * 支付成功
  */
 
-export const paySuccess = (id) => {
+export const paySuccess = (id, uers) => {
   var data = {
-    id
+    id,
+    uers
   }
   return fetch('/api/paySuccess', data)
 }

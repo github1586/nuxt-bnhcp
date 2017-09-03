@@ -45,7 +45,7 @@
       <div class="remain_d">
         <ul class="link_list">
           <!-- 如果使用了优惠券请给 span 加 class="quan" -->
-          <li><a href="我的--优惠券--使用优惠券.html">选择优惠券：<span><i>暂无优惠券 </i></span></a></li>
+          <li><a>选择优惠券：<span><i>暂无优惠券 </i></span></a></li>
         </ul>
         <div class="remain">
           <!-- <p class="banl_p">
@@ -73,7 +73,7 @@ import headerTop from '~components/common/header.vue'
 import {mapState, mapMutations} from 'vuex'
 import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
-import {submitOrder} from '../../ajax/getData'
+import {submitOrder, deleteCart} from '../../ajax/getData'
 export default {
   data () {
     return {
@@ -107,7 +107,7 @@ export default {
   },
   methods: {
     ...mapMutations([
-      'ORDERDATA'
+      'ORDERDATA', 'CART'
     ]),
     filterWeeks (value) {
       return filterWeek(value)
@@ -124,8 +124,15 @@ export default {
       let id = this.$route.query.id // 获取路由参数
       let data = await submitOrder(phone, id, this.totalMoney) // 提交订单
       if (data.status) {
+        console.log(data)
         this.ORDERDATA(data.orderData)
+        if (this.$route.query.courceId) {
+          await deleteCart(this.$route.query.courceId.toString().split('-')) // 删除购物车提交后的
+        }
+        this.CART([])
         this.$router.push({path: '/order/payOrder', query: {id: id}})
+      } else {
+        alert(data.result)
       }
     }
   },
