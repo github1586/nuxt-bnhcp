@@ -34,6 +34,10 @@ NUXT 能为我们做什么
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show2_gif.gif)
 ![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show3_gif.gif)
 
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show8_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show9_gif.gif)
+![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show10_gif.gif)
+
 ## 感谢～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 感谢～～！
@@ -103,15 +107,15 @@ git clone 项目地址 进入 local文件夹 cd template 里面是本地（node�
 13. 优惠券页面
 14. 钱包页面
 15. 购物车 （添加购物车 删除购物车 结算购物车 购物车批量提交订单）
-16. redis (首页缓存 分页缓存）
-17. 阿里云部署
+16. 我的订单 （全部订单 待付款 交易成功）
+17. redis (首页缓存 分页缓存）
+18. 阿里云部署
 
 ## 预计功能 <img src="https://img.shields.io/badge/estimate-v1.0.0-ff69b4.svg"/>
 1. 头像上传
 2. 家长添加孩子
 3. 报名
-4. 我的订单
-5. 客服
+4. 客服
 
 （有些页面没有在此处写，根据项目进度往上加~）
 ## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>

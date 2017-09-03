@@ -66,10 +66,12 @@
         </div>
       </div>
     </div>
+		<layer-msg :msg="this.layerMsg" v-show="isLayer"></layer-msg>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
+import layerMsg from '~components/layer/layerMsg.vue'
 import {mapState, mapMutations} from 'vuex'
 import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
@@ -77,6 +79,8 @@ import {submitOrder, deleteCart} from '../../ajax/getData'
 export default {
   data () {
     return {
+      layerMsg: '',
+      isLayer: false,
       name: '确认订单',
       className: 1,
       backgroundColor: 1,
@@ -132,12 +136,17 @@ export default {
         this.CART([])
         this.$router.push({path: '/order/payOrder', query: {id: id}})
       } else {
-        alert(data.result)
+        this.layerMsg = data.result
+        this.isLayer = true
+        setTimeout(() => { // 设为false 可再次调用
+          this.isLayer = false
+        }, 2000)
       }
     }
   },
   components: {
-    headerTop
+    headerTop,
+    layerMsg
   }
 }
 </script>

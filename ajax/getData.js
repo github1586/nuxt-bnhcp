@@ -133,9 +133,10 @@ export const paySuccess = (id, uers) => {
  * 请求订单列表
  */
 
-export const getOrderList = (user) => {
+export const getOrderList = (user, status) => {
   var data = {
-    user
+    user,
+    status
   }
   return fetch('/api/getOrderList', data)
 }

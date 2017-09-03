@@ -4,10 +4,7 @@
     <div class="container full">
       <!-- 选项卡 -->
       <ul class="menu_tabs">
-          <li><a onclick="return false" href="#" class="on">全部</a></li>
-          <li><a onclick="return false" href="">待付款</a></li>
-          <li><a onclick="return false" href="">已支付</a></li>
-          <li><a onclick="return false" href="">已评价</a></li>
+          <li v-for="(items, index) in tabArr" :key="index"><a @click="changeActive(index)" :class="{on: changeActivated === index}">{{items}}</a></li>
       </ul> 
       <ul class="meun">
         <li v-for="(item, index) in listArr" :key="index">
@@ -45,24 +42,39 @@
         </li>
       </ul>
     </div>
-		<no-content :content="noContent" v-show="this.listArr.length === 0"></no-content>	
+		<no-content :content="noContent" v-show="isNoContent"></no-content>	
 		<Footertabs></Footertabs>
+		<transition name="loading">
+			<loading v-show="showLoading"></loading>
+		</transition>
   </div>
 </template>
 <script>
 import headerTop from '~components/common/header.vue'
 import Footertabs from '~components/home/Footertabs.vue'
 import {mapMutations} from 'vuex'
+import loading from '~components/common/loading.vue'
 import {getOrderList, submitOrder} from '../../ajax/getData.js'
 import {getStore} from '../../config/common.js'
 import noContent from '~components/common/no_content/no_content.vue'
 export default {
   data () {
     return {
+      tabArr: [
+        '全部',
+        '待付款',
+        '已支付',
+        '已评价'
+      ],
       name: '我的订单',
       className: 1,
+      // 位置左侧是选中的id
+      changeActivated: 0,
       backgroundColor: 1,
       back: 0,
+      isNoContent: false,
+      // 是否显示加载动画
+      showLoading: true,
       listArr: [],
       // 无内容样式
       noContent: {
@@ -84,7 +96,10 @@ export default {
       if (data.status) {
         this.listArr = data.result
       }
-      console.log(data.result['__ob__'])
+      if (JSON.stringify(data.result) === '{}') { // 如果没有数据那就 该咋咋把
+        this.isNoContent = true
+      }
+      this.showLoading = false
     },
     async goPayTo (status, item, totalMoney) {
       if (!parseInt(status)) {
@@ -98,12 +113,25 @@ export default {
         data.orderData.orderId = item[0].orderId
         this.ORDERDATA(data.orderData)
       }
+    },
+    async changeActive (index) {
+      this.isNoContent = false
+      let phone = getStore('user')
+      let data = await getOrderList(phone, index - 1)
+      if (data.status) {
+        this.listArr = data.result
+      }
+      if (JSON.stringify(data.result) === '{}') { // 如果没有数据那就 该咋咋把
+        this.isNoContent = true
+      }
+      this.changeActivated = index
     }
   },
   components: {
     headerTop,
     Footertabs,
-    noContent
+    noContent,
+    loading
   }
 }
 </script>
@@ -212,8 +240,6 @@ export default {
 				span
 					background-color:  $theme_color
 					color: #fff
-				
-			
 			span
 				display: block
 				color: $theme_gray666
@@ -243,9 +269,6 @@ export default {
 		&.appliy
 			background-color:  $theme_color
 			color: #fff
-		
-	
-
 // 弹窗样式部分
 .layermchild.shai_box
 	width: 100%
@@ -262,19 +285,6 @@ export default {
 		top: 6px
 		&::after,&::before
 			width: 18px
-		
-	
-
-
-/* 加载页面 */
-// .loading_page
-// 	&.flow
-// 		top: 86px
-// 		.con_box
-// 			margin-top: -77px
-// 		
-// 	
-// 
 .layermchild.reimburse
 	position: relative
 	width:300px !important
