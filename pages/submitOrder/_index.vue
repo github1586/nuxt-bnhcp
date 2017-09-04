@@ -128,7 +128,6 @@ export default {
       let id = this.$route.query.id // 获取路由参数
       let data = await submitOrder(phone, id, this.totalMoney) // 提交订单
       if (data.status) {
-        console.log(data)
         this.ORDERDATA(data.orderData)
         if (this.$route.query.courceId) {
           await deleteCart(this.$route.query.courceId.toString().split('-')) // 删除购物车提交后的

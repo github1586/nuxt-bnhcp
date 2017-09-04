@@ -6,11 +6,15 @@
     </h1>
     <div v-else id="room">
       <div class="top">
-
+        <h3 class="groupChat">群聊大厅</h3>
+        <h3 class="singleChat">单聊</h3>
+      </div>
+      <div class="msgContent">
+        <p class="currentLine">当前在线<span>12</span></p>
       </div>
       <div class="bottom_send">
-        <input type="text">
-        <input type="button" name="" id="">
+        <input class="content" type="text">
+        <input id="send" type="button" value="发送"/>
       </div>
     </div>
   </div>
@@ -69,17 +73,43 @@ h1
     font-weight: normal
 #room
   .top
-    height: 60px
+    height: 48px
     width: 100%
     background: $theme_fu_org
+    h3
+      float: left
+      width: 50%
+      height: 48px
+      color: #fff
+      text-align: center
+      line-height: 48px
+      font-size: 16px
+    .singleChat
+      border-left: 1px solid #fff
+  .msgContent
+    .currentLine
+      text-align: center
+      margin-top: 10px
+      color: $theme_gray999
   .bottom_send
-    height: 40px
+    height: 33px
     background: $theme_fu_red
     width: 100%
     position: fixed
     bottom: 0
     left: 0
-    input
-      height: 38px
+    .content
+      float: left
+      height: 29px
+      width: 80%
+      margin-top: 2px
+      margin-left: 2px
+      padding-left: 6px
+    #send
+      color: #fff
+      width: 19%
+      height: 33px
+      line-height: 34px
+      background: $theme_fu_red
 </style>
 

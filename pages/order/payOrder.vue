@@ -72,7 +72,6 @@ export default {
     },
     async success () {
       let phone = getStore('user') // 拿到用户手机号
-      console.log(this.orderData)
       let result = await paySuccess(this.orderData.orderId, phone)
       if (result.status) {
         this.$router.push({path: '/paySuccess/index'})
