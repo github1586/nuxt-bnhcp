@@ -201,7 +201,6 @@ export default {
   }
 }
 </script>
-
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
 .ser_rel_list
