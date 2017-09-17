@@ -12,28 +12,50 @@
       <div class="msgContent">
         <p class="currentLine">当前在线<span>12</span></p>
       </div>
+      <ul>
+        <li class="msg_list" v-for="(item, index) in msg_list" :key="index">
+          <p><img class="actor" :src="item.actor" alt=""><span>{{item.msg}}</span></p>
+        </li>
+      </ul>
       <div class="bottom_send">
-        <input class="content" type="text">
-        <input id="send" type="button" value="发送"/>
+        <input class="content" type="text" v-model="current_msg">
+        <input id="send" @click="send()" type="button" value="发送"/>
       </div>
     </div>
   </div>
 </template>
 <script>
 export default {
+  bodyAttrs: {
+    class: 'fff'
+  },
+  head: {
+    script: [
+      { src: 'https://cdn.socket.io/socket.io-1.2.0.js' }
+    ]
+  },
   data () {
     return {
-      into: true
+      into: true,
+      msg_list: [{actor: '/img/teacherHead/1_tpl_73.jpg', msg: '你在干什么呢？'}],
+      current_msg: ''
     }
   },
   mounted () {
     setTimeout(() => {
       this.into = false
     }, 3000)
+    if (process.BROWSER_BUILD) {
+      // var socket = io()
+      console.log(socket)
+      // socket.emit('chat message', this.current_msg)
+      // this.current_msg = ''
+      // return false
+    }
   },
-  head: {
-    bodyAttrs: {
-      class: 'fff'
+  methods: {
+    send () {
+      this.msg_list.push({actor: '/img/teacherHead/1_tpl_73.jpg', msg: '你在干什么呢？'})
     }
   }
 }
@@ -111,5 +133,17 @@ h1
       height: 33px
       line-height: 34px
       background: $theme_fu_red
+.msg_list
+  margin-top: 15px
+  .actor
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    margin-right: 10px
+    margin-left: 10px
+  span
+    display: inline-block
+    line-height: 30px
+    height: 28px
 </style>
 
