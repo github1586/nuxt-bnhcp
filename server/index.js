@@ -4,7 +4,7 @@ import express from 'express'
 import api from './api'
 
 const app = express()
-const host = process.env.HOST || '192.168.1.110'
+const host = process.env.HOST || 'localhost'
 const port = process.env.PORT || 8000
 
 var bodyParser = require('body-parser')
@@ -12,10 +12,25 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
+var apps = express()
+// socket.io
+// const http = require('http').Server(apps)
+const server = require('http').createServer(apps)
+const io = require('socket.io')(server)
+
 app.set('port', port)
 
 // Import API Routes
 app.use('/api', api)
+io.on('connection', (socket) => {
+  console.log('a user connected : ' + socket.id)
+  socket.on('disconnect', () => {
+    console.log('user disconnected : ' + socket.id)
+  })
+  socket.on('add-list', (msg) => {
+    socket.emit('now-playlist', msg)
+  })
+})
 
 // Start nuxt.js
 async function start () {

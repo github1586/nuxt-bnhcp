@@ -13,6 +13,9 @@ module.exports = {
         { rel: 'stylesheet', href: '/common/common.css' }
     ]
   },
+  env: {
+    HOST_URL: process.env.HOST_URL || 'http://localhost:3000'
+  },
   /*
   ** Customize the progress-bar colornuxt
   */

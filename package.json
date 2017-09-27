@@ -12,13 +12,16 @@
     "eslint-plugin-import": "2.3.0",
     "eslint-plugin-node": "5.0.0",
     "express": "4.15.3",
+    "fs": "0.0.1-security",
     "mysql": "2.13.0",
     "nuxt": "v1.0.0-alpha.4",
     "redis": "^2.8.0",
     "socket.io": "^2.0.3",
+    "socket.io-client": "^2.0.3",
     "source-map-support": "0.4.15",
     "vue-carousel": "0.6.4",
-    "vue-slide": "1.1.1"
+    "vue-slide": "1.1.1",
+    "vue-socket.io": "^2.1.1-a"
   },
   "scripts": {
     "dev": "backpack dev",

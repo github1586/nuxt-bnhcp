@@ -14,48 +14,47 @@
       </div>
       <ul>
         <li class="msg_list" v-for="(item, index) in msg_list" :key="index">
-          <p><img class="actor" :src="item.actor" alt=""><span>{{item.msg}}</span></p>
+          <h3><img class="actor" :src="item.actor" alt=""><span>{{item.name}}</span></h3>
+          <p>{{item.msg}}</p>
         </li>
       </ul>
       <div class="bottom_send">
-        <input class="content" type="text" v-model="current_msg">
-        <input id="send" @click="send()" type="button" value="发送"/>
+        <form @submit.prevent="submit">
+          <input class="content" autocomplete="off" type="text" v-model="current_msg">
+          <input id="send" type="submit" value="发送"/>
+        </form>
       </div>
     </div>
   </div>
 </template>
 <script>
+import socket from '~plugins/socket.io'
 export default {
   bodyAttrs: {
     class: 'fff'
   },
-  head: {
-    script: [
-      { src: 'https://cdn.socket.io/socket.io-1.2.0.js' }
-    ]
-  },
   data () {
     return {
       into: true,
-      msg_list: [{actor: '/img/teacherHead/1_tpl_73.jpg', msg: '你在干什么呢？'}],
+      socket: null,
+      msg_list: [{actor: '/img/teacherHead/1_tpl_73.jpg', name: 'guanbo', msg: '你在干什么呢？'}],
       current_msg: ''
     }
   },
   mounted () {
+    socket.emit('add-list', 'hello world')
+    socket.on('chat message', (msg) => {
+      console.log(msg)
+    })
     setTimeout(() => {
       this.into = false
     }, 3000)
-    if (process.BROWSER_BUILD) {
-      // var socket = io()
-      console.log(socket)
-      // socket.emit('chat message', this.current_msg)
-      // this.current_msg = ''
-      // return false
-    }
+  },
+  created () {
   },
   methods: {
-    send () {
-      this.msg_list.push({actor: '/img/teacherHead/1_tpl_73.jpg', msg: '你在干什么呢？'})
+    submit () {
+      this.msg_list.push({actor: '/img/teacherHead/1_tpl_73.jpg', name: 'guanbo', msg: '你在干什么呢？'})
     }
   }
 }
@@ -145,5 +144,7 @@ h1
     display: inline-block
     line-height: 30px
     height: 28px
+  p
+    margin-left: 50px
 </style>
 
