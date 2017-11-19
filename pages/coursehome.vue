@@ -350,7 +350,7 @@
         // 小于15条 限时暂无更多
         if (data.data.length < 15 && data.data.length !== 0) {
           this.TOUCHEND(true)
-          return false
+          return
         }
       }
     },

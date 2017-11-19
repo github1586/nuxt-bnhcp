@@ -4,7 +4,7 @@ import express from 'express'
 import api from './api'
 
 const app = express()
-const host = process.env.HOST || 'localhost'
+const host = process.env.HOST || '192.168.1.110'
 const port = process.env.PORT || 8000
 
 var bodyParser = require('body-parser')

@@ -1,64 +1,56 @@
-import {getStyle} from '../config/configinfo.js'
 
 export const loadMore = {
   directives: {
     'load-more': {
       bind: (el, binding) => {
-        let windowHeight = window.screen.height
-        let height
-        let setTop
-        let paddingBottom
-        let marginBottom
-        let requestFram
-        let oldScrollTop
-        let scrollEl
-        let heightEl
-        let scrollType = el.attributes.type && el.attributes.type.value
-        let scrollReduce = 2
-        if (scrollType === 2) {
-          scrollEl = el
-          heightEl = el.children[0]
-        } else {
-          scrollEl = document.body
-          heightEl = el
-        }
-
-        el.addEventListener('touchstart', () => {
-          if (scrollType === 2) {
-            height = heightEl.clientHeight
-          }
-          setTop = el.offsetTop
-          paddingBottom = getStyle(el, 'paddingBottom')
-          marginBottom = getStyle(el, 'marginBottom')
-        }, false)
-
-        el.addEventListener('touchmove', () => {
-          loadMore()
-        }, false)
-
-        el.addEventListener('touchend', () => {
-          oldScrollTop = scrollEl.scrollTop
-          moveEnd()
-        }, false)
-
-        const moveEnd = () => {
-          requestFram = requestAnimationFrame(() => {
-            if (scrollEl.scrollTop !== oldScrollTop) {
-              oldScrollTop = scrollEl.scrollTop
-              moveEnd()
-            } else {
-              cancelAnimationFrame(requestFram)
-              height = heightEl.clientHeight
-              loadMore()
+        var scrollToBottom = {
+          getScrollTop: function () {
+            var scrollTop = 0
+            var bodyScrollTop = 0
+            var documentScrollTop = 0
+            if (document.body) {
+              bodyScrollTop = document.body.scrollTop
             }
-          })
-        }
-
-        const loadMore = () => {
-          if (scrollEl.scrollTop + windowHeight >= height + setTop + paddingBottom + marginBottom - scrollReduce) {
-            binding.value()
+            if (document.documentElement) {
+              documentScrollTop = document.documentElement.scrollTop
+            }
+            scrollTop = (bodyScrollTop - documentScrollTop > 0) ? bodyScrollTop : documentScrollTop
+            return scrollTop
+          },
+          getScrollHeight: function () {
+            var scrollHeight = 0
+            var documentScrollHeight = 0
+            var bodyScrollHeight = 0
+            if (document.body) {
+              bodyScrollHeight = document.body.scrollHeight
+            }
+            if (document.documentElement) {
+              documentScrollHeight = document.documentElement.scrollHeight
+            }
+            scrollHeight = (bodyScrollHeight - documentScrollHeight > 0) ? bodyScrollHeight : documentScrollHeight
+            return scrollHeight
+          },
+          getClientHeight: function () {
+            var windowHeight = 0
+            if (document.compatMode === 'CSS1Compat'){
+              windowHeight = document.documentElement.clientHeight
+            } else {
+              windowHeight = document.body.clientHeight
+            }
+            return windowHeight
+          },
+          onScrollEvent: function (callback) {
+            var This = this
+            window.onscroll = function () {
+              if (This.getScrollTop() + This.getClientHeight() >= This.getScrollHeight()) {
+                typeof callback === 'function' && callback.call(this)
+              }
+            }
           }
         }
+        scrollToBottom.onScrollEvent(function () {
+          binding.value()
+        })
       }
     }
   }
