@@ -12,7 +12,7 @@
     "eslint-plugin-node": "5.0.0",
     "express": "4.15.3",
     "mysql": "2.13.0",
-    "nuxt": "latest",
+    "nuxt": "v1.0.0-alpha.4",
     "source-map-support": "0.4.15",
     "vue-carousel": "0.6.4",
     "vue-slide": "1.1.1"
