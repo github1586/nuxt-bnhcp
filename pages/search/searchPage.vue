@@ -140,3 +140,4 @@ export default {
 		background: #fff
 		border-radius: 5px
 </style>
+

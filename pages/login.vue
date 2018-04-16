@@ -205,3 +205,4 @@ export default {
   background-size: 100% 100%
   background-attachment: fixed
 </style>
+

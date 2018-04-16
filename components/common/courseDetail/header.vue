@@ -217,3 +217,4 @@ export default {
 				color: #fff
 				display: inline-block
 </style>
+

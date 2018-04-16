@@ -25,3 +25,4 @@ export default {
     margin: 0 auto
     font-size: 1.5rem
 </style>
+

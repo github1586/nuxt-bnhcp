@@ -59,3 +59,4 @@ export default {
           padding-right: 1rem
           -webkit-tap-highlight-color: transparent
 </style>
+

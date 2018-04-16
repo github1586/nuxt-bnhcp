@@ -14,3 +14,4 @@ export const getStyle = (element, attr, NumberMode = 'int') => {
   // 在获取 opactiy 时需要获取小数 parseFloat
   return NumberMode === 'float' ? parseFloat(target) : parseInt(target)
 }
+

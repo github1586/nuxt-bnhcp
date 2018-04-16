@@ -71,3 +71,4 @@ export default {
         color: #484848
         margin: 7px 0 0 0
 </style>
+

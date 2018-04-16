@@ -445,3 +445,4 @@ export default {
 .loading-enter, .loading-leave-active
 	opacity: 0
 </style>
+

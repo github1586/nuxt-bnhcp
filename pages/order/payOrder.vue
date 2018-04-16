@@ -180,3 +180,4 @@ export default {
             border-radius: 1px
             padding: 0 2px
 </style>
+

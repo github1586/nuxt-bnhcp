@@ -5,11 +5,10 @@
       <rd-swipe :swipe="swipe">
         <div class="rd-swipe-item" :style="{ 'background-image': `url(${img})` }" v-for="(img, index) in imgs">
         </div>
-      </rd-swipe>
+      </rd-swipe> 
     </div>
   </div>
 </template>
-
 <script>
 import rdSwipe from './vue-slide.vue'
 export default {

@@ -113,3 +113,4 @@ export default {
   .index-enter, .index-leave-active
     opacity: 0
 </style>
+

@@ -49,3 +49,4 @@ export default {
 .box
   padding-bottom: 50px
 </style>
+

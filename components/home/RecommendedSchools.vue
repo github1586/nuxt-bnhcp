@@ -74,3 +74,4 @@ export default {
 					margin-top: 5px
 					white-space: nowrap
 </style>
+

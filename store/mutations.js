@@ -54,3 +54,4 @@ export default {
     state.orderData = value
   }
 }
+

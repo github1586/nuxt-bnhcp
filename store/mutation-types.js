@@ -7,4 +7,3 @@ export const COURSE_SORT = 'COURSE_SORT' // 课程排序
 export const COURSE_DETAIL = 'COURSE_DETAIL' // 课程排序
 export const CART = 'CART' // 购物车
 export const ORDERDATA = 'ORDERDATA' // 订单信息
-

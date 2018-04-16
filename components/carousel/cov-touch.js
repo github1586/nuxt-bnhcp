@@ -10,6 +10,7 @@ const MOUSE_EVENT_MAP = {
   'mouseup': 1
 }
 
+
 const _ = {
   on (el, type, func) {
     el.addEventListener(type, func, false)

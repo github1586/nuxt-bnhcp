@@ -157,3 +157,4 @@ export default {
           background-size: 0.5rem 0.8rem
           font-weight: normal
 </style>
+
