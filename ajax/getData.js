@@ -140,4 +140,3 @@ export const getOrderList = (user, status) => {
   }
   return fetch('/api/getOrderList', data)
 }
-
