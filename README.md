@@ -45,7 +45,7 @@ NUXT 能为我们做什么
 
 git clone 项目地址 进入 local文件夹 cd template 里面是本地（node）写死的数据可以 
 
-然后 --  yarn install 和 npm run dev
+然后 yarn 》》 yarn dev
 
 另一种 自己跑本地服务 sql文件 在根目录下
 
