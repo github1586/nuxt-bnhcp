@@ -60,7 +60,7 @@
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-<img src="https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.jpg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/>
 
 
 ![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg)
