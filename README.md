@@ -63,17 +63,17 @@
 <img src="https://github.com/github1586/bnhcp/blob/master/static/img/show1_gif.jpg" width="280"/>
 
 
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show4_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show5_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show6_gif.gif)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg)
 
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show7_gif.gif) 
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show2_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show3_gif.gif)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/4.jpeg) 
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/5.jpeg)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/6.jpeg)
 
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show8_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show9_gif.gif)
-![avatar](https://github.com/github1586/bnhcp/blob/master/static/img/show10_gif.gif)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg)
+![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg)
 
 欢迎大家来给我提提意见 互相探讨~
 
