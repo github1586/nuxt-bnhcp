@@ -1,11 +1,11 @@
 # vue-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
 
-> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx反向代理 + redis 缓存
-## 前言 [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis
+## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
 
-线上项目地址：<a href="hhttp://nodet.cn:3000/" target="_blank" style="color: red;">http://nodet.cn/</a>  （Google Chrome观看更佳）
+online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://nodet.cn/</a>
 
-## 项目目录结构 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## project <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 ```
 .
 ├── ajax                 // 请求数据封装
@@ -58,7 +58,7 @@
 
 ```
 
-## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## Project screenshots <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg" width="280"/>
 
@@ -66,13 +66,7 @@
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg" width="280"/>
 
-欢迎大家来给我提提意见 互相探讨~
-
-微信:node-s
-
-## 个人 <img src="https://img.shields.io/oneself/my-ff69b4.svg"/>
-
-爱生活 爱技术 爱折腾
+Email: 8889999i@gmail.com
 
 ## Build Setup <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
@@ -80,5 +74,5 @@
 # install dependencies
 $ yarn install
 
-# serve with hot reload at localhost:3000
+# serve with hot reload at 127.0.0.1:3000
 $ yarn dev 
