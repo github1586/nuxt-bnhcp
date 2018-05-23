@@ -6,13 +6,11 @@
 线上项目地址：<a href="hhttp://nodet.cn:3000/" target="_blank" style="color: red;">http://nodet.cn/</a>  （Google Chrome观看更佳）
 
 ## 项目目录结构 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
-`
+```
+.
 ├── ajax                 // 请求数据封装
-
 ├── assets               // 静态资源
-
 ├── components           // 组件
-
 │   ├── carousel         // 轮播
 │   ├── common           // 公用组件
 │   │   ├── courseDetail // 课程详情
@@ -58,6 +56,7 @@
 │   └── js
 └── store`
 
+```
 
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
