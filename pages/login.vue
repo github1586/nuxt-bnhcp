@@ -13,9 +13,9 @@
   </div>
 </template>
 <script>
-import { setStore } from '../config/common.js'
-import { userLongin } from '../ajax/getData.js'
-import layerMsg from '~components/layer/layerMsg.vue'
+import { setStore } from '../config/common'
+import { userLongin } from '../ajax/getData'
+import layerMsg from '~/components/layer/layerMsg.vue'
 export default {
   data () {
     return {
@@ -40,6 +40,7 @@ export default {
         }
         let data = await userLongin(this.phone, this.password)
         if (data.status) {
+          alert(234)
           setStore('user', this.phone) // 存储用户手机号
           this.$router.push({ path: '/' }) // 跳转
         } else {
@@ -205,4 +206,3 @@ export default {
   background-size: 100% 100%
   background-attachment: fixed
 </style>
-

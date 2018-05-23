@@ -114,4 +114,3 @@ export default {
           background: url('/img/icon_tab_my_on.png')no-repeat center 10px
           background-size: 19px 20px 
 </style>
-

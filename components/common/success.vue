@@ -104,4 +104,3 @@ header
       right: 1rem
       font-size: 1.5rem
 </style>
-

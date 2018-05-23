@@ -70,4 +70,3 @@ export default {
       span
         margin-left: 0.5rem
 </style>
-

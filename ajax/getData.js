@@ -31,13 +31,13 @@ export const courselist = (offset, courseId, type, sort, selectScreen = []) => {
     courseId,
     selectScreenStr
   }
-  return fetch('/api/courselist', data)
+  return fetch( '/api/courselist', data)
 }
 /**
  * 获取课程详情
  */
 export const getDetail = (id) => {
-  fetch('/api/courseDetail/index/' + id)
+  fetch( '/api/courseDetail/index/' + id)
 }
 
 /**
@@ -140,3 +140,4 @@ export const getOrderList = (user, status) => {
   }
   return fetch('/api/getOrderList', data)
 }
+

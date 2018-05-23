@@ -84,4 +84,3 @@ export default {
 		animation: ellipse .6s infinite ease-in-out;
 	}
 </style>
-

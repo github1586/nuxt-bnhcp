@@ -172,4 +172,3 @@
 							background-size: 19px 19px
 							padding-left: 50px
 </style>
-

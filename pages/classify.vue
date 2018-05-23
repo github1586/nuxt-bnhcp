@@ -31,8 +31,8 @@
   </div>
 </template>
 <script>
-import axios from '~plugins/axios'
-import myFooter from '~components/home/Footertabs.vue'
+import axios from '~/plugins/axios'
+import myFooter from '~/components/home/Footertabs.vue'
 import {mapState, mapMutations} from 'vuex'
 import {syncClass} from '../ajax/getData'
 export default {
@@ -321,4 +321,3 @@ export default {
     top: 2.5rem
     right: 2rem
 </style>
-

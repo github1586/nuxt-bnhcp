@@ -5,7 +5,7 @@
           <div class="head_portrait">
               <p><img src="img/con_lft_tp.jpg" alt=""></p>
               <h2>小仙女豆豆</h2>
-              <span class="pay_num">余额：&yen102.32</span>
+              <span class="pay_num">余额：&yen;102.32</span>
           </div>
       </div>
       <div class="my_order">
@@ -29,7 +29,7 @@
   </div>
 </template>
 <script>
-import myFooter from '~components/home/Footertabs.vue'
+import myFooter from '~/components/home/Footertabs.vue'
 export default {
   components: {
     myFooter
@@ -157,4 +157,3 @@ export default {
           background-size: 0.5rem 0.8rem
           font-weight: normal
 </style>
-

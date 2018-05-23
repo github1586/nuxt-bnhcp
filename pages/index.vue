@@ -13,15 +13,15 @@
   </transition> 
 </template>
 <script>
-import Myheader from '~components/home/Myheader.vue'
+import Myheader from '~/components/home/Myheader.vue'
 import {mapState, mapMutations} from 'vuex'
-import Carousel from '~components/carousel/Carousel.vue'
-import Classification from '~components/home/Classification.vue'
-import RecommendedSchools from '~components/home/RecommendedSchools.vue'
-import Grabactivity from '~components/home/Grabactivity.vue'
-import Courseblock from '~components/home/Courseblock.vue'
-import Footertabs from '~components/home/Footertabs.vue'
-import axios from '~plugins/axios'
+import Carousel from '~/components/carousel/Carousel.vue'
+import Classification from '~/components/home/Classification.vue'
+import RecommendedSchools from '~/components/home/RecommendedSchools.vue'
+import Grabactivity from '~/components/home/Grabactivity.vue'
+import Courseblock from '~/components/home/Courseblock.vue'
+import Footertabs from '~/components/home/Footertabs.vue'
+import axios from '~/plugins/axios'
 
 export default {
   // ajax module as axios
@@ -113,4 +113,3 @@ export default {
   .index-enter, .index-leave-active
     opacity: 0
 </style>
-

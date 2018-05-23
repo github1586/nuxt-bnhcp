@@ -32,7 +32,7 @@ export const loadMore = {
           },
           getClientHeight: function () {
             var windowHeight = 0
-            if (document.compatMode === 'CSS1Compat'){
+            if (document.compatMode === "CSS1Compat"){
               windowHeight = document.documentElement.clientHeight
             } else {
               windowHeight = document.body.clientHeight
@@ -55,4 +55,3 @@ export const loadMore = {
     }
   }
 }
-

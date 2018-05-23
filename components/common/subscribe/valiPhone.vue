@@ -65,4 +65,3 @@
 					text-align: center
 					border-radius: 5px
 </style>
-

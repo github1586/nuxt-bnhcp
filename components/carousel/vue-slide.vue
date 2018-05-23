@@ -54,7 +54,7 @@
         <div class="rd-swipe-pagination" v-if="options.pagination">
             <div class="rd-swipe-pagination-item" 
                 :class="{ 'active': item.active }" 
-                v-for="(item, index) in pagination"
+                v-for="(item, index) in pagination" :key="index"
                 @click="turnTo(index)"
             ></div>
         </div>
@@ -246,4 +246,3 @@ export default {
   }
 }
 </script>
-

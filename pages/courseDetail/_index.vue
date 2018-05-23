@@ -9,14 +9,14 @@
   </div>
 </template>
 <script>
-import headerTop from '~components/common/courseDetail/header.vue'
-import descripTion from '~components/common/courseDetail/description.vue'
-import detailContent from '~components/common/courseDetail/detailContent.vue'
-import courseInfo from '~components/common/courseDetail/courseInfo.vue'
-import evaluate from '~components/common/courseDetail/evaluate.vue'
-import footerBtn from '~components/common/footerBtn.vue'
+import headerTop from '~/components/common/courseDetail/header.vue'
+import descripTion from '~/components/common/courseDetail/description.vue'
+import detailContent from '~/components/common/courseDetail/detailContent.vue'
+import courseInfo from '~/components/common/courseDetail/courseInfo.vue'
+import evaluate from '~/components/common/courseDetail/evaluate.vue'
+import footerBtn from '~/components/common/footerBtn.vue'
 import { mapState, mapMutations } from 'vuex'
-import axios from '~plugins/axios'
+import axios from '~/plugins/axios'
 export default {
   // ajax module as axios
   fetch ({store, query}) {
@@ -49,4 +49,3 @@ export default {
 .box
   padding-bottom: 50px
 </style>
-

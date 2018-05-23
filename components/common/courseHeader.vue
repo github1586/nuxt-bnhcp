@@ -102,5 +102,4 @@ header
         border-left: 1px solid #ccc
         display: block
         padding: 0 0 0 25px
-        
 </style>

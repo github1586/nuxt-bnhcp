@@ -16,7 +16,7 @@
             <li class="school_name">{{this.detailCourse.campusesName}}</li>
             <li class="str_end_time"><span>{{this.detailCourse.open_date1}}</span>至<span>{{this.detailCourse.end_date1}}</span></li>
             <li class="week_time">{{filterWeeks(this.detailCourse.goods_week)}}</li>
-            <li class="totle_mon">&yen<span>{{this.detailCourse.cost}}</span></li>
+            <li class="totle_mon">&yen;<span>{{this.detailCourse.cost}}</span></li>
           </ul>
         </div>
       </div>
@@ -34,7 +34,7 @@
 							<li class="school_name">{{items.campusesName}}</li>
 							<li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
 							<li class="week_time">{{filterWeeks(items.goods_week)}}</li>
-							<li class="totle_mon">&yen<span>{{items.cost}}</span></li>
+							<li class="totle_mon">&yen;<span>{{items.cost}}</span></li>
 						</ul>
 					</div>
 				</div>
@@ -70,8 +70,8 @@
   </div>
 </template>
 <script>
-import headerTop from '~components/common/header.vue'
-import layerMsg from '~components/layer/layerMsg.vue'
+import headerTop from '~/components/common/header.vue'
+import layerMsg from '~/components/layer/layerMsg.vue'
 import {mapState, mapMutations} from 'vuex'
 import {mostAddClass} from '../../ajax/getData.js'
 import {filterWeek, getStore} from '../../config/common.js'
@@ -128,6 +128,7 @@ export default {
       let id = this.$route.query.id // 获取路由参数
       let data = await submitOrder(phone, id, this.totalMoney) // 提交订单
       if (data.status) {
+        console.log(data)
         this.ORDERDATA(data.orderData)
         if (this.$route.query.courceId) {
           await deleteCart(this.$route.query.courceId.toString().split('-')) // 删除购物车提交后的
@@ -444,4 +445,3 @@ export default {
       border-radius: 0
       float: right
 </style>
-

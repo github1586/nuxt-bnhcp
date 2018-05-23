@@ -11,7 +11,7 @@
         </ul>
       </div>
     </div>
-    <div class="container latest_search" v-show="history">
+    <div class="container latest_search">
       <p class="search_text">搜索历史</p>
       <ul>
         <li v-for="(item, index) in historys" :key="index">
@@ -19,14 +19,14 @@
 				</li>
       </ul>
     </div>
-    <div class="clear_btn_contain" v-show="history">
+    <div class="clear_btn_contain" >
       <div class="clear_btn" @click="clearHistory()">清空搜索历史</div>
     </div>
   </div>
 </div>
 </template>
 <script>
-import courseHeader from '~components/common/courseHeader.vue'
+import courseHeader from '~/components/common/courseHeader.vue'
 import {removeStore, getStore} from '../../config/common.js'
 export default {
   data () {
@@ -42,17 +42,17 @@ export default {
     deleteClose () {
     }
   },
-  computed: {
-    history: function () {
-      if (getStore('history')) { // 获取搜索记录
-        this.historys = JSON.parse(getStore('history'))
-        this.$forceUpdate()
-      } else {
-        this.historys = []
-      }
-      return this.historys.length
-    }
-  },
+  // computed: {
+  //   history: function () {
+  //     if (getStore('history')) { // 获取搜索记录
+  //       this.historys = JSON.parse(getStore('history'))
+  //       this.$forceUpdate()
+  //     } else {
+  //       this.historys = []
+  //     }
+  //     return !!this.historys.length
+  //   }
+  // },
   mounted () {
   },
   components: {
@@ -140,4 +140,3 @@ export default {
 		background: #fff
 		border-radius: 5px
 </style>
-

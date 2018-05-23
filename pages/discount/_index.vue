@@ -6,7 +6,7 @@
             <ul>
                 <li>
                     <div class="left_con">
-                        <p><i>&yen</i>9999</p>
+                        <p><i>&yen;</i>9999</p>
                         <span>满10000元可用</span>
                     </div>
                     <div class="right_con">
@@ -21,7 +21,7 @@
                 </li>
                  <li>
                     <div class="left_con">
-                        <p><i>&yen</i>9999</p>
+                        <p><i>&yen;</i>9999</p>
                         <span>满10000元可用</span>
                     </div>
                     <div class="right_con">
@@ -36,7 +36,7 @@
                 </li>
                  <li>
                     <div class="left_con">
-                        <p><i>&yen</i>9999</p>
+                        <p><i>&yen;</i>9999</p>
                         <span>满10000元可用</span>
                     </div>
                     <div class="right_con">
@@ -51,7 +51,7 @@
                 </li>
                 <li>
                     <div class="left_con">
-                        <p><i>&yen</i>9999</p>
+                        <p><i>&yen;</i>9999</p>
                         <span>满10000元可用</span>
                     </div>
                     <div class="right_con">
@@ -66,7 +66,7 @@
                 </li>
                 <li>
                     <div class="left_con">
-                        <p><i>&yen</i>9999</p>
+                        <p><i>&yen;</i>9999</p>
                         <span>满10000元可用</span>
                     </div>
                     <div class="right_con">
@@ -85,7 +85,7 @@
   </div>
 </template>
 <script>
-import topHrader from '~components/common/header.vue'
+import topHrader from '~/components/common/header.vue'
 export default {
   data () {
     return {
@@ -229,4 +229,3 @@ header
             background: url('/img/kid_radio_on.png')no-repeat right center
             background-size: 19px 19px
 </style>
-

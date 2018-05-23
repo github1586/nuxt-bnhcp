@@ -23,7 +23,7 @@
                 <li class="school_name">{{items.institutionsName}}({{items.campusesName}})</li>
                 <li class="str_end_time"><span>{{items.open_date1}}</span>至<span>{{items.end_date1}}</span></li>
                 <li class="week_time">{{filterWeeks(items.goods_week)}}</li>
-                <li class="totle_mon on" :class="{tuan: items.is_signup == 2}">&yen<span>{{items.mall_cost}}</span><i>&yen{{items.cost}}</i></li>
+                <li class="totle_mon on" :class="{tuan: items.is_signup == 2}">&yen;<span>{{items.mall_cost}}</span><i>&yen;{{items.cost}}</i></li>
                 <li class="meybe_class">
                   已报<span>{{items.saled}}</span>/<i>{{items.total}}</i>人
                   <p>{{items.district}}</p>
@@ -55,7 +55,7 @@
 import {mapState, mapMutations} from 'vuex'
 import {loadMore} from '../mixin/mixin.js'
 import loading from './loading.vue'
-import noContent from '~components/common/no_content/no_content.vue'
+import noContent from '~/components/common/no_content/no_content.vue'
 import {courselist, getleckCourse} from '../../ajax/getData.js'
 import {filterWeek} from '../../config/common.js'
 export default {
@@ -157,7 +157,7 @@ export default {
       // 小于15条 限时暂无更多
       if (data.data.length < 15) {
         this.TOUCHEND(true)
-        return
+        return false
       }
     },
     // 加载到底部加载更多
@@ -201,6 +201,7 @@ export default {
   }
 }
 </script>
+
 <style lang="sass" scoped>
 @import '~static/common/style.sass'
 .ser_rel_list
@@ -445,4 +446,3 @@ export default {
 .loading-enter, .loading-leave-active
 	opacity: 0
 </style>
-

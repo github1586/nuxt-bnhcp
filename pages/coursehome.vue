@@ -112,9 +112,9 @@
   </div>
 </template>
 <script>
-  import axios from '~plugins/axios'
-  import courseList from '~components/common/courselist.vue'
-  import courseHeader from '~components/common/courseHeader.vue'
+  import axios from '~/plugins/axios'
+  import courseList from '~/components/common/courselist.vue'
+  import courseHeader from '~/components/common/courseHeader.vue'
   import {mapState, mapMutations} from 'vuex'
   import {syncClass, filter, courselist, getleckCourse} from '../ajax/getData'
   export default {
@@ -350,7 +350,7 @@
         // 小于15条 限时暂无更多
         if (data.data.length < 15 && data.data.length !== 0) {
           this.TOUCHEND(true)
-          return
+          return false
         }
       }
     },
@@ -718,4 +718,3 @@
 .index-enter, .index-leave-active
   opacity: 0            
 </style>
-

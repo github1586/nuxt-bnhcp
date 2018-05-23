@@ -9,4 +9,3 @@
     props: ['content']
   }
 </script>
-

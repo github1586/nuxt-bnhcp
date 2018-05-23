@@ -30,4 +30,3 @@ header
   font-size: 1.6rem
   line-height: 38px
 </style>
-

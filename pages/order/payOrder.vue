@@ -36,9 +36,9 @@
   </div>
 </template>
 <script>
-import headerTop from '~components/common/header.vue'
-import yesBtn from '~components/common/subscribe/yesbtn.vue'
-import computedTime from '~components/common/computedTime.vue'
+import headerTop from '~/components/common/header.vue'
+import yesBtn from '~/components/common/subscribe/yesbtn.vue'
+import computedTime from '~/components/common/computedTime.vue'
 import {paySuccess} from '../../ajax/getData.js'
 import {mapState} from 'vuex'
 import {getStore} from '../../config/common.js'
@@ -72,6 +72,7 @@ export default {
     },
     async success () {
       let phone = getStore('user') // 拿到用户手机号
+      console.log(this.orderData)
       let result = await paySuccess(this.orderData.orderId, phone)
       if (result.status) {
         this.$router.push({path: '/paySuccess/index'})
@@ -180,4 +181,3 @@ export default {
             border-radius: 1px
             padding: 0 2px
 </style>
-

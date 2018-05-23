@@ -10,8 +10,8 @@
 </div>
 </template>
 <script>
-import topHrader from '~components/common/header.vue'
-import yesBtn from '~components/common/subscribe/yesbtn.vue'
+import topHrader from '~/components/common/header.vue'
+import yesBtn from '~/components/common/subscribe/yesbtn.vue'
 export default {
   data () {
     return {
@@ -59,4 +59,3 @@ export default {
   i
     color: $theme_color
 </style>
-

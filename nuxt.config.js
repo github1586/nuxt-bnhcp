@@ -3,38 +3,30 @@ module.exports = {
   ** Headers of the page
   */
   head: {
-    title: 'bnhcp',
+    title: 'bobo',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' },
-      { hid: 'description', name: 'description', content: 'bnhcp project' }
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { hid: 'description', name: 'description', content: '{{escape description }}' }
     ],
     link: [
-        { rel: 'stylesheet', href: '/common/common.css' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: '/common/common.css' }
     ]
   },
-  env: {
-    HOST_URL: process.env.HOST_URL || 'http://localhost:3000'
-  },
   /*
-  ** Customize the progress-bar colornuxt
+  ** Customize the progress bar color
   */
   loading: { color: '#3B8070' },
-  // or
-  cache: {
-    max: 1000,
-    maxAge: 900000
-  },
   /*
   ** Build configuration
   */
   build: {
-    vendor: ['axios', 'babel-polyfill'],
     /*
-    ** Run ESLINT on save
+    ** Run ESLint on save
     */
-    extend (config, ctx) {
-      if (ctx.isClient) {
+    extend (config, { isDev, isClient }) {
+      if (isDev && isClient) {
         config.module.rules.push({
           enforce: 'pre',
           test: /\.(js|vue)$/,
@@ -45,4 +37,3 @@ module.exports = {
     }
   }
 }
-

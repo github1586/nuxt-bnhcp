@@ -217,4 +217,3 @@ export default {
 	    top: 20px
 	    right: 20px
 </style>
-

@@ -25,7 +25,7 @@
                   </li>
                   <li class="school_name">{{item.address}}</li>
                   <li class="str_end_time"><span>{{item.open_date1}}</span>至<span>{{item.end_date1}}</span></li>
-                  <li class="totle_mon">&yen<span>{{item.cost}}</span><i>&yen{{item.mall_cost}}</i></li>
+                  <li class="totle_mon">&yen;<span>{{item.cost}}</span><i>&yen;{{item.mall_cost}}</i></li>
                   <li class="meybe_class">
                     已报<span>{{item.saled}}</span>/<i>{{item.total}}</i>人
                   </li>
@@ -70,7 +70,7 @@
 </template>
 
 <script>
-import footerTab from '~components/home/Footertabs.vue'
+import footerTab from '~/components/home/Footertabs.vue'
 import {mapState, mapMutations} from 'vuex'
 import {getCartList, deleteCart} from '../ajax/getData.js'
 import {getStore} from '../config/common.js'
@@ -429,4 +429,3 @@ export default {
     li
       background: #fff
 </style>
-

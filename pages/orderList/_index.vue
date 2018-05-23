@@ -25,7 +25,7 @@
                       <p>学校：<span>{{items.end_date1}}</span></p>
                     </div>
                   </div>
-                  <h3>&yen {{items.cost}}</h3>
+                  <h3>&yen; {{items.cost}}</h3>
                 </li>
               </ul>
             </a>
@@ -50,13 +50,13 @@
   </div>
 </template>
 <script>
-import headerTop from '~components/common/header.vue'
-import Footertabs from '~components/home/Footertabs.vue'
+import headerTop from '~/components/common/header.vue'
+import Footertabs from '~/components/home/Footertabs.vue'
 import {mapMutations} from 'vuex'
-import loading from '~components/common/loading.vue'
+import loading from '~/components/common/loading.vue'
 import {getOrderList, submitOrder} from '../../ajax/getData.js'
 import {getStore} from '../../config/common.js'
-import noContent from '~components/common/no_content/no_content.vue'
+import noContent from '~/components/common/no_content/no_content.vue'
 export default {
   data () {
     return {
@@ -635,4 +635,3 @@ export default {
 				border-color: $theme_color
 				border-radius: 2px
 </style>
-

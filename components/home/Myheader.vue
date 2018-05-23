@@ -84,4 +84,3 @@ export default {
 				background: url(/img/index_has_login.png) no-repeat 14px center
 				background-size: 12px 15px
 </style>
-

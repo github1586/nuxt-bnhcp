@@ -121,4 +121,3 @@ export default {
 					&.time_s
 						font-size: 1.3rem
 </style>
-

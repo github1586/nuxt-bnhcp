@@ -53,7 +53,7 @@
 	</div>
 </template>
 <script>
-import Headerchunk from '~components/common/Headerchunk.vue'
+import Headerchunk from '~/components/common/Headerchunk.vue'
 export default {
   data () {
     return {
@@ -108,4 +108,3 @@ export default {
           p
             text-align: center
 </style>
-

@@ -12,7 +12,7 @@
 <script>
 import {postCourseId, isexistCart} from '../../ajax/getData'
 import {getStore} from '../../config/common.js'
-import layerMsg from '~components/layer/layerMsg.vue'
+import layerMsg from '~/components/layer/layerMsg.vue'
 import { mapState } from 'vuex'
 export default {
   data () {
@@ -125,4 +125,3 @@ export default {
     &.disabled
       background: $theme_graybbb
 </style>
-

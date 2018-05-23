@@ -7,10 +7,9 @@
 
 let baseUrl = ''
 if (process.env.NODE_ENV === 'development') {
-
+  baseUrl = 'http://nodet.cn:3005';
 } else if (process.env.NODE_ENV === 'production') {
-
-// baseUrl = 'http://cangdu.org:8001';
+  baseUrl = 'http://nodet.cn:3005/api';
 }
 // 获取老师头像
 let getTeacherHead = () => {
@@ -23,4 +22,3 @@ export {
   baseUrl,
   getTeacherHead
 }
-

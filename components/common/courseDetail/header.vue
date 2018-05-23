@@ -19,7 +19,7 @@
 </template>
 <script>
 import { mapState } from 'vuex'
-import pullDown from '~components/common/pullDown.vue'
+import pullDown from '~/components/common/pullDown.vue'
 export default {
   data () {
     return {
@@ -217,4 +217,3 @@ export default {
 				color: #fff
 				display: inline-block
 </style>
-
