@@ -61,19 +61,16 @@
 ## 项目截图 <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg" width="280"/>
 
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/4.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/5.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/6.jpeg" width="280"/>
 
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg)
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg)
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg)
-
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/4.jpeg) 
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/5.jpeg)
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/6.jpeg)
-
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg)
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg)
-![avatar](https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg)
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg" width="280"/>
+<img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg" width="280"/>
 
 欢迎大家来给我提提意见 互相探讨~
 
