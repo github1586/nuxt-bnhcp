@@ -1,4 +1,4 @@
-# vue-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
+# NUXT-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis
 ## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
@@ -74,5 +74,5 @@ Email: 8889999i@gmail.com
 # install dependencies
 $ yarn install
 
-# serve with hot reload at 127.0.0.1:3000
+# serve with hot reload at 127.0.0.1:3000 (Must be)
 $ yarn dev 
