@@ -111,6 +111,7 @@ export default {
     text-align: center
     color: #fff
     font-size: 15px
+    float: left
   .yu
     background: #f8f8f8
     color: $theme_color
