@@ -5,7 +5,7 @@
 
 online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://nodet.cn/</a>
 
-## 感谢～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
+## Thank you～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 感谢～～！
 
@@ -62,7 +62,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 ```
 
-## 完成功能 <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
+## complete <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
 1. 首页渲染
 2. 课程的分类搜索
