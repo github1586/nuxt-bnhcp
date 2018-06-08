@@ -74,7 +74,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 8. 分类页面
 9. 我的页面
 10. 提交订单
-11. 登录（注册暂无）
+11. 登录、注册
 12. 设置页面
 13. 优惠券页面
 14. 钱包页面
