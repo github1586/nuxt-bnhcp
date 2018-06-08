@@ -5,7 +5,7 @@
 
 online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://nodet.cn/</a>
 
-## Thank you～ <img src="https://img.shields.io/thank/you-v1.0.0-ff69b4.svg"/>
+## Thank you～  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 感谢～～！
 
@@ -83,7 +83,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 17. redis (首页缓存 分页缓存）
 18. 阿里云部署
 19. 无痕埋点
-## Project screenshots <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## Project screenshots  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg" width="280"/>
 
@@ -93,7 +93,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 Email: 8889999i@gmail.com vx: node-s
 
-## Build Setup <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## Build Setup  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 ``` bash
 # install dependencies
