@@ -1,4 +1,4 @@
-# NUXT-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
+# nuxt-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
 
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis + 阿里云部署
 ## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
@@ -83,7 +83,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 17. redis (首页缓存 分页缓存）
 18. 阿里云部署
 19. 无痕埋点
-## Project screenshots  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## project screenshots  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg" width="280"/>
 
@@ -93,7 +93,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 Email: 8889999i@gmail.com vx: node-s
 
-## Build Setup  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
+## build Setup  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 ``` bash
 # install dependencies
