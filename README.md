@@ -82,7 +82,6 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 16. 我的订单 （全部订单 待付款 交易成功）
 17. redis (首页缓存 分页缓存）
 18. 阿里云部署
-19. 无痕埋点
 ## project screenshots  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/1.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/2.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/3.jpeg" width="280"/>
