@@ -12,53 +12,183 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 ## project <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 ```
 .
-├── ajax                 // 请求数据封装
-├── assets               // 静态资源
-├── components           // 组件
-│   ├── carousel         // 轮播
-│   ├── common           // 公用组件
-│   │   ├── courseDetail // 课程详情
-│   │   ├── no_content   // 无数据公用组件
-│   │   └── subscribe    // tab
-│   ├── config           // 配置项
-│   ├── home             // 主页组件
-│   ├── layer            // 弹窗组件
-│   └── mixin            // 混合
+
+├── README.md
+├── ajax
+│   └── getData.js
+├── assets
+│   └── README.md
+├── components
+│   ├── AppLogo.vue
+│   ├── README.md
+│   ├── carousel
+│   │   ├── Carousel.vue
+│   │   ├── cov-touch.js
+│   │   └── vue-slide.vue
+│   ├── common
+│   │   ├── Headerchunk.vue
+│   │   ├── Moreclass.vue
+│   │   ├── computedTime.vue
+│   │   ├── courseDetail
+│   │   │   ├── courseInfo.vue
+│   │   │   ├── description.vue
+│   │   │   ├── detailContent.vue
+│   │   │   ├── evaluate.vue
+│   │   │   └── header.vue
+│   │   ├── courseHeader.vue
+│   │   ├── courselist.vue
+│   │   ├── footerBtn.vue
+│   │   ├── header.vue
+│   │   ├── loading.vue
+│   │   ├── no_content
+│   │   │   └── no_content.vue
+│   │   ├── pullDown.vue
+│   │   ├── subscribe
+│   │   │   ├── detailTime.vue
+│   │   │   ├── valiPhone.vue
+│   │   │   └── yesbtn.vue
+│   │   └── success.vue
+│   ├── config
+│   │   └── configinfo.js
+│   ├── home
+│   │   ├── Classification.vue
+│   │   ├── Courseblock.vue
+│   │   ├── Footertabs.vue
+│   │   ├── Grabactivity.vue
+│   │   ├── Myheader.vue
+│   │   └── RecommendedSchools.vue
+│   ├── layer
+│   │   └── layerMsg.vue
+│   └── mixin
+│       └── mixin.js
 ├── config
-│   └── async            // ajax封装
-├── dist                 // server最终打包上线目录
-│   └── api              
-│       ├── controller   // 请求处理
-│       │   ├── cart
-│       │   ├── course
-│       │   ├── home
-│       │   ├── login
-│       │   └── order
-│       ├── model         // mysql查询语句
-│       └── redis         // redis配置
-├── layouts               // 布局
-├── middleware            // 中间件
-├── pages                 // 页面
-│   ├── chat              // 聊天页面
-│   ├── conf              // 设置页面
-│   ├── courseDetail      // 课程详情页面
-│   ├── discount          // 限时优惠页面
-│   ├── myWallet          // 我的钱包
-│   ├── order             // 订单
-│   ├── orderList         // 订单列表
-│   ├── paySuccess        // 支付成功
-│   ├── search            // 查询页面
-│   ├── submitOrder       // 提交页面
-│   └── subscribe         // tab
-├── plugins               // 插件
-├── static                // 静态资源
-│   ├── common
-│   ├── img
-│   │   ├── headImg
-│   │   ├── img
-│   │   └── teacherHead
-│   └── js
-└── store`
+│   ├── async
+│   │   ├── env.js
+│   │   └── fetch.js
+│   └── common.js
+├── layouts
+│   ├── README.md
+│   └── default.vue
+├── middleware
+│   └── README.md
+├── nuxt
+│   ├── App.js
+│   ├── client.js
+│   ├── components
+│   │   ├── no-ssr.js
+│   │   ├── nuxt-child.js
+│   │   ├── nuxt-error.vue
+│   │   ├── nuxt-link.js
+│   │   ├── nuxt-loading.vue
+│   │   └── nuxt.js
+│   ├── dist
+│   │   ├── 01c6ecd76274336b610c.js
+│   │   ├── 066f8893c99ed96e829b.js
+│   │   ├── 30e89264b49bc224a7bd.js
+│   │   ├── 3361ffbfddc25d93b5b8.js
+│   │   ├── 4baf47c61efc08d4cbdf.js
+│   │   ├── 577c7152a496528e9b98.js
+│   │   ├── 5df321ea5b7a48db46ef.js
+│   │   ├── 5e076e89204c382a8d85.js
+│   │   ├── 68be7f95fa20c1f3601d.js
+│   │   ├── 6d6f7e3ce100305546b2.js
+│   │   ├── 6f70b0413844b5334687.js
+│   │   ├── 77efe89fa34819ba021c.js
+│   │   ├── LICENSES
+│   │   ├── a07f22d65683b27556c9.js
+│   │   ├── b272896ebc0529f1e83c.js
+│   │   ├── c90f81fb39c9c4d202c9.js
+│   │   ├── cf1513594f2bb80e8d42.js
+│   │   ├── d7d2111b61f788fbe058.js
+│   │   ├── de3840e12e249c86d539.js
+│   │   ├── f4c3f36956a13b771bf1.js
+│   │   ├── index.spa.html
+│   │   ├── index.ssr.html
+│   │   ├── server-bundle.json
+│   │   └── vue-ssr-client-manifest.json
+│   ├── empty.js
+│   ├── index.js
+│   ├── loading.html
+│   ├── middleware.js
+│   ├── router.js
+│   ├── server.js
+│   ├── store.js
+│   ├── utils.js
+│   └── views
+│       ├── app.template.html
+│       └── error.html
+├── nuxt.config.js
+├── package.json
+├── pages
+│   ├── chat
+│   │   └── _index.vue
+│   ├── classify.vue
+│   ├── conf
+│   │   └── _index.vue
+│   ├── courseDetail
+│   │   └── _index.vue
+│   ├── coursehome.vue
+│   ├── discount
+│   │   └── _index.vue
+│   ├── index.vue
+│   ├── login.vue
+│   ├── myWallet
+│   │   └── _index.vue
+│   ├── oneself.vue
+│   ├── order
+│   │   └── payOrder.vue
+│   ├── orderList
+│   │   └── _index.vue
+│   ├── paySuccess
+│   │   └── _index.vue
+│   ├── search
+│   │   └── searchPage.vue
+│   ├── shoppingCart.vue
+│   ├── submitOrder
+│   │   └── _index.vue
+│   └── subscribe
+│       └── _index.vue
+├── plugins
+│   ├── README.md
+│   └── axios.js
+├── server
+│   ├── api
+│   │   ├── controller
+│   │   │   ├── cart
+│   │   │   │   └── index.js
+│   │   │   ├── course
+│   │   │   │   └── index.js
+│   │   │   ├── home
+│   │   │   │   └── index.js
+│   │   │   ├── interface.js
+│   │   │   ├── login
+│   │   │   │   └── index.js
+│   │   │   ├── order
+│   │   │   │   └── index.js
+│   │   │   ├── paramsFilter.js
+│   │   │   └── router.js
+│   │   ├── index.js
+│   │   ├── model
+│   │   │   ├── db.js
+│   │   │   ├── settings.js
+│   │   │   └── sql.js
+│   │   └── redis
+│   │       └── redis.js
+│   └── index.js
+├── static
+│   ├── README.md
+│   ├── common
+│   │   ├── common.css
+│   │   └── style.sass
+│   ├── favicon.ico
+│   └── img
+├── store
+│   ├── README.md
+│   ├── index.js
+│   ├── mutation-types.js
+│   └── mutations.js
+├── yarn-error.log
+└── yarn.lock`
 
 ```
 
