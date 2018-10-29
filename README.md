@@ -81,31 +81,6 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 │   │   ├── nuxt-link.js
 │   │   ├── nuxt-loading.vue
 │   │   └── nuxt.js
-│   ├── dist
-│   │   ├── 01c6ecd76274336b610c.js
-│   │   ├── 066f8893c99ed96e829b.js
-│   │   ├── 30e89264b49bc224a7bd.js
-│   │   ├── 3361ffbfddc25d93b5b8.js
-│   │   ├── 4baf47c61efc08d4cbdf.js
-│   │   ├── 577c7152a496528e9b98.js
-│   │   ├── 5df321ea5b7a48db46ef.js
-│   │   ├── 5e076e89204c382a8d85.js
-│   │   ├── 68be7f95fa20c1f3601d.js
-│   │   ├── 6d6f7e3ce100305546b2.js
-│   │   ├── 6f70b0413844b5334687.js
-│   │   ├── 77efe89fa34819ba021c.js
-│   │   ├── LICENSES
-│   │   ├── a07f22d65683b27556c9.js
-│   │   ├── b272896ebc0529f1e83c.js
-│   │   ├── c90f81fb39c9c4d202c9.js
-│   │   ├── cf1513594f2bb80e8d42.js
-│   │   ├── d7d2111b61f788fbe058.js
-│   │   ├── de3840e12e249c86d539.js
-│   │   ├── f4c3f36956a13b771bf1.js
-│   │   ├── index.spa.html
-│   │   ├── index.ssr.html
-│   │   ├── server-bundle.json
-│   │   └── vue-ssr-client-manifest.json
 │   ├── empty.js
 │   ├── index.js
 │   ├── loading.html
