@@ -7,7 +7,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 ## thank you～  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
-如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 有什么问题联系我哦 感谢～～！
+如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 有什么问题联系我哦  感谢～～！
 
 ## project <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 ```
@@ -195,7 +195,7 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg" width="280"/>
 
-Email: 8889999i@gmail.com vx: node-s
+Email: 8889999i@gmail.com wx: 13691059345
 
 ## build Setup  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
