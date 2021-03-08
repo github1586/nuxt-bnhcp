@@ -9,6 +9,8 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 有什么问题联系我哦  感谢～～！
 
+Email: 8889999i@gmail.com  商务合作 或 问题交流 联系wx: gentlemanrs 备注：github
+
 ## complete <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
 1. 首页渲染
@@ -36,8 +38,6 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/4.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/5.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/6.jpeg" width="280"/>
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg" width="280"/>
-
-Email: 8889999i@gmail.com  商务合作 或 问题交流 联系wx: gentlemanrs 备注：github
 
 
 ## project <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
