@@ -37,7 +37,8 @@ online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://
 
 <img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/8.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/7.jpeg" width="280"/><img src="https://github.com/github1586/nuxt-bnhcp/blob/master/show/9.jpeg" width="280"/>
 
-Email: 8889999i@gmail.com wx: gentlemanrs
+Email: 8889999i@gmail.com  商务合作 或 问题交流 联系wx: gentlemanrs 备注：github
+
 
 ## project <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 ```
