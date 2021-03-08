@@ -52,7 +52,7 @@
     "eslint-plugin-standard": "^2.0.1",
     "eslint-plugin-vue": "^4.0.0",
     "node-sass": "^4.5.3",
-    "pug": "^2.0.0-beta6",
+    "pug": "^3.0.1",
     "pug-loader": "^2.3.0",
     "sass-loader": "^6.0.5",
     "vue-slide": "^1.1.1"
