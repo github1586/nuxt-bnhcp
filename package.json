@@ -22,7 +22,7 @@
     }
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "babel-cli": "^6.26.0",
     "babel-runtime": "^6.26.0",
     "backpack-core": "^0.7.0",
