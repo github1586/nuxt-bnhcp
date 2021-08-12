@@ -32,7 +32,7 @@
     "mysql": "2.14.0",
     "nodemon": "^1.17.4",
     "nuxt": "2.0.0",
-    "redis": "2.8.0",
+    "redis": "3.1.1",
     "request": "^2.79.0",
     "source-map-support": "0.4.15",
     "vue-carousel": "0.6.4",
