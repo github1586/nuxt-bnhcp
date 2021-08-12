@@ -5,11 +5,11 @@
  * imgBaseUrl: 图片所在域名地址
  */
 
-let baseUrl = ''
+let baseUrl = 'http://127.0.0.1:3005/api'
 if (process.env.NODE_ENV === 'development') {
-  baseUrl = 'http://nodet.cn:3005';
+  baseUrl = 'http://127.0.0.1:3005';
 } else if (process.env.NODE_ENV === 'production') {
-  baseUrl = 'http://nodet.cn:3005/api';
+  baseUrl = 'http://127.0.0.1:3005/api';
 }
 // 获取老师头像
 let getTeacherHead = () => {

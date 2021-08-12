@@ -31,7 +31,7 @@
     "image-webpack-loader": "^4.2.0",
     "mysql": "2.14.0",
     "nodemon": "^1.17.4",
-    "nuxt": "^2.0.0",
+    "nuxt": "2.0.0",
     "redis": "2.8.0",
     "request": "^2.79.0",
     "source-map-support": "0.4.15",

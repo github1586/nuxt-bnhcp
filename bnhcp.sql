@@ -43,6 +43,17 @@ CREATE TABLE gradeTwo(
 	`pid` VARCHAR(36)
 )ENGINE=InnoDB AUTO_INCREMENT=25963587 DEFAULT CHARSET=utf8;
 
+-- ----------------------------
+-- Table structure for `gradeTwo`
+-- ----------------------------
+CREATE TABLE course(
+	`courseId` INT PRIMARY KEY AUTO_INCREMENT,
+	`teacher_id` VARCHAR(36),
+	`course_id` VARCHAR(36),
+	`name` VARCHAR(36),
+	`cost` VARCHAR(36),
+)ENGINE=InnoDB AUTO_INCREMENT=25963587 DEFAULT CHARSET=utf8;
+
 INSERT INTO `gradeTwo`(gradeTwoId, twoclass_name, pid) VALUES(NULL, "乐器", "15963587");
 INSERT INTO `gradeTwo`(gradeTwoId, twoclass_name, pid) VALUES(NULL, "声乐", "15963587");
 INSERT INTO `gradeTwo`(gradeTwoId, twoclass_name, pid) VALUES(NULL, "舞蹈", "15963587");

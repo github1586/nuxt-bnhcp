@@ -1,7 +1,7 @@
 module.exports = {
-    username: '数据库用户名',
-    password: '用户密码',
-    host: '远程ip',
+    username: 'root',
+    password: '123456',
+    host: '127.0.0.1',
     port: 3306,
-    name: '数据库名字'
+    name: 'bnhcp'
 }

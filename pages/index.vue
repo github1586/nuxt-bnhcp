@@ -26,7 +26,7 @@ import axios from '~/plugins/axios'
 export default {
   // ajax module as axios
   async asyncData () {
-    let { data } = await axios.get('/api/')
+    let { data } = await axios.get('http://127.0.0.1:3005/api/')
     return {
       allparentinfo: data
     }
