@@ -3,7 +3,7 @@
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis + 阿里云部署
 ## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
 
-online：<a href="hhttp://nodet.cn/" target="_blank" style="color: red;">http://nodet.cn/</a>
+online：<a href="https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/" target="_blank" style="color: red;">http://nodet.cn/</a>
 
 ## thank you～  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
