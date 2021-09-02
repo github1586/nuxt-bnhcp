@@ -1,6 +1,6 @@
 # nuxt-bnhcp <img src="https://img.shields.io/badge/bnhcp-v1.0.0-green.svg"/> 
 
-> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis + 阿里云部署
+> Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis + 腾讯云 serveless
 ## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
 
 online：<a href="https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/" target="_blank" style="color: red;">https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/</a>  serveless 部署，目前访问慢，并且二级路由有问题。
