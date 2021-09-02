@@ -8,7 +8,7 @@ online：<a href="https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/" t
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 有什么问题联系我哦  感谢～～～！
 
-Email: 8889999i@gmail.com  商务合作 或 问题交流 联系wx: gentlemanrs 备注：github 
+Email: 8889999i@gmail.com  商务合作 或 问题交流 联系wx: driveawaygo 备注：github 
 
 ## complete <img src="https://img.shields.io/badge/complete-v1.0.0-origin.svg"/>
 
