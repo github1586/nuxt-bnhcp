@@ -3,7 +3,7 @@
 > Node.js(v6.9.1) + express(4.X) + vue(2.0) + vuex + mysql(5.7.18) + （NUXT）SSR + nginx + redis + 腾讯云 serveless
 ## preface [![](https://badge.juejin.im/entry/599a8ecd518825243a78bd3b/likes.svg?style=flat-square)](https://juejin.im/entry/599a8ecd518825243a78bd3b/detail) 
 
-online：<a href="https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/" target="_blank" style="color: red;">https://service-rvy1pwwe-1306117517.gz.apigw.tencentcs.com/</a>  serveless 部署，目前访问慢，并且二级路由有问题。
+online：<a href="nodet.cn" target="_blank" style="color: red;">nodet.cn</a>
 ## thank you～  <img src="https://img.shields.io/badge/build-v1.0.0-blue.svg"/>
 
 如果我的项目对您有所帮助，您可以点右上角 "Star" 支持一下 有什么问题联系我哦  感谢～～～！
